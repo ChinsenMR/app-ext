@@ -1,0 +1,38 @@
+/* components/addrPicker/addrPicker.wxss */
+.addr-box{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 15px;
+  z-index: 1000;
+  background: #fff;
+  text-align: center;
+}
+.btn-box{
+  padding: 15px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  color: #333;
+}
+.addr-cancel,.addr-sure{
+  padding: 8px 18px;
+  border: 1px solid #efefef;
+  border-radius: 4px;
+}
+.addr-sure{
+  color: #fff;
+  background: #49CB5F;
+  border-color: #49CB5F;
+}
+.addr-cover{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(0, 0, 0, .3);
+}

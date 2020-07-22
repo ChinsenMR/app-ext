@@ -1,0 +1,25 @@
+<!--pages/Specialoffer/Specialoffer.wxml-->
+<view class='newpeopletop'>
+  <image src='' class='newimg' src='{{imgurl + "banner@2x (1).png"}}'></image>
+  <view class='pai'>
+    <text class='painame'>CHNAEL</text>
+    <text>给生活留白</text>
+  </view>
+</view>
+<view class='allproduct'>CHNAEL女装全场89元2件</view>
+<view class='tomorrow'>明天00:00-12:00限时特惠</view>
+<view class='commingtimebox'>
+    <view class='staringsalse'>{{limeTime.startState?"距离结束":"距离开始"}}:</view>
+     <view class='commingtime'>{{limeTime.limitHours}}:{{limeTime.limitMin}}:{{limeTime.limitSecond}}</view>
+</view>
+<!-- 商品content -->
+<view class='newpeoplecontent'>
+  <view class='searchbox'>
+    <image src='{{imgurl + "icon_search@2x.png"}}' class="searchimg"></image>
+    <input class='search' placeholder='请输入搜索关键词' placeholder-class='Placeholder'></input>
+  </view>
+  <!-- 限时折扣内容组件 -->
+  <view class='Discountcontentbox'>
+    <Discountcontent productlist="{{goodslist}}" notime="{{notime}}" ></Discountcontent>
+  </view>
+</view>

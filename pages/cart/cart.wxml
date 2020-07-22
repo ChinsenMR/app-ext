@@ -1,0 +1,98 @@
+<view class="layout" hidden='{{storeList.CartItemInfo.length == 0}}'>
+  <view class='allSelect df ais'>
+    <icon class='iconfont df ais jct {{selectAllStatus? "iconxuanze":"iconweixuanze"}}' bindtap='selectAll'></icon>
+    <text>全选</text>
+  </view>
+  <view class='content-ul'>
+    <view class='content-li'>
+      <view class='li-header df ais jct-between'>
+        <view class='li-headerL df ais'>
+          <icon class='iconfont df ais jct {{selectAllStatus? "iconxuanze":"iconweixuanze"}}' bindtap='selectAll'>
+          </icon>
+          <view class='df ais'>
+            <!-- <image src='{{storeList.ThumbnailUrl100}}' mode='widthFix'></image> -->
+            <text>代理商店</text>
+          </view>
+        </view>
+        <!-- <view class='li-headerR' bindtap='getCoupon'>领券</view> -->
+      </view>
+      <view class='li-inner'>
+        <!-- 商品简介 -->
+        <view class='li-innerTop df ais' wx:for='{{storeList.CartItemInfo}}' wx:key="index"
+          data-id='{{item.SkuID}}' bindtouchstart="touchStart" bindtouchend="touchEnd">
+          <icon class='iconfont df ais jct {{item.status? "iconxuanze":"iconweixuanze"}}' data-id='{{item.SkuID}}'
+            bindtap='selelctSingle' hidden='{{item.clearStatus}}'>
+          </icon>
+          <view class='li-innerR df ais flex'>
+            <image src='{{item.ThumbnailUrl100}}' mode='widthFix'></image>
+            <view class='flex'>
+              <view class='title'>{{item.Name}}</view>
+              <view class='goodsPer'>
+                <text>{{item.SkuContent}}</text>
+              </view>
+              <view class='df ais jct-between'>
+                <view class='goodsPrice'>￥{{item.MemberPrice}}</view>
+                <view class='df ais'>
+                  <text class='reduce df ais jct' data-id='{{item.SkuID}}' data-num='{{item.Quantity}}'
+                    data-type='reduce' bindtap='changeNum'>-</text>
+                  <text class='num df ais jct'>{{item.Quantity}}</text>
+                  <text class='add df ais jct' data-id='{{item.SkuID}}' data-num='{{item.Quantity}}' data-type='add'
+                    bindtap='changeNum'>+</text>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class='clear' hidden='{{!item.clearStatus}}' bindtap='clear' data-id='{{item.SkuID}}'
+            data-num='{{item.Quantity}}'>删除</view>
+        </view>
+        
+        <!-- 换购 -->
+        <!-- <view class='df ais repurchase'>
+          <icon class='iconfont'></icon>
+          <view class='repurchase-inner df ais'>
+            <image src='../../images/big_pic@2x.png' mode='widthFix'></image>
+            <view class='df fdc jct-between'>
+              <view class='repurchase-title'>
+                <text>换购</text>
+                <text>购满1件，可用优惠价换购商品</text>
+              </view>
+              <view class='goodsPrice'>￥79.00</view>
+            </view>
+          </view>
+        </view> -->
+
+      </view>
+      <!-- <view class='li-bottom df ais jct-between'>
+        <view class='li-bottomL df ais'>
+          <text>换购</text>
+          <text>购满1件，可用优惠价换购商品</text>
+        </view>
+        <view class='li-bottomR df ais jct-end'>
+          <text>换购</text>
+          <icon class='iconfont iconyoujiantou df ais jct'></icon>
+        </view>
+      </view> -->
+    </view>
+  </view>
+
+  <!-- 优惠券 -->
+  <Coupon id='coupon' />
+  <!-- 底部tab -->
+  <Custom-tab goodsTotal="{{goodsTotal}}" totalPrice="{{totalPrice}}" storeList='{{storeList}}'
+    magnitude="{{magnitudeObj}}" hidden='{{!storeList.CartItemInfo.length}}'/>
+
+</view>
+
+<view class='emptyCart df ais fdc' hidden='{{storeList.CartItemInfo.length != 0}}'>
+  <image src='{{imgUrl+"icon_gouwuche-t@2x.png"}}' mode='widthFix'></image>
+  <view class='emptyCart-item1'>购物车空空如也～</view>
+  <view bindtap="handleGo">
+    <view class='emptyCart-item2'>去逛逛</view>
+  </view>
+</view>
+
+<!-- 底部导航 -->
+<!-- hidden='{{storeList.CartItemInfo.length != 0}}' -->
+<view class="tab-bar">
+  <tabBar class="" curActive="{{tabIndex}}"></tabBar>
+</view>

@@ -1,0 +1,9 @@
+<!--components/productacting/productacting.wxml-->
+<view class='acting-box'>
+  <view class='actingdetail' wx:for="{{ productdata}}" data-index="{{index}}" wx:key="index" bindtap='junpactive'>
+    <view class='actingitem'>
+      <image src='{{item.imgurl}}'></image>
+    </view>
+    <text class='actingname'>{{item.name}}</text>
+  </view>
+</view>

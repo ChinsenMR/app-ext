@@ -1,0 +1,29 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: WuJixuan
+ * @Date: 2020-07-02 18:42:11
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2020-07-06 09:47:13
+ -->
+
+<!-- <swiper autoplay circular style="height:400rpx">
+  <swiper-item wx:for="{{newArr}}" wx:key="index">
+    <view class="spacing_wrap">
+      <image src="{{item}}" style="width:100%;height:100%;" mode="widthFix"></image>
+    </view>
+  </swiper-item>
+</swiper>
+<canvas id="myCanvas" canvas-id="myCanvas" style="width: 150px;height: 100px;"></canvas>
+
+<view style="{{ startColor ? 'background: ' + startColor : '' }};"></view>
+
+<view style="{{ endColor ? 'background: ' + endColor : '' }};"></view>
+
+<view style="{{ startColor && endColor ? 'background: linear-gradient(' + startColor + ',' + endColor + ')' : '' }};">
+
+<block wx:for="{{ colorArr }}" wx:key="index">
+  <view style="background: {{ item.startColor }};"></view>
+</block>
+</view> -->
+<image src="{{url}}" data-url="{{url}}" show-menu-by-longpress="saveImage"></image>

@@ -1,0 +1,15 @@
+<!--components/topMenu/topMenu.wxml-->
+<!-- <text>components/topMenu/topMenu.wxml</text> -->
+<view class="tab">
+  <ul>
+    <li wx:for="{{topMenuUrls.content.dataset}}" style='background-color:{{item.bgColor}}; border-right:{{topMenuUrls.content.marginstyle}}rpx solid white '>
+      <view bindtap='jumptap' data-type='{{item.linkType}}' data-index='{{index}}'>
+        <view class="content">
+          <image wx:if="{{topMenuUrls.content.style==1}}" src='{{item.picType==0?"http://cmyqtest.hmeshop.cn"+item.pic:item.pic}}' alt=""></image>
+          <view wx:if="{{topMenuUrls.content.style==1}}" style='color:{{item.fotColor}}' class='font'>{{item.showtitle}}</view>
+          <view wx:else style='color:{{item.fotColor}}; line-height: 120rpx' class='font'>{{item.showtitle}}</view>
+        </view>
+      </view>
+    </li>
+  </ul>
+</view>

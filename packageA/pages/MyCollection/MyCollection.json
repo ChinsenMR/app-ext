@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-submit-bar": "/miniprogram_npm/vant-weapp/submit-bar/index",
+    "van-checkbox": "/miniprogram_npm/vant-weapp/checkbox/index",
+    "van-nav-bar": "/miniprogram_npm/vant-weapp/nav-bar/index"
+  },
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "收藏"
+}

@@ -1,0 +1,65 @@
+<view id='box'>
+	<!-- 收货地址 -->
+	<view class='addressBox' bindtap='goSelectAddress'>
+		<image src='{{imgurl + "icon_address@2x.png"}}' class='dingwei' mode='widthFix' />
+		<view class='addressTip'>
+			<view class='addresstipone' wx:if="{{!defaultAddress}}">请选择一个收货地址</view>
+			<view wx:else>
+				<view class='userNameBox'>
+					<view class='userName'>{{defaultAddress.ShipTo}}</view>
+					<view class='userPhone'>{{defaultAddress.CellPhone}}</view>
+				</view>
+				<view class='address'>
+					{{defaultAddress.FullRegionName}} {{defaultAddress.Address}}
+				</view>
+			</view>
+		</view>
+		<view class='addressRight' wx:if="{{!orderId}}">
+			<view class='lineOne' />
+			<view class='lineTwo' />
+		</view>
+	</view>
+	<!-- 店铺 -->
+	<view class='shopBox' wx:if="{{goodsCartList.length}}">
+		<!-- <view class='shopTitle'>
+      <image src='{{item.logo}}' class='shoplogo'></image>
+      <view class='shopName'>{{orderInfo.StoreName}}</view>
+	</view> -->
+		<view class='shopGoodBox'>
+			<!-- 商品列表 -->
+			<view class='shopGoodListBox' wx:for='{{goodsCartList}}' wx:key="index">
+				<image src='{{item.ThumbnailUrl180}}' class='goodImg' mode='aspectFill' />
+				<view class='goodmsgBox'>
+					<view class='goodTip'>{{item.Name}}</view>
+					<view class='goodSizeBox' wx:if="{{item.SkuContent}}">{{item.SkuContent}}</view>
+					<view class='unitPriceBox'>
+						<view class='unitPrice'>{{item.NeedPoint}}积分</view>
+						<view class='goodnumber'>X {{item.Quantity}}</view>
+					</view>
+				</view>
+			</view>
+			<view class='df ais jct-between attrList'>
+				<view>备注</view>
+				<view class='df ais'>
+					<input
+					 placeholder='选填，请先和商家协商'
+					 value="{{remark}}"
+					 bindinput="handleVal"
+					 disabled="{{orderId}}"
+					/>
+				</view>
+			</view>
+			<view class='allnumberBox'>
+				共 {{ totalCount}} 件 合计:
+				<text>{{totalPrice}}积分</text>
+			</view>
+		</view>
+	</view>
+	<!-- 默认tab -->
+	<view class='allBtnBox df ais' wx:if="{{!orderId}}">
+		共 {{totalCount}} 件 合计: {{totalPrice}}积分
+		<view class='surebtn df ais' bindtap='confirmOrder' wx:if="{{!isComfirmIng}}">确定订单</view>
+		<view class='surebtn df ais' wx:else>确定订单</view>
+	</view>
+</view>
+

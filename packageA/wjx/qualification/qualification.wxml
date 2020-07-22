@@ -1,0 +1,79 @@
+<view id="qualification">
+  <view class="header">
+    <view class="info">
+      <label for="" class="info_t">联系人</label>
+      <input type="text" value="{{obj.Name}}" disabled />
+    </view>
+    <view class="info">
+      <label for="" class="info_t">手机号</label>
+      <input type="text" value="{{obj.tel}}" disabled />
+    </view>
+    <view class="info">
+      <label for="" class="info_t">微信号</label>
+      <input type="text" value="{{obj.wechat}}" disabled />
+    </view>
+  </view>
+
+  <view class="content">
+    <view class="code_wrap">
+      <label for="" class="code_t">微信二维码:</label>
+      <view class="pictbox">
+        <view class="evalteimg" wx:for="{{codeList}}" wx:key>
+          <image class="tu" src="{{item}}"></image>
+          <image class="close" src="{{imgurl}}btn_close.png" data-index="{{index}}" bindtap="codeDel" wx:if="{{obj.RequetStatus!=1}}"></image>
+        </view>
+        <view class="takepic" bindtap="codeImg" wx:if="{{obj.RequetStatus!=1}}">
+          <image class="pict" src="{{imgurl}}icon_camera1.png"></image>
+          <text>{{codeList.length}}/1</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="xg_agent">
+      <label for="" class="xg_zizhi">相关资质:</label>
+      <view class="img_wrap" wx:if="{{true}}">
+        <label class="flex_name" style="font-size: 26rpx;">请上传营业执照</label>
+        <view class="pictbox">
+          <view class="evalteimg" wx:for="{{photoList}}" wx:key>
+            <image class="tu" src="{{item}}"></image>
+            <image class="close" src="{{imgurl}}btn_close.png" data-index="{{index}}" bindtap="Deleted" wx:if="{{obj.RequetStatus!=1}}"></image>
+          </view>
+          <view class="takepic" bindtap="postImg" wx:if="{{obj.RequetStatus!=1}}">
+            <image class="pict" src="{{imgurl}}icon_camera1.png"></image>
+            <text>{{photoList.length}}/2</text>
+          </view>
+        </view>
+      </view>
+      <view class="flexss">
+        <!-- 图片上传 -->
+        <label class="flex_name" style="font-size: 26rpx;">请上传证书</label>
+        <view class="pictbox">
+          <view class="evalteimg" wx:for="{{certificate}}" wx:key>
+            <image class="tu" src="{{item}}"></image>
+            <image class="close" src="{{imgurl}}btn_close.png" data-index="{{index}}" bindtap="Deleted2" wx:if="{{obj.RequetStatus!=1}}"></image>
+          </view>
+          <view class="takepic" bindtap="certificate" wx:if="{{obj.RequetStatus!=1}}">
+            <image class="pict" src="{{imgurl}}icon_camera1.png"></image>
+            <text>{{certificate.length}}/3</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="btn_wrap">
+    <view class="btn" bindtap="submit" wx:if="{{obj.RequetStatus!=1}}">提交认证</view>
+    <!-- <view class="btn" v-else @click="submit">重新提交</view> -->
+    <!-- <view class="btn" v-else-if="obj.RequetStatus == 0" @click="submit">审核中</view>
+      <view class="btn" v-else-if="obj.RequetStatus == 1" @click="submit">重新认证</view> -->
+  </view>
+  <!-- 弹窗 -->
+  <view class="win" wx:if="{{isShow}}">
+    <image src="{{img}}" alt="" class="win_img" />
+    <view class="win_dp">店铺资质认证<text style="color:red;">{{obj.RequetStatus==0?'审核中':'未通过'}}</text></view>
+    <view class="win_tt">您提交的资料正在审核,请等候~</view>
+    <view class="win_btn add_win" wx:if="{{obj.RequetStatus == 2}}" catchtap="handleCX">重新认证</view>
+    <view class="win_btn" wx:if="{{obj.RequetStatus == 0}}" catchtap="handleClick">朕以了解</view>
+    <view class="win_btn add_active" wx:if="{{obj.RequetStatus == 2}}" catchtap="handleClick">以后再说</view>
+  </view>
+  <view class="zhezhao" wx:if="{{isShow}}"></view>
+</view>

@@ -1,0 +1,49 @@
+<!-- 默认tab -->
+<view class='customTab tab2 df ais' wx:if='{{isDefault == 1}}'>
+	<view class='df ais tab2-home'>
+		<navigator class='df ais fdc' open-type="redirect" url="../index/index">
+			<image src='{{imgUrl+"icon_shouye@2x.png"}}' mode='widthFix' />
+			<text>首页</text>
+		</navigator>
+	</view>
+	<view class='tab2-activity tab2-home'>
+		<!-- <view wx:if="{{magnitude.StoreId>0}}" open-type="redirect" url="../../../packageA/pages/shopkeeperList/shopkeeperList.wxml" > -->
+		<!-- 掌柜图标 -->
+		<view wx:if="{{magnitude.StoreId != 0 && BrandLevel != 0}}" bindtap="handleMagnitude" class=" df ais fdc jct">
+			<image src='{{imgUrl+"icon_zhuanqian@2x.png"}}' class="icon_img" />
+			<text class="icon_text">掌柜</text>
+		</view>
+		<!-- <view wx:else open-type="redirect" url=""> -->
+		<!-- 升级图标 -->
+		<view wx:else bindtap="handleUpgrade" class=" df ais fdc jct">
+			<image src='{{imgUrl+"huiyuan.png"}}' class="icon_img" />
+			<text class="icon_text">升会员</text>
+		</view>
+	</view>
+	<view class="tab2-cart {{totalPrice != 0? 'cartBg':''}} df ais flex jct-between">
+		<view class='df ais'>
+			<view class='tab2-cartIcon'>
+				<image src='{{imgUrl+"icon_gouwuche@2x.png"}}' mode='widthFix' />
+				<icon class='gListTotal df ais jct' wx:if="{{totalPrice != 0}}">{{goodsTotal}}</icon>
+			</view>
+			<view>￥{{totalPrice}}</view>
+		</view>
+		<view bindtap='placeOrder'>去结算</view>
+	</view>
+	<view class='tab2-me'>
+		<navigator class='df ais fdc' open-type="redirect" url="../member/member">
+			<image src='{{imgUrl+"icon_wode@2x (1).png"}}' mode='widthFix' />
+			<text>我的</text>
+		</navigator>
+	</view>
+</view>
+
+<!-- 自定义tab -->
+<view class="c-tab da" wx:if='{{isDefault == 2}}'>
+	<text class="ct-num">共 {{goodsTotal}} 件</text>
+	<text class="ct-account flex">合计 : {{totalPrice}}积分</text>
+	<!-- <text class="goIndex ct-btn" bindtap="goIndex">首页</text> -->
+	<text class="ct-btn" bindtap='placeOrder'>结算</text>
+	<!-- <text class="ct-btn" wx:else>结算</text> -->
+</view>
+

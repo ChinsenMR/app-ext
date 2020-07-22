@@ -1,0 +1,143 @@
+<view class='layout'>
+	<view class='header'>
+		<image src='{{imgUrl+"bg_order@2x.png"}}' mode='widthFix' />
+		<view class='header-c df ais'>
+			<image src='{{imgUrl+"icon_order_01@2x.png"}}' mode='widthFix' />
+			<text>{{data.StatusText}}</text>
+			<text wx:if="{{data.ItemStatusText}}">（{{data.ItemStatusText}}）</text>
+		</view>
+	</view>
+
+	<!-- 用户信息 -->
+	<view class='userInfo df ais'>
+		<image src='{{imgUrl+"icon_address@2x.png"}}' mode='widthFix' />
+		<view class='userInfo-inner flex'>
+			<view class='userInfo-innerT df ais-end'>
+				<text>{{data.ShipTo}}</text>
+				<text>{{data.Cellphone}}</text>
+			</view>
+			<view class='userInfo-innerB'>{{data.Address}}</view>
+		</view>
+	</view>
+
+	<!-- 商店列表 -->
+	<view class='storeList' bindtap="handleDetail">
+		<view class='storeName df ais'>
+			<!-- <image src='{{imgUrl+"touxiang_03@2x.png"}}' mode='widthFix'></image> -->
+			<text>{{data.Suppliers[0].SupplierName}}</text>
+		</view>
+		<view class='goodsList df ais' wx:for='{{data.Suppliers[0].LineItems}}' wx:key="index">
+			<image src='{{item.Image}}' mode='widthFix' />
+			<view class='flex'>
+				<view class='goodsName to-line'>{{item.Name}}</view>
+				<view class='goodsType'>
+					<text>{{item.SkuText}}</text>
+					<!-- <text>尺寸：24cm</text> -->
+				</view>
+				<view class='df ais jct-between goodsPrice'>
+
+					<text>￥ {{item.Price}}</text>
+
+					<text class="count">x {{item.Amount}}</text>
+					<!-- start 如果系统允许用户退货 -->
+					<block wx:if="{{IS_ALLOW_USER_APPLY_AFTER_SALE}}">
+						<view
+						 bindtap="applyAfterSale"
+						 class="apply-aftersale"
+						 data-params="{{ {goods: item, orderId: item.OrderId, type: 3} }}"
+						 wx:if="{{item.IsAllowReturn}}"
+						>
+							申请售后
+						</view>
+					</block>
+					<view
+					 bindtap="seeAfterSaleDetail"
+					 class="apply-aftersale"
+					 data-params="{{ {type: 1, returnId: item.ReturnInfo.ReturnId, orderId: item.OrderId, skuId: item.ReturnInfo.SkuId} }}"
+					 wx:if="{{item.ReturnInfo}}"
+					>
+						售后详情
+					</view>
+					<!-- end 如果系统允许用户退货 -->
+				</view>
+			</view>
+		</view>
+		<!-- 操作按钮 -->
+		<view class='handler-bar'>
+			<!-- start 如果系统允许用户退款 -->
+			<block wx:if="{{IS_ALLOW_USER_APPLY_AFTER_SALE}}">
+				<button
+				 class="handle-btn"
+				 wx:if="{{data.IsShowRefund}}"
+				 bindtap="applyAfterSale"
+				 data-params="{{ {type: 0, orderId: data.OrderId} }}"
+				>申请退款
+				</button>
+			</block>
+			<!-- 不允许用户退款，只允许联系卖家申请，并由代理申请售后、退款 -->
+			<button
+			 class="handle-btn black"
+			 bindtap="showContactCode"
+			 data-items="{{ data }}"
+			 wx:else
+			>联系卖家
+			</button>
+			<!-- 用户没有申请退款的权限，但是有权限查看详情 -->
+			<button
+			 class="handle-btn black"
+			 wx:if="{{data.RefundInfo}}"
+			 bindtap="seeAfterSaleDetail"
+			 data-params="{{ {type: 2, refundId: data.RefundInfo.RefundId, orderId: data.OrderId} }}"
+			>退款详情
+			</button>
+			<button
+			 class="handle-btn black"
+			 wx:if="{{data.Status == 3}}"
+			 bindtap="seeExpressStep"
+			 data-orderId="{{data.OrderId}}"
+			>查看物流
+			</button>
+			<button
+			 class="handle-btn"
+			 wx:if="{{data.Status == 3}}"
+			 data-id="{{data.OrderId}}"
+			 bindtap="handleFinishOrder"
+			>确认收货
+			</button>
+			<navigator
+			 class="handle-btn"
+			 wx:if="{{data.Status == 5}}"
+			 url="/packageA/pages/evaluate/evaluate?id={{data.OrderId}}"
+			 br
+			>去评价
+			</navigator>
+		</view>
+		<view class='realityPrice df ais jct-end'>
+			<text>实付款： </text>
+			<text>￥ {{data.OrderTotal}}</text>
+			<text>( 运费：￥ {{data.Freight}} )</text>
+		</view>
+	</view>
+
+	<!-- 订单信息 -->
+	<view class='orderInfo'>
+		<view class='df ais orderInfo-title'>订单信息</view>
+		<view class='df ais jct-between orderInfo-code'>
+			<view>订单编号</view>
+			<view class='df ais jct-end'>
+				<text>{{data.OrderId}}</text>
+				<text data-code='{{data.OrderId}}' bindtap='_setClipboard'>复制编号</text>
+			</view>
+		</view>
+		<view class='df ais jct-between orderInfo-time'>
+			<view>创建时间</view>
+			<view>
+				<text>{{data.OrderDate}}</text>
+				<!-- <text>15:20:53</text> -->
+			</view>
+		</view>
+	</view>
+</view>
+
+<base-code-dialog show="{{displayDialog}}" bind:close="closeDialog" wechat="{{wechat}}" />
+

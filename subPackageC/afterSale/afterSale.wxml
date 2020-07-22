@@ -1,0 +1,120 @@
+<view class="aftersale-wrap">
+	<!-- 详情 -->
+	<view class="detail-container">
+		<!-- 订单id -->
+		<view class="status-item flex-center">
+			<view class="number flex-1">售后编号：{{params.refundId || params.returnId}}</view>
+			<view class="status">{{detail.HandleStatusData}}</view>
+		</view>
+		<!-- 商品 -->
+		<view class="goods-item flex-box" wx:for="{{detail.LineItem}}" wx:key="index">
+			<view class="cover" style="background: url({{item.ThumbnailsUrl}})center center / cover no-repeat" />
+			<view class="content">
+				<view class="title to-2line">{{item.ItemDescription}}</view>
+				<view class="sku">{{item.SKU}}</view>
+				<view class="price">￥{{item.ItemAdjustedPrice}}</view>
+			</view>
+			<view class="count">x{{item.Quantity}}</view>
+		</view>
+		<!-- 订单信息 -->
+		<view class="info-item">
+			<view class="item flex-box">
+				<view class="title">订单编号:</view>
+				<view class="value">{{detail.OrderId}}</view>
+			</view>
+			<view class="item flex-box">
+				<view class="title">售后原因:</view>
+				<view class="value">{{detail.ReturnReason || detail.RefundReason || '-'}}</view>
+			</view>
+			<block wx:if="{{params.type == 1}}">
+				<view class="item flex-box">
+					<view class="title">退货数量:</view>
+					<view class="value">{{detail.Quantity}}</view>
+				</view>
+				<view class="item flex-box">
+					<view class="title">退货金额:</view>
+					<view class="value">{{detail.RefundAmount}}</view>
+				</view>
+				<view class="item flex-box">
+					<view class="title">退货方式:</view>
+					<view class="value">{{detail.RefundTypeData}}</view>
+				</view>
+				<view class="item flex-box">
+					<view class="title">物流公司:</view>
+					<view class="value">{{detail.ExpressCompanyName || '-'}}</view>
+				</view>
+				<view class="item flex-box">
+					<view class="title">物流单号:</view>
+					<view class="value">{{detail.ShipOrderNumber || '-' }}</view>
+				</view>
+				<view class="item flex-box">
+					<view class="title">凭证:</view>
+					<view class="value flex-center">
+						<image
+						 src="{{item}}"
+						 class="img-item"
+						 wx:for="{{detail.UserCredentialList }}"
+						 wx:key="index"
+						 bindtap="seeImage"
+						 data-url="{{item}}"
+						/>
+					</view>
+				</view>
+			</block>
+			<view class="item flex-box">
+				<view class="title">备注:</view>
+				<view class="value">{{detail.UserRemark || '-'}}</view>
+			</view>
+			<view class="item flex-box">
+				<view class="title">后台备注:</view>
+				<view class="value">{{detail.AdminRemark || '-'}}</view>
+			</view>
+		</view>
+	</view>
+	<!-- 售后流程进度 -->
+	<view class="express-slider">
+		<!-- 标题 -->
+		<view class="handler flex-center">
+			<view class="title flex-1">售后进度</view>
+			<image
+			 src="{{ isShowExpress ? arrowUp : arrowDown }}"
+			 style="width: 26rpx"
+			 mode="widthFix"
+			 bindtap="handleArrow"
+			 wx:if="{{ expressSlider.length }}"
+			/>
+			<view class="no-data" wx:else>
+				暂无数据
+			</view>
+		</view>
+		<!-- 进度 -->
+		<block wx:if="{{isShowExpress}}">
+			<view class="item {{item.status == 1 ? 'item-active' : ''}}" wx:for="{{expressSlider}}" wx:key="{{item}}">
+				<view class="circle" />
+				<view class="title">{{item.data}}</view>
+				<view class="date">{{item.time}}</view>
+			</view>
+		</block>
+		<!-- <view class="flex-content-center" wx:else>暂无物流详情</view> -->
+	</view>
+
+	<!-- 如果是退货可以有以下操作 -->
+	<view class="btn-list" wx:if="{{ params.type == 1 }}">
+		<button class="examine btn-style-clear" wx:if="{{status == 1 }}" bindtap="handleEditExpress">
+			去发货
+		</button>
+		<button class="examine btn-style-clear" wx:if="{{status == 6 }}" bindtap="handleEditExpress">
+			修改物流信息
+		</button>
+		<!-- 如果携带了fromType，就是代理进入审批通过或者拒绝 -->
+		<block wx:if="{{params.fromType && status !== 6}}">
+			<button class="examine btn-style-clear" bindtap="confirm">确认收货</button>
+			<button class="btn-style-clear" bindtap="turnDown">拒绝通过</button>
+		</block>
+		<!-- 如果是已经发货的状态可以查看物流 -->
+		<button class="btn-style-clear" wx:if="{{status && status !== 1 }}" bindtap="seeExpressStep">
+			查看物流
+		</button>
+	</view>
+</view>
+

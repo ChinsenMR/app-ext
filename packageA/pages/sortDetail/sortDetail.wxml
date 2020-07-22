@@ -1,0 +1,34 @@
+<view class='layout'>
+  <scroll-view scroll-x class="navBar ">
+    <block wx:for="{{Categorydata}}"  wx:key="{{item}}">
+      <view class="test {{index==activeIndex?'active':''}}" bindtap="getClickIndex" data-nums="{{index}}" data-id="{{item.CategoryId}}">
+        {{item.Name}}
+      </view>
+    </block>
+  </scroll-view>
+
+  <!-- 内容区 -->
+  <view class="g-ul">
+    <navigator url="/pages/goodsDetail/goodsDetail?p={{item.ProductId}}" class="g-li dd-vh" wx:for='{{list}}' wx:key wx:if='{{list.length != 0}}'>
+      <image class="g-img" src="{{item.ImageUrl1}}" mode="aspectFill"></image>
+      <view class="g-title to-2line">{{item.ProductName}}</view>
+      <view class="da g-pbox">
+        <view class="flex">
+          <view class="da">
+            <text class="pMark">￥</text>
+            <text class="curPrice">{{item.SalePrice}}</text>
+            <!-- <text class="newTip">新人专享价</text> -->
+          </view>
+          <view class="prePrice">原价:￥{{item.MarketPrice || 0}}</view>
+        </view>
+        <view class="g-add dcc">+</view>
+      </view>
+    </navigator>
+
+    <!-- 空空如也 -->
+    <view class="empty dd-vh" wx:if='{{list.length == 0 && isEmpty}}'>
+      <image src="{{imgUrl+'icon_kong.png'}}" mode="widthFix"></image>
+      <text>空空如也...</text>
+    </view>
+  </view>
+</view>

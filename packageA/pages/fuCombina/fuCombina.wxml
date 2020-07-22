@@ -1,0 +1,50 @@
+<!--packageA/pages/fuCombina/fuCombina.wxml-->
+<view class="content">
+  <block wx:for="{{RList}}" wx:for-item="Item" wx:for-index="Index"
+         wx:key="{{Index}}">
+    <view class="title">
+      {{Item.CombinationName}}
+    </view>
+    <block wx:for="{{Item.CGList}}" wx:for-item="Mitem" wx:for-index="Mindex"
+           wx:key="{{Mitem.GroupId}}">
+      <view class="wrapper" hover-class="hover" bindtap="choose"
+            data-index="{{Index+'_'+Mindex}}">
+          <view class="item">
+              <view class="gou">
+                <image 
+                src="{{chooseIndex==Index+'_'+Mindex?imgurl+'gou.png':imgurl+'round.png'}}">
+                </image>
+              </view>
+              <view class="shop" >
+                <block wx:for="{{Mitem.GList}}" 
+                       wx:key="{{item.ProductId}}">
+                  <view class="shop_item">
+                      <view class="up">
+                          <view class="img">
+                            <image src="{{item.ProductImg}}"></image>
+                          </view>
+                          <text class="num">x{{item.Count}}</text>
+                      </view>
+                      <view class="down">
+                        <view class="name">{{item.PName}}</view>
+                        <view class="price">￥{{item.SalePrice}}</view>
+                      </view>
+                  </view>
+                  <view class="add" wx-if="{{index!=(Mitem.GList.length-1)}}">
+                    <image src="{{imgurl+'add.png'}}"></image>
+                  </view>
+                </block>
+              </view>
+          </view>
+      </view>
+    </block>
+    <!--占位空盒子-->
+    <view class="box"></view>
+    <view class="totalPrice">
+        <view class="total">总价格：
+          <text class="price">￥{{totalPrice || '0'}}</text>
+        </view>
+        <text class="addCart" bindtap="addCart" hover-class="red">加入购物车</text>
+    </view>
+  </block>
+</view>

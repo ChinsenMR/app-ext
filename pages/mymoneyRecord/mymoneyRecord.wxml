@@ -1,0 +1,72 @@
+<!--pages/mymoneyRecord/mymoneyRecord.wxml-->
+<!-- <text>pages/mymoneyRecord/mymoneyRecord.wxml</text> -->
+<view class='box'>
+   <view class='titleBox'>
+       <view class='list'> 
+          <view class='listTitle {{showType == 0 ? "listNow" : "" }}' data-type="0" bindtap='clickType'  >提现明细</view>
+       </view>
+       <view class='list'> 
+          <view class='listTitle {{showType == 1 ? "listNow" : "" }}' data-type="1" bindtap='clickType' >余额明细  
+          </view>
+       </view>
+       <view class='list'> 
+          <view class='listTitle {{showType == 2 ? "listNow" : "" }}' data-type="2" bindtap='clickType' >佣金明细
+          
+          </view>
+       </view>
+   </view>
+<!-- 提现明细 -->
+   <view class='listDetailsBox' wx:if="{{showType == 0}}">
+       <view class='listDetails'>
+           <view class='detailsList'   >
+              <view class='tixian' wx:for="{{tixianData}}" wx:key="index" >
+                  <view class='tixianMsg'>提现</view>
+                  <view class='timeBox'>
+                      <view class='tixianVal'>-150</view>
+                      <view class='tixianTime'>2019/10/01</view>
+                  </view>
+              </view>
+           </view>
+       </view>
+   </view>
+<!-- 提现明细 -->
+<!-- 余额明细 -->
+   <view class='listDetailsBox'  wx:if="{{showType == 1}}" >
+       <view class='listDetails'>
+           <view class='detailsList'  >
+              <view class='tixian' wx:for="{{tixianData}}" wx:key="index" >
+                  <view class='tixianMsg'>
+                      <view class='yuETip'>余额支付</view>
+                      <view class='allyuE'>余额:$150.00</view>
+                  </view>
+
+                  <view class='timeBox'>
+                      <view class='tixianVal'>-150</view>
+                      <view class='tixianTime'>2019/10/01</view>
+                  </view>
+              </view>
+           </view>
+       </view>
+   </view>
+
+<!-- 余额明细 -->
+<!-- 佣金明细 -->
+  <view class='listDetailsBox'  wx:if="{{showType == 2}}" >
+       <view class='listDetails'>
+           <view class='detailsList'  >
+              <view class='tixian' wx:for="{{tixianData}}" wx:key="index" >
+                  <view class='tixianMsg'>
+                      <view class='yuETip'>哈开始计划尽快哈按时打卡机</view>
+                      <view class='allyuE'>订单号:41321321321</view>
+                  </view>
+
+                  <view class='timeBox'>
+                      <view class='tixianVal'>-150</view>
+                      <view class='tixianTime'>2019/10/01</view>
+                  </view>
+              </view>
+           </view>
+       </view>
+   </view>
+<!-- 佣金明细 -->
+</view>

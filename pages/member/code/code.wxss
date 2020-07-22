@@ -1,0 +1,65 @@
+/* pages/member/code/code.wxss */
+page{
+  font-size:22rpx;
+}
+.content{
+  position:fixed;
+  top:0;
+  z-index: 1000;
+}
+.mask{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(0,0,0,.4);
+  z-index:2;
+}
+.code{
+  z-index:9;
+}
+.tab{
+  background:white;
+  z-index:9;
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  display: flex;
+}
+.item{
+  width:50%;
+  text-align: center;
+  height:200rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position:relative;
+}
+.btn{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  opacity: 0;
+}
+.img{
+  width:100rpx;
+  height:100rpx;
+  margin:0 auto;
+  margin-bottom:5rpx;
+}
+.code swiper{
+  width:520rpx;
+  height:740rpx;
+  position:fixed;
+  left:115rpx;
+  top:15%;
+  z-index:9;
+}
+.code swiper-item>image{
+  width:100% !important;
+  height: 100% !important;
+}

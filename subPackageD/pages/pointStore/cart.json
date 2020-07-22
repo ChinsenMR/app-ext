@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "积分购物车",
+  "usingComponents": {
+
+    "custom-tab": "../../components/tab/tab"
+  }
+}

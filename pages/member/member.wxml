@@ -1,0 +1,217 @@
+<view class='box '>
+	<!-- <view class='box {{userInfo.gradeId==80?"yangtop":""}}'> -->
+	<view class='content'>
+		<view class='content-top-box'>
+			<view class="content-jifen-wrap" bindtap='handleOnSign' wx:if="{{false}}">
+				<image src='http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/icon_qiandao.png'
+					class='topdate' />
+				<view class='toptip'>签到领积分</view>
+			</view>
+		</view>
+
+		<view class='c_top da' wx:if="{{userInfo && IsBindUser==true}}">
+			<!-- 头像 -->
+			<image src='{{userInfo.picture}}' mode="aspectFill" />
+			<view class='c_t_center'>
+				<view class='username'>
+					{{userInfo.NickName || '-'}}
+					<view class='userlevelbox'>
+						<image src='http://img.hmeshop.cn/hmeshop_jxy/images/icon_putong.png' />
+						<view class="line1">{{userInfo.GradeName}}</view>
+					</view>
+				</view>
+				<text id='userId'>ID:{{userInfo.UserId}} </text>
+				<text id='userTime'>注册时间 :{{userInfo.CreateDate}}</text>
+			</view>
+			<navigator url="/packageA/pages/EditPersonInfo/EditPersonInfo" class='Edit' hover-class="none">
+				<view class="redact_inof">编辑资料 ></view>
+			</navigator>
+		</view>
+		<!-- 登录按钮 -->
+		<view class="login_btn" wx:if="{{userInfo=='' || IsBindUser==false}}" bindtap="handleLogin">
+			<view class="login_wrap_img">
+				<image src="{{imgurl+'head@2x.png'}}" />
+			</view>
+			<view class="login_wrap">
+				<view class="login_in">登录/注册</view>
+				<text class="login_status">当前状态未登录</text>
+			</view>
+			<view class="jiantou_wrap">
+				<image src="{{imgurl+'more2@2x.png'}}" />
+			</view>
+		</view>
+
+		<view class='c_bottom' wx:if="{{false}}">
+			<text class='text1'>{{userData.UserGradeName}}</text>
+			<text class='text2'>消费金额：￥{{userData.Expenditure}}</text>
+			<view bindtap='onSignIn'>
+				<image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/sign.png' />
+				<text>{{signIn}}</text>
+			</view>
+		</view>
+
+	</view>
+
+	<!-- 会员卡片不需要了 需要使用时,需要将在外层view删除-->
+	<view class="card_wrap" wx:if="{{false}}">
+		<view class='vipCarBox' wx:if="{{userInfo.gradeId==77 || userInfo.gradeId==78}}">
+			<view class='vipCarimgbox {{showcard ? "incard" :""}}' animation="{{animationData}}" catchtap='cardshow'
+				style="background-image: url('http://img.hmeshop.cn/hmeshop_jxy/images/bg_huiyuantequan.png')">
+				<view class='viptip'>VIP会员特权</view>
+				<view class='vipdetali'>查看详情 </view>
+			</view>
+			<view
+				class='vipCarimgbox2  {{ userInfo.gradeId==77?"golad":"bojin"}} {{showcard ? "showcard" :"showcardnone" }}'
+				wx:if="{{userInfo.gradeId==77 || userInfo.gradeId==78}}">
+				<view class="vipcbox">
+					<view class="vipboxl">
+						<image src="{{vipcardInfo.SiteLogo}}" />
+						{{vipcardInfo.SiteName}}
+					</view>
+					<view class="vipboxr">NO：{{userInfo.UserId}}</view>
+				</view>
+				<view class="gradcart">{{userInfo.GradeName}}卡</view>
+				<view class='cancelcarBtn' bindtap='canclecard' wx:if='{{showcard}}'>
+					<view class='leftline' />
+					<view class='rightline' />
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="member">
+		<view class="member_left">
+			<view class="member_left-top">轻创业·好赚钱</view>
+			<view class="member_left-bottom">购物省的多·分享有补贴</view>
+		</view>
+		<view class="member_right">
+			分享邀好友
+			<button bindtap="showCode" class="member_btn" />
+		</view>
+	</view>
+</view>
+
+<!-- 用户金额 -->
+<view class='userRepositoryBox'>
+	<view class='userRepository'>
+		<view class='userRepositoryminiBox' data-index="{{index}}" bindtap="Todetali" wx:for='{{userRepository}}'
+			wx:key="index">
+			<navigator url="/packageA/pages/{{item.url}}/{{item.url}}" hover-class="none" class="user_active">
+				<view class='userRepositorynum'>
+					<text>￥</text>
+					<text>{{item.num || 0}}</text>
+				</view>
+				<view class='userRepositorytext'>{{item.text}}</view>
+			</navigator>
+		</view>
+	</view>
+</view>
+
+<!-- 会员中心 -->
+<!-- 1 -->
+<view class='myorderBox basic'>
+	<view class='myorderBox3'>
+		<!-- <view class='myorderTitle' catchtap='gomyorder'>基础模块</view> -->
+		<view class='myorderListBox'>
+			<view class='myorderList2' wx:for="{{myorderBox}}" wx:key="index" data-index="{{index}}"
+				bindtap='Tomyorder'>
+				<view class="myordernum" wx:if="{{index!=4&&!!item.ordernum}}">{{item.ordernum}}</view>
+				<!-- <view class="myordernum" wx:if="{{index!=4 && item.ordernum!=0}}">{{item.ordernum}}</view> -->
+				<image src='{{item.imgurl}}' />
+				<text style="color:{{item.color}}">{{item.text}}</text>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="upgrade">
+	<view class="upgrade_left" bindtap="handleGo" data-type="1" >
+		<view class="upgrade_title">升级会员</view>
+		<view class="upgrade_text">头一次·就这么优惠</view>
+		<view class="upgrade_btn">点击升级</view>
+	</view>
+	<view class="upgrade_right" bindtap="handleGo" data-type="2" wx:if="{{userInfo.KjCustomId === 0}}">
+		<view class="upgrade_title">成为代理</view>
+		<view class="upgrade_text">轻创业·好赚钱</view>
+		<view class="upgrade_btn">点击升级</view>
+	</view>
+	<view class="upgrade_right" bindtap="goAgentCenter" wx:else>
+		<view class="upgrade_title">代理中心</view>
+		<view class="upgrade_text">轻创业·好赚钱</view>
+		<view class="upgrade_btn">点击进入</view>
+	</view>
+</view>
+<!-- 2 -->
+<view class='myorderBox'>
+	<view class='myorderBox2'>
+		<view class='myorderListBox wxj_active'>
+			<navigator url="{{item.url}}" class="myorderList addActive" hover-class="none" wx:for="{{memberCenter}}"
+				wx:key="index" wx:if="{{item.status}}">
+				<image src='{{item.imgurl}}' />
+				<text>{{item.text}}</text>
+				<button wx:if="{{item.text=='客服'}}" open-type="contact" bindcontact="handleContact"
+					class="service"></button>
+			</navigator>
+			<view class="myorderList" hover-class="hover" bindtap="showCode">
+				<image src='{{imgUrl+"erweima@2x.png"}}' />
+				<text>专属二维码</text>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- 3 -->
+<view class='myorderBox' wx:if="{{false}}">
+	<view class='myorderBox2'>
+		<view class='agencyCenterTitle'>推广模块</view>
+		<view class='myorderListBox add_active'>
+			<view class="myorderList wjx_nums" hover-class="hover" bindtap="handleWJXfx">
+				<image src='{{imgUrl + "icon_dingdan.png"}}' />
+				<text>分销订单</text>
+				<view class="quantity" wx:if="{{userInfo.fenxiaoPayOrderCount !=0}}">{{userInfo.fenxiaoPayOrderCount}}
+				</view>
+			</view>
+			<navigator url="{{item.url}}" class="myorderList" hover-class="none" wx:for="{{menmbercneterThree}}"
+				wx:key="index">
+				<image src='{{item.imgurl}}' />
+				<text>{{item.text}}</text>
+			</navigator>
+			<view class="myorderList" hover-class="hover" bindtap="showCode">
+				<image src='{{code}}' />
+				<text>专属二维码</text>
+			</view>
+		</view>
+	</view>
+</view>
+
+<!-- 代理中心 -->
+<view class='agencyCenter' wx:if="{{false}}">
+	<view class='agencyCenter2'>
+		<view class='agencyCenterTitle'>代理模块</view>
+		<view class='agencyCenterListBox '>
+			<navigator class="agencyCenterList" wx:for="{{agencyCenter}}" url="{{item.url+'?kcj='+KjCustomId}}"
+				wx:key="index" hover-class="none" wx:if="{{item.status}}">
+				<image src='{{item.imgurl}}' />
+				<view class=''>{{item.text}}</view>
+			</navigator>
+		</view>
+	</view>
+</view>
+
+<!-- 签到弹窗 -->
+<view class="smarker" wx:if="{{SignInmask}}">
+	<view class="debox">
+		<view class="deboxtop">签到成功</view>
+		<view class="deboxbt">
+			<image class="jifenimng" src="{{imgurl}}star.png" alt="" />
+			<span class="jifenadd">积分+{{SignInpoints}}</span>
+		</view>
+	</view>
+	<image class="closeq" src="{{imgurl}}icon_close@2x.png" path="{{path}}" alt="" bindtap="colseSignin" />
+</view>
+<view class='dingqi' />
+<btn-to-top show="{{showToTop}}" />
+
+<!--专属二维码-->
+<code show="{{show}}" swiper="{{swiper}}" bindtabShow='tabShow' />
+<!--专属二维码-->
+
+<tabBar curActive="{{tabIndex}}" />

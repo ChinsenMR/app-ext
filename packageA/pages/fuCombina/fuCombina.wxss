@@ -1,0 +1,84 @@
+/* packageA/pages/fuCombina/fuCombina.wxss */
+page{
+  font-size:28rpx;
+}
+.title{
+  font-size: 28rpx;
+  padding: 20rpx;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f0f0f0;
+  background:white;
+}
+.wrapper{
+  background:white;
+  padding:20rpx;
+}
+.item{
+  display: flex;
+  align-items: center;
+}
+.shop{
+  flex:1;
+  display: flex;
+}
+.gou{
+  width:40rpx;
+  height:40rpx;
+  margin-right:15rpx;
+}
+.gou image{
+  width:100%;
+  height:100%;
+}
+.img{
+  width:100rpx;
+  height:120rpx;
+  background:pink;
+}
+.shop_item{
+  width:22%;
+}
+.up{
+  display: flex;
+  align-items: center;
+}
+.num{
+  margin-left:10rpx;
+  font-size:24rpx;
+}
+.down{
+  font-size:28rpx;
+}
+.price{
+  color:#e74a42;
+}
+.add{
+  width:30rpx;
+  height:30rpx;
+  margin-top:45rpx;
+  margin-right:10rpx;
+}
+.totalPrice{
+  display: flex;
+  padding: 20rpx;
+  background: white;
+  margin-top: 2rpx;
+  justify-content: space-between;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.addCart{
+  background:#e74a42;
+  color:white;
+  padding:8rpx 15rpx;
+  border-radius: 30rpx;
+}
+.box{
+  height:100rpx;
+}
+.red{
+  background:red;
+}

@@ -1,0 +1,140 @@
+.account {
+  height: 285rpx;
+  background-color: #FF4C4C;
+  color: #fff;
+  font-size: 68rpx;
+  padding-bottom: 50rpx;
+  box-sizing: border-box;
+}
+
+.account>view {
+  text-align: center;
+}
+
+.a-tip {
+  font-size: 35rpx;
+  margin-top: 5rpx;
+}
+
+.a-btn {
+  padding: 0 30rpx;
+  margin-top: -40rpx;
+}
+
+.a-btn button {
+  background-color: #fff;
+  color: #F06060;
+  font-size: 34rpx;
+  width: 300rpx;
+  line-height: 70rpx;
+  text-align: center;
+  border-radius: 10rpx;
+}
+
+
+.au-header {
+  padding: 20rpx 30rpx;
+  color: #666;
+  font-size: 30rpx;
+}
+
+.a-li {
+  padding: 0 30rpx;
+  background-color: #fff;
+  height: 121rpx;
+  border-bottom: 1rpx solid #F4F4F4;
+}
+
+.al-tip {
+  color: #333;
+  font-size: 30rpx;
+}
+
+.al-time {
+  color: #C5C3C3;
+  font-size: 22rpx;
+}
+
+.al-account {
+  color: #333;
+  font-size: 34rpx;
+  text-align: right;
+}
+
+.empty {
+  color: #999;
+  font-size: 30rpx;
+  margin-top: 200rpx;
+  text-align: center;
+}
+
+/* 隐藏充值按钮 */
+.chongzhi {
+  font-size: -999rpx;
+  opacity: 0;
+}
+
+/* 提现协议弹窗 */
+.win_wrap {
+  width: 80%;
+  height: 1000rpx;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  /* background-color: #fff; */
+  z-index: 10999;
+  box-shadow: 10px 10px 5px #888888;
+  border-radius: 10rpx;
+  border:1rpx solid #eee;
+}
+.win_style{
+  width: 100%;
+  background-color: #fff;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.win_main {
+  width: 100%;
+  height: 900rpx;
+  background: rgba(0, 0, 0, .6);
+  position: relative;
+}
+.search_btn{
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  margin-right: 15rpx;
+  border:1rpx solid #fff;
+ padding: 5rpx;
+ box-sizing: border-box;
+}
+.btn_img{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.btn_wrap{
+  position: absolute;
+  left: 25%;
+  bottom:0;
+  font-size: 30rpx;
+  color:#fff;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+}
+.zhezhao {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* background: rgba(244, 244, 244, .6); */
+  z-index: 99;
+}

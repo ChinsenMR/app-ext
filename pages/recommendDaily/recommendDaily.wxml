@@ -1,0 +1,73 @@
+<view class='layout'>
+  <view class='header-bg'>
+    <!-- <image src='{{imgUrl+"bg_chanpin@2x.png"}}' mode='widthFix'></image> -->
+    <image src='{{imgUrl+"bg_chanpin@2x.png"}}' mode='widthFix'></image>
+  </view>
+  <!-- 优惠券 -->
+  <view class='coupon-ul df' wx:if="{{false}}">
+    <scroll-view scroll-x>
+      <view class='coupon-li' wx:for="{{coupon}}" wx:key>
+        <image src='{{imgUrl+"bg_youhuiquan@2x.png"}}' mode='widthFix'></image>
+        <view class='coupon-inner ddc-v'>
+          <view class='coupon-innerT'>COUPON</view>
+          <view class='coupon-innerP df ais-end'>
+            <text>¥</text>
+            <text>{{item.Price}}</text>
+          </view>
+          <view class='coupon-innerI'>{{item.CanUseProductsText}}</view>
+          <view class='coupon-innerB df ais jct'>立即领取</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 镇店爆款 -->
+  <view class='recommend df ais'>
+    <image src='{{imgUrl+"meiri_bao@2x.png"}}' mode='widthFix'></image>
+    <view class='must-buy'>
+      <view class='goodsImg df fdc ais jct'>
+        <image src='{{firstGoods.ImageUrl1}}' mode='widthFix'></image>
+        <image src='{{imgUrl+"bg_03@2x.png"}}' mode='widthFix'></image>
+      </view>
+      <view class='goods-info'>
+        <view class='goods-infoT to-line'>{{firstGoods.ProductName}}</view>
+        <view class='df ais jct-between'>
+          <view class='df ais goods-infoL'>
+            <view>狂欢价：</view>
+            <view class='df ais-end'>
+              <text>¥</text>
+              <text>{{firstGoods.SalePrice}}</text>
+            </view>
+          </view>
+          <navigator url="/pages/goodsDetail/goodsDetail?p={{firstGoods.ProductId}}"  class='goods-infoR'>
+            <image src='{{imgUrl+"btn_dianjigoumai@2x.png"}}' mode='widthFix'></image>
+            <text>点击抢购</text>
+          </navigator>
+        </view>
+      </view>
+    </view>
+    <view class='goods-ul'>
+      <view class='goods-li df jct' wx:for="{{goodsList}}" wx:key wx:if='{{ index > 0 && index < 4 }}'>
+        <image src='{{imgUrl+"bg_04@2x.png"}}' mode='wifthFix'></image>
+        <view class='goods-liT df fdc ais jct'>
+          <image src='{{item.ImageUrl1}}'></image>
+          <image src='{{imgUrl+"bg_03@2x.png"}}' mode='widthFix'></image>
+        </view>
+        <view class='goods-liTitle to-line'>{{item.ProductName}}</view>
+        <view class='goods-liB df ais jct-between'>
+          <view class='df ais goods-liBL'>
+            <view>狂欢价：</view>
+            <view class='df ais-end'>
+              <text>¥</text>
+              <text>{{item.SalePrice}}</text>
+            </view>
+          </view>
+          <navigator url="/pages/goodsDetail/goodsDetail?p={{item.ProductId}}"  class='goods-liBR'>
+            <image src='{{imgUrl+"btn_dianjigoumai@2x.png"}}' mode='widthFix'></image>
+            <text>点击抢购</text>
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

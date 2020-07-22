@@ -1,0 +1,15 @@
+<!--pages/nighpackge/nighpackge.wxml-->
+<view class='nightbox'>
+  <view class='nighttop'>
+    <view class='nighttitle'>HOT
+      <text>.</text> 爆款</view>
+  </view>
+  <view class='baoyoutop'>9.9包邮
+  </view>
+  <view class='baoyoudetail'>实惠这里有、品质这也有、性价比这里还有，全场商品9.9元起，全场包邮、好货带回家。</view>
+  <view class='searchbox'>
+    <image src='{{imgurl + "icon_search@2x.png"}}' class="searchimg"></image>
+    <input class='search' placeholder='请输入搜索关键词' placeholder-class='Placeholder' bindinput='onSearch'></input>
+  </view>
+  <Discountcontent productlist="{{goodslist}}" notime="{{notime}}"></Discountcontent>
+</view>

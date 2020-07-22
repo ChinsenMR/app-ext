@@ -1,0 +1,62 @@
+.newpeoplebox {
+  width: 100%;
+  /* height: 100%; */
+  box-sizing:border-box;
+  padding: 15rpx 25rpx;
+  background: linear-gradient(0deg, rgba(255, 102, 102, 1) 0%, rgba(255, 68, 68, 1) 100%);
+}
+
+.newtop {
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.touxina {
+  background: skyblue;
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 6rpx;
+}
+
+.name {
+  font-size: 30rpx;
+  color: rgba(255, 255, 255, 1);
+  margin-left: 5rpx;
+}
+
+.single {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 10rpx solid transparent;
+  border-bottom: 10rpx solid transparent;
+  border-right: 10rpx solid#FF6666;
+  top: 71%;
+  left: 99rpx;
+}
+
+.dearfriend {
+  position: absolute;
+  height: 90rpx;
+  background: rgba(255, 102, 102, 1);
+  /* opacity: 0.48; */
+  padding: 10rpx 21rpx;
+  border-radius: 6rpx;
+  color: rgba(249, 180, 120, 1);
+  font-size: 30rpx;
+  top: 62%;
+  left: 15%;
+}
+
+.newtitle {
+  color: rgba(255, 204, 153, 1);
+  font-size: 95rpx;
+  margin-top: 80rpx;
+  text-align: center;
+}
+.goodslistbox{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10rpx;
+}

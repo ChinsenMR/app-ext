@@ -1,0 +1,32 @@
+<!--pages/authorizationLogin/authorizationLogin.wxml-->
+<view class='logo'>
+	<image  src='{{projectLogo}}' mode="widthFix"></image>
+</view>
+<view class='loginBox'>
+	<button class='wxLogin' open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">微信授权登录</button>
+	<image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/weixin@2x.png' />
+</view>
+<view class='loginBox goBack'>
+	<button class='wxLogin' bindtap="goBackHome">取消登录</button>
+
+</view>
+
+<view class='other' wx:if="{{false}}">其他登录方式</view>
+<view class='otherWay' wx:if="{{false}}">
+	<view>
+		<button bindtap='goPhoneLogin'>手机号登录</button>
+	</view>
+	<view>
+		<button bindtap='goUserLogin'>账号密码登录</button>
+	</view>
+</view>
+<view class='agree'>注册即视为同意
+	<text>《商城服务条款》</text>
+	、
+	<text>《隐私条款》</text>
+	<text>《商城支付用户服务协议》</text>
+	、
+	<text>《商城信用服务协议》</text>
+	等。
+</view>
+

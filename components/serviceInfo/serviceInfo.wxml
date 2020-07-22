@@ -1,0 +1,39 @@
+<view class='layout'>
+  <view class='content'>
+    <view class='header df ais jct'>
+      <text>商品服务保障</text>
+      <view class='close df ais jct' bindtap='closeFun'>+</view>
+    </view>
+    <view class='content-ul'>
+      <view class='content-li df ais-start'>
+        <image src='{{imgUrl + "icon_zhengpinbaozhang@2x.png"}}' mode='widthFix'></image>
+        <view class='df fdc ais-start flex'>
+          <text>正品保障</text>
+          <text>所售商品均通过正规品牌商直供或者其他供货商采供，确保正品，请放心购买。</text>
+        </view>
+      </view>
+    </view>
+    <view class='content-li df ais-start'>
+        <image src='{{imgUrl + "icon_maiguibipeii@2x.png"}}' mode='widthFix'></image>
+        <view class='df fdc ais-start flex'>
+          <text>买贵必赔</text>
+          <text>如发现同一天该商品的成交价格高于用户在平台上相同商品，用户有效凭证的情况下，可以申请差额补偿的服务。</text>
+        </view>
+      </view>
+      <view class='content-li df ais-start'>
+        <image src='{{imgUrl + "icon_zhengpinbaozhang@2x.png"}}' mode='widthFix'></image>
+        <view class='df fdc ais-start flex'>
+          <text>假一赔三</text>
+          <text>经营者在向消费者提供商品时，有下列情况之一的，属于欺诈消费者行为，消费者可以主张“三倍赔偿”</text>
+        </view>
+      </view>
+      <view class='content-li df ais-start'>
+        <image src='{{imgUrl + "icon_shouhouwuyou@2x.png"}}' mode='widthFix'></image>
+        <view class='df fdc ais-start flex'>
+          <text>售后无忧</text>
+          <text>如商品有质量问题，自用户收到商品之日起7日内可退货、15日以内可换货</text>
+        </view>
+      </view>
+      <view class='btn' bindtap='closeFun'>完成</view>
+  </view>
+</view>

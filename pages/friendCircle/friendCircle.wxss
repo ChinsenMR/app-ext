@@ -1,0 +1,184 @@
+/* pages/friendCircle/friendCircle.wxss */
+page{
+  padding-top: 88rpx;
+  box-sizing: border-box; 
+}
+.tabs-top{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  height: 88rpx;
+  color: #999;
+  background: #ffffff;
+  border-top: 2rpx solid #f6f6f6;
+  border-bottom: 2rpx solid #f6f6f6;
+}
+.tabs-top:before{
+  content: " ";
+  display: block;
+  width: 2rpx;
+  height: 60%;
+  background: #F0F0F0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%)
+}
+.tabs-top>.top-item{
+  position: relative;
+  flex: 1;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+  font-size: 28rpx;
+  font-weight: lighter;
+}
+.active{
+  color: #E0001B;
+  font-weight: 700;
+}
+.tabs-top>.top-item>image{
+  width: 38rpx;
+  height: 37rpx;
+  margin-right: 14rpx;
+}
+.list{
+  margin-top: 20rpx;
+  padding: 30rpx 30rpx;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+.list>.item{
+  display: -webkit-flex;
+  display: flex;
+}
+.item>.list-left{
+  position: relative;
+  flex-shrink: 0;
+  width: 158rpx;
+  height: 158rpx; 
+}
+.item>.list-left>image{
+  width: 158rpx;
+  height: 158rpx; 
+  border-radius: 4rpx;
+}
+.item>.list-left>.quantity{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 6rpx 0;
+  box-sizing: border-box;
+  background: rgba(0, 0, 0, .6);
+  width: 100%;
+  font-size: 30rpx;
+  color: #ffffff;
+  text-align: center;
+}
+.list-right{
+  margin-left: 30rpx;
+  flex: 1;
+  color: #999999;
+}
+.list-right>.date{
+  display: block;
+  font-size: 24rpx;
+}
+.list-right>.info{
+  margin-top: 16rpx;
+  width: 100%;
+  font-size: 28rpx;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/
+  -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+  -webkit-line-clamp: 3; /** 显示的行数 **/
+  overflow: hidden; /** 隐藏超出的内容 **/
+}
+/*9图*/
+.note-box{
+  margin-top: 20rpx;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+.note-box image{
+  width: 28rpx;
+  height: 28rpx;
+  vertical-align: middle;
+  margin-right: 17rpx;
+}
+.note-box .note{
+  font-size: 26rpx;
+  color: #666666;
+}
+.nine-content{
+  margin-top: 20rpx;
+  padding: 30rpx 0 0 30rpx;
+  box-sizing: border-box;
+  background: #ffffff;
+  color: #999999;
+}
+.nine-content>.date{
+  display: block;
+  font-size: 24rpx;
+}
+.nine-content>.info{
+  display: block;
+  padding-right: 20rpx;
+  box-sizing: border-box;
+  word-break: break-all; 
+  font-size: 28rpx;
+}
+.nine-content>.imgs-box{
+  margin-top: 30rpx;
+  display: -webkit-flex;
+  display: flex;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+}
+.nine-content>.imgs-box>.img-item{
+  width: 33.33%;
+  padding-bottom: 30rpx;
+  padding-right: 30rpx;
+  box-sizing: border-box;
+}
+.nine-content>.imgs-box>.img-item>image{
+  width: 100%;
+}
+
+/*缺省页*/
+.empty{
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%,-40%);
+  color: #666666;
+  text-align: center;
+  font-size: 16px;
+}
+.empty>image{
+  width: 360rpx;
+  height: 360rpx;
+}
+
+.isShowFrom{
+  display: none;
+}
+.disflex{
+  display: flex;
+  align-items: center;
+}
+.formText{
+  color: black;
+  font-size: 28rpx;
+}
+.formText text{
+  font-weight: bold;
+  color: #1E90FF;
+}

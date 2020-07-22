@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "代理订单",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "van-picker": "../../miniprogram_npm/vant-weapp/picker/index"
+  }
+}

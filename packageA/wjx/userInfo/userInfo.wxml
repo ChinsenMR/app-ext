@@ -1,0 +1,35 @@
+<view class="userInfo">
+  <form bindsubmit="formSubmit">
+    <view class="form_wrap">
+      <block wx:for="{{user}}" wx:key="index">
+        <view class="input_wrap">
+          <!-- 头像 不需要了 -->
+          <!-- <image class="head_img" src="{{item.HeadUrl}}" wx:if="{{item.HeadUrl}}"></image> -->
+          <label for="" class="title">{{item.title}}</label>
+          <input type="{{item.type}}"
+            placeholder="{{item.pla}}"
+            name="{{item.name}}" 
+            value="{{item.val}}" 
+            disabled="{{item.dis}}"
+            bindinput="handleInput"
+          />
+        </view>
+        <view class="upload" wx:if="{{item.status}}">
+          <view class="del_img" wx:if="{{avatar}}">
+            <image class="avatar" src="{{avatar}}" ></image>
+            <view class="del_btn" bindtap="handleDel">x</view>
+          </view>
+          <view class="codewrap" bindtap="upAvatar" wx:else>
+            <image src="{{imgUrl+'add_icon99.png'}}"></image>
+          </view>
+        </view>
+      </block>
+    </view>
+    <view class="btn-area">
+      <button formType="submit" bindtap="handleBC">保存</button>
+    </view>
+  </form>
+  <view class="tip" wx:if="{{false}}">
+    <text>*只支持上传二维码,不支持修改代理信息</text>
+  </view>
+</view>

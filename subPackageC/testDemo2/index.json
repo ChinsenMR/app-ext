@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "order-good": "../../components/order-good",
+    "loading": "../../components/loading"
+  },
+  "navigationBarTitleText": "新建直播"
+}

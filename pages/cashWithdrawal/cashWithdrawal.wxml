@@ -1,0 +1,38 @@
+<!--pages/cashWithdrawal/cashWithdrawal.wxml-->
+<!-- <text>pages/cashWithdrawal/cashWithdrawal.wxml</text> -->
+<view class='box'>
+    <view class="cardBox"> 
+       <view class='imgbox'>
+          <view class='immg'></view>
+       </view>
+       <view class='cardMsg'>
+         <view class='cardName'>中国建设银行</view>
+         <view class='cardType'>储蓄卡</view>
+         <view class='cardNumber'>45645646546545454545454</view>
+       </view>
+       <view class='toRight'>
+           <view class='goCardlist'>
+               <view class='xia'></view>
+               <view class='shang'></view>
+           </view>
+       </view>
+    </view>
+
+    <view class='presentationBox'>
+        <view class='presentationBoxTip'>提现金额</view>
+
+        <view class='presentationBoxIpt'>
+           <text>￥</text>
+           <input type="digit" class='presentationInput' placeholder='请输入提现金额' placeholder-style='font-size: 30rpx;font-weight: Bold;letter-spacing: 3rpx;' bindinput='whatchIpt' value='{{inpVal}}' data-val="{{inpVal}}" >  </input>
+        </view>
+
+        <view class='tipBox'>
+            <view class='tip'>可提现金额￥750.00</view>
+            <view class='allPresentation'>全部提现</view>
+        </view>
+    </view>
+
+    <view class='sureBtom'>
+       <view class='sureBtn' bindtap='sendmoney' >确认</view>
+    </view>
+</view>

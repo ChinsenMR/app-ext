@@ -1,0 +1,60 @@
+<!-- 信息列表 -->
+<image style="width: 100%" wx:if="{{RequetStatus != -1}}" src="{{statusIconUrls[RequetStatus]}}" mode="widthFix" />
+<van-notice-bar wrapable scrollable="false" text="{{'拒绝原因：' + refuseReason}}"
+	wx:if="{{RequetStatus === 2 && refuseReason}}" />
+<form bindsubmit="onSubmit">
+	<view class="wrap-container da" wx:for='{{fleidList}}' wx:key="index">
+		<view class="da flex" wx:if='{{item.type != "性别" && item.type != "生日" && item.type != "地区"}}'>
+			<label>{{item.type}}</label>
+			<input bindinput='handleInput' style="{{ item.fleid == 'region' }}" data-name='{{item.fleid}}'
+				placeholder="{{item.desc}}" value="{{item.value}}" name='{{item.fleid}}'
+				disabled='{{item.fleid == "WeChat"? false : true}}' />
+
+		</view>
+	</view>
+	<!-- <button class="btn" form-type="submit">保存</button> -->
+</form>
+<view class="about-content">
+	<view class="filed">
+		相关资质
+		<text>（选填，若三个月内未完成上传，店铺将会被冻结）</text>
+	</view>
+	<view class="image-wrap">
+		<view class="item" bindtap="upload" data-type="1"
+			style="background: url({{LicenseImg}})center center / cover no-repeat">
+			<image class="icon" src="{{iconUrl}}" wx:if="{{!LicenseImg}}" />
+			<view class="text" wx:if="{{!LicenseImg}}">上传营业执照</view>
+		</view>
+		<view class="item" bindtap="upload" data-type="2"
+			style="background: url({{CertImg}})center center / cover no-repeat">
+			<image class="icon" src="{{iconUrl}}" wx:if="{{!CertImg}}" />
+			<view class="text" wx:if="{{!CertImg}}">上传相关资质证件</view>
+		</view>
+		<view class="item" bindtap="upload" data-type="3"
+			style="background: url({{WxImage}})center center / cover no-repeat">
+			<image class="icon" src="{{iconUrl}}" wx:if="{{!WxImage}}" />
+			<view class="text" wx:if="{{!WxImage}}">上传微信门店</view>
+		</view>
+	</view>
+</view>
+<button class="submit-btn {{LicenseImg}}" bindtap="submit" hidden="{{RequetStatus == 0}}">
+	{{RequetStatus == -1 ? '提交申请' : '重新上传'}}
+</button>
+<import src="../../../wxParse/wxParse.wxml" />
+
+
+<view class="win_wrap" catchtouchmove="ture" wx:if="{{isWin}}">
+	<view class="win_main">
+		<scroll-view scroll-y="{{true}}">
+			<template is="wxParse" data="{{wxParseData:article.nodes}}" />
+		</scroll-view>
+		<view class="btn_wrap" catchtap="handleTY" data-status="1">
+			<view class="search_btn">
+				<view class="btn_img" wx:if="{{isShow}}" />
+			</view>
+			<view class="search_title">我已阅读该协议</view>
+		</view>
+	</view>
+	<view class="win_style" catchtap="handleAgree">同意</view>
+</view>
+<view class="zhezhao" catchtouchmove="ture" wx:if="{{isWin}}" />

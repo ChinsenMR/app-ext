@@ -1,0 +1,13 @@
+<van-tabs active="{{ checkIndex }}" bind:change="selectTab">
+	<van-tab title="{{item.name}}" name="{{index}}" wx:for="{{ title }}" wx:key="index"></van-tab>
+</van-tabs>
+<block wx:if="{{detailList.length}}">
+	<view class="detail" wx:for="{{detailList}}" wx:key="index">
+		<view class="del">
+			<view class="qian">{{item.TradeTypeName}}</view>
+			<text class="date">{{item.TradeDate}}</text>
+		</view>
+		<view class="der">{{item.BalanceType==0?'-':'+'}}{{item.Points}}</view>
+	</view>
+</block>
+<view class="no-data">{{loadMore ? '加载更多数据':'没有更多了'}}</view>

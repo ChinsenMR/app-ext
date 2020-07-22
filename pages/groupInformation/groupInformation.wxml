@@ -1,0 +1,56 @@
+<!--pages/groupInformation/groupInformation.wxml-->
+<!-- 头部 -->
+<view class='top'>
+  <view class='title'>
+    <view class='icon'>√</view>
+    <view class='txt'>成团{{allData.MaxMenberCount}}人</view>
+  </view>
+  <view class='stitle' wx:if="{{allData.Message === '参团成功' || allData.Message === '开团成功'}}">只差 {{allData.SurplusCount}} 位小伙伴参与，快去邀请小伙伴参与吧！</view>
+  <view class='stitle' wx:else>感谢小伙伴们鼎力相助</view>
+</view>
+<!-- 商品信息 -->
+<view style='background-color:white;width:100%;'>
+  <view class='goods'>
+    <view class='left'>
+      <image src='{{allData.SKUInfo[0].Img}}'></image>
+    </view>
+    <view class='right'>
+      <view class='title'>{{allData.SKUInfo[0].ProductName}}</view>
+      <view class='sku' wx:if="{{allData.SKUInfo[0].SkuContent}}">已选：{{allData.SKUInfo[0].SkuContent}}</view>
+      <view class='price'>
+        <view class='groupprice'>拼团价:￥{{allData.SKUInfo[0].Price}}</view>
+        <view class='oriprice'>原价:￥{{allData.SKUInfo[0].ItemTotal}}</view>
+        <!-- <view class='group'>{{allData.MaxMenberCount}}人团</view> -->
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 参团人员 -->
+<view class='personnel'>
+  <view class='title'>参团的人</view>
+  <view class='imgarray'>
+    <!-- 团长 -->
+    <image class='headimg' src='{{allData.LeaderHead}}'></image>
+    <view class='colonel'>团长</view>
+    <!-- 团员 -->
+    <view wx:for="{{headimg}}">
+      <image wx:if='{{item}}' class='headimg' src='{{item}}'></image>
+      <view wx:if='{{!item}}' class='noper'>?</view>
+    </view>
+    <!-- <view class='more'>更多</view> -->
+  </view>
+</view>
+<!-- 倒计时 -->
+<view class='countdown' wx:if="{{allData.Message === '参团成功' || allData.Message === '开团成功'}}">
+  <view class='txt'>
+    <view>剩余：</view>
+    <view>
+      <text class='font'>{{countDownList[0].day}}</text>天
+      <text class='font'>{{countDownList[0].hou}}</text>时
+      <text class='font'>{{countDownList[0].min}}</text>分
+      <text class='font' style='background-color:red'>{{countDownList[0].sec}}</text>  结束
+    </view>
+  </view>
+</view>
+<!-- 确认按钮 -->
+<button class='confirmation' open-type="share" bindtap='shareFriend' wx:if="{{allData.Message === '参团成功' || allData.Message === '开团成功'}}">邀请好友参团</button>

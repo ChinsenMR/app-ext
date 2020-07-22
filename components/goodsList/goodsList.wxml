@@ -1,0 +1,83 @@
+<!--components/goodsList/goodsList.wxml-->
+<!-- <text>components/goodsList/goodsList.wxml</text> -->
+<!-- 小图模式 -->
+<view class='list' wx:if="{{goodList.content.layout==1}}">
+  <ul>
+    <li wx:for="{{goodList.content.goodslist}}" wx:key="index">
+      <navigator url='/pages/productDetail/productDetail?id={{item.item_id}}' hover-class="none">
+        <image src='{{item.pic}}' alt=""></image>
+        <view class='title' wx:if="{{goodList.content.showName}}">{{item.title}}</view>
+        <view class='oandp'>
+          <view class='price' wx:if="{{goodList.content.showPrice}}">￥{{item.price}}</view>
+          <text class='oprice' wx:if="{{goodList.content.showMaketPrice}}">￥{{item.original_price}}</text>
+        </view>
+        <view class='scount' wx:if="{{goodList.content.showSaleCount}}">已售 {{item.salecount}} 件</view>
+      </navigator>
+    </li>
+  </ul>
+</view>
+<!-- 大图模式 -->
+<view class='blist' wx:if="{{goodList.content.layout==2}}">
+  <ul>
+    <li wx:for="{{goodList.content.goodslist}}" wx:key="index">
+      <navigator url='/pages/productDetail/productDetail?id={{item.item_id}}' hover-class="none">
+        <image mode='widthFix' src='{{item.pic}}' alt=""></image>
+        <view class='title' wx:if="{{goodList.content.showName}}">{{item.title}}</view>
+        <view class='oandp'>
+          <view class='price' wx:if="{{goodList.content.showPrice}}">￥{{item.price}}</view>
+          <text class='oprice' wx:if="{{goodList.content.showMaketPrice}}">原价:￥{{item.original_price}}</text>
+          <view class='scount' wx:if="{{goodList.content.showSaleCount}}">已售 {{item.salecount}} 件</view>
+        </view>
+      </navigator>
+    </li>
+  </ul>
+</view>
+<!-- 一大两小 -->
+<view wx:if="{{goodList.content.layout==3}}">
+  <block wx:for="{{goodList.content.goodslist}}">
+    <ul>
+      <li class="list_o" wx:key="index" wx:if="{{index%3 ===0||index===0}}">
+        <navigator url='/pages/productDetail/productDetail?id={{item.item_id}}' hover-class="none">
+          <image mode='widthFix' src='{{item.pic}}' alt=""></image>
+          <view class='title' wx:if="{{goodList.content.showName}}">{{item.title}}</view>
+          <view class='oandp'>
+            <view class='price' wx:if="{{goodList.content.showPrice}}">￥{{item.price}}</view>
+            <text class='oprice' wx:if="{{goodList.content.showMaketPrice}}">￥{{item.original_price}}</text>
+            <view class='scount' wx:if="{{goodList.content.showSaleCount}}">已售 {{item.salecount}} 件</view>
+          </view>
+        </navigator>
+      </li>
+    </ul>
+    <ul class="owlist_t">
+      <li wx:key="index" wx:if="{{index%3!=0}}">
+        <navigator url='/pages/productDetail/productDetail?id={{item.item_id}}' hover-class="none">
+          <image src='{{item.pic}}' alt=""></image>
+          <view class='title' wx:if="{{goodList.content.showName}}">{{item.title}}</view>
+          <view class='oandp'>
+            <view class='price' wx:if="{{goodList.content.showPrice}}">￥{{item.price}}</view>
+            <text class='oprice' wx:if="{{goodList.content.showMaketPrice}}">￥{{item.original_price}}</text>
+          </view>
+          <view class='scount' wx:if="{{goodList.content.showSaleCount}}">已售 {{item.salecount}} 件</view>
+        </navigator>
+      </li>
+    </ul>
+  </block>
+</view>
+<!-- 列表模式 -->
+<view class='ullist' wx:if="{{goodList.content.layout==4}}">
+  <ul>
+    <li wx:for="{{goodList.content.goodslist}}" wx:key="index">
+      <navigator url='/pages/productDetail/productDetail?id={{item.item_id}}' hover-class="none">
+        <image src='{{item.pic}}' alt=""></image>
+        <view class='righttxt'>
+          <view class='title' wx:if="{{goodList.content.showName}}">{{item.title}}</view>
+          <view class='oandp'>
+            <view class='price' wx:if="{{goodList.content.showPrice}}">￥{{item.price}}</view>
+            <text class='oprice' wx:if="{{goodList.content.showMaketPrice}}">￥{{item.original_price}}</text>
+          </view>
+          <view class='scount' wx:if="{{goodList.content.showSaleCount}}">已售 {{item.salecount}} 件</view>
+        </view>
+      </navigator>
+    </li>
+  </ul>
+</view>

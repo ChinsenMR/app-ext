@@ -1,0 +1,24 @@
+
+<view class='box'>
+  <view class='fromtop'>
+    <view class='shibie'>
+      <textarea class='shibietext' bindinput="userWhrite" data-copyPlate="{{copyPlate}}" value='{{copyPlate}}' disabled='{{false}}' placeholder='粘贴地址自动填写逗号分隔 收货人，手机号，地址' placeholder-style='font-size: 26rpx; color: #B1B1B1;'></textarea>
+      <view class='shibiebtn' catchtap='clickshibie'>识别</view>
+    </view>
+  </view>
+  <view class='fromeBox'>
+    <view class='fromeone' wx:for="{{fromdata}}" wx:key="index">
+      <view class='username'>{{item.title}}</view>
+      <input data-index="{{index}}" wx:if='{{index !== 2}}' type='{{item.type}}' placeholder='{{item.pl}}' value='{{item.val}}' class='ipt' disabled='{{index == 2}}' bindinput="weachinput" maxlength="{{index==1?'11':'140'}}"></input>
+      <text wx:if='{{index == 2}}' bindtap='bindRegionChange' class='{{!isSelected?"placeHolder":""}}'>{{region.province.name+' '+region.city.name}} {{region.area.name?region.area.name:''}}</text>
+      <view class='rightBtnBox' wx:if='{{index == 2}}'> </view>
+    </view>
+  </view>
+  <view class='defluterAddressBox'>
+    <view class='defaultetip'>设为默认地址</view>
+    <switch checked="{{switch1Checked}}" bindchange="switch1Change" />
+  </view>
+
+  <view class='submintBtn {{showSubmintBtn ? "showSubmintBtn" :""}} ' bindtap='clickSubmint'>保存</view>
+</view>
+<litterfirshiaddress show="{{showSelect}}" bindaddrevent="onSelectRegion"></litterfirshiaddress>

@@ -1,0 +1,97 @@
+@import '../../../app.wxss';
+
+.goods-comment {
+  padding: 0 30rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.goods-commentH {
+  height: 89rpx;
+  margin-bottom: 20rpx;
+}
+
+.goods-commentH view:first-child {
+  color: #333;
+  font-size: 30rpx;
+  font-weight:bold;
+}
+
+.goods-commentH view:last-child {
+  color: #999;
+  font-size: 26rpx;
+}
+
+.arrowRight {
+  width: 15rpx;
+  margin-left: 30rpx;
+}
+
+.commoentInfo {
+  color: #666;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+
+.commoentImg {
+  margin-top: 20rpx;
+  padding-bottom: 30rpx;
+}
+
+.commoentImg image {
+  width: 220rpx;
+  margin-right: 15rpx;
+}
+
+.commoentImg image:nth-of-type(3),
+.commoentImg image:nth-of-type(6),
+.commoentImg image:nth-of-type(9){
+  margin-right: 0;
+}
+
+.userInfoImg{
+  width: 76rpx;
+  height: 76rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.userName{
+  color: #333;
+  font-size: 26rpx;
+}
+
+.userInfo-grade{
+  width: 129rpx;
+  height: 30rpx;
+  background-color: #333333;
+  border-radius: 15rpx;
+  margin-left: 16rpx;
+}
+
+.userInfo-grade image{
+  width: 20rpx;
+}
+
+.userInfo-grade text{
+  color: #FFDDBC;
+  font-size: 18rpx;
+  margin-left: 6rpx;
+  height: 30rpx;
+  padding-bottom: 6rpx;
+  box-sizing:  border-box;
+}
+
+.userInfo-gradeStar{
+  margin-top: 12rpx;
+}
+
+.userInfo-gradeStar image{
+  width: 19rpx;
+  margin-right: 9rpx;
+}
+
+.buyTime {
+  color: #999;
+  font-size: 20rpx;
+}

@@ -1,0 +1,30 @@
+<view class='layout df ais jct' bindtap='close'>
+  <view class='main'>
+    <view class='main-img df ais'>
+      <image 
+      wx:for="{{imgList}}"
+      wx:for-index="index"
+      wx:key="index"
+      mode='widthFix'
+      src='{{item}}'>
+      </image>
+    </view>
+    <view class='center'>
+      分享多图到微信朋友圈，请先点击
+      <text>【保存图片】</text>
+      保存图片到您的相册，再点击
+      <text>【手动发圈】</text>
+      到微信自行选取相应图片分享到您的朋友圈！
+    </view>
+    <view class='buttom df ais jct-between'>
+      <view class='df fdc jct ais'>
+        <image src='{{imgUrl + "icon_xiazai@2x (1).png"}}' mode='widthFix'></image>
+        <text>保存图片</text>
+      </view>
+      <view class='df fdc jct ais'>
+        <image src='{{imgUrl + "icon_wechat@2x.png"}}' mode='widthFix'></image>
+        <text>手动发圈</text>
+      </view>
+    </view>
+  </view>
+</view>

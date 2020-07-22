@@ -1,0 +1,47 @@
+<!-- 默认tab -->
+<view class='d-tab da' wx:if='{{isDefault == 1}}'>
+  <view class="d-ul da">
+    <navigator hover-class="none" url="{{curActive == index? '':'/pages/'+item.u + '/' + item.u}}" class="d-li dd-vh"
+      wx:for='{{dList}}' wx:key="index" open-type="{{item.t == '升会员'? 'navigate':'redirect'}}">
+      <image src="{{curActive == index? imgUrl+item.si : imgUrl+item.i}}" mode="widthFix" style="width:{{item.w}}rpx">
+      </image>
+      <text style="color: {{curActive == index? '#FFCC99':''}}">{{item.t}}</text>
+    </navigator>
+  </view>
+  <view class="d-share dd-vh" bindtap="onShare" wx:if="{{curActive!=1}}">
+    <image src="{{imgUrl+'icon_share@2x (1).png'}}" mode="widthFix"></image>
+    <text>分享</text>
+  </view>
+</view>
+
+<view class="c-tab da" wx:if='{{isDefault == 2}}'>
+  <block wx:for='{{cList}}' wx:key="index">
+    <view class="tab_wrap" bindtap="handleGo" data-url="{{item.Content2}}" data-index="{{index}}" data-item="{{item}}">
+      <image src="{{curActive == index? item.ShopMenuPicClick : item.ShopMenuPic}}" mode="widthFix"
+        style="width: {{item.Width}}rpx;"></image>
+      <text style="color: {{curActive == index? '#FF3366':''}}">{{item.Name}}</text>
+    </view>
+  </block>
+</view>
+
+<!-- 分享弹窗 -->
+<view class="s-modal" wx:if='{{showShare}}' data-type="close" bindtap="onShare" style="padding-top:{{tabH - 15}}px">
+  <!-- <view class="s-modal" wx:if='{{showShare}}' data-type="close" bindtap="onShare" style="--tabH:{{tabH}}"> -->
+  <swiper circular='{{true}}' indicator-dots='{{true}}' indicator-color='#FF6666' bindchange='onChange'>
+    <block wx:for="{{sImgArr}}" wx:key>
+      <swiper-item>
+        <image src="{{item.url}}" mode="widthFix" class="sm-img" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="sb-ul da">
+    <button open-type='share' class="sb-li dd-vh" catchtap="onInvite">
+      <image src="{{imgUrl + 'icon_wechat@2x.png'}}" mode="widthFix"></image>
+      <text>邀请好友</text>
+    </button>
+    <view class="sb-li dd-vh" catchtap="onSave">
+      <image src="{{imgUrl + 'icon_xiazai@2x.png'}}" mode="widthFix"></image>
+      <text>保存图片</text>
+    </view>
+  </view>
+</view>

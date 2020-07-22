@@ -1,0 +1,44 @@
+<!--pages/integralrecord/integralrecord.wxml-->
+<block wx:for="{{gamgeData}}" wx:if="{{item.GameType < 2}}">
+<view class='title' wx:if="{{item.GameType == 0}}">
+  <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/huodong_zhuangpang@2x.png'></image>
+  <text>{{item.GameTitle}}</text>
+</view>
+<view class='title' wx:if="{{item.GameType == 1}}">
+  <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/huodong_jindang@2x.png'></image>
+  <text>{{item.GameTitle}}</text>
+</view>
+<view class='raffle'>
+  <view class='raffel_con'>
+    <text class='left'>参与会员：</text>
+    <text class='right'>所有会员</text>
+  </view>
+  <view class='raffel_con'>
+    <text class='left'>参与条件：</text>
+    <text class='right'>每天参与1次\n参与上线100次</text>
+  </view>
+  <view class='raffel_con'>
+    <text class='left'>消费积分：</text>
+    <text class='right'>{{item.NeedPoint}}积分/次</text>
+  </view>
+  <view class='raffel_con'>
+    <text class='left'>游戏说明：</text>
+    <rich-text class='right' nodes="{{item.Description}}"></rich-text>
+  </view>
+  <view class='raffel_con'>
+    <text class='left'>活动时间：</text>
+    <text class='right' >{{item.BeginTime+"~"+item.EndTime}}</text>
+  </view>
+</view>
+<navigator url='{{(item.GameType == 0?"/pages/lottery/lottery?id=":"/pages/smashedGoldenEggs/smashedGoldenEggs?id=")+item.GameId}}'>
+  <view class='join'>
+    <view class='text'>我要参与</view>
+    <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/path-right@2x.png'></image>
+  </view>
+</navigator>
+</block>
+
+<view class='empty' wx:if='{{isEmpty}}'>
+    <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/pic-kong.png'></image>
+    <text>暂无数据</text>
+</view>

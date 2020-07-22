@@ -1,0 +1,18 @@
+<view style='margin-top:20rpx' wx:if="{{adpicUrls.content.showType==1}}">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true" indicator-color="{{indicatorColor}}" style='height: {{swiperH}}px' class='color'>
+    <block>
+      <swiper-item wx:for="{{adpicUrls.content.dataset}}" wx:key="index" class="adPic">
+        <view class='navigator' bindtap='jumptap' data-type='{{item.linkType}}' data-index='{{index}}'>
+          <image mode="widthFix" src="{{item.pic}}" bindload='onLoadImg' />
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view wx:else>
+  <view wx:for="{{adpicUrls.content.dataset}}" class="adPic">
+    <view class='navigator' bindtap='jumptap' data-type='{{item.linkType}}' data-index='{{index}}'>
+      <image mode="widthFix" src="{{item.pic}}" bindload='onLoadImg' />
+    </view>
+  </view>
+</view>

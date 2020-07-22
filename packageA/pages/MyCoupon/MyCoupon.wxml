@@ -1,0 +1,25 @@
+<van-tabs animated color="#F33" active="{{ active }}" bind:click="Select">
+  <van-tab title="{{item.Name}}({{item.Num}})" wx:for="{{Topheard}}" wx:key>
+
+    <view class="couponbox" wx:for="{{List}}" wx:key wx:if="{{List.length!=0}}">
+      <view class=" defalut  {{active==0?'coudet':'coudet2'}}">
+        <view class="coul">
+          <view class="limt">
+            <view>
+              <text class="dol">¥</text>
+              <text class="num">{{item.Price}}</text>
+            </view>
+            <view class="man">满{{item.OrderUseLimit}}可用</view>
+          </view>
+        </view>
+        <view class="coum">
+          <view class="new">{{item.CouponName}}</view>
+          <view class="tiem">{{item.StartTime}}至{{item.ClosingTime}}</view>
+        </view>
+        <view class="coumr" wx:if="{{active==0}}">去使用</view>
+        <view class="emity" wx:if="{{active==1}}"></view>
+      </view>
+    </view>
+    <view class="nocnopnn" wx:if="{{List.length==0}}">暂无优惠券</view>
+  </van-tab>
+</van-tabs>

@@ -1,0 +1,80 @@
+<view class="distribution_of_subordinates" wx:if="{{true}}">
+  <block wx:for="{{newArr.MySubUsersList}}" wx:key="{{item}}">
+    <!-- 分销下下属列表 -->
+    <view class="subordinates_wrap">
+      <!-- 左边 1-->
+      <view class="left_wrap">
+        <image class="left_img" src="{{item.Picture}}"></image>
+        <!-- 代理等级 -->
+        <view class="agent_level">{{item.GradeName}}</view>
+      </view>
+      <!-- 中 1-->
+      <view class="zhitui_team_wrap">
+        <view class="info_name">{{item.NickName}}</view>
+        <view class="zhitui_or_team">
+          (直推<text class="color1">{{item.ExpandMemberAll}}</text>
+          <view class="team_box" wx:if="{{item.ExpandMemberAll !=0 && teamNus!=0}}">
+            /团队<text class="color2">{{teamNus}}</text>
+          </view>)
+        </view>
+        <view class="zhitui_time">{{item.CreateDate}}</view>
+      </view>
+      <!-- 中 2 -->
+      <view class="sum_price_wrap">
+        <view class="sum_price">￥{{item.SubSumOrderTotal}}</view>
+      </view>
+      <!-- 右边 -->
+      <view class="change_the_rating_wrap">
+        <view class="upward" wx:if="{{true}}">
+          <image wx:if="{{item.ExpandMemberAll!=0}}" src="{{imgUrl+'xiang_xia.png'}}" class="upward_img"
+            bindtap="handleUnderling" data-userid="{{item.UserId}}"></image>
+          <image wx:if="{{false}}" src="{{imgUrl+'xiang_shang.png'}}" class="upward_img"></image>
+        </view>
+        <!-- 修改等级 -->
+        <view class="change_rating" catchtap="handleChange" data-userid="{{item.UserId}}">更改等级</view>
+        <!-- 佣金 -->
+        <view class="show_commission" wx:if="{{true}}">￥{{item.SubMemberAllSplittin}}</view>
+      </view>
+    </view>
+  </block>
+
+  <!-- 隐藏的盒子 -->
+  <block wx:for="{{newArr}}" wx:key="{{items}}" wx:for-item="items">
+    <view class="newWrap" wx:if="{{false}}">
+      <!-- 左边 1-->
+      <view class="left_wrap">
+        <image class="left_img" src="{{items.Picture}}"></image>
+        <!-- 代理等级 -->
+        <view class="agent_level">{{items.GradeName}}</view>
+      </view>
+      <!-- 中 1-->
+      <view class="zhitui_team_wrap">
+        <view class="info_name">{{items.NickName}}</view>
+        <view class="zhitui_or_team">
+          (直推<text class="color1">{{items.ExpandMemberAll}}</text>
+          <view class="team_box" wx:if="{{items.ExpandMemberAll !=0 && teamNus!=0}}">
+            /团队<text class="color2">{{teamNus}}</text>
+          </view>)
+        </view>
+        <view class="zhitui_time">{{items.CreateDate}}</view>
+      </view>
+      <!-- 中 2 -->
+      <view class="sum_price_wrap">
+        <view class="sum_price">￥{{items.SubSumOrderTotal}}</view>
+      </view>
+      <!-- 右边 -->
+      <view class="change_the_rating_wrap">
+        <view class="upward">
+          <image wx:if="{{items.ExpandMemberAll!=0}}" src="{{imgUrl+'xiang_xia.png'}}" class="upward_img"
+            bindtap="handleUnderling" data-userid="{{items.UserId}}"></image>
+          <image wx:if="{{false}}" src="{{imgUrl+'xiang_shang.png'}}" class="upward_img"></image>
+        </view>
+        <!-- 修改等级 -->
+        <view class="change_rating" catchtap="handleChange" data-userid="{{items.UserId}}">更改等级</view>
+        <!-- 佣金 -->
+        <view class="show_commission" wx:if="{{true}}">￥{{item.SubMemberAllSplittin}}</view>
+      </view>
+    </view>
+  </block>
+
+</view>

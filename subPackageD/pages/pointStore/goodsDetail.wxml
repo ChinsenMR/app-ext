@@ -1,0 +1,28 @@
+
+
+<view class='layout' hidden="{{currentTab != 1}}">
+  <!-- banner图片 -->
+  <view class='banner'>
+    <swiper indicator-dots="true" circular="true">
+      <swiper-item class='banner-item' wx:for='{{bannerArr}}' wx:key="{{item}}">
+        <image src="{{item}}" class='banner-img' mode='aspectFill' />
+      </swiper-item>
+    </swiper>
+    <swiper hidden='{{shopUser == ""}}' class='banner-user' autoplay='true' vertical='true' circular="true">
+      <swiper-item wx:for='{{shopUser}}' wx:for-idnex='{{shopUser}}' wx:key>
+        <view class='df ais'>
+          <image src='{{shopUser.CusUserHead}}' mode='widthFix'></image>
+          <text>{{shopUser.CusUserName}}</text>
+          <text>购买了此商品</text>
+        </view>
+      </swiper-item>
+    </swiper>
+  </view>
+   <!-- 商品标题和价格 -->
+    <!-- wx:if="{{goodsInfo.IsFavorite}}" -->
+  <PriceItem goodsInfo='{{goodsInfo}}' />
+  
+  <!-- 商品图文详情 -->
+  <PictureDetail wx:if="{{description}}" description='{{description}}' />
+</view>
+<button class="buy" bindtap="buyGoods">立即兑换</button>

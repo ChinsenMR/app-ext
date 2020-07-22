@@ -1,0 +1,105 @@
+<template name="goods">
+    <view class='goodsList df ais-start'>
+        <image
+        src='{{goods.Image}}'
+        mode='aspectFill'
+        data-id='{{item.OrderId}}'
+        bindtap='toOrderDetail'
+        />
+        <view class='glist-R flex'>
+            <view class='dbc to-line' data-id='{{item.OrderId}}' bindtap='toOrderDetail'>
+                {{goods.Name}}
+            </view>
+            <view
+            class='dbc goodsSpecs'
+            data-id='{{item.OrderId}}'
+            bindtap='toOrderDetail'
+            hidden="{{!goods.SkuText}}}"
+            >
+                {{goods.SkuText || '无规格'}}
+            </view>
+            <view class='price dbc'>
+                <text data-id='{{item.OrderId}}' bindtap='toOrderDetail'>￥ {{goods.Price}}</text>
+
+                <!-- start 如果系统允许用户退货 -->
+                <block wx:if="{{IS_ALLOW_USER_APPLY_AFTER_SALE}}">
+                    <view
+                    bindtap="applyAfterSale"
+                    class="apply-aftersale"
+                    data-params="{{ {goods: goods, orderId: item.OrderId, type: 3} }}"
+                    wx:if="{{goods.IsAllowReturn}}"
+                    >
+                        申请售后
+                    </view>
+
+                </block>
+                <view
+                bindtap="seeAfterSaleDetail"
+                class="apply-aftersale"
+                data-params="{{ {type: 1, returnId: goods.ReturnInfo.ReturnId, orderId: item.OrderId, skuId: goods.ReturnInfo.SkuId} }}"
+                wx:if="{{goods.ReturnInfo}}"
+                >
+                    售后详情
+                </view>
+                <!-- end 如果系统允许用户退货 -->
+
+                <text data-id='{{item.OrderId}}' bindtap='toOrderDetail'>x {{goods.ShipmentQuantity}}</text>
+            </view>
+        </view>
+    </view>
+    <view class='totalPrice da-e'>
+        <text>共 {{item.Quantity}} 件商品</text>
+        <text>合计：￥ {{item.Amount}}</text>
+    </view>
+    <!-- 根据订单状态 显示 相应的底部 按钮 -->
+    <view class='o-footer da-e'>
+        <view class="da" wx:if='{{item.Status == 1}}'>
+            <button class='oBtn-r' data-id='{{item.OrderId}}' bindtap='cancelOrd'>取消订单</button>
+            <button class='oBtn-b' data-id='{{item.OrderId}}' bindtap='pay'>去付款</button>
+        </view>
+        <!-- <navigator class="oBtn-r" url="/pages/newAddress/newAddress?orderid={{item.OrderId}}" wx:if='{{item.Status == 2}}'>修改地址</navigator> -->
+
+        <!-- start 如果允许用户退款就展示退款按钮，否则只能联系卖家 -->
+        <block wx:if="{{IS_ALLOW_USER_APPLY_AFTER_SALE}}">
+            <view
+                class="oBtn-r"
+                bindtap="applyAfterSale"
+                data-params="{{ {type: 0, orderId: item.OrderId} }}"
+                wx:if="{{item.IsAllowRefund}}"
+            >
+                申请退款
+            </view>
+        </block>
+        <block wx:else>
+            <view class="oBtn-b" bindtap="showContactCode" data-items="{{ item }}">
+                联系卖家
+            </view>
+        </block>
+        <!-- end 如果允许用户退款就展示退款按钮，否则只能联系卖家 -->
+        <view
+            class="oBtn-b"
+            bindtap="seeAfterSaleDetail"
+            data-params="{{ {type: 2, refundId: item.RefundInfo.RefundId, orderId: item.OrderId} }}"
+            wx:if='{{item.RefundInfo}}'
+        >
+            退款详情
+        </view>
+        <view class="da" wx:if='{{item.Status == 3}}'>
+            <!-- <navigator class="oBtn-b" url="/packageA/pages/Logistics/Logistics?id={{item.OrderId}}&Items={{item.LineItems}}">查看物流</navigator> -->
+            <view class="oBtn-b" bindtap="seeExpressStep" data-orderId="{{item.OrderId}}">
+                查看物流
+            </view>
+            <button
+                class='oBtn-r'
+                data-id="{{item.OrderId}}"
+                bindtap="handleFinishOrder"
+                wx:if="{{item.Status == 3}}"
+            >
+                确认收货
+            </button>
+        </view>
+        <navigator class="oBtn-r" url="/packageA/pages/evaluate/evaluate?id={{item.OrderId}}" wx:if='{{item.Status == 5}}'>
+            去评价
+        </navigator>
+    </view>
+</template>

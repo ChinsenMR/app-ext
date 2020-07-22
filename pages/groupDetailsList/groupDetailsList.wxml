@@ -1,0 +1,59 @@
+<view class="group_wrap">
+  <block wx:for="{{groupData}}" wx:key>
+    <view class="content">
+      <!-- 上 -->
+      <view class="commodity_wrap">
+        <view class="commodity_img_wrap">
+          <image src="{{item.ImageUrl1}}"></image>
+        </view>
+        <view class="group_main">
+          <view class="group_title">{{item.ProductName}}</view>
+          <view class="group_price">火拼价:￥<text>{{item.SalePrice}}</text></view>
+          <view class="time_wrap">
+            <view class="time">
+              <view class="over" wx:if="{{item.GroupStatus==0}}">
+                <!-- <text class="timeColor">{{item.limitHours!='00'?'1小时':item.limitMin}}{{item.limitHours!='00'?'':'分'}}</text> -->
+                <text class="timeColor" wx:if="{{item.limitHours !='00'}}">{{item.limitHours}}时</text>
+                <text class="timeColor" wx:else>{{item.limitMin}}分</text>
+                后组团结束
+              </view>
+              <text class="over" wx:if="{{item.GroupStatus==2}}">组团失败</text>
+              <text class="over" wx:if="{{item.GroupStatus==1}}">成团时间:{{item.StartTime}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+      <!-- 中 -->
+      <view class="group_team_wrap">
+        <view class="group_team_title">
+          <view class="team_title" wx:if="{{item.GroupStatus==0}}">已参团的小伙伴,还差<text class="team_num">{{item.JoinNumber-item.fightGroupUsers.length}}</text>人</view>
+          <view class="team_title" wx:if="{{item.GroupStatus==1 && item.fightGroupUsers.length==2}}">参团的小伙伴们:</view>
+          <view class="team_title" wx:if="{{item.GroupStatus==2}}">参团的小伙伴们:</view>
+          <!--用于参团失败的-->
+        </view>
+       <view class="team_img_wrap">
+          <block wx:for="{{item.fightGroupUsers}}" wx:key wx:for-item="items">
+            <view class="team_members">
+              <image src="{{items.Picture}}"></image>
+              <image class="captain_img" wx:if="{{items.IsFightGroupHead}}" src="{{imgUrl+'wujiaoxing.png'}}"></image>
+            </view>
+          </block>
+       </view>
+      </view>
+      <!-- 下 -->
+      <view class="group_btn_wrap">
+        <view class="group_detail" bindtap="handleGroup" data-id="{{item.FightGroupId}}" data-ProductId="{{item.ProductId}}">拼团详情</view>
+        <view class="view_order" bindtap="handleOrder"data-orderid="{{item.OrderId}}">查看订单</view>
+      </view>
+      
+      <!-- 水印 -->
+      <view class="shuiyin">
+        <!-- <image wx:if="{{false}}" src='{{imgUrl+(joinGroup?"pic_assemble_1@2x.png":"pic_assemble_2@2x.png")}}' mode='widthFix'></image> -->
+        <image wx:if="{{item.GroupStatus==1}}" src='{{imgUrl+"pic_assemble_1@2x.png"}}' mode='widthFix'></image>
+        <image wx:elif="{{item.GroupStatus==2}}" src='{{imgUrl+"pic_assemble_2@2x.png"}}' mode='widthFix'></image>
+        <image wx:else="{{item.GroupStatus==0}}" src='' mode='widthFix'></image>
+      </view>
+    </view>
+  </block>
+  <view class="no_data" wx:if="{{groupData.length==0}}">暂无数据~</view>
+</view>

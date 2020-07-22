@@ -1,0 +1,135 @@
+<wxs module="afterSale">
+	var totalPrice = function(val, count){
+	val = Number(val);
+	count = Number(count)
+	return val * count
+	}
+	module.exports.totalPrice = totalPrice;
+</wxs>
+<view class='layout'>
+	<!-- 商品信息 -->
+	<view class="g-info da" wx:for="{{initData.SkuInfo}}" wx:key='index'>
+		<image class="g-img" src="{{item.ThumbnailsUrl}}" mode="aspectFill" />
+		<view class="flex">
+			<view class="dbc">
+				<text class="g-title to-2line">{{item.ItemDescription}}</text>
+				<text class="g-num">x{{item.Quantity}}</text>
+			</view>
+			<view class="g-sku" wx:if="{{item.SKU}}">规格：{{item.SKU}}</view>
+		</view>
+	</view>
+	<view class="a-type">
+		<view class="at-header">请选择申请售后类型</view>
+		<van-radio-group value="{{ params.type }}" bind:change="onRadio">
+			<view class="da at-radio">
+				<van-radio
+				 wx:if="{{params.type == '0'}}"
+				 name="0"
+				 checked-color='#E5414A'
+				 checked
+				>
+					仅退款
+				</van-radio>
+				<van-radio
+				 wx:else
+				 name="1"
+				 checked-color='#E5414A'
+				 checked
+				>退货退款
+				</van-radio>
+			</view>
+		</van-radio-group>
+		<view class="a-account da">
+			<text class="aac-tip">退款金额：</text>
+			<text class="aac-price">￥{{ afterSale.totalPrice(initData.Total, count)}}</text>
+		</view>
+		<view class="a-account da" wx:if="{{params.type != 0}}">
+			<text class="aac-tip">退货数量（最多退货{{initData.SkuInfo[0].Quantity}}件）：</text>
+			<input
+			 placeholder="请输入数量"
+			 value="{{count}}"
+			 data-name="count"
+			 class="aac-input"
+			 bindinput="inputText"
+			/>
+			<!-- <view class="desc">最多退货{{initData.SkuInfo[0].Quantity}}件</view> -->
+		</view>
+		<view class="a-account da">
+			<text class="aac-tip">备注：</text>
+			<input
+			 placeholder="请输入备注"
+			 value="{{remark}}"
+			 data-name="remark"
+			 style="width: 176rpx"
+			 bindinput="inputText"
+			/>
+			<!-- <view class="desc">最多退货{{initData.SkuInfo[0].Quantity}}件</view> -->
+		</view>
+	</view>
+	<picker range="{{reasonArr}}" bindchange="onChange">
+		<view class="dbc reason-s">
+			<text>{{curReason? curReason : '请选择退货原因'}}</text>
+			<image class="arrowRight" src="{{imgUrl+'arrowRight.png'}}" mode="widthFix" />
+		</view>
+	</picker>
+	<picker
+	 range="{{refundType}}"
+	 bindchange="onChangeType"
+	 range-key="text"
+	 wx:if="{{params.type == 0}}"
+	>
+		<view class="dbc reason-s">
+			<text>{{refundTypeIndex != null ? refundType[refundTypeIndex].text : '请选择退款方式'}}</text>
+			<image class="arrowRight" src="{{imgUrl+'arrowRight.png'}}" mode="widthFix" />
+		</view>
+	</picker>
+	<view class="voucher" wx:if="{{params.type != 0}}">
+		<view class="v-header">上传凭证</view>
+		<view class="da v-box">
+			<view class="vb-img" wx:for='{{voucherImg}}' wx:key>
+				<image src="{{item}}" mode="aspectFill" />
+				<image
+				 class="vb-clear"
+				 src="{{imgUrl+'icon_del_1.png'}}"
+				 mode="widthFix"
+				 data-index="{{index}}"
+				 bindtap="onClear"
+				/>
+			</view>
+			<view class="up-btn dd-vh" bindtap="onUpdate" wx:if='{{voucherImg.length < 3}}'>
+				<image src="{{imgUrl+'icon_camera.png'}}" mode="widthFix" />
+				<text>上传凭证</text>
+			</view>
+		</view>
+	</view>
+	<view class="logisticsInfo" wx:if="{{params.type != 0}}">
+		<view class="title">默认物流信息</view>
+		<view class="log-li da">
+			<input
+			 type="text"
+			 placeholder="请填收货人姓名"
+			 value="{{initData.ShipTo}}"
+			 disabled
+			/>
+		</view>
+		<view class="log-li da">
+			<input
+			 type="text"
+			 placeholder="请填写收货地址"
+			 value="{{initData.ShipAddress}}"
+			 disabled
+			/>
+		</view>
+		<view class="log-li da">
+			<input
+			 type="tel"
+			 maxlength="11"
+			 value="{{initData.CellPhone}}"
+			 placeholder="请填写手机号码"
+			 disabled
+			/>
+		</view>
+	</view>
+	<button class="apply-btn" bindtap="onSubmit">提交申请</button>
+</view>
+

@@ -1,0 +1,8 @@
+<!--components/cuttingLine/cuttingLine.wxml-->
+<!-- <text>components/cuttingLine/cuttingLine.wxml</text> -->
+<view wx:if="{{cuttlineUrls.style == 0}}">
+  <view style='border-bottom:2rpx dashed {{cuttlineUrls.corlor}};' class='cuttingLine'></view>
+</view>
+<view wx:else="{{cuttlineUrls.style == 1}}">
+  <view style='border-bottom:2rpx solid {{cuttlineUrls.corlor}};' class='cuttingLine'></view>
+</view>

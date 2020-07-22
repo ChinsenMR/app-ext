@@ -1,0 +1,34 @@
+<!--pages/shoppromotions/shoppromotions.wxml-->
+<view class='shoppromotions'>
+  <view class='top'>
+    <block wx:if="{{false}}">
+    <text class='title'>店铺信息分享</text>
+    <textarea rows="3" placeholder-class="place-holder" placeholder='分享时说点什么吧' class='msg'></textarea>
+    <view class='button-wrap'>
+      <button open-type="share" class='btn-shareWx'>分享到微信</button>
+      <button class="btn-shareWb"  plain style=" border-color: #E0001B;">分享到微博</button>
+    </view>
+    </block>
+    <view class='shop-name'>
+      <image src='{{shareData.logo}}' class='logo'></image>
+      <text>{{shareData.storeDescription}}</text>
+    </view>
+  </view>
+  <view class='mid'>
+    <text class='title title-red'>店铺链接</text>
+    <text selectable="true" class='text-link'>{{shareData.urlToEncode}}</text>
+    <text class='text-tips'>(长按以上虚线框，复制链接地址发送给好友！)</text>
+  </view>
+  <view class='bottom'>
+    <text class='title title-green'>二维码</text>
+    <select-tabs first-title="店铺二维码" second-title="公众号二维码" bind:myTabsEvent="tapSelectCode">
+    </select-tabs>
+    <text class='code-tips'>点击二维码图片收藏，然后发送给好友</text>
+    <view class='code-box' bindtap="previewqrImage" style='display:{{codeType===0?"block":"none"}}'>
+      <image mode='widthFix' class="img" src='{{qrData}}'></image>
+    </view>
+    <view class='code-box' bindtap="previewImage" style='display:{{codeType===1?"block":"none"}}'>
+      <image mode='widthFix' class="img" src='{{shareData.storeFollowCode}}'></image>
+    </view>
+  </view>
+</view>

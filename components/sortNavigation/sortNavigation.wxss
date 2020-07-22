@@ -1,0 +1,39 @@
+/* components/sortNavigation/sortNavigation.wxss */
+
+/* 分类 */
+
+.sort ul {
+  display: flex;
+  flex-wrap: wrap;
+  width: 98%;
+  margin: 20rpx auto;
+  align-items: flex-start;
+}
+
+.sort li {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sort .navigator {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 98%;
+}
+
+.sort li image {
+  width: 100%;
+  height: 100%;
+}
+
+.sort li text {
+  font-size: 12px;
+}

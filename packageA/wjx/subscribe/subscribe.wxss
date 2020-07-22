@@ -1,0 +1,92 @@
+/* packageA/pages/subscribePage/subscribePage.wxss */
+page {
+  height: 100%;
+}
+
+.subscribe {
+  height: 100%;
+  display: flex;
+  color: #363636;
+  background: #fefefe;
+  flex-direction: column;
+}
+
+.subscribe .tips {
+  padding: 35rpx;
+  color: #272727;
+  font-size: 32rpx;
+  font-weight: bold;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+
+.subscribe .tips view:last-child {
+  color: #272727;
+  font-size: 30rpx;
+  font-weight: 100;
+  margin-top: 35rpx;
+}
+
+.subscribe .scrollList {
+  flex: 1;
+  overflow: auto;
+}
+
+.subscribe .subscribeList {
+  display: flex;
+  align-items: center;
+  padding: 25rpx 15rpx;
+  border-bottom: 1rpx solid #f4f4f4;
+}
+
+.subscribe .subscribeList span {
+  margin-left: 20rpx;
+}
+
+.subscribe .subscribePlane {
+  display: flex;
+  align-items: center;
+  padding: 50rpx 20rpx;
+  justify-content: space-around;
+}
+
+.subscribe .subscribePlane view {
+  color: #56bc69;
+  padding: 10rpx 50rpx;
+  border-radius: 10rpx;
+  background: #f3f1f4;
+}
+
+.subscribe .subscribePlane view:last-child {
+  color: #f3f1f4;
+  background: #56bc69;
+}
+
+checkbox .wx-checkbox-input {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+  border: 1rpx solid #53bd6b;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+  background: #53bd6b;
+  border: 1rpx solid #53bd6b;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+  border-radius: 50%;
+  /* 圆角 */
+  width: 40rpx;
+  /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 40rpx;
+  /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  /* 对勾大小 30rpx */
+  color: #fff;
+  /* 对勾颜色 白色 */
+  background: transparent;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}

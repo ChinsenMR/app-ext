@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "order-good": "../../components/order-good",
+    "loading": "../../components/loading"
+  },
+  "navigationBarTitleText": "直播订单",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#F7F7F7"
+}

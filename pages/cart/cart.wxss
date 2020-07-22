@@ -1,0 +1,234 @@
+.layout{
+  background-color: #F5F5F5;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+
+.allSelect{
+  background-color: #fff;
+  height: 88rpx;
+  border-radius: 6rpx;
+  color: #333333;
+  font-size: 28rpx;
+  margin-bottom: 20rpx;
+}
+
+.content-ul{
+  margin-bottom: 300rpx;
+}
+
+.allSelect icon, .content-li icon{
+  font-size: 35rpx;
+  color: #FF4444;
+  margin: 0 30rpx;
+}
+
+.iconweixuanze{
+  border: 2rpx solid #E5E5E5;
+  border-radius: 50%;
+  height: 35rpx;
+  width: 35rpx;
+}
+
+.iconxuanze{
+  width: 39rpx;
+  height: 39rpx;
+}
+
+.content-li{
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  border-radius: 6rpx;
+}
+
+.li-header{
+  height: 88rpx;
+}
+
+.li-headerL text, .li-headerR{
+  color: #333333;
+  font-size: 28rpx;
+}
+
+.li-headerL image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.li-headerR{
+  margin-right: 30rpx;
+}
+
+.li-inner{
+  border-bottom: 1rpx solid #E5E5E5;
+  border-top: 1rpx solid #E5E5E5;
+}
+
+.li-innerTop{
+  overflow-x: scroll;
+  width: 690rpx;
+}
+
+.li-innerR{
+  border-bottom: 1rpx solid #E5E5E5;
+  padding: 30rpx 0;
+  width: 550rpx;
+}
+
+.li-innerTop:last-child .li-innerR{
+  border: none;
+}
+
+.li-innerR > view{
+  padding-right: 30rpx;
+}
+
+.li-innerR image, .repurchase image{
+  width: 128rpx;
+  margin-right: 17rpx;
+}
+
+.reduce, .add, .num{
+  color: #E5E5E5;
+  font-size: 30rpx;
+  border: 2rpx solid #E5E5E5;
+  height: 35rpx;
+  width: 35rpx;
+  border-radius: 50%;
+  box-sizing: border-box;
+  padding-bottom: 3rpx;
+  padding-left: 1rpx;
+}
+
+.num{
+  width: 65rpx;
+  margin: 0 20rpx;
+  border-radius: 18rpx;
+  font-size: 26rpx;
+  color: #000000;
+}
+
+.title{
+  color: #333333;
+  font-size: 26rpx;
+}
+
+.goodsPer{
+  display: table;
+  color: #FF4444;
+  font-size: 22rpx;
+  background-color: #FFEEEE;
+  line-height: 30rpx;
+  width: auto;
+  margin: 12rpx 0 20rpx 0;
+  padding: 0 15rpx;
+}
+
+.goodsPrice{
+  color: #FF4444;
+  font-size: 28rpx;
+}
+
+.li-bottom{
+  padding: 0 20rpx;
+  height: 88rpx;
+}
+
+.li-bottomL text:first-child{
+  color: #fff;
+  width: 60rpx;
+  line-height: 30rpx;
+  background-color: #479EFF;
+  border-radius: 6rpx;
+  font-size: 22rpx;
+  text-align: center;
+}
+
+.li-bottomL text:last-child{
+  color: #333333;
+  font-size: 26rpx;
+  margin-left: 16rpx;
+}
+
+.li-bottomR{
+  color: #479EFF;
+  font-size: 26rpx;
+}
+
+.li-bottomR icon{
+  margin-right: 0;
+  margin-left: 5rpx;
+  color: #479EFF;
+  font-size: 45rpx;
+}
+
+.repurchase icon{
+  margin: 0 30rpx;
+  width: 39rpx;
+}
+
+.repurchase-title text:first-child{
+  color: #fff;
+  width: 60rpx;
+  line-height: 30rpx;
+  background-color: #479EFF;
+  border-radius: 6rpx;
+  font-size: 22rpx;
+  text-align: center;
+}
+
+.repurchase-title text:last-child{
+  color: #333333;
+  font-size: 26rpx;
+  margin-left: 11rpx;
+}
+
+.repurchase-title{
+  margin-bottom: 50rpx;
+}
+
+.repurchase-inner{
+  padding: 30rpx 0;
+}
+
+.clear{
+  width: 154rpx;
+  line-height: 189rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 28rpx;
+  font-weight:500;
+  background-color: #EF3535;
+}
+
+.emptyCart{
+  font-size: 30rpx;
+  color: #666;
+  text-align: center;
+  margin-top: 200rpx;
+}
+
+.emptyCart image{
+  width: 492rpx;
+}
+
+.emptyCart-item1{
+  font-size: 30rpx;
+  color: #999;
+  margin: 55rpx 0 30rpx 0;
+}
+
+.emptyCart-item2{
+  font-size: 36rpx;
+  color: #33B5FF;
+  width: 224rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 30rpx;
+  border: 1rpx solid #33B5FF;
+}
+
+.tab-bar{
+  display: block;
+}

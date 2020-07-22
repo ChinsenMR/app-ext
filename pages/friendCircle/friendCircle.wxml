@@ -1,0 +1,55 @@
+<!--pages/friendCircle/friendCircle.wxml-->
+<view class='tabs-top' bindtap='onTabSelect'>
+  <!-- <view data-num='1' class='top-item'>
+    <image data-num='1' src='{{tabNum == 1?"https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/red-icon-n.png":"https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/white-icon-n.png"}}'></image>
+    <text class='{{tabNum == 1?"active":""}}' data-num='1'>列表</text>
+  </view> -->
+  <view data-num='2' class='top-item'>
+    <image data-num='2' src='{{tabNum == 2?"https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/red-icon-f.png":"https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/white-icon-f.png"}}'></image>
+    <text class='{{tabNum == 2?"active":""}}' data-num='2'>九图一文</text>
+  </view>
+</view>
+
+<!--列表 -->
+<block wx:if="{{tabNum==1}}">
+  <view class='list' wx:for="{{firendList}}" wx:key="{{item.ArticleId}}">
+    <view class='item'>
+      <view class='list-left'>
+        <image src='{{item.ImageUrl}}'></image>
+        <!-- <text class='quantity'>{{item.RowNumber}}/9</text> -->
+      </view>
+      <view class='list-right'>
+        <text class='date'> {{item.PubTime}}</text>
+        <text class='info'>{{item.Memo}}</text>
+      </view>
+    </view>
+  </view>
+</block>
+<!--九图  -->
+<block wx:if="{{tabNum==2}}">
+  <view class='note-box' wx:if="{{!isEmpty && firendList.length}}">
+    <view class='disflex'>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/what.png'></image>
+      <text class='note' bindtap="showFrom">怎么将多图文素材分享到朋友圈 ?</text>
+    </view>
+    <view class="{{isShowFrom ? '' : 'isShowFrom'}}">
+      <view class='formText'><text>第一步：</text>选择待分享的多图效果；</view>
+      <view class='formText'><text>第二步：</text>长按每个图片，分别将图片分别收藏到本地；</view>
+      <view class='formText'><text>第三步：</text>长按标题文字，复制标题；</view>
+      <view class='formText'><text>第四步：</text>打开微信朋友圈，粘贴标题、选择收藏的图片，将多图分享到朋友圈</view>
+    </view>
+  </view>
+  <view class='nine-content' wx:for="{{firendList}}" wx:key="{{item.id}}" data-select="{{index}}" bindtap="previewImage">
+    <text class='date'>{{item.CreatTime}}</text>
+    <text class='info' selectable="true">{{item.ShareDesc}}</text>
+    <view class='imgs-box'>
+      <view class='img-item' wx:for="{{item.images}}" wx:key="{{item}}">
+        <image mode="widthFix" src='{{item}}' data-index='{{index}}'></image>
+      </view>
+    </view>
+  </view>
+</block>
+<view class='empty' wx:if="{{isEmpty}}">
+  <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/pic-kong.png'></image>
+  <text>暂无数据</text>
+</view>

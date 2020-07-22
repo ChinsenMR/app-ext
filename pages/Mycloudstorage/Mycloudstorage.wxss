@@ -1,0 +1,107 @@
+/* pages/Mycloudstorage/Mycloudstorage.wxss */
+/* 其他商品 */
+
+.allproductbox {
+  padding: 11rpx 20rpx;
+  background: rgba(255, 255, 255, 1);
+}
+.mycloud{
+  height:88rpx;
+  color:rgba(51,51,51,1);
+  background:rgba(255,255,255,1);
+  font-size: 26rpx;
+  line-height: 88rpx;
+
+}
+.allprocucttop {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search {
+  width: 250rpx;
+  display: flex;
+  align-items: center;
+  padding-left: 30rpx;
+  height: 53rpx;
+  background: rgba(204, 204, 204, 1);
+  border-radius: 27rpx;
+}
+
+.searchimg {
+  width: 68rpx;
+  height: 32rpx;
+  margin-right: 17rpx;
+}
+
+.search input {
+  display: inline-block;
+}
+
+.holder {
+  color: #999;
+  font-size: 26rpx;
+}
+
+.zonheactive {
+    font-size: 26rpx;
+ color:rgba(51,51,51,1);
+}
+.up{
+  width: 15rpx;
+  height: 14rpx;
+}
+.moneydefault {
+  font-size: 26rpx;
+ color:rgba(51,51,51,1);
+  margin-left: 99rpx;
+  /* margin-right: 27rpx; */
+}
+
+.zonheproductbox {
+  margin-top: 26rpx;
+  box-sizing: border-box;
+}
+
+.zonhedetail {
+  /* width: 323rpx; */
+  height: 358rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 1px solid rgba(244, 244, 244, 1);
+  border-radius: 6rpx;
+  padding: 11rpx 9rpx 20rpx 11rpx;
+  display: inline-block;
+  margin-top: 10rpx;
+  margin-right: 10rpx;
+}
+
+.zonheimg {
+  width: 320rpx;
+  height: 218rpx;
+  border-radius: 6rpx;
+  background: skyblue;
+}
+
+.zonheproductname {
+  width: 232rpx;
+  font-size: 26rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgba(51, 51, 51, 1);
+  margin-top: 16rpx;
+}
+
+.zonheprice {
+  font-size: 20rpx;
+  color: #999;
+  margin-top: 13rpx;
+}
+
+.zonheprice text {
+  font-size: 24rpx;
+  color: #f90;
+  /* margin-left: 68rpx; */
+}

@@ -1,0 +1,145 @@
+
+<!-- 头部导航栏 -->
+<view class='nav' style="height:{{navHeight}}px">
+	<!-- <view class='nav-inner df ais' style='height:{{navHeight - statusBarHeight}}px; margin-top:{{statusBarHeight}}px'> -->
+	<view class='nav-inner df ais' style='height:{{newHeight}}px; margin-top:{{statusBarHeight}}px'>
+		<image
+		 src='{{imgUrl+"arrowLeft.png"}}'
+		 mode='widthFix'
+		 bindtap='navigateBack'
+		 class="nav_inner_img"
+		/>
+		<!-- <view class='topTab df ais jct-between' style='height:{{navHeight - statusBarHeight}}px' bindtap='selectNav'> -->
+		<view class='topTab df ais jct-between' style='height:{{newHeight}}px' bindtap='selectNav'>
+			<text class="{{currentTab==1? 'activeTab':''}}" data-id='1'>商品</text>
+			<text class="{{currentTab==2? 'activeTab':''}}" data-id='2'>评价</text>
+		</view>
+		<view class='empty' />
+	</view>
+</view>
+
+<view class='layout' style='margin-top:{{navHeight}}px' hidden="{{currentTab != 1}}">
+	<!-- banner图片 -->
+	<view class='banner' wx:if="{{true}}">
+		<swiper indicator-dots circular>
+			<swiper-item class='banner-item' wx:for='{{bannerArr}}' wx:key="index">
+				<image src="{{item}}" class='banner-img' mode='aspectFill' />
+			</swiper-item>
+		</swiper>
+		<swiper
+		 hidden='{{shopUser == ""}}'
+		 class='banner-user'
+		 autoplay
+		 vertical
+		 circular
+		>
+			<swiper-item wx:for='{{shopUser}}' wx:for-idnex='{{shopUser}}' wx:key="index">
+				<view class='df ais'>
+					<image src='{{shopUser.CusUserHead}}' mode='widthFix' />
+					<text>{{shopUser.CusUserName}}</text>
+					<text>购买了此商品</text>
+				</view>
+			</swiper-item>
+		</swiper>
+	</view>
+
+	<!-- 限时组件  需要传入限时的时间 -->
+	<LimitTime goodsInfo='{{goodsInfo}}' wx:if='{{goodsInfo.IsCountDown || goodsInfo.IsWaitSale}}' />
+
+	<!-- 商品标题和价格 -->
+	<PriceItem goodsInfo='{{goodsInfo}}' wx:if="{{goodsInfo.IsFavorite}}" />
+
+	<!-- 优惠模块 -->
+	<!-- <Coupon promotionStr="{{promotionStr}}" coupons='{{coupons}}' /> -->
+
+	<!-- 产品规格  /  发货地址  弹出组件 -->
+	<GoodsSpecs
+	 wx:if="{{goodsInfo}}"
+	 skuItem='{{skuItem}}'
+	 skus='{{skus}}'
+	 prDid='{{prDid}}'
+	 goodsInfo='{{goodsInfo}}'
+	 freight='{{freight}}'
+	 id='goodsSpecsCom'
+	 bind:succ="succ"
+	 paramData="{{paramData}}"
+	 Defaultaddres="{{Defaultaddres}}"
+	/>
+
+	<!-- 拼团模块-->
+	<!-- <GroupPlay goodsInfo='{{goodsInfo}}' wx:if='{{goodsInfo.IsFightGroup}}' /> -->
+	<!-- 新模式修改拼团 -->
+	<GroupPlay
+	 goodsInfo='{{goodsInfo}}'
+	 dlr='{{dlr}}'
+	 fid='{{groupId}}'
+	 wx:if='{{goodsInfo.isShowFightActivity && goodsInfo.IsFightGroup}}'
+	/>
+
+	<!-- 商品服务保障 -->
+	<Discount/>
+
+	<!-- 店家实拍模块 -->
+	<ShopPicture bind:toChange="selectNav" prDid='{{prDid}}' />
+
+	<!-- 新人专享福利 -->
+	<!-- <Welfare welfareList="{{welfareList}}" /> -->
+
+	<!-- 商品图文详情 -->
+	<PictureDetail wx:if="{{description}}" description='{{description}}' />
+
+	<!-- 自定义底部tab -->
+	<Tab
+	 wx:if="{{goodsInfo}}"
+	 goodsInfo='{{goodsInfo}}'
+	 bind:open='openSpecs'
+	 bind:share='onShareQrCode'
+	 num="{{cartCount}}"
+	/>
+	<!-- 分享 -->
+	<share
+	 wx:if="{{isShow}}"
+	 shareInfo="{{shareInfo}}"
+	 bind:closeEvent="closeShareDialog"
+	 infoId="{{userid}}"
+	 prDid='{{prDid}}'
+	 pageType='{{pageType}}'
+	 dlr="{{agencyInfo.UserId}}"
+	/>
+</view>
+
+<!-- 直播提示弹窗 -->
+<view class="live_auto" wx:if="{{goodsInfo.LiveProducts.length !=0 && liveShow}}">
+	<swiper
+	 vertical
+	 circular
+	 autoplay
+	 interval="5000"
+	 style="width: 233rpx;height: 50rpx;"
+	>
+		<block wx:for="{{goodsInfo.LiveProducts}}" wx:key="*this">
+			<swiper-item style="width: 100%;height: 100%;">
+				<view
+				 class="live_tip"
+				 catchtap="handleGo"
+				 data-roomid="{{itme.LiveRoomId}}"
+				 data-pid="{{item.ProductId}}"
+				>
+					<image class="live_img" src="{{item.LiveImg}}" />
+					<view class="live_text line1">{{item.AnchorName}}</view>
+					<view class="live_dh wrap">
+						<view class="m1" />
+						<view class="m2" />
+						<view class="m3" />
+					</view>
+					<image class="off_img" src="{{imgUrl+'icon-close.png'}}" catchtap="handleOff" />
+				</view>
+			</swiper-item>
+		</block>
+	</swiper>
+</view>
+
+<!-- tab实拍组件 -->
+<UserComment currentTab="{{currentTab}}" prDid='{{prDid}}' />
+<view class="yyemity" />
+

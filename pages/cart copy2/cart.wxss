@@ -1,0 +1,95 @@
+#cart {
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+#cart .agency {
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+#cart .agency-header {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #eee;
+}
+#cart .agency-header icon {
+  color: #FF4444;
+  margin-right: 20rpx;
+}
+#cart .agency-header .iconweixuanze {
+  border: 2rpx solid #E5E5E5;
+  border-radius: 50%;
+  height: 35rpx;
+  width: 35rpx;
+}
+#cart .agency-header .iconxuanze {
+  width: 39rpx;
+  height: 39rpx;
+}
+#cart .discounts {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20rpx;
+}
+#cart .discounts > text:nth-child(1) {
+  font-size: 20rpx;
+  color: #FF3333;
+  padding: 5rpx 10rpx;
+  border: 1rpx solid #e6868d;
+  border-radius: 10rpx;
+  margin-right: 10rpx;
+}
+#cart .discounts > text:nth-child(2) {
+  display: block;
+  flex: 1;
+  font-size: 26rpx;
+  color: #333333;
+}
+#cart .discounts-btn {
+  width: 110rpx;
+  display: flex;
+  align-items: center;
+}
+#cart .discounts-btn text {
+  font-size: 26rpx;
+  color: #FF3333;
+}
+#cart .discounts-btn image {
+  width: 16rpx;
+  height: 27rpx;
+  margin-left: 10rpx;
+}
+#cart .content-list-btn icon {
+  color: #FF4444;
+  margin-right: 20rpx;
+}
+#cart .content-list-btn .iconweixuanze {
+  border: 2rpx solid #E5E5E5;
+  border-radius: 50%;
+  height: 35rpx;
+  width: 35rpx;
+}
+#cart .content-list-btn .iconxuanze {
+  width: 39rpx;
+  height: 39rpx;
+}
+#cart .content-list-img image {
+  width: 128rpx;
+  height: 128rpx;
+}
+#cart .content-list-main-title {
+  font-size: 28rpx;
+  color: #333333;
+}
+#cart .van-swipe-cell__right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28rpx;
+  color: #fff;
+  background-color: red;
+  width: 65px;
+  height: 100%;
+}

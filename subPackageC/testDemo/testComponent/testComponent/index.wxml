@@ -1,0 +1,4 @@
+<view class="wrap">
+  子组件：有{{wallet}}块钱
+  <button bindtap="lost">子组件：买包3块钱的辣条</button>
+</view>

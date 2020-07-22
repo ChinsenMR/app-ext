@@ -1,0 +1,129 @@
+.layout{
+  background-color: #fff;
+  height: 100%;
+}
+.header{
+  height: 88rpx;
+  padding-left: 30rpx;
+  border-top: 1rpx solid #f7f7f7;
+  border-bottom: 1rpx solid #f7f7f7;
+  color: #FF3333;
+  font-size: 28rpx;
+  font-weight:500;
+  padding-top: 10rpx;
+  box-sizing: border-box;
+}
+
+.active{
+  position: relative;
+  line-height: 88rpx;
+}
+
+.active::after{
+  position: absolute;
+  content: '';
+  bottom: 9rpx;
+  left: 0;
+  right: 0;
+  height: 3rpx;
+  width: 100%;
+  background-color: #FF3333;
+}
+
+.totalNum{
+  height: 80rpx;
+  padding-left: 30rpx;
+  color: #333;
+  font-size: 26rpx;
+}
+
+.totalNum text{
+  color: #333;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.content-ul{
+  padding: 0 30rpx;
+}
+
+.content-li{
+  border: 1rpx solid #EFEFEF;
+  border-radius: 6rpx;
+  padding: 20rpx 20rpx 30rpx 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.content-liT{
+  border-bottom: 1rpx solid #EFEFEF;
+  padding-bottom: 21rpx;  
+}
+
+.content-liT image{
+  width: 90rpx;
+  margin-right: 15rpx;
+}
+
+.goodsTitle{
+  color: #333;
+  font-size: 26rpx;
+  font-weight:500;
+  margin: 5rpx 0 8rpx 0;
+}
+
+.content-liB{
+  margin-top: 21rpx;
+}
+
+.goodsSpecs{
+  color: #999;
+  font-size: 20rpx;
+}
+
+.goodsSpecs view{
+  margin-right: 22rpx;
+}
+
+.goodsSpecs text{
+  color: #FF9900;
+  font-weight:500;
+}
+
+.goodsState-inner:last-child{
+  margin: 30rpx 0 20rpx 0;
+}
+
+.goodsState-inner view text:first-child{
+  color: #999;
+  font-size: 20rpx;
+}
+
+.goodsState-inner view text:last-child{
+  color: #FF9933;
+  font-size: 28rpx;
+  margin-top: 8rpx;
+  font-weight:500;
+}
+
+.btn{
+  margin-top: 30rpx;
+}
+
+.btn-L{
+  color: #999;
+  font-size: 20rpx;
+}
+
+.btn-L image{
+  width: 10rpx;
+  margin-right: 10rpx;
+}
+
+.btn-R{
+  width: 118rpx;
+  height: 44rpx;
+  background-color: #F84B4B;
+  border-radius: 22rpx;
+  color: #fff;
+  font-size: 24rpx;
+}

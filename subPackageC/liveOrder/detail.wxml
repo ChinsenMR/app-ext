@@ -1,0 +1,94 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: WuJixuan
+ * @Date: 2020-06-03 14:53:44
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2020-06-24 12:01:52
+ -->
+<view class="orderDetail app">
+
+  <view class="orderDetail-main">
+    <view class="orderDetail-orderNum">
+      <span class="flex">订单编号：</span>
+      {{ orderInfo.OrderId }}</view>
+    <view class="orderDetail-orderNum">
+      <span class="flex"> 直播房间ID：</span>
+      {{ orderInfo.LiveRoomId }}</view>
+
+    <!-- <view class="orderDetail-status">{{ orderInfo.statusTxt }}</view> -->
+
+    <view class="address">
+      <span class="name">{{orderInfo.addressee.name}}</span>
+      <span class="phone">{{orderInfo.addressee.phone}}</span>
+      <view class="bot">{{orderInfo.addressee.address}}</view>
+    </view>
+
+
+    <view class="liveOrderList-list-goods-item product" wx:for="{{ orderInfo.products }}" wx:key="{{ProductId}}"
+      wx:for-item="product">
+      <image src="{{product.pic}}" mode="widthFix" />
+      <span class="contant">
+        <view class="name">{{product.name}}</view>
+        <view class="type">
+          <!-- <span class="child">甜蜜套装 | 粉色</span> -->
+        </view>
+        <view class="price">￥{{product.Price}}</view>
+      </span>
+      <span class="num">x{{product.quantity}}</span>
+    </view>
+
+    <!-- <view class="orderDetail-goods">
+      <view class="orderDetail-goods-item" wx:for="{{ orderInfo.products }}" wx:key="ProductId" wx:for-item="product">
+        <order-good product="{{ product }}" />
+      </view>
+    </view> -->
+
+    <!-- <view class="orderDetail-trail">
+      <logistics-trail steps="{{ trail }}" loading="{{ trailLoading }}" /> -->
+    <!-- 
+      <view class="orderDetail-trail-noData" wx:if="{{ !trailLoading && !trail.length }}">
+        暂无物流信息~
+      </view> -->
+    <!-- </view> -->
+  </view>
+
+  <view class="orderDetail-info">
+    <!-- <van-cell title="订单信息" /> -->
+
+    <view class="orderDetail-cell-group">
+      <view class="orderDetail-cell">
+        <view class="orderDetail-cell-title">订单备注：</view>
+        <view class="orderDetail-cell-content">{{ orderInfo.Remark }}</view>
+      </view>
+      <view class="orderDetail-cell">
+        <view class="orderDetail-cell-title">优惠金额</view>
+        <view class="orderDetail-cell-content">￥{{ orderInfo.OrderProfit }}</view>
+      </view>
+      <view class="orderDetail-cell">
+        <view class="orderDetail-cell-title">支付时间</view>
+        <view class="orderDetail-cell-content">{{orderInfo.OrderStatus!=1?orderInfo.PayDate:'无' }}</view>
+      </view>
+      <view class="orderDetail-cell">
+        <view class="orderDetail-cell-title">实付金额</view>
+        <view class="orderDetail-cell-content">￥{{ orderInfo.OrderCostPrice }}</view>
+      </view>
+      <!-- <view class="orderDetail-cell">
+        <view class="orderDetail-cell-title">奖励金额</view>
+        <view class="orderDetail-cell-content">{{ orderInfo.FinishDate }}</view>
+      </view> -->
+    </view>
+  </view>
+
+  <!-- <view class="orderDetail-handle">
+    <view class="orderDetail-handle-item">
+      <van-button type="primary" size="small" round>申请售后</van-button>
+    </view>
+  </view> -->
+
+  <view class="newLive-handle">
+    <van-button type="primary" custom-class="newLive-handle-btn" bindtap="handleTimeConfirm" round>
+      查看物流
+    </van-button>
+  </view>
+</view>

@@ -1,0 +1,148 @@
+/* pages/myAwards/myAwards.wxss */
+
+.list {
+  margin-top: 20rpx;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  background: #fff;
+  width: 100%;
+}
+
+.list>.item {
+  border-bottom: 2rpx solid #e5e5e5;
+  padding: 30rpx 30rpx 30rpx 0;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.list>.item:last-child {
+  border-bottom: none;
+}
+
+.item>.left {
+  font-size: 28rpx;
+}
+
+.item>.left>.title {
+  color: #333;
+}
+
+.item>.left>.total-money {
+  color: #ff950d;
+}
+
+.item>.left>.number {
+  display: block;
+  color: #999;
+  font-size: 24rpx;
+  margin-top: 6rpx;
+}
+
+.right>.icon {
+  color: #e0001b;
+  font-size: 28rpx;
+}
+
+.right>.money {
+  color: #e0001b;
+  font-size: 40rpx;
+}
+
+.nav {
+  display: flex;
+  margin-top: 2rpx;
+  margin-bottom: 30rpx;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  background-color: #fff;
+}
+
+.nav .left {
+  position: relative;
+}
+
+.nav .left::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 2rpx;
+  height: 40rpx;
+  top: 20rpx;
+  right: 0;
+  background-color: #eee;
+}
+
+.default {
+  flex: 1;
+  text-align: center;
+  color: #bebebe;
+}
+
+.red {
+  flex: 1;
+  text-align: center;
+  font-weight: 600;
+  color: #e0001b;
+  border-bottom: 6rpx solid #e0001b;
+}
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.noAwards {
+position: fixed;
+top: 30%;
+left: 50%;
+transform: translate(-50%,-40%);
+text-align: center;
+font-size: 16px;
+color: #666;
+}
+.noAwards image{
+  width: 360rpx;
+  height: 360rpx;
+}
+
+/* .list {
+  display: flex;
+  margin-bottom: 2rpx;
+  padding: 20rpx 30rpx;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+
+.list .l_left {
+  width: 89%;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.list .l_left view {
+  width: 92%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.list .l_left .time {
+  margin-top: 6rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.list .l_right {
+  font-size: 36rpx;
+  color: #ff950d;
+} */

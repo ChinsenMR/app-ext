@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "addr-picker": "../../components/addrPicker/addrPicker",
+    "litterfirshiaddress":"../../components/litterfirshiaddress/litterfirshiaddress"
+  },
+  "navigationBarTitleText": "新增地址",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black"
+}

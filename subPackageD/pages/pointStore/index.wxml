@@ -1,0 +1,24 @@
+<navigator class="float-btn" target="" url="/packageB/pages/cart/cart" hover-class="navigator-hover" open-type="navigate">
+    积分购物车
+  </navigator>
+<view class="" hover-class="none" hover-stop-propagation="false">
+  <view class="goods-wrap">
+    <view class="item" wx:for="{{list}}" wx:key="{{item}}">
+      <view class="cover" style="background:url({{item.ImageUrl}})center center / cover no-repeat" bindtap="seeDetail" data-id="{{item.GiftId}}"></view>
+      <view class="content">
+        <view class="title" bindtap="seeDetail" data-id="{{item.GiftId}}">{{item.Name}}</view>
+        <view class="price" bindtap="seeDetail" data-id="{{item.GiftId}}">市场参考价：￥{{item.MarketPrice}}</view>
+        <view class="df">
+          <view class="integral " bindtap="seeDetail" data-id="{{item.GiftId}}">
+            <text class="bold">{{item.NeedPoint}}</text>
+            积分
+          </view>
+          <!-- <navigator url="../cart/cart?id={{item.GiftId}}" hover-class="navigator-hover" open-type="navigate"> -->
+          <button class="get" bindtap="addCart" data-id="{{item.GiftId}}">兑换</button>
+          <!-- </navigator> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- <view class="more" style="text-align:center">没有更多了</view> -->

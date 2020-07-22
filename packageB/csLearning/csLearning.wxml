@@ -1,0 +1,4 @@
+<view class="ceshi">
+  <text>{{newStr}}</text>
+  <button bindtap="changeStr" data-str="我改变了字符串">修改字符</button>
+</view>

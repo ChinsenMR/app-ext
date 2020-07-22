@@ -1,0 +1,309 @@
+<import src="../../wxParse/wxParse.wxml" />
+<import src="../../template/template.wxml" />
+<!-- 购物券弹窗start -->
+<view class='masker' wx:if="{{coupons.Result}}">
+  <image class='maskerimg' mode='widthFix' src="{{coupons.ImageUrl1}}"></image>
+  <image class='nowshare' mode='widthFix' src='{{imgurl + "btn_gouwuquan@2x.png"}}'></image>
+  <image class='colse' mode='widthFix' src='{{imgurl +"icon_close@2x.png"}}' bindtap='closemasker'></image>
+</view>
+<!-- 购物券弹窗end -->
+<!-- 顶部 -->
+<view class='nav'>
+  <view class='nav-box' style='height:{{navHeight}}px;'>
+    <view class='nav-boxInner df ais' style='margin-top: {{statusBarHeight}}px; height:{{navHeight-statusBarHeight}}px'>
+      <!-- 返回按钮新增 -->
+      <view class="wjxback" bindtap="getBack" wx:if="{{true}}">
+        <image style="width:40rpx;height:35rpx;" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/newzuojiantout.png"/>
+      </view>
+      <view class='nav-name'>{{homeTitle}}</view>
+      <view class='search-box df ais' bindtap='Tosearch'>
+        <view class="wrapper"><image src='{{imgurl + "icon_search@2x.png"}}' mode='widthFix'></image></view>
+        <input class='search' type="text" placeholder='搜索' placeholder-class='Placeholder' disabled='false'></input>
+      </view>
+      <view class='kong'></view>
+    </view>
+  </view>
+  <!-- 导航栏 -->
+  <view class='scrollbox df ais' wx:if="{{true}}">
+    <scroll-view class="scroll df ais" scroll-x="true" bindtap='selecttarbar'>
+      <navigator 
+      url="/packageA/pages/sortDetail/sortDetail?id={{item.CategoryId}}&index={{index}}"
+      wx:for="{{Categorydata}}" 
+      wx:key 
+      data-active='{{index}}'
+       class="scrollitem {{active==index?'tabbaractive':''}}">
+        {{item.Name}}
+      </navigator>
+    </scroll-view>
+    <!-- 首页tab栏按钮弹窗 -->
+    <view class="btn df ais" bindtap='showtarbar' >
+      <image src="{{imgurl + 'icon_fenlei@2x (10).png'}}">
+      </image>
+    </view>
+  </view>
+</view>
+
+<!-- 分类弹窗 -->
+<view class='{{windowHeight==812?"navboxmarskx":"navboxmarsk"}}' style='margin-top:{{navHeight - navHeight - 25}}px' wx:if="{{showtarbar}}" bindtap="handleOff">
+  <view class='navbox' style='margin-top:0px'>
+    <view class='navbartop' bindtap='showtarbar'>
+      <view class='all'>全部分类</view>
+      <image class='hide' src='{{imgurl +"icon_fenlei@2x (3).png"}}'></image>
+    </view>
+    <view class='navitembox' catchtap>
+      <!-- <navigator class='{{navitemactive==-1?"navitemactive":"navitem"}}' data-navitemactive="-1" bindtap='Selectnav'>精选</navigator> -->
+      <navigator 
+      url="/packageA/pages/sortDetail/sortDetail?id={{item.CategoryId}}"
+      wx:for="{{Categorydata}}" 
+      wx:key="{{item}}"
+      data-navitemactive="{{index}}" 
+      class='{{navitemactive==index?"navitemactive":"navitem"}}' 
+      bindtap='Selectnav'>
+        {{item.Name}}
+      </navigator>
+    </view>
+  </view>
+</view>
+
+<view id='index' style='margin-top:{{navHeight + 30}}px' >
+  <!-- 轮播科=图 -->
+  <view class='{{windowHeight==812?".index-contentx":"index-content"}}'>
+    <swiper indicator-dots="true"  wx:if="{{true}}" autoplay="true" interval="5000" duration="1000" indicator-color="rgba(255,255,255,1)" indicator-active-color="#FF4444" circular='true' style='height: {{swiperH}}px'>
+      <block wx:for='{{bannerArr}}' wx:for-item='bannerItem' wx:for-index='bannerIndex' wx:key='{{bannerIndex}}'>
+        <swiper-item class="slide-image">
+          <image bindload="onLoadImg" src="{{bannerItem.PhotoPath}}" class="slide-image" lazy-load='true' mode='widthFix' />
+        </swiper-item>
+      </block>
+    </swiper>
+    <!-- 广告站位 -->
+    <view class='product' wx:if="{{bannerArr2[0].PhotoPath}}">
+      <image src='{{bannerArr2[0].PhotoPath}}' mode='widthFix'></image>
+    </view>
+    <!-- 商品活动 组件-->
+    <productacting wx:if="{{true}}"></productacting>
+    <!-- 新人特惠 -->
+    <block wx:if="{{newpeopledata.length!=0}}">
+      <view class='newpeople-box'>
+        <view class='newpeopletop' bindtap='tospcilelimit' data-pagetype="1">
+          <view class='newpeoplename'>新人特惠</view>
+          <view class='morebtn'>
+            <image src='{{imgurl + "btn_more@2x.png"}}'></image>
+          </view>
+        </view>
+        <view class='newpeopledetail'>
+          <scroll-view class="newpeoplescroll" scroll-x style="width: 100%" bindscrolltolower="TOR">
+            <block wx:for="{{newpeopledata}}" wx:for-index='newpeopleIndex' wx:key='{{newpeopleIndex}}'>
+              <view class="newpeopleitem" data-ProductID="{{item.ProductId}}" bindtap="Toprodetai" data-pagetype="1">
+                <view class='newpeopleitemimgbox' style='background-image: url({{item.ImageUrl1}})'>
+
+                  <!-- <image src=''></image> -->
+                  <!-- <view class='peoplenamebox'>
+                    <view class='productname'>{{item.ProductName}}</view>
+                    <view class='productpricebox'>
+                      <view class='producttitle'>新人转回</view>
+                      <view class='productprice'>￥
+                        <text></text>{{item.SalePrice}}</view>
+                      <view class='yuanjia'>原价:
+                        <text>{{item.MarketPrice==null?0:item.MarketPrice}}</text>
+                      </view>
+                    </view>
+                  </view> -->
+
+                </view>
+                <view class='peoplename'>{{item.ProductName}}</view>
+                <view class='peoplepricebox'>
+                  <view class='peoplepriceacting'>
+                    <text>￥</text>
+                    <text class="ppg_text">{{item.SalePrice}}</text>
+                  </view>
+                  <view class='peoplepricenoacting'>原价:
+                    <text>￥{{item.MarketPrice==null?0:item.MarketPrice}}</text>
+                  </view>
+                </view>
+              </view>
+            </block>
+          </scroll-view>
+        </view>
+        <!-- 限时抢购-->
+        <block wx:if="{{countDownList.length!=0}}">
+          <view class='xiangshititel'>
+            <image class='xianshi1' src='{{imgurl + "icon_zhuangshi_02@2x.png"}}'></image>
+            <view class='xianshitop'>限时抢购</view>
+            <image class='xianshi2' src='{{imgurl + "icon_zhuangshi_02@2x.png"}}'></image>
+          </view>
+          <view class='xianshiproductbox' wx:for="{{countDownList}}" wx:for-index='countDownIndex' wx:for-item='countDownItem' wx:key='{{countDownIndex}}' style='background-image: url({{countDownItem.BannerImg}})' data-id='{{countDownItem.CountDownId}}' bindtap='Tonewpeople'
+            hidden='{{countDownItem.countDownState.overTime}}'>
+            <view class='xianshistarting'>
+              <view class='bingin'>{{countDownItem.countDownState.startState? '距开始':'距结束'}}</view>
+              <text>{{countDownItem.countDownState.limitHours}}</text>
+              <text>:</text>
+              <text>{{countDownItem.countDownState.limitMin}}</text>
+              <text>:</text>
+              <text>{{countDownItem.countDownState.limitSecond}}</text>
+              <image src='{{imgurl + "btn_more@2x.png"}}' lazy-load='true'></image>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+    <!-- 9块9包邮 -->
+    <block wx:if="{{Freeshippingdata.length!=0}}">
+      <view class='Freeshipping-box'>
+        <view class='Freeshipping-title'>
+          <view class=' titlename'>9.9包邮</view>
+          <view class='Ribtn1 Ribtn' bindtap='tonight'>更多 ></view>
+        </view>
+        <view>
+          <scroll-view class="Freeshippingidetail-box" scroll-x="true" style="width: 100%" bindscrolltolower="NighttoR">
+            <view class="Freeshippingdetail" wx:for="{{Freeshippingdata}}" wx:for-index='freeshippingIndex' wx:key='{{freeshippingIndex}}' data-ProductID="{{item.ProductId}}" bindtap="Toprodetai" data-pagetype="3">
+              <view class='Freeshippingimg'>
+                <image src='{{item.ImageUrl1}}' lazy-load='true' mode='aspectFill'></image>
+              </view>
+              <view class="Freeshippingprice">包邮
+                <text class="fsg_text1">:￥</text>
+                <text class="fsg_text2">{{item.SalePrice}}</text>
+              </view>
+              <view class='Freeshippingfutrue'>原价:
+                <text class='noprice'>￥{{item.MarketPrice==null?0:item.MarketPrice}}</text>
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </block>
+    <!-- 折扣专区 -->
+    <block wx:if="{{zhekoudata!=0}}">
+      <view class='Brandspike-box'>
+        <view class='Freeshipping-title' bindtap='TobrandDiscount'>
+          <view class='titlename'>折扣专区</view>
+          <view class='Ribtn  '>更多 ></view>
+        </view>
+        <scroll-view class="Freeshippingidetail-box" scroll-x="true" style="width: 100%" bindscrolltolower="ZhekouToR">
+          <view class="Brandspikedetail" wx:for="{{zhekoudata}}" wx:key="index" data-ProductID="{{item.ProductId}}" bindtap="Toprodetai" data-pagetype="4">
+            <view class='Brandspikeimg'>
+              <image src='{{item.ImageUrl1}}' lazy-load='true'></image>
+            </view>
+            <view class="Brandspikeprice">
+              <view class="newPrice">
+                <text class="brand_price_wrap">折后价:</text>
+                <text>￥{{item.SalePrice}}</text>
+              </view>
+              <view class="oldPrice">
+                <text class='Brandspikefutrue'>原价:</text>
+                <text class='noprice'>￥{{item.MarketPrice==null?0:item.MarketPrice}}</text>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </block>
+    <!-- 拼团 -->
+    <block wx:if="{{groupdata.length!=0}}">
+      <view class='groupbox'>
+        <view class='Freeshipping-title Freeshipping-title2 '>
+          <view class='titlename'>拼团</view>
+          <view class=' Ribtn3' bindtap='toGroupindex'>更多 ></view>
+        </view>
+        <indexgroup groupdata="{{groupdata}}"></indexgroup>
+      </view>
+    </block>
+
+    <!-- 今日特卖头部  style="top:{{tabHeight}}px"  / 即将开售-->
+    <block>
+      <view class='commingsale-box' id="tab-commingsale">
+        <view class='commingsaletop' bindtap='select' style="top:{{navHeight + 30}}px;" wx:if="{{true}}">
+          <view data-status="0" class="default {{status==0?'active':''}}">热销特卖</view>
+          <view data-status="1" class="default {{status==1?'active':''}}">即将开售</view>
+        </view>
+        <!-- <view class='commingsaletop' wx:if="{{isHeight}}">
+          <view data-status="0" class="default {{status==0?'active':''}}">热销特卖</view>
+          <view data-status="1" class="default {{status==1?'active':''}}">即将开售</view>
+        </view> -->
+
+        <!-- 今日特卖内容  -->
+        <block wx:for="{{sepciledata}}" wx:for-item='sepItem' wx:for-index='sepIndex' wx:key="{{sepIndex}}" wx:if="{{sepciledata.length!=0}}">
+          <view class='commingsale-content' data-TopCategoryId="{{sepItem.TopCategoryId}}" bindtap='toCommingsale' >
+            <view class='commingsaleimg' wx:if="{{false}}">
+              <image src='{{sepItem.BigImageUrl}}' lazy-load='true' mode='widthFix'></image>
+              <view class='todaynew'>店长推荐</view>
+            </view>
+            <!-- 品牌商品列表 -->
+            <view class='commingdetail' >
+              <view class='commingitem' wx:for="{{sepItem.ProductInfos}}" wx:for-item='proItem' wx:for-index='proIndex' wx:key="{{proIndex}}" >
+                  <!-- catchtap阻止点事件时间冒泡 -->
+                <image class='commingitenimg' mode="aspectFill" src="{{proItem.ImageUrl1}}" lazy-load='true' data-productid="{{proItem.ProductId}}" catchtap="Toprodetai" data-pagetype="5"></image>
+                <view class='starting' wx:if="{{status==1 && !proItem.countDownState.overTime}}">距开始
+                  <text>{{proItem.countDownState.limitHours}}</text>
+                  <text>:</text>
+                  <text>{{proItem.countDownState.limitMin}}</text>
+                  <text>:</text>
+                  <text>{{proItem.countDownState.limitSecond}}</text>
+                </view>
+                <view class='commingitemname to-2line'>{{proItem.ProductName}}</view>
+                <view class='commingitempricebox'>
+                  <view class='commingprice'>
+                    <text>￥</text>
+                    <text>{{proItem.SalePrice}}</text>
+                  </view>
+                  <view class='commingitemyuan'>原价:
+                    <text>￥{{proItem.MarketPrice==null?0:proItem.MarketPrice}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+    <view class="nolist" wx:if="{{sepciledata.length==0}}">暂无数据</view>
+    <view class='kongbaige'></view>
+  </view>
+  <!-- 内容end -->
+</view>
+<!-- 返回顶部按钮 -->
+<btn-to-top show="{{showToTop}}" />
+<!-- 分享弹窗 -->
+<view class='sharebox' wx:if="{{sharestutes}}">
+  <view>
+    <view class="tower-swiper" bindtouchmove="towerMove" bindtouchstart="towerStart" bindtouchend="towerEnd" bindtap='share'>
+      <view class="tower-item {{item.zIndex==1?'none':''}}" wx:for="{{swiperList}}" wx:key style="--index:{{item.zIndex}};--left:{{item.mLeft}}">
+        <view class="swiper-item" data-index="{{index}}">
+          <image src="{{item.url}}" mode="aspectFill" lazy-load='true' wx:if="{{item.type=='image'}}" lazy-load='true'></image>
+        </view>
+        <!-- <view class='swiperdetail'>
+          <view class='swiperL'>
+            <view class='compname'>鸿猫企业</view>
+            <text class='giveyou'>我有一份好东西分享给你！</text>
+          </view>
+          <view class='swiperR'>
+            <image class='sharema'></image>
+            <text>邀请码:258303</text>
+          </view>
+        </view> -->
+      </view>
+    </view>
+    <view class='sharebottom'>
+      <view class='bottomL'>
+
+        <button open-type='share'>
+          <image class='shareweixin' src='http://img.hmeshop.cn/hmeshop_jxy/images/icon_wechat@2x.png'></image>
+        </button>
+        <text class='sharefriend'>邀请好友</text>
+      </view>
+      <view class='savebottom' bindtap='savePiture'>
+        <button>
+          <image class='saveimg' src='http://img.hmeshop.cn/hmeshop_jxy/images/icon_xiazai@2x (1).png'></image>
+        </button>
+        <text class='sharefriend'>保存图片</text>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 升级代理按钮 -->
+<image bindtap="Tovip" class='floatBtn' mode="widthFix" src='{{imgurl + "icon_shengdaili@2x.png"}}' wx:if="{{false}}"></image>
+
+<!-- 底部导航 -->
+<tabBar curActive='0' tabH="{{navHeight}}"/>
+<!-- <tabBar curActive='0' wx:if="{{userInfo != ''}}" /> -->
+ <!-- 底部导航栏 -->
+ <!-- <template is="tabBar" data="{{...bindData}}"  wx:if="{{userInfo == ''}}"  /> --> 

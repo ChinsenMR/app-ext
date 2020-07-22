@@ -1,0 +1,125 @@
+<view class='layout'>
+  <scroll-view scroll-x class='navBar df ais jct-between' bindtap='selectNav'>
+    <text wx:for="{{Grade}}" wx:key="{{item}}" class='{{activeItem == item.GradeId? "active":""}}' data-id='{{item.GradeId}}'>{{item.Name}}({{item.ReferralCount}})</text>
+  </scroll-view>
+
+
+  <view class='content-inner'>
+    <view class='content-header df ais jct-between'>
+      <view>会员数: {{listData.ExpandMemberAll}}</view>
+      <view>总消费:¥ {{listData.NextMemberTotal}}</view>
+      <view>获得佣金:¥ {{listData.SplittinTotal}}</view>
+      <!-- <picker range='{{timeArr}}' bindchange='selectTime'>
+        <view class='df ais'>
+          <input type='text' value='{{seTime}}' disabled='true' placeholder='时间'></input>
+          <text></text>
+        </view>
+      </picker> -->
+    </view>
+
+    <view class='content-search df ais'>
+      <view class='search-item df ais jct'>
+        <image src='{{imgUrl+"icon_search@2x.png"}}' mode='widthFix'></image>
+        <input type='text' placeholder='输入微信名/微信号' bindconfirm='search' bindblur='search'></input>
+      </view>
+      <view class='content-search-R df ais jct-between flex'>
+        <view class='df ais' data-id='1' bindtap='attrSort'>
+          <text>加入时间</text>
+          <image src='{{imgUrl+(joinTimeIcon == 0? "icon_chengjiaoe@2x.png":(joinTimeIcon == 1? "icon_jingzhuan_01@2x.png":"icon_jingzhuan_02@2x.png"))}}' mode='widthFix'>
+          </image>
+        </view>
+        <view class='df ais' data-id='2' bindtap='attrSort'>
+          <text>消费总额</text>
+          <image src='{{imgUrl+(totalPriceIcon == 0? "icon_chengjiaoe@2x.png":(totalPriceIcon == 1? "icon_jingzhuan_01@2x.png":"icon_jingzhuan_02@2x.png"))}}' mode='widthFix'>
+          </image>
+        </view>
+        <view class='df ais' data-id='3' bindtap='attrSort'>
+          <text>贡献佣金</text>
+          <image src='{{imgUrl+(empolyIcon == 0? "icon_chengjiaoe@2x.png":(empolyIcon == 1? "icon_jingzhuan_01@2x.png":"icon_jingzhuan_02@2x.png"))}}' mode='widthFix'>
+          </image>
+        </view>
+      </view>
+    </view>
+
+    <!-- 原分销下属 -->
+    <view class='content-ul' wx:if='{{listData.MySubUsersList.length!=0}}'>
+      <view class='content-li df ais jct-between' wx:for='{{listData.MySubUsersList}}' wx:key>
+        <view class='df ais content-liL'>
+          <view class='userIng'>
+            <image src='{{item.Picture}}' mode='widthFix'></image>
+            <text>{{item.GradeName}}</text>
+          </view>
+          <view class='userInfo'>
+            <view>{{item.NickName || item.UserName}}</view>
+            <view>{{item.CreateDate}}</view>
+            <progress percent='30' border-radius='4' stroke-width='4' activeColor='#FF6666' backgroundColor='#E2E2E2'>
+            </progress>
+          </view>
+        </view>
+        <view class='df ais jct-end content-liR'>
+          <text>￥ {{item.SubSumOrderTotal}}</text>
+          <text>￥ {{item.SubMemberAllSplittin}}</text>
+        </view>
+      </view>
+    </view>
+
+    <!-- new分销下属容器 -->
+    <view class="distribution_of_subordinates" wx:if="{{false}}">
+      <block wx:for="{{listData.MySubUsersList}}" wx:key="{{item}}">
+        <!-- 分销下下属列表 --> 
+        <view class="subordinates_wrap">
+          <!-- 左边 1-->
+          <view class="left_wrap">
+            <image class="left_img" src="{{item.Picture}}"></image>
+            <!-- 代理等级 -->
+            <view class="agent_level">{{item.GradeName}}</view>
+          </view>
+          <!-- 中 1-->
+          <view class="zhitui_team_wrap">
+            <view class="info_name">{{item.NickName || item.UserName}}</view>
+            <view class="zhitui_or_team">
+              (直推<text class="color1">{{item.ExpandMemberAll}}</text>
+                <view class="team_box" wx:if="{{item.ExpandMemberAll !=0 && teamNus!=0}}">
+                  /团队<text class="color2">{{teamNus}}</text>
+                </view>)
+            </view>
+            <view class="zhitui_time">{{item.CreateDate}}</view>
+          </view>
+          <!-- 中 2 -->
+          <view class="sum_price_wrap">
+            <view class="sum_price">￥{{item.SubSumOrderTotal}}</view>
+          </view>
+          <!-- 右边 -->
+          <view class="change_the_rating_wrap">
+            <view class="upward" wx:if="{{false}}">
+              <image wx:if="{{item.ExpandMemberAll!=0}}" src="{{imgUrl+'xiang_xia.png'}}" class="upward_img" bindtap="handleUnderling" data-userid="{{item.UserId}}"></image>
+              <image wx:if="{{false}}" src="{{imgUrl+'xiang_shang.png'}}" class="upward_img"></image>
+            </view>
+            <!-- 修改等级 -->
+            <view class="change_rating" catchtap="handleChange" data-userid="{{item.UserId}}" wx:if="{{true}}">更改等级</view>
+            <!-- <view class="change_rating" catchtap="handleChange" data-userid="{{item.UserId}}"></view> -->
+            <!-- 佣金 -->
+            <view class="show_commission" wx:if="{{true}}">￥{{item.SubMemberAllSplittin}}</view>
+          </view>
+        </view>
+      </block>
+
+      <!-- 隐藏的盒子 -->
+      <agent newArr="{{newArr}}" wx:if="{{false}}"></agent>
+
+    </view>
+
+    <!-- 空列表 -->
+    <view class='empty' wx:if="{{listData.length==0}}">该条件下还没有会员哦～</view>
+  </view>
+
+  <!-- 弹窗 -->
+  <view class="win_wrap" wx:if="{{showWin}}">
+    <block wx:for="{{agentList}}" wx:key="{{item}}">
+      <view class="win_main" catchtap="handleAlter" data-gradeId="{{item.GradeId}}">{{item.Name}}</view>
+    </block>
+  </view>
+  <!-- 遮罩层 -->
+  <view class="pop-up"  wx:if="{{showWin}}" catchtap="changeHide"></view>
+
+</view>

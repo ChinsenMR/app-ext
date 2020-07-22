@@ -1,0 +1,77 @@
+<view class="regulation">
+    <!-- 会员说明 -->
+    <view class="explain_wrap">
+      <view class="explain_title">· 会员等级说明</view>
+      <view class="explain_text">
+        <text>会员共分为三个等级，分别为普通会员、黄金会员、铂金会员。会员级别由消费额度决定，消费额越多级别越高，享受到的会员权益越多。</text>
+      </view>
+    </view>
+    <!-- 会员图标 -->
+    <view class="membership">
+      <view class="membership_box">
+        <view class="membership_img">
+          <image src="http://m.qpic.cn/psb?/V14HZwCK4bti9q/lbIVRNZAKucqBY1N.O7CAez3XEoKVO0uXhYFFvbv8qM!/b/dL8AAAAAAAAA&bo=xADEAAAAAAADByI!&rf=viewer_4"></image>
+        </view>
+        <view class="membership_text">
+          <text class="text1">普通会员</text>
+          <text class="text2">消费0元</text>
+        </view>
+      </view>
+      <view class="line_box"></view>
+      <view class="membership_box">
+        <view class="membership_img">
+            <image src="http://m.qpic.cn/psb?/V14HZwCK4bti9q/B19VInwkQV1fBtzoOajgq5aDl10GKIa*A1UnKViRH7I!/b/dL8AAAAAAAAA&bo=wADAAAAAAAADFzI!&rf=viewer_4"></image>
+          </view>
+          <view class="membership_text">
+            <text class="text1">黄金会员</text>
+            <text class="text2">消费99元</text>
+        </view>
+      </view>
+      <view class="line_box"></view>
+      <view class="membership_box">
+        <view class="membership_img">
+            <image src="http://m.qpic.cn/psb?/V14HZwCK4bti9q/r8JW.vIuHbVL7z4p4zQ1CUGZizM7UXpOI9ABSkJtQpA!/b/dL8AAAAAAAAA&bo=vgC.AAAAAAADFzI!&rf=viewer_4"></image>
+          </view>
+          <view class="membership_text">
+            <text class="text1">铂金会员</text>
+            <text class="text2">消费199元</text>
+        </view>
+      </view>
+    </view>
+    <!-- 会员权益 -->
+    <view class="rights_wrap">
+      <!-- 标题 -->
+      <view class="rights_title">· 会员权益</view>
+      <view class="rights_state">
+        <view class="rights_text">1、复购的价格更低</view>
+        <view class="rights_text">2、会 员推荐会员消费，首购分润更大</view>
+      </view>
+      <!-- 会员表格 -->
+      <view class="rights_table">
+        <!-- 第一列 -->
+        <view class="list_one">
+          <view class="line">会员推荐关系</view>
+          <view class="line">黄金推黄金</view>
+          <view class="line">黄金推铂金</view>
+          <view class="line">铂金推黄金</view>
+          <view class="line">铂金推铂金</view>
+        </view>
+        <!-- 第二列 -->
+        <view class="list_two">
+            <view class="line">首购分润</view>
+            <view class="line">(258-168) * 4</view>
+            <view class="line">(228-168) * 10</view>
+            <view class="line">(258-138) * 4</view>
+            <view class="line">(228-138) * 10</view>
+        </view>
+        <!-- 第三列 -->
+        <view class="list_three">
+            <view class="line">复购分润</view>
+            <view class="line">10%返点</view>
+            <view class="line">13%返点</view>
+            <view class="line">10%返点</view>
+            <view class="line">13%返点</view>
+        </view>
+      </view>
+    </view>
+  </view>

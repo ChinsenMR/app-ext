@@ -1,0 +1,112 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2020-03-23 13:59:29 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2020-03-23 13:59:29 
+    直播详情
+ */ -->
+<view id="fuLiveDet">
+  <!--  -->
+  <view class="info" wx:for="{{infoList}}" wx:key="index">
+    <span class="name">{{item.name}}</span>
+    <span class="val">
+      <input disabled="{{dataInfo.Status!=0&&dataInfo.Status!=1}}" wx:if="{{!item.choose&&!item.time&&item.plr!='1'}}"
+        bindinput="inputFN" data-name="{{'infoList['+index+'].val'}}" value="{{item.val}}" />
+      <view wx:if="{{item.choose}}" bindtap="openFN">{{item.val}}</view>
+      <view wx:if="{{item.time}}" bindtap="handleShowTime">{{item.val?item.val:item.plr}}</view>
+      <view wx:if="{{item.plr=='1'}}">
+        {{item.val?item.val==1?'驳回':item.val==2?'待开播':item.val==3?'直播中':item.val==4?'已结束':item.val==5?'已过期':'':'待审核'}}
+      </view>
+    </span>
+  </view>
+  <!--  -->
+  <view class="img">
+    <span class="child" bindtap="handleUploadImg" data-name="dataInfo.LiveImg[0]">
+      <view class="title">直播间封面图</view>
+      <image mode="aspectFill" src="{{dataInfo.LiveImg[0]}}" />
+    </span>
+    <span class="child" bindtap="handleUploadImg" data-name="dataInfo.ShowImg[0]">
+      <view class="title">直播分享图</view>
+      <image mode="aspectFill" src="{{dataInfo.ShowImg[0]}}" />
+    </span>
+  </view>
+  <!--  -->
+  <view class="about">关联商品</view>
+  <!--  -->
+  <view class="product" wx:if="{{moreNum||!moreNum&&index<5}}" wx:for="{{dataInfo.Products}}" wx:key="index">
+    <image mode="aspectFill" src="{{item.ImageUrl}}" />
+    <span class="contant">
+      <view class="name">{{item.name}}</view>
+      <!-- <view class="sku">2.8ml</view> -->
+      <view class="price">¥{{item.Price}}</view>
+    </span>
+  </view>
+  <!--  -->
+  <view class="more" bindtap="openMore">
+    <van-button>{{moreNum?'隐藏':'显示更多'}}</van-button>
+  </view>
+  <!--  -->
+  <!-- <view class="funtion">
+        <span class="child" bindtap="funFN" data-index="{{index}}" wx:for="{{fun}}" wx:key="index">
+            <image mode="aspectFill" src="{{item.img}}" />
+            <span class="title">{{item.name}}</span>
+        </span>
+    </view> -->
+  <!--  -->
+  <view class="btn" wx:if="{{dataInfo.Status==0||dataInfo.Status==1}}" bindtap="subminFN">
+    <van-button>重新编辑</van-button>
+  </view>
+</view>
+<view class="alert {{alertT?'alertInfo':''}}">
+  <view style="position: relative;    background: #fff;">
+    <canvas data-mode="content" canvas-id="myCanvasT" id="myCanvasT" />
+    <view class="btn">
+      <button bindtap="saveImg">保存到相册</button>
+    </view>
+  </view>
+  <image bindtap="closeAlert" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/close_qw.png" />
+</view>
+<!--  -->
+<van-popup show="{{open}}" bindtap="onCloseP" position="bottom" bind:close="onCloseP">
+  <view class="choose" bindtap="chooseFN" data-val="{{index?'是':'否'}}" wx:for="{{2}}" wx:key="index">
+    {{index?'是':'否'}}
+  </view>
+</van-popup>
+<van-popup show="{{ timeVisible }}" position="bottom" bindclose="handleCloseTime" custom-class="newLive-popup-time">
+  <view class="newLive-popup-time-head">
+    <view class="newLive-popup-time-head-title">选择开播时间</view>
+    <view class="newLive-popup-time-head-close" bindtap="handleCloseTime">
+      <van-icon name="close" />
+    </view>
+  </view>
+  <view class="newLive-popup-time-main">
+    <view class="newLive-popup-time-tofu">
+      <view class="newLive-popup-time-tofu-item">
+        <van-button type="default" data-type="start" bindtap="hanldeSwitchTime">
+          开始时间
+        </van-button>
+      </view>
+      <view class="newLive-popup-time-tofu-item">
+        <view class="line"></view>
+      </view>
+      <view class="newLive-popup-time-tofu-item">
+        <van-button type="default" data-type="end" bindtap="hanldeSwitchTime">
+          结束时间
+        </van-button>
+      </view>
+    </view>
+    <van-datetime-picker type="datetime" value="{{ filedsValues.beginTime }}" bindinput="handleStartTimeInput"
+      min-date="{{ minDate }}" show-toolbar="{{ false }}" visible-item-count="{{ 3 }}" wx:if="{{ isStart }}" />
+    <van-datetime-picker type="datetime" value="{{ filedsValues.endTime }}" bindinput="handleEndTimeInput"
+      min-date="{{ minDate }}" show-toolbar="{{ false }}" visible-item-count="{{ 3 }}" wx:else />
+  </view>
+  <view class="newLive-handle">
+    <van-button type="primary" custom-class="newLive-handle-btn" bindtap="handleTimeConfirm" round>
+      确定
+    </van-button>
+  </view>
+</van-popup>
+
+
+<!-- 遮罩层 dataInfo.Status==0的时候方可编辑-->
+<view class="zezhao" catchtap="handleClick"></view>

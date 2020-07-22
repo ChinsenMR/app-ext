@@ -1,0 +1,9 @@
+{
+  "navigationBarTextStyle": "black",
+  "backgroundColor":"#ffffff",
+  "navigationBarBackgroundColor":"#ffffff",
+  "usingComponents":{
+     "PictureDetail":"../../components/pictureDetail/pictureDetail",
+     "PriceItem":"../../components/priceItem/priceItem"
+  }
+}

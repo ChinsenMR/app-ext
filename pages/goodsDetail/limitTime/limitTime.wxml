@@ -1,0 +1,18 @@
+  <!-- 限时 -->
+
+  <view class='limit-time'>
+    <view class='limit-time1 {{limitBg}} df ais jct-between'>
+      <view class='startTimeTxt' wx:if='{{goodsInfo.IsWaitSale}}'>5月17日08:00开抢</view>
+      <image wx:if='{{goodsInfo.IsCountDown}}' src='{{ imgUrl + "pic_activity_1@2x.png" }}' mode='widthFix'></image>
+      <view class='limit-time1R df ais'>
+        <view class='startTimeTxt2'>{{goodsInfo.IsWaitSale? "距开始":"距降价"}}</view>
+        <view class='df ais'>
+          <text>{{limitHours}}</text>
+          <icon>:</icon>
+          <text>{{limitMin}}</text>
+          <icon>:</icon>
+          <text>{{limitSecond}}</text>
+        </view>
+      </view>
+    </view>
+  </view>

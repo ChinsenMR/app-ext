@@ -1,0 +1,40 @@
+<!--pages/member/code/code.wxml-->
+<view class="content" hidden="{{!show}}">
+	<!--面罩-->
+	<view class="mask" catchtouchmove="move" bindtap="cancel" />
+	<!--二维码内容-->
+	<view class="code">
+		<!--swiper-->
+		<swiper circular="true" bindchange="change">
+			<block wx:for="{{swiper}}" wx:key="index">
+				<swiper-item style="width:100% !important;height:100% !important;">
+					<image src="{{item.url}}" mode="aspectFit" />
+				</swiper-item>
+			</block>
+		</swiper>
+		<!--底部邀请 保存-->
+		<view class="tab">
+			<!--转发按钮-->
+			<view class="item" hover-class="hover">
+				<!-- <button class="btn" button-hover="hover" open-type="share">
+        </button> -->
+				<!--转发按钮-->
+				<!-- <view class="wrapper">
+          <view class="img">
+            <image src="{{wx_img}}"></image>
+          </view>
+          <text>邀请好友</text>
+        </view> -->
+			</view>
+			<view class="item" hover-class="hover" bindtap="save">
+				<view class="wrapper">
+					<view class="img">
+						<image src="{{download_img}}" />
+					</view>
+					<text>保存图片</text>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+

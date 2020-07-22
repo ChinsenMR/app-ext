@@ -1,0 +1,125 @@
+#cart {
+  box-sizing: border-box;
+  padding: 20rpx;
+
+  .agency {
+    background-color: #fff;
+    border-radius: 10rpx;
+
+    &-header {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 20rpx;
+      border-bottom: 1rpx solid #eee;
+
+      icon {
+        color: #FF4444;
+        margin-right: 20rpx;
+      }
+
+      .iconweixuanze {
+        border: 2rpx solid #E5E5E5;
+        border-radius: 50%;
+        height: 35rpx;
+        width: 35rpx;
+      }
+
+      .iconxuanze {
+        width: 39rpx;
+        height: 39rpx;
+      }
+    }
+  }
+
+  // .优惠展示
+  .discounts {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20rpx;
+
+    >text:nth-child(1) {
+      font-size: 20rpx;
+      color: #FF3333;
+      padding: 5rpx 10rpx;
+      border: 1rpx solid #e6868d;
+      border-radius: 10rpx;
+      margin-right: 10rpx;
+    }
+
+    >text:nth-child(2) {
+      display: block;
+      flex: 1;
+      font-size: 26rpx;
+      color: #333333;
+    }
+
+    &-btn {
+      width: 110rpx;
+      display: flex;
+      align-items: center;
+
+      text {
+        font-size: 26rpx;
+        color: #FF3333;
+      }
+
+      image {
+        width: 16rpx;
+        height: 27rpx;
+        margin-left: 10rpx;
+      }
+    }
+  }
+
+  // 商品内容
+  .content {
+    &-list {
+      &-btn {
+        icon {
+          color: #FF4444;
+          margin-right: 20rpx;
+        }
+
+        .iconweixuanze {
+          border: 2rpx solid #E5E5E5;
+          border-radius: 50%;
+          height: 35rpx;
+          width: 35rpx;
+        }
+
+        .iconxuanze {
+          width: 39rpx;
+          height: 39rpx;
+        }
+      }
+      &-img{
+        image{
+          width: 128rpx;
+          height: 128rpx;
+        }
+      }
+      &-main{
+        &-title{
+          font-size: 28rpx;
+          color:#333333;
+        }
+      }
+    }
+  }
+
+  .van-swipe {
+    &-cell__right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28rpx;
+      color: #fff;
+      background-color: red;
+      width: 65px;
+      height: 100%;
+    }
+
+  }
+}

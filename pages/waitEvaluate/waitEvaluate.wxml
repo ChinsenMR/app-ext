@@ -1,0 +1,42 @@
+<view class='header'>
+  <select-tabs first-title="待评价" second-title="已评价" bind:myTabsEvent="onSelectTabs"></select-tabs>
+</view>
+<view class="tabbox">
+  <view class="orderList" wx:for="{{orderList}}" wx:key="orderList" data-id="{{index}}" wx:for-item="i">
+    <view class="ol_top">
+      <view class="ott_left">
+        <view class="ot_center">
+          <view>订单编号：{{i.OrderId}}</view>
+          <view>订单日期：{{i.OrderDate}}</view>
+        </view>
+      </view>
+      <view class="ot_right">{{i.OrderStatus}}</view>
+    </view>
+    <view class="ol_center" wx:for="{{i.OrderItems}}" wx:for-index="idx">
+      <view class="oc_left" bindtap='onShopDetailPage' data-id='{{item.ProductId}}'>
+        <image src="{{item.Img}}"></image>
+      </view>
+      <view class="oc_right" bindtap='onShopDetailPage' data-id='{{item.ProductId}}'>
+        <view>{{item.ProductName}}</view>
+        <view class="ocr_bottom">
+          <view class="price">￥{{item.Price}}</view>
+          <view class="num">x{{item.Quantity}}</view>
+        </view>
+      </view>
+      <view class="ol_bottom">
+        <text class="check" wx:if="{{i.OrderStatus=='待评价'}}" bindtap='onToEvaluatePage' data-id='{{index+"_"+idx}}'>立即评价</text>  
+        <text class="check" bindtap='onExchange' data-id='{{index+"_"+idx}}'>申请售后</text>
+      </view>
+    </view>
+    <view class="ol_all">
+      <view class="all">共{{i.orderCount}}件商品</view>
+      <view class="total">合计:￥{{i.OrderTotal}}</view>
+    </view>
+    <view class='ol_all_bottom'>
+    </view>
+  </view>
+</view>
+<view class='empty' wx:if='{{isEmpty}}'>
+  <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/pic-kong.png'></image>
+  <text>暂无数据</text>
+</view>

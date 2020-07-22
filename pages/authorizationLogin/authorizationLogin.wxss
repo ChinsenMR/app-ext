@@ -1,0 +1,224 @@
+/* pages/authorizationLogin/authorizationLogin.wxss */
+
+page {
+  padding: 0 40rpx;
+  background-color: #fff;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 500rpx;
+}
+
+.logo image {
+  width: 400rpx;
+}
+
+.loginBox {
+  position: relative;
+}
+
+.loginBox .wxLogin {
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  text-indent: 3em;
+  border: 2rpx solid #78d235;
+  color: #04a70d;
+  background-color: #fff;
+  width: 80%;
+  border-radius: 40rpx;
+}
+
+
+
+.loginBox image {
+  position: absolute;
+  width: 60rpx;
+  height: 52rpx;
+  top: 16rpx;
+  left: 160rpx;
+}
+
+.other {
+  position: relative;
+  margin: 50rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.other::before {
+  content: '';
+  position: absolute;
+  width: 230rpx;
+  height: 4rpx;
+  left: -50rpx;
+  top: 20rpx;
+  background-color: #ccc;
+}
+
+.other::after {
+  content: '';
+  position: absolute;
+  width: 230rpx;
+  height: 4rpx;
+  right: -50rpx;
+  top: 20rpx;
+  background-color: #ccc;
+}
+
+.otherWay {
+  display: flex;
+  justify-content: space-between;
+}
+
+.otherWay view {
+  flex: 1;
+}
+
+.otherWay view button {
+  margin: 0;
+  width: 84%;
+  font-size: 30rpx;
+  border: 2rpx solid #cb6295;
+  color: #cb6295;
+  background-color: #fff;
+}
+
+.otherWay view:last-child {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.agree {
+  margin-top: 60rpx;
+  font-size: 24rpx;
+  text-align: center;
+  color: #999;
+}
+
+.agree text {
+  color: #3195d3;
+}
+
+/* 账号关联 */
+
+.mask {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/*弹窗样式  */
+
+.mask {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.mask .findAccount {
+  min-height: 800rpx;
+  width: 600rpx;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 10rpx;
+  padding-bottom: 20rpx;
+}
+
+.findTitle {
+  position: relative;
+  font-size: 40rpx;
+  margin: 70rpx 130rpx;
+  border-bottom: dashed 2rpx #cd0019;
+  font-family: PingFang-SC-Bold;
+}
+
+.findTitle image {
+  position: absolute;
+  margin: -30rpx 100rpx;
+}
+
+.headportrait {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  overflow: hidden;
+  margin: 0 50rpx;
+  font-size: 20rpx;
+  font-family: PingFang-SC-Bold;
+  color: #333;
+}
+
+.item-box {
+  margin-right: 14rpx;
+  margin-bottom: 10rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  border: 2rpx solid transparent;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.item-box>image {
+  margin-bottom: 10rpx;
+  width: 130rpx;
+  height: 130rpx;
+}
+
+.selected {
+  border: 2rpx solid #e0001b;
+  color: #e0001b;
+}
+
+.textscript {
+  color: #cd0019;
+  font-size: 24rpx;
+  font-weight: medium;
+  padding: 0 50rpx;
+  line-height: 35rpx;
+  text-align: left;
+}
+
+.btnyes {
+  background-color: #b10a1f;
+  font-size: 36rpx;
+  border-radius: 34rpx;
+  color: #fff;
+  width: 320rpx;
+  height: 68rpx;
+  box-shadow: 5rpx;
+  line-height: 68rpx;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+}
+
+.btnno {
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #999;
+  border-bottom: solid 1px #999;
+}
+
+.goBack {
+  margin-top: 20rpx;
+
+}
+
+.goBack .wxLogin {
+  border: none !important;
+  /* background: rgb(209, 209, 209) !important; */
+  border: 2rpx solid orange!important;
+  color: orange;
+  /* color: white !important; */
+  text-indent: 0;
+}

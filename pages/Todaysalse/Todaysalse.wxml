@@ -1,0 +1,29 @@
+<!--pages/Specialoffer/Specialoffer.wxml-->
+<view class='newpeopletop'>
+     <image src='{{imgurl}}banner @2x.png' class='newimg'></image>
+     <view class='pai'>
+          <text class='painame'>CHNAEL</text>
+          <text>给生活留白</text>
+     </view>
+</view>
+<!-- <view class='allproduct'>CHNAEL女装全场89元2件</view>
+<view class='tomorrow'>周五00:00上新</view> -->
+
+<!-- 商品content -->
+<view class='newpeoplecontent'>
+     <view class='searchbox'>
+          <image src='{{imgurl + "icon_search@2x.png"}}' class="searchimg"></image>
+          <input 
+          class='search' 
+          value="{{searchVal}}" 
+          placeholder='请输入搜索关键词' 
+          placeholder-class='Placeholder'
+          bindconfirm="onSearch"
+          ></input>
+          <!-- <image class="shibai" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshopV3/20190708/shibai.png"></image> -->
+     </view>
+     <!-- 限时折扣内容组件 -->
+     <view class='Discountcontentbox'>
+       <Discountcontent productlist="{{goodslist}}" notime="{{notime}}"></Discountcontent>
+     </view>
+</view>

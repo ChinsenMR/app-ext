@@ -1,0 +1,85 @@
+@import '../../../app.wxss';
+
+.welfare {
+  margin-top: 20rpx;
+  background-color: #fff;
+  padding: 30rpx;
+}
+
+.welfare-headerL text:first-child {
+  color: #333;
+  font-size: 30rpx;
+  font-weight:bold;
+}
+
+.welfare-headerL text:last-child {
+  color: #666;
+  font-size: 26rpx;
+  margin-left: 30rpx;
+  margin-top: 15rpx;
+}
+
+.welfare-headerR text {
+  color: #999;
+  font-size: 26rpx;
+  margin-right: 30rpx;
+}
+
+.welfare-header + view {
+  color: #666;
+  font-size: 22rpx;
+  background-color: #fff;
+  margin-top: 5rpx;
+}
+
+.welfare-header + view text {
+  color: #f44;
+  margin: 0 5rpx;
+}
+
+.welfare-ul {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 40rpx;
+}
+
+.welfare-li {
+  display: inline-block;
+  width: 186rpx;
+  margin-right: 25rpx;
+}
+
+.welfare-li image {
+  width: 186rpx;
+}
+
+.welfare-li view:first-of-type {
+  color: #333;
+  font-size: 22rpx;
+  width: 175rpx;
+  margin: 11rpx 0;
+}
+
+.welfare-li .welfare-ulB text:first-child {
+  color: #f44;
+  font-size: 24rpx;
+}
+
+.welfare-li .welfare-ulB text:last-child {
+  color: #fff;
+  font-size: 20rpx;
+  background-color: #f44;
+  line-height: 24rpx;
+  width: 89rpx;
+  text-align: center;
+  border-radius: 13rpx 12rpx 12rpx 0;
+}
+
+.intr-header .arrowRight {
+  margin-left: 60rpx;
+}
+
+.arrowRight {
+  width: 15rpx;
+}

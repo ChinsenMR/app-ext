@@ -1,0 +1,97 @@
+<view class='result' hidden='{{hiddenResult}}'>
+
+	<!-- 店铺列表 -->
+	<view class='store-ul' wx:if="{{false}}">
+		<view
+		 class='store-li df ais'
+		 wx:for="{{storeList}}"
+		 wx:for-index="storeIndex"
+		 wx:for-item="storeList"
+		 wx:key="{{storeIndex}}"
+		 wx:if="{{storeIndex<storeNum}}"
+		>
+			<image src='{{imgUrl+storeList.img}}' mode='widthFix' />
+			<view class='df fdc jct storeInfo'>
+				<view class='df ais'>
+					<text class='to-line'>{{storeList.title}}</text>
+					<text class='coupon' wx:if="{{storeList.coupon}}">优惠券</text>
+				</view>
+				<view>{{storeList.info}}</view>
+			</view>
+		</view>
+		<view class='more-store df ais jct-between' bindtap='moreStore'>
+			<view class='df ais more-storeL'>
+				<text/>
+
+				<text>更多会场
+</text>
+			</view>
+			<image src='{{imgUrl+"arrowRight.png"}}' mode='widthFix' />
+		</view>
+	</view>
+
+	<!-- 结果列表 -->
+	<view class='result-ul' hidden='{{showResult}}'>
+		<view class='result-ulH df ais'>
+			<view class='df ais jct flex'>
+				<view class='df ais jct result-ulHL' bindtap='priceSort'>
+					<text>价格</text>
+					<image src='{{imgUrl+sortIcon}}' mode='widthFix' />
+				</view>
+			</view>
+			<view class='df ais jct flex'>
+				<view class='df ais jct result-ulHR' bindtap='openDrawer'>
+					<text>筛选</text>
+					<image src='{{imgUrl+"icon_shaixuan@2x.png"}}' mode='widthFix' />
+				</view>
+			</view>
+		</view>
+		<view class='df ais result-inner'>
+			<!-- <view class='result-li'wx:for="{{resultList}}" wx:for-item="resultList" wx:for-index="resultIndex" wx:key="resultIndex"> -->
+			<block wx:for="{{comList}}" wx:for-index="resultIndex" wx:key="resultIndex">
+				<view class='result-li'>
+					<!-- <image src='{{imgUrl+resultList.img}}' mode='widthFix'></image> -->
+					<image src='{{item.ImageUrl1}}' data-productid="{{item.ProductId}}" bindtap="Toprodetai" />
+					<view class='goodsTitle to-2line'>{{item.ProductName}}</view>
+					<view class='goodsPrice df ais jct-between'>
+						<view class='df ais goodsPrice-l'>
+							<view class='df ais-end'>
+								<text>￥</text>
+								<text>{{item.SalePrice}}</text>
+							</view>
+							<!-- <view class='df ais jct'>新人专享价</view> -->
+						</view>
+						<!-- <view class='goodsPrice-r' bindtap="addCart" data-id="{{item.ProductId}}">+</view> -->
+					</view>
+					<view class='df ais curPrice'>
+						<text>原价:</text>
+						<text>￥{{item.MarketPrice?item.MarketPrice:0}}</text>
+					</view>
+				</view>
+			</block>
+
+		</view>
+	</view>
+	<!--占位wrapper-->
+	<view class="warpper" />
+
+	<!-- 底部导航栏 -->
+	<!-- <import src="../../../template/template.wxml" />
+  <template is="tabBar" data="{{tabBar:bindData.tabBar}}" /> -->
+
+	<!-- 底部导航 -->
+	<tabBar curActive='-1' />
+	<!-- 产品规格  /  发货地址  弹出组件 -->
+	<addCart
+	 wx:if="{{targetData.goodsInfo}}"
+	 skuItem='{{targetData.skuItem}}'
+	 skus='{{targetData.skus}}'
+	 prDid='{{targetData.prDid}}'
+	 goodsInfo='{{targetData.goodsInfo}}'
+	 freight='{{targetData.freight}}'
+	 id='goodsSpecsCom'
+	 bind:succ="succ"
+	 paramData="{{targetData.paramData}}"
+	/>
+</view>
+

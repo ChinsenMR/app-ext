@@ -1,0 +1,21 @@
+<!--pages/exchanged/exchanged.wxml-->
+<view class='products'>
+  <view class='pro-item' wx:for="{{order.OrderItems}}" wx:key="index">
+    <image src='{{item.Img}}'></image>
+    <view class='right'>
+      <text selectable class='title'>{{item.ProductName}}</text>
+      <view class='bottom'>
+        <text class='money'>¥{{item.Price}}</text>
+        <text class='quantity'>x{{item.Quantity}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='text-wrap'>
+  <text class='title'>售后备注</text>
+  <textarea maxlength='1000' placeholder='请提供您的收款账户类型、账号。例如：支付宝、银行卡等。' bindinput="onGetInfo"></textarea>
+</view>
+<view class='btn-wrap'>
+ <button bindtap='onSubmit'>提交申请</button>
+</view>
+<view class='mask' wx:if="{{show}}"></view>

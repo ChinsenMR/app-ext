@@ -1,0 +1,35 @@
+<view class="withdraw">
+  <!-- 提现方式的选择 -->
+  <view class="huokuai_wrap">
+    <view class="withdrawal_way" bindtap="handleWay">
+      <view class="withdrawal_title" >选择提现方式</view>
+      <text class="jiantou">></text>
+    </view>
+  </view>
+  <!-- 提现金额 -->
+  <view class="withdrawal_money">
+    <view class="money_title">提现金额</view>
+    <view class="money_in">
+      <text class="money_icon">¥</text>
+      <input 
+      type="number" 
+      class="money_input"  
+      value="{{moneyVal}}" 
+      bindinput="getMoneyVal" 
+      placeholder="请输入提现金额"
+      placeholder-class="placeholderStyle"
+      auto-focus="{{true}}"
+      />
+    </view>
+    <view class="money_num">
+      <view class="money_one">可提现金额¥{{Balance}}</view>
+      <view class="money_all" bindtap="handleAll">全部提现</view>
+    </view>
+  </view>
+
+
+<!-- <view bindtap="handleConfirm"  class="money_btn">确定</view> -->
+<button bindtap="handleConfirm"  class="money_btn" disabled="{{!isShow}}" type="warn">确定</button>
+
+
+</view>

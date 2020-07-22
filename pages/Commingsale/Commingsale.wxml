@@ -1,0 +1,11 @@
+<image src='{{imgurl+"banner @2x.png"}}' mode='widthFix' class=''></image>
+<view class='newpeoplecontent'>
+  <view class='searchbox'>
+    <image src='{{imgurl + "icon_search@2x.png"}}' class="searchimg"></image>
+    <input class='search' placeholder='请输入搜索关键词' placeholder-class='Placeholder'></input>
+  </view>
+  <!-- 限时折扣内容组件 -->
+  <view class='Discountcontentbox'>
+    <Discountcontent productlist="{{goodslist}}" pagetype="{{pagetype}}"></Discountcontent>
+  </view>
+</view>

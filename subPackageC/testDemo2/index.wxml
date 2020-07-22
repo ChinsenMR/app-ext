@@ -1,0 +1,6 @@
+<view>
+    这里是对应store/user.js里的wallet：{{wallet}}
+</view>
+<view>
+    这里是对应store/cart.js里的goodsCount：{{goodsCount}}
+</view>

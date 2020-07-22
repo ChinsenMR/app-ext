@@ -1,0 +1,39 @@
+<!--pages/shopOrders/shopORders.wxml-->
+<view class='shopORders'>
+  <view class="Skin-DistributorOrders">
+		<view class="orderTitle">
+			<view class="list list1 {{orderIndex == 0 ? 'actives' : ''}}" bindtap='tabOrder' data-index='0'>
+      全部订单{{orderCount.orderAllCount?"("+orderCount.orderAllCount+")":""}}
+      </view>
+			<view class="list {{orderIndex == 1 ? 'actives' : ''}}" bindtap='tabOrder' data-index='1'>
+      已完成{{orderCount.orderAllCount?"("+orderCount.orderFinishedCount+")":""}}
+      </view>
+		</view>
+		<view class="orderList">
+			<view class="actives all-orders" wx:for="{{orders}}">
+				<view >
+					<view class="orderinfo">
+						<view>订单编号：{{item.OrderId}}</view>
+						<view>订单日期：{{item.OrderDate}}</view>
+						<view>订单买家：{{item.Username}}</view>
+						<view>成交金额：<text class="coloractive">￥{{item.PayMoney}}</text></view>
+						<view class="state">{{item.OrderStatusName}}</view>
+					</view>
+					<view class="commodity" wx:for="{{item.OrderItem}}" wx:for-index="idx" wx:for-item="itemInfo">
+						<view class="commodityImg"><image src='{{itemInfo.ThumbnailsUrl}}'></image></view>
+						<view class="commodityinfo">
+							<view>{{itemInfo.ItemDescription}}</view>
+							<view class="money">佣金：￥{{itemInfo.ItemsCommission}} <text>x{{itemInfo.Quantity}}</text></view>
+						</view>
+					</view>
+					<view class="commodityNum"><text class="commission" wx:if='{{false}}'>修改佣金</text>共{{item.ShopNum}}件商品 <text>预计收益佣金: ￥{{item.CommssionSum}}</text></view>
+				</view>
+			</view>
+		</view>
+		<view class="under"></view>
+	</view>
+</view>
+ <view class='empty' wx:if='{{isEmpty}}'>
+    <image src='../../images/pic-kong.png'></image>
+    <text>暂无数据</text>
+  </view>

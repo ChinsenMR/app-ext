@@ -1,0 +1,52 @@
+<!--pages/myAwards/myAwards.wxml-->
+<!-- <select-tabs first-title="分享奖励" bind:myTabsEvent="onClickTabs" second-title="团队奖励" color="yellow"></select-tabs>
+<view class='list'>
+  <view class='item'>
+    <view class='left'>
+      <text class='title'>订单总额：</text><text class='total-money'>¥2999</text>
+      <text class='number'>HM4584587485895414145</text>
+    </view>
+    <view class='right'><text class='icon'>¥</text><text class='money'>10</text></view>
+  </view>
+  <view class='item'>
+    <view class='left'>
+      <text class='title'>订单总额：</text><text class='total-money'>¥2999</text>
+      <text class='number'>HM4584587485895414145</text>
+    </view>
+    <view class='right'><text class='icon'>¥</text><text class='money'>10</text></view>
+  </view>
+  <view class='item'>
+    <view class='left'>
+      <text class='title'>订单总额：</text><text class='total-money'>¥2999</text>
+      <text class='number'>HM4584587485895414145</text>
+    </view>
+    <view class='right'><text class='icon'>¥</text><text class='money'>10</text></view>
+  </view>
+</view> -->
+
+<view class="tabbox">
+  <view class="nav">
+    <view class="{{selected?'red':'default'}} left" bindtap="selected">分享奖励 </view>
+    <view class="{{selected1?'red':'default'}} left" bindtap="selected1">晋级奖励</view>
+    <view class="{{selected2?'red':'default'}}" bindtap="selected2">团队奖励</view>
+  </view>
+  <view>
+    <view class='list' wx:if="{{CommissionList.length>0}}">
+      <view class='item' wx:for="{{CommissionList}}" wx:key="index">
+        <view class='left'>
+          <text class='title'>订单总额：</text>
+          <text class='total-money'>¥{{item.OrderTotal}}</text>
+          <text class='number'>{{item.OrderId}}</text>
+        </view>
+        <view class='right'>
+          <text class='icon'>¥</text>
+          <text class='money'>{{item.CommTotal}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='noAwards' wx:if="{{CommissionList.length==0}}">
+      <image src='/images/pic-kong.png'></image>
+      <text>暂无数据</text>
+    </view>
+  </view>
+</view>

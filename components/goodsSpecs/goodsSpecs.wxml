@@ -1,0 +1,51 @@
+<view class='layout'>
+  <view class='content'>
+    <view class='goodsInfo df ais'>
+      <image class='goodsImg' src='{{goodsInfo.goodsImg}}' mode='widthFix'></image>
+      <view class='goodsInfo-right'>
+        <view class='goodsPrice'>{{goodsInfo.goodsPrice}}</view>
+        <view class='selected-txt'>已选：{{selected}}</view>
+      </view>
+      <view class='close df ais jct' bindtap='closeFun'>+</view>
+    </view>
+    <view class='select-ul'>
+      <view class='select-title'>颜色</view>
+      <view class='select-inner df ais' bindtap='selectItem'>
+        <view 
+         wx:for='{{colorArr}}' wx:for-index="colorIndex" 
+         wx:for-item="colorItem" wx:key="{{colorIndex}}"
+         class="{{currentSelect== colorIndex? 'activeSelect':''}} df ais" 
+         data-id='{{colorIndex}}'>
+          <image src='{{goodsInfo.goodsImg}}' mode='widthFix'></image>
+          <text>{{colorItem}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='select-ul'>
+      <view class='select-title'>尺寸</view>
+      <view class='select-inner df ais' bindtap=''>
+        <view wx:for='{{sizeArr}}' wx:for-index="sizeIndex" 
+         wx:for-item="sizeItem" wx:key="{{sizeIndex}}"
+         class="{{currentSelect== sizeIndex? 'activeSelect':''}} df ais jct" 
+         data-id='{{sizeIndex}}'>
+         {{sizeItem}}
+        </view>
+      </view>
+    </view>
+    <view class='goodsNum df ais jct-between'>
+      <view class='goodsNum-l df ais-end'>
+        <text>数量</text>
+        <text>仅有2件</text>
+      </view>
+      <view class='df ais'>
+        <text class='reduce df ais jct' bindtap='reduceFun'>-</text>
+        <text class='num df ais jct'>{{goodsNum}}</text>
+        <text class='add df ais jct' bindtap='addFun'>+</text>
+      </view>
+    </view>
+    <view class='btn df ais jct-between' bindtap='btn'>
+      <text bindtap='addGoods'>加入购物车</text>
+      <text>立即购买</text>
+    </view>
+  </view>
+</view>

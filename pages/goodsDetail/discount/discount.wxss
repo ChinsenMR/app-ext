@@ -1,0 +1,94 @@
+@import '../../../app.wxss';
+
+.discount-bottom{
+  border-top:0;
+}
+
+.intr-header {
+  color: #999;
+  font-size: 22rpx;
+  padding: 0 30rpx;
+  height: 88rpx;
+}
+
+.discount-bottom{
+  border-top:0;
+}
+
+.arrowRight {
+  width: 15rpx;
+  margin-left: 30rpx;
+}
+
+.intr-header > view image {
+  width: 30rpx;
+  margin-right: 6rpx;
+}
+
+/* modal */
+
+.dModal{
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 10000;
+}
+
+.close{
+  transform: rotate(45deg);
+  height: 35rpx;
+  width: 35rpx;
+  position:absolute;
+  top: 22rpx;
+  right: 27rpx;
+}
+
+.content{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  border-radius:6rpx 6rpx 0 0;
+  padding-bottom: 24rpx;
+}
+
+.header{
+  height: 88rpx;
+  color: #333;
+  font-size: 38rpx;
+}
+
+.content-li{
+  padding: 0 27rpx;
+  margin-bottom: 60rpx;
+}
+
+.content-li image{
+  width: 30rpx;
+  margin-top: 4rpx;
+  margin-right: 15rpx;
+}
+
+.content-li text:first-child{
+  color: #333;
+  font-size: 30rpx;
+  margin-bottom: 10rpx;
+}
+
+.content-li text:last-child{
+  color: #999;
+  font-size: 24rpx;
+}
+
+.btn{
+  margin: 0 27rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background-color: #FF4444;
+  color: #fff;
+  border-radius: 44rpx; 
+}

@@ -1,0 +1,34 @@
+<!-- 购物车tab -->
+<view class='customTab tab2 df ais'>
+  <view class='df ais tab2-home'>
+    <navigator class='df ais fdc' open-type="redirect" url="">
+      <image src='{{imgUrl+"icon_shouye@2x.png"}}' mode='widthFix'></image>
+      <text>首页</text>
+    </navigator>
+  </view>
+  <view class='tab2-activity'>
+    <navigator open-type="redirect" url="">
+      <image src='{{imgUrl+"icon_shenghuiuan.png"}}' mode='widthFix'></image>
+    </navigator>
+  </view>
+  <view class="tab2-cart {{totalPrice != 0? 'cartBg':''}} df ais flex">
+    <navigator class='df ais jct-between flex' open-type="redirect" url="">
+      <view class='df ais'>
+        <view class='tab2-cartIcon'>
+          <image src='{{imgUrl+"icon_gouwuche@2x.png"}}' mode='widthFix'></image>
+          <icon class='gListTotal df ais jct' wx:if="{{totalPrice != 0}}">{{goodsTotal}}</icon>
+        </view>
+        <view>￥{{totalPrice}}</view>
+      </view>
+      <view>去结算</view>
+    </navigator>
+  </view>
+  <view class='df ais tab2-me'>
+    <navigator class='df ais fdc' open-type="redirect" url="">
+      <image src='{{imgUrl+"icon_wode@2x (1).png"}}' mode='widthFix'></image>
+      <text>我的</text>
+    </navigator>
+  </view>
+</view>
+
+<!-- 换购商品 -->

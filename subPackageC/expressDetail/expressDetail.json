@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "物流详情",
+  "usingComponents": {
+    "van-steps": "/miniprogram_npm/vant-weapp/steps/index",
+    "van-card": "/miniprogram_npm/vant-weapp/card/index"
+  }
+}

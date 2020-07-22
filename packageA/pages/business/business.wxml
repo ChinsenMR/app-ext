@@ -1,0 +1,37 @@
+<!-- 上传运营资质 -->
+<view class="business">
+   <view class="flex">
+      <view class="title_wrap">
+        <text class="title">请上传营业执照</text>
+      </view>
+      <view class="upload_img_wrap">
+        <view class="img_wrap" wx:if="{{pics.length < 2 }}" bindtap="chooseImg">
+          <image  class="bus_img" src="../../images/icon_add.png"  ></image>
+        </view>
+        <view class="img_wrap img_box"  wx:for="{{pics}}" wx:key="index">
+            <image mode="aspectFitf" src="{{item}}"></image>
+        </view>
+      </view>
+    </view>
+
+    <view class="flex">
+      <view class="title_wrap ">
+        <text class="title">请上传证书</text>
+      </view>
+      <view class="upload_img_wrap line_feed ">
+        <view class="img_wrap" wx:if="{{certificate.length < 4 }}" bindtap="uploadCertificate">
+          <image  class="bus_img" src="../../images/icon_add.png"  ></image>
+        </view>
+        <view class="img_wrap img_box"  wx:for="{{certificate}}" wx:key="index" >
+            <image mode="aspectFitf" src="{{item}}"></image>
+        </view>
+      </view>
+    </view>
+
+
+
+    <!-- <view class="business_btn">提交</view> -->
+   <!-- <button class="business_btn" bindtap="uploadimg" type="warn">上传</button> -->
+   <button class="business_btn" bindtap="upconfirm" type="warn">提交</button>
+
+</view>

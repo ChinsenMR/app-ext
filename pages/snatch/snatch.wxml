@@ -1,0 +1,84 @@
+<view class="tabbox">
+  <view class="nav">
+    <view class="{{selected?'red':'default'}} left" bindtap="selected">进行中</view>
+    <view class="{{selected1?'red':'default'}} left" bindtap="selected1">已揭晓</view>
+    <view class="{{selected2?'red':'default'}}" bindtap="selected2">中奖记录</view>
+
+  </view>
+  <view class="{{selected?'show':'hidden'}}">
+    <view class="tabList1">
+      <view>
+        <view class="left">
+          <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/penwu.png'></image>
+        </view>
+        <view class="center">
+          <view class="c_top">雅漾舒护活泉喷雾300ml 增强肌肤受性本</view>
+          <view class="c_center">已售45487件</view>
+          <view class="c_bottom">
+            <text class="current"><text class='symbel'>￥</text>1.00</text>
+            <text class="del">￥500.00</text>
+          </view>
+        </view>
+        <view class="right">
+          <view class="r_top">
+            <view class="clock">
+             <text>{{clock.hr}}</text> :
+             <text>{{clock.min}}</text> :
+             <text>{{clock.sec}}</text>
+            </view>
+          </view>
+          <view class="r_bottom">
+            立即购买
+          </view>
+        </view>
+      </view>
+    </view>
+    
+  </view>
+  <view class="{{selected1?'show':'hidden'}}">
+    <view class="tabList2">
+      <view>
+        <view class="left">
+          <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/penwu.png'></image>
+        </view>
+        <view class="center">
+          <view class="c_top">雅漾舒护活泉喷雾300ml 增强肌肤受性本</view>
+          <view class="c_center">
+            <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/winner.png'></image>
+            王宝强_HK986846565565 </view>
+          <view class="c_bottom">
+            <span class="current"><text class='symbel'>￥</text>1.00</span>
+            <span class="del">￥500.00</span>
+          </view>
+        </view>
+        <view class="right">
+          <view class="r_top">
+            活动结束
+          </view>
+          <view class="r_bottom">
+            已售45487件
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="{{selected2?'show':'hidden'}}">
+    <view class='tabList'>
+      <view class='t_left'>
+        <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/penwu.png'></image>
+      </view>
+      <view class='right'>
+        <view class='r_top'>
+          获得雅漾舒护活泉喷雾300ml 增强肌肤耐受性本雅漾舒护活泉喷雾2件包邮
+        </view>
+        <view class='r_bottom'>
+          <view class='price'>
+            <text class='current'><text class='symbel'>￥</text>1.00</text>
+            <text class='del'>￥500.00</text>
+          </view>
+          <view class='time'>2018.12.12</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

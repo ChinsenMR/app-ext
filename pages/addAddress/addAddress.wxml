@@ -1,0 +1,24 @@
+<!--pages/addAddress/addAddress.wxml-->
+<view class='add-addr-wrap'>
+  <view class='input-wrap'>
+    <label>收货人</label><input type='text' bindinput="writeName" value="{{name}}" placeholder='请输入姓名'  maxlength="30" placeholder-class='placeHolder'/>
+  </view>
+  <view class='input-wrap'>
+    <label>手机</label><input type='text' bindinput="writePhone" value="{{phoneNum}}" placeholder='请输入手机号' placeholder-class='placeHolder' maxlength="11"/>
+  </view>
+  <view class='input-wrap' bindtap='bindRegionChange'>
+    <label>省/市/区</label>
+    <!-- <picker mode="region" bindchange="bindRegionChange" value='region' custom-item="{{customItem}}"> -->
+      <text class='{{!isSelected?"placeHolder":""}}' >{{region.province.name+' '+region.city.name+' '+region.area.name}}</text>
+      <i class="right-arrow"></i>
+     <!-- </picker> -->
+  </view>
+  <view class='input-wrap'>
+    <label>详细地址</label><input type='text' bindinput="writeAddress" value="{{addressDetail}}" placeholder='请输入详细地址' placeholder-class='placeHolder'/>
+    <i class="address" bindtap='testlocal' wx:if="{{flase}}"><image src='../../images/address.png'></image></i>
+  </view>
+</view>
+<view class='btn-wrap'>
+  <button  bindtap='onSubmit'>保存收货地址</button>
+</view>
+<addr-picker show="{{showSelect}}" bindaddrevent="onSelectRegion"></addr-picker>

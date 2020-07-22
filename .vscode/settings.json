@@ -1,0 +1,13 @@
+{
+  "files.associations": {
+    "*.tpl": "html",
+    "*.xtpl": "html",
+    "*.vue": "vue",
+    "*.wxml": "html",
+    "*.wxss": "css",
+    "*.wpy": "vue",
+    "*.mpx": "vue",
+    "*.cjson": "jsonc",
+    "*.wxs": "javascript"
+  }
+}

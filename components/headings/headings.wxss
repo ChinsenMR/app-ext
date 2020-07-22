@@ -1,0 +1,21 @@
+/* components/headings/headings.wxss */
+.wbtitle{
+  width: 100%;
+  height: 80rpx;
+}
+.wbtitle_content{
+  width: 100%;
+  height: 60rpx;
+}
+.wbtitle_content text{
+  font-size: 30rpx;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 10rpx;
+}
+.wbtitle_content image{
+  width: 8%;
+  height: 60rpx;
+  display: inline-block;
+  vertical-align: middle;
+}

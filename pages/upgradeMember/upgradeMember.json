@@ -1,0 +1,8 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "会员专享",
+  "usingComponents":{
+    "tabBar":"../../components/tabBar/tabBar"
+  }
+}

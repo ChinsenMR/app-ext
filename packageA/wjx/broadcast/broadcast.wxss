@@ -1,0 +1,234 @@
+#fuLive {
+  box-sizing: border-box;
+}
+#fuLive .search_wrap {
+  width: 100%;
+  background-color: #fff;
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  align-items: center;
+}
+#fuLive .search_wrap .search_left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10rpx 20rpx;
+  background-color: #f8f8f8;
+  border-radius: 30rpx;
+}
+#fuLive .search_wrap .search_left image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+#fuLive .search_wrap .search_left input {
+  flex: 1;
+}
+#fuLive .search_wrap .search_btn {
+  font-size: 28rpx;
+  color: #333;
+  font-weight: 600;
+  width: 100rpx;
+  text-align: center;
+}
+#fuLive .list_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  padding: 0 15rpx;
+}
+#fuLive .list_wrap .list {
+  padding: 36rpx 24rpx;
+  align-items: center;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  width: 308rpx;
+  margin: 20rpx 0;
+  border-radius: 10rpx;
+}
+#fuLive .list_wrap .list .img {
+  border-radius: 8rpx;
+  position: relative;
+}
+#fuLive .list_wrap .list .img .imgbg {
+  width: 308rpx;
+  height: 388rpx;
+}
+#fuLive .list_wrap .list .img .stuts {
+  font-size: 22rpx;
+  position: absolute;
+  top: 14rpx;
+  left: 8rpx;
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  border-radius: 5rpx;
+  overflow: hidden;
+}
+#fuLive .list_wrap .list .img .stuts .name {
+  display: inline-block;
+  padding: 4rpx 18rpx;
+}
+#fuLive .list_wrap .list .img .stuts .active {
+  background-color: #65d15c !important;
+}
+#fuLive .list_wrap .list .img .stuts .active2 {
+  background: linear-gradient(90deg, #ff5353 0%, #ff2b95 100%);
+}
+#fuLive .list_wrap .list .img .stuts .active3 {
+  background-color: #1c1d1f;
+}
+#fuLive .list_wrap .list .img .stuts .val {
+  padding: 4rpx 10rpx;
+}
+#fuLive .list_wrap .list .img .stuts .hui {
+  background: rgba(7, 7, 7, 0.6);
+}
+#fuLive .list_wrap .list .img .playback {
+  position: absolute;
+  top: 14rpx;
+  right: 15rpx;
+  display: flex;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20rpx;
+  padding: 5rpx 10rpx;
+}
+#fuLive .list_wrap .list .img .playback image {
+  width: 25rpx;
+  height: 20rpx;
+  margin-right: 5rpx;
+}
+#fuLive .list_wrap .list .img .playback text {
+  font-size: 22rpx;
+  color: #fff;
+}
+#fuLive .list_wrap .list .people {
+  font-size: 22rpx;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  padding: 14rpx 12rpx;
+  background: rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  color: #fff;
+}
+#fuLive .list_wrap .list .people image {
+  width: 36rpx;
+  height: 36rpx;
+  border-radius: 50%;
+  margin-right: 5rpx;
+}
+#fuLive .list_wrap .list .people .name {
+  flex: 1;
+}
+#fuLive .list_wrap .list .people .val {
+  border: 1px solid #fff;
+  border-radius: 20rpx;
+  width: 100rpx;
+  height: 36rpx;
+  font-size: 22rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#fuLive .list_wrap .list .people .IsSubscription {
+  color: #fff;
+  border: none;
+  background: linear-gradient(90deg, #ff5353 0%, #ff2b95 100%);
+}
+#fuLive .contant {
+  flex: 1;
+  color: #333;
+}
+#fuLive .contant .name {
+  margin-left: 18rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+#fuLive .contant .val {
+  margin-left: 18rpx;
+  margin-top: 22rpx;
+  font-size: 26rpx;
+}
+#fuLive .contant .val .black {
+  color: #666666;
+  font-size: 22rpx;
+}
+#fuLive .contant .dis {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#fuLive .contant .dis .red {
+  color: #eb1b1b;
+}
+#fuLive .contant .list {
+  margin-top: 22rpx;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+}
+#fuLive .contant .list .child {
+  position: relative;
+  border-radius: 20rpx;
+  margin: 0 8rpx;
+  width: calc(50% - 16rpx);
+  border: 1px solid #f5f5f5;
+}
+#fuLive .contant .list .child image {
+  width: 100%;
+  height: 198rpx;
+}
+#fuLive .contant .list .child .price {
+  padding: 5rpx 0;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  box-sizing: border-box;
+  color: #fff;
+  text-align: center;
+  font-size: 22rpx;
+}
+#fuLive .noMore {
+  font-size: 28rpx;
+  color: #999;
+  padding: 20rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+.zhibo {
+  margin: 60rpx;
+  background: #fff;
+  height: calc(100% - 120rpx);
+  width: 100%;
+  border-radius: 10rpx;
+}
+.zhibo .scroll-view {
+  height: 100%;
+  overflow: auto;
+}
+.zhibo .child {
+  margin-bottom: 20rpx;
+  padding-bottom: 20rpx;
+  font-size: 26rpx;
+}
+.zhibo .child .time {
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.zhibo .child video {
+  width: calc(100% - 40rpx);
+  margin: 0 20rpx;
+  height: 300rpx;
+}

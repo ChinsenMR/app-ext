@@ -1,0 +1,13 @@
+<!--pages/Specialtimelimit/Specialtimelimit.wxml-->
+<view class='newpeoplebox'>
+  <view class='newtop'>
+    <image class='touxina' src=''></image>
+    <view class='name'>111</view>
+     <view class='single'></view>
+     <view class='dearfriend'>亲爱的朋友，为你准备了超值的新人专享价宝贝，快来挑一件吧！</view>
+  </view>
+  <view class='newtitle'>新人专享特惠</view>
+</view>
+<view class='goodslistbox'>
+  <Discountcontent productlist="{{goodslist}}" notime="{{notime}}"></Discountcontent>
+</view>

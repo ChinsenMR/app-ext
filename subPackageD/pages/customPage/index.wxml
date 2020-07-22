@@ -1,0 +1,98 @@
+<!--pages/moduleHome/moduleHome.wxml-->
+<import src="../../../pages/common/templeates.wxml"></import>
+<import src="../../../wxParse/wxParse.wxml"></import>
+<button bindtap="onclick" wx:if="{{false}}">开启{{isShow}}</button>
+<!-- 分享 -->
+<share wx:if="{{isShow}}" shareInfo="{{shareInfo}}" bind:closeEvent="closeEvent"></share>
+<!-- 限时抢购 -->
+<block wx:if="{{false}}">
+  <view class="flashSale">
+    <view class='flashSaleTitle'>
+      <image class='titleIcon' src='http://img.hmeshop.cn/hmeshop_jxy/images/icon_zhuangshi_02@2x.png'></image>
+      <view class='titleName'>限时抢购</view>
+      <image class='titleIcon' src='http://img.hmeshop.cn/hmeshop_jxy/images/icon_zhuangshi_02@2x.png'></image>
+    </view>
+    <view class='flashSaleBox' wx:for="{{countDownList}}" wx:for-index='countDownIndex' wx:for-item='countDownItem'
+      wx:key='{{countDownIndex}}' style='background-image: url({{countDownItem.BannerImg}})'
+      data-id='{{countDownItem.CountDownId}}' bindtap='Tonewpeople' hidden='{{countDownItem.countDownState.overTime}}'>
+      <view class='timeContent'>
+        <view class='bingin'>{{countDownItem.countDownState.startState? '距开始':'距结束'}}</view>
+        <text>{{countDownItem.countDownState.limitHours}}</text>
+        <text>:</text>
+        <text>{{countDownItem.countDownState.limitMin}}</text>
+        <text>:</text>
+        <text>{{countDownItem.countDownState.limitSecond}}</text>
+        <image src="http://img.hmeshop.cn/hmeshop_jxy/images/btn_more@2x.png" lazy-load='true'></image>
+      </view>
+    </view>
+  </view>
+
+</block>
+
+<!-- 拼团 -->
+<block wx:if="{{false}}">
+  <view class='groupbox'>
+    <view class='groupTitle'>
+      <view class='titleName'>拼团</view>
+      <view class='more'>更多 ></view>
+    </view>
+    <view class='groupdetail'>
+      <view class='groupdetailbox' wx:for="{{groupdata}}" wx:key="index">
+        <view class='groupimg'>
+          <image src='{{item.ImageUrl1}}' mode="aspectFill"></image>
+        </view>
+        <view class='groupR'>
+          <view class='groupname'>
+            <text class='grouping' wx:if="{{item.IsFightNow==0}}">未开团</text>
+            <text class='grouping' wx:if="{{item.IsFightNow==1}}">正在拼团</text> {{item.ProductName}}
+          </view>
+          <view class='prosess'>
+            <!-- 正在拼团进度条 -->
+            <view class='progessbox' wx:if="{{true}}">
+              <view class='acrive' style='width:100%'>当前有{{item.CanFightCount}}个团可拼</view>
+            </view>
+            <!-- 即将结束拼团进度条 -->
+            <view class='grouped'>已卖{{item.SoldCount}}件</view>
+            <view class='baoyou' wx:if="{{item.IsfreeShipping}}">包邮</view>
+            <view class='baoyou' wx:else>不包邮</view>
+          </view>
+          <view class='pricebox'>
+            <view class='grouprice'>
+              <text class='grouppeople'>{{item.JoinNumber}}人团:</text>
+              <text class="ge_one1">￥</text>
+              <text class="ge_one2">{{item.SalePrice}}</text>
+              <text class="ge_one3">单买价:</text>
+              <text class="ge_one4">￥{{item.SalePrice}}</text>
+            </view>
+            <view class='gogroup' data-ProductID="{{item.ProductId}}" bindtap="Toprodetai" data-pagetype="6">去拼团 >
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+
+<view class="homecont">
+  <!-- 首页模板 -->
+  <view class="mobanBox" wx:for="{{TopicData}}" wx:key="id" wx:for-item="itemName" wx:for-index="itemIndex">
+    <!-- 富文本 -->
+    <view class="" wx:if="{{itemName.type == '1'}}">
+      <view class='richtext'>
+        <template is="wxParse" data="{{wxParseData:richtext.nodes}}" />
+      </view>
+    </view>
+    <!-- 其他模块 -->
+    <view wx:else class="outerView">
+      <template is="{{'temp_'+itemName.type}}"
+        data="{{...itemName,itemIndex,swiperSite,RequestUrl,height,imgUrl,nums,title,toView,scrollTop,xiDing,navHeight,cObj,colorArr,colorIndex,headerTop, customTitle: PROJECT_TITLE, hideTitle: true}}"></template>
+    </view>
+  </view>
+</view>
+
+<!-- 产品规格  /  发货地址  弹出组件 -->
+<addCart wx:if="{{goodsInfo}}" skuItem='{{skuItem}}' skus='{{skus}}' prDid='{{prDid}}' goodsInfo='{{goodsInfo}}'
+  freight='{{freight}}' id='goodsSpecsCom' bind:succ="succ" paramData="{{paramData}}" />
+
+<!-- 底部导航 -->
+<!-- <tabBar curActive='0'/> -->

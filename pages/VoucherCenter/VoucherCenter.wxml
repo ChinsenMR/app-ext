@@ -1,0 +1,90 @@
+<!--pages/VoucherCenter/VoucherCenter.wxml-->
+<view class='Vouchertop'>
+  <scroll-view class='scroll' scroll-x style="width: 100%">
+    <view bindtap='select' wx:for="{{classifydata}}" data-active="{{index}}" wx:key="index"
+      class="{{active==index?'active':'item'}}" data-CategoryId="{{item.CategoryId}}">{{item.Name}}</view>
+  </scroll-view>
+</view>
+
+<!-- <view class='Voucherbox' wx:if="{{active>0}}" wx:if="{{Coupondata.length!=0}}"> -->
+<view class='Voucherbox' wx:if="{{false}}">
+  <view class='Voucherdetail' wx:for="{{Coupondata}}" wx:key="index">
+    <view class='vouchL'>
+      <image class='vouchimg' src='{{item.ProductImg}}' mode='widthFix'></image>
+      <view class='vouchM'>
+        <view class='name'>{{item.CouponName}}</view>
+        <view class='prosessD'>
+          <view class='prosessbox'>
+            <text>券仅剩{{item.Percent}}张</text>
+            <view class='prosessing' style='width:100%'></view>
+          </view>
+          <!-- <view class='backway'>退货包邮</view> -->
+        </view>
+        <view class='pricebox'>
+          <view class='price'>券后价￥{{item.AfterPrice}}
+            <text></text>
+          </view>
+          <view class='yuanjia'>原价:
+            <text>￥{{item.SalePrice}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='vouchR'>
+      <image class='lingqu' wx:if="{{item.IsGet||Receivecoupone.Result=='Success'&&activeitem==index}}" mode='widthFix'
+        src='{{imgurl}}icon_yilinqu@2x.png' />
+      <view class='ondoor'>
+        <text>￥</text>{{item.Price}}</view>
+      <view class='quan'>无门槛券</view>
+      <view class='Active' data-index="{{index}}" wx:if="{{Receivecoupone.Result=='Success'&&activeitem==index}}"
+        bindtap='Byuser'>立即使用</view>
+      <view class='now' data-activeitem='{{index}}' wx:else bindtap='Getcoupon' data-CouponId="{{item.CouponId}}">立即领取
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 通用券 -->
+<view class='Voucherbox' wx:if="{{active==0}}" wx:if="{{Coupondata.length!=0}}">
+  <view class='Voucherdetail' wx:for="{{Coupondata}}" wx:key="index">
+    <view class='vouchL'>
+      <view class='mangquan'>
+        <view class='quanmoney'>{{item.Price}}
+          <text>元</text>
+        </view>
+        <view class='limit'>满减券</view>
+      </view>
+      <view class='vouchM'>
+        <view class='name'>{{item.CouponName}}</view>
+        <view class='prosessD'>
+          <view class='prosessbox'>
+            <!-- <text></text> -->
+            <view class='prosessing' style='width:100%'>限时限量</view>
+          </view>
+          <!-- <view class='backway'>退货包邮</view> -->
+        </view>
+        <view class='pricebox'>
+          <view class='price allprocess'>全场通用
+            <!-- <text></text> -->
+          </view>
+          <!-- <view class='yuanjia allprocess'>原价:
+            <text>￥{{item.SalePrice}}</text>
+          </view> -->
+        </view>
+      </view>
+    </view>
+    <view class='vouchR'>
+      <image class='lingqu' wx:if="{{item.IsGet||Receivecoupone.Result=='Success'&&activeitem==index}}" mode='widthFix'
+        src='{{imgurl}}icon_yilinqu@2x.png' />
+      <view class='ondoor'>
+        <text>￥</text>{{item.Price}}</view>
+      <view class='quan'>通用券</view>
+      <!-- <view class='Active add_active' wx:if="{{Receivecoupone.Result=='Success'&&activeitem==index}}" bindtap='Byuser' -->
+      <view class='Active add_active' wx:if="{{item.IsGet}}" bindtap='Byuser'
+        data-allactive='allactive'>立即使用</view>
+      <view class='now' data-activeitem='{{index}}' wx:else bindtap='Getcoupon' data-CouponId="{{item.CouponId}}">立即领取
+      </view>
+
+    </view>
+  </view>
+</view>
+<view class="emity" wx:if="{{Coupondata.length==0}}">暂无优惠券</view>

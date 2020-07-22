@@ -1,0 +1,12 @@
+<!--components/textNavigation/textNavigation.wxml-->
+<!-- <text>components/textNavigation/textNavigation.wxml</text> -->
+<view class='content'>
+  <view class="itemtest" wx:for="{{textNavUrls.content.dataset}}">
+    <navigator bindtap='jumptap' data-type='{{item.linkType}}' data-index='{{index}}'>
+      {{item.title}}
+      <view class="img-box">
+        <image src="https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/path-right@2x.png"></image>
+      </view>
+    </navigator>
+  </view>
+</view>

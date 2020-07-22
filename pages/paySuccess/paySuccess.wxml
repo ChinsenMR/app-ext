@@ -1,0 +1,11 @@
+<view class='layout df fdc ais'>
+  <image src='{{imgUrl+"icon_chenggong@2x.png"}}' mode='widthFix' class='suIcom'></image>
+  <view class='su-item1'>订单支付成功</view>
+  <view class='su-item2' wx:if="{{sta==1}}">¥ {{dikou}}</view>
+  <view class='su-item2 {{sta==1?"active":""}}'>¥ {{total}}</view>
+  <view class='su-item3'>仓库正在为您备货中</view>
+  <view class='df ais jct btn'>
+    <text bindtap='checkOrder'>查看订单</text>
+    <text bindtap='toIndex'>返回首页</text>
+  </view>
+</view>

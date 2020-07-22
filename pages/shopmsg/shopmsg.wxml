@@ -1,0 +1,37 @@
+<form bindsubmit='formSubmit' data-text="{{shopInfo.storeName}}">
+  <view class='top'>
+    <view class='t_left'>
+      <image src='{{imgURL}}'></image>
+    </view>
+    <view class='t_right'>
+      <text class='newUpload' bindtap='loadHeadImg'>重新上传头像</text>
+      <view class='suggest'>建议尺寸：200 x 200像素小于120KB，支持 jpg、gif、png格式
+      </view>
+    </view>
+  </view>
+  <view class='msg'>
+    <view class='msg_left'>店铺名称</view>
+    <view class='msg_right'>
+      <input value='{{shopInfo.storeName}}' name="storeName" placeholder-class='inputPlace'></input>
+    </view>
+  </view>
+  <view class='msg'>
+    <view class='msg_left mst_intro'>联系方式</view>
+    <view class='msg_right'>
+      <input placeholder='请输入手机号码' value='{{shopInfo.cellPhone}}' name="Phone" placeholder-class='inputPlace'></input>
+    </view>
+  </view>
+  <view class='msg'>
+    <view class='msg_left mst_intro'>提现账号</view>
+    <view class='msg_right'>
+      <input placeholder='填写支付宝账号' value='{{shopInfo.requestAccount}}' name="requestAccount" placeholder-class='inputPlace'></input>
+    </view>
+  </view>
+  <view class='msg introduction'>
+    <view class='msg_left'>店铺简介</view>
+    <view class='msg_right'>
+      <textarea rows="2" cols="10" name="storeDescription" maxlength='30' placeholder='填写文字限制在30字以内' value='{{shopInfo.storeDescription}}' placeholder-class='inputPlace' bindinput='textArea'></textarea>
+    </view>
+  </view>
+  <button class='btn' form-type="submit">保存信息</button>
+</form>

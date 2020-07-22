@@ -1,0 +1,6 @@
+<!--components/selectTabs.wxml-->
+ <ul class="select-tabs" bindtap="onTapSelectCode">
+    <li class='{{codeType==0?"active "+color:""}}' data-code="0">{{firstTitle}}</li>
+    <li class='{{codeType==1?"active "+color:""}}' data-code="1">{{secondTitle}}</li>
+    <slot></slot>
+  </ul>

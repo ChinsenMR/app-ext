@@ -1,0 +1,23 @@
+<template name="tabBar">
+  <view class='tabBar-box'>
+    <view class="tabBar df ais">
+      <block wx:for="{{tabBar}}" wx:for-item="item" wx:key="tabBar">
+        <view class="tabBar-item">
+          <navigator open-type="redirect" url="{{item.pagePath}}" class='df fdc ais jct'>
+            <image class="icon" src='{{item.iconPath}}' mode='widthFix' style='width:{{item.width}}rpx'></image>
+            <view  class="{{item.current== 1 ? 'tabBartext' :'tarbdefault'}}">{{item.text}}</view>
+          </navigator>
+        </view>
+      </block>
+      <view class='cartnumber' wx:if="{{cartNumber>0}}">{{cartNumber>99?'99+':cartNumber}}</view>
+    </view>
+    <view class='share df ais jct fdc' bindtap='share' wx:if="{{true}}">
+      <image src='http://img.hmeshop.cn/hmeshop_jxy/images/icon_share@2x (1).png' mode='widthFix'></image>
+      <view class='shareing'>分享</view>
+    </view>
+  </view>
+</template>
+
+<template name='custom'>
+  
+</template>

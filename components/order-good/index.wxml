@@ -1,0 +1,30 @@
+<view class="orderGood">
+  <view class="orderGood-pic">
+    <image 
+      mode="aspectFill" 
+      src="{{ product.pic }}" 
+    />
+  </view>
+  <view class="orderGood-desc">
+    <view 
+      class="orderGood-name textOverflowMulti2"
+      style="padding-right: {{ product.quantity ? '50rpx' : '0' }}"
+    >
+      {{ product.name }}
+    </view>
+    <view class="orderGood-des">{{ product.desc }}</view>
+    <view class="orderGood-sub">
+      <view class="orderGood-tags">
+        <view 
+          class="orderGood-tags-item"
+          wx:for="{{ product.tags }}"
+          wx:key="index"
+        >
+          {{ item }}
+        </view>
+      </view>
+      <slot name="extra"></slot>
+    </view>
+    <view class="orderGood-num" wx:if="{{ product.quantity }}">x{{ product.quantity }}</view>
+  </view>
+</view>

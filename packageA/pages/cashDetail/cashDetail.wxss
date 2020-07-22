@@ -1,0 +1,53 @@
+.layout{
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+
+.a-li{
+  padding: 0 30rpx;
+  background-color: #fff;
+  height: 121rpx;
+  border-bottom: 1rpx solid #F4F4F4;
+  position: relative;
+}
+
+.al-tip{
+  color: #333;
+  font-size: 30rpx;
+}
+
+.al-time{
+  color: #C5C3C3; 
+  font-size: 22rpx;
+}
+
+.al-account{
+  color: #333;
+  font-size: 34rpx;
+  text-align: right;
+}
+
+.empty{
+  color: #999;
+  font-size: 30rpx;
+  margin-top: 200rpx;
+  text-align: center;
+}
+.title{
+  padding: 5rpx 20rpx 20rpx 20rpx;
+  font-size:30rpx;
+  color:#999;
+}
+.flex{
+  color:red;
+}
+.wjx{
+  position: absolute;
+  top:38rpx;
+  right: 180rpx;
+  font-size: 26rpx;
+  color:#333;
+}
+.active{
+  color:red;
+}

@@ -1,0 +1,6 @@
+/**app.wxss**/
+@import "/template/template.wxss";
+@import "./assets/wxss/clear.wxss";
+@import "./assets/wxss/other.wxss";
+/* 提供了基本的布局类库 便于开发使用*/
+@import "./assets/wxss/main.wxss"; 

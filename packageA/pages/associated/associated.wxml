@@ -1,0 +1,15 @@
+<form bindsubmit="formSubmit" bindreset="formReset">
+  <view class="input_wrap">
+    <view class="userName">
+      <text class="test">用户名</text>
+      <input class="input_test" value="" placeholder="请输入代理上管理系统用户名" name="userName"></input>
+    </view>
+    <view class="password">
+      <text class="test">密码</text>
+      <input class="input_test" value="" password placeholder="请输入代理上管理系统密码" name="userPass"></input>
+    </view>
+  </view>
+  <view class="btn-area">
+    <button formType="submit" class="ass_btn">立即绑定</button>
+  </view>
+</form>

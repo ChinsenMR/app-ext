@@ -1,0 +1,31 @@
+<!--pages/balanceDetail/balanceDetail.wxml-->
+<view class='balance_main'>
+  <view>
+    <text class='text-left'>流水号 :</text>
+    <text class='text-right'>{{data.PayId}}</text>
+  </view>
+  <view>
+    <text class='text-left'>类型 :</text>
+    <text class='text-right'>{{data.TradeType}}</text>
+  </view>
+  <view>
+    <text class='text-left'>收支 :</text>
+    <text class='text-right {{data.TradeAmount>0?"red":"green"}}'>{{data.TradeAmount>0?'+¥'+data.TradeAmount:'-¥'+(data.TradeAmount*(-1))}}</text>
+  </view>
+  <view>
+    <text class='text-left'>收支方式 :</text>
+    <text class='text-right'>{{data.TradeWays}}</text>
+  </view>
+  <view>
+    <text class='text-left'>时间 :</text>
+    <text class='text-right'>{{data.TradeTime}}</text>
+  </view>
+  <view>
+    <text class='text-left'>余额 :</text>
+    <text class='text-right'>¥{{data.AvailableAmount}}</text>
+  </view>
+  <view>
+    <text class='text-left '>备注 :</text>
+    <text class='text-right little'>{{data.Remark}}</text>
+  </view>
+</view>

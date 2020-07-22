@@ -1,0 +1,62 @@
+<view class='layout'>
+  <view class='header df ais'>
+    <text class='active'>我的库存</text>
+  </view>
+  <view class='totalNum df ais'>共
+    <text> {{list.length}} </text>款商品</view>
+  <view class='content-ul'>
+    <view class='content-li' wx:for='{{list}}' wx:key>
+      <view class='content-liT df ais-start'>
+        <image src='{{item.ImageUrl}}' mode='widthFix'></image>
+        <view class=''>
+          <view class='goodsTitle'>{{item.Name}}</view>
+          <view class='goodsSpecs df ais'>
+            <view>规格:{{item.OrderSize}}</view>
+            <view>拿货价:
+              <text>￥{{item.Price}}</text>/盒</view>
+            <view>{{item.LeastApplyQty}}盒起</view>
+          </view>
+        </view>
+      </view>
+      <view class='content-liB'>
+        <view class='goodsState' hidden='{{item.show}}'>
+          <view class='goodsState-inner df ais jct-between'>
+            <view class='df ais jct fdc'>
+              <text>当前库存（盒）</text>
+              <text>{{item.Qty}}</text>
+            </view>
+            <view class='df ais jct fdc'>
+              <text>累计进货（盒）</text>
+              <text>{{item.ApplyTotalQty}}</text>
+            </view>
+            <view class='df ais jct fdc'>
+              <text>累计出货（盒）</text>
+              <text>{{item.SaleCounts}}</text>
+            </view>
+          </view>
+          <view class='goodsState-inner df ais jct-between'>
+            <view class='df ais jct fdc'>
+              <text>进货单价（元）</text>
+              <text>{{item.Price}}</text>
+            </view>
+            <view class='df ais jct fdc'>
+              <text>总销量</text>
+              <text>{{item.SalePercentage}}</text>
+            </view>
+            <view class='df ais jct fdc'>
+              <text>累计收益（元）</text>
+              <text>{{item.IncomeTotal}}</text>
+            </view>
+          </view>
+        </view>
+        <view class='df ais jct-between btn'>
+          <view class='btn-L df ais' data-index="{{index}}" bindtap='showStatus'>
+            <image src='{{hiddenState? imgUrl+"more@2x.png":imgUrl+"retract@2x.png"}}' mode='widthFix'></image>
+            <text>{{item.show? '展开':'收起'}}</text>
+          </view>
+          <view class='btn-R df ais jct'>去进货</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

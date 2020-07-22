@@ -1,0 +1,106 @@
+page {
+  background-color: #fff;
+}
+#myUpgrade {
+  padding: 60rpx 40rpx;
+  box-sizing: border-box;
+}
+#myUpgrade header {
+  background: #d7d7d7;
+  border-radius: 12rpx;
+  padding: 80rpx 20rpx 20rpx 20rpx;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#myUpgrade header .img {
+  position: absolute;
+  top: -47rpx;
+  left: 43%;
+}
+#myUpgrade header .img .dj_img {
+  padding: 5rpx 10rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 20rpx;
+  border-radius: 19rpx;
+  background: #999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 80rpx;
+  left: -10%;
+  width: 100rpx;
+}
+#myUpgrade header .img image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  border: 1rpx solid #eee;
+}
+#myUpgrade header .img_name {
+  font-size: 26rpx;
+  color: #333;
+  margin-bottom: 13rpx;
+}
+#myUpgrade header .miaoshu {
+  font-size: 24rpx;
+  color: #333;
+}
+#myUpgrade .content {
+  box-sizing: border-box;
+  background: #f2f2f2;
+  padding: 10rpx;
+  border-radius: 12rpx;
+}
+#myUpgrade .content .phone {
+  font-size: 26rpx;
+  color: #333;
+  padding: 10rpx 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #ccc;
+}
+#myUpgrade .content .phone .phone_t {
+  flex: 1;
+}
+#myUpgrade .content .phone input {
+  flex: 4;
+}
+#myUpgrade .content .wxcode {
+  font-size: 26rpx;
+  color: #333;
+  padding: 10rpx 0;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #ccc;
+}
+#myUpgrade .content .wxcode .wx_t {
+  flex: 1;
+}
+#myUpgrade .content .wxcode input {
+  flex: 4;
+}
+#myUpgrade .content .img_code {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25rpx 0 15rpx 0;
+}
+#myUpgrade .content .img_code image {
+  width: 150rpx;
+  height: 150rpx;
+  border: 1rpx solid #999;
+  margin-bottom: 10rpx;
+}
+#myUpgrade .content .img_code .code_test {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 24rpx;
+  color: #999;
+}

@@ -1,0 +1,58 @@
+<view class="layout" wx:if='{{goodsCartList.length}}'>
+	<view class='content-ul'>
+		<view class='content-li'>
+			<view class='li-inner'>
+				<!-- 商品简介 -->
+
+				<block wx:for='{{goodsCartList}}' wx:for-index='index' wx:key="index">
+					<van-swipe-cell class='li-innerTop df ais' data-id='{{item.GiftId}}' bind:close="removeGoods"
+						right-width="{{ 150 }}" async-close id="cell">
+						<van-cell-group>
+							<view class='li-innerR df ais flex'>
+
+								<view class="cover"
+									style="background: url({{item.ThumbnailUrl180}})center center / cover no-repeat" />
+								<view class='flex'>
+									<view class='title'>{{item.Name}}</view>
+									<view class='goodsPer'>
+										<text>{{item.SkuContent}}</text>
+									</view>
+									<view class='df ais jct-between'>
+										<view class='goodsPrice'>{{item.NeedPoint}}积分</view>
+										<view class='df ais' wx:if="{{!item.clearStatus}}">
+											<text class='reduce' data-id='{{item.GiftId}}' data-num='{{ -1 }}'
+												bindtap='changeNum'>
+												-
+											</text>
+
+											<input class='num' value="{{item.Quantity}}" disabled="{{false}}" />
+
+											<text class='add' data-id='{{item.GiftId}}' data-num='{{ 1 }}'
+												data-type='add' bindtap='changeNum'>
+												+
+											</text>
+										</view>
+									</view>
+								</view>
+							</view>
+						</van-cell-group>
+						<view slot="right" class='clear' data-id='{{item.GiftId}}'>删除
+						</view>
+					</van-swipe-cell>
+
+				</block>
+
+			</view>
+		</view>
+	</view>
+	<!-- 底部tab -->
+	<custom-tab goodsTotal="{{totalCount}}" totalPrice="{{totalPrice}}" goodsCartList='{{goodsCartList}}'
+		magnitude="{{magnitudeObj}}" />
+</view>
+<view class='emptyCart df ais fdc' wx:else>
+	<image src='{{imgUrl+"icon_gouwuche-t@2x.png"}}' mode='widthFix' />
+	<view class='emptyCart-item1'>购物车空空如也～</view>
+	<view bindtap="goBack">
+		<view class='emptyCart-item2'>去逛逛</view>
+	</view>
+</view>

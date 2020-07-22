@@ -1,0 +1,7 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "佣金",
+  "enablePullDownRefresh": true,
+  "usingComponents": {}
+}

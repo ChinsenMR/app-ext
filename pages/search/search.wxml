@@ -1,0 +1,77 @@
+<!--pages/search/search.wxml-->
+<view class='search-box'>
+  <view class='input-box'>
+    <input type='text' value='{{keyWord}}' bindfocus="onFocus" bindinput="onInput" placeholder='搜索商品'></input>
+    <icon type="clear" size="20" bindtap='onClearInput' class='closed {{showClosed?"active":""}}'></icon>
+  </view>
+  <text class='btn-search' bindtap='onSearch'>搜索</text>
+</view>
+<!--搜索  -->
+<block wx:if="{{false}}">
+  <view class='hot-search' bindtap='onHotSearch'>
+    <text data-kw='服装'>服装</text>
+    <text data-kw='日用品'>日用品</text>
+  </view>
+  <block wx:for="{{2}}">
+    <view class='first-menu'>
+      <text>服装</text>
+      <text class="plus" bindtap='onPlus' data-num='{{index}}'>{{showMenu===index?"-":"+"}}</text>
+    </view>
+    <view class='second-menu-wrap {{showMenu===index?"active":""}}' wx:for-index="idx" wx:for-item="itemData" wx:for="{{10}}">
+      <view class='second-menu'>
+        <text>牛仔裤</text>
+        <i class="arrow"></i>
+      </view>
+    </view>
+  </block>
+</block>
+
+<!--列表区  -->
+<block wx:if="{{true}}">
+  <view class='tab-bar'>
+    <view class="{{sort=='saleprice'?'current':''}}" data-type="saleprice" bindtap='onSelectSort'>
+      <text>价格 </text>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/up.png' class="glyphicon" wx:if="{{sort!='saleprice'}}"></image>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/activeDown.png' class="glyphicon" wx:if="{{thePriceOrder=='desc'&&sort=='saleprice'}}"></image>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/activeUp.png' class="glyphicon" wx:if="{{thePriceOrder=='asc'&&sort=='saleprice'}}"></image>
+    </view>
+    <view class="{{sort=='addedDate'?'current':''}}" data-type="addedDate" bindtap='onSelectSort'>
+      <text>上架 </text>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/up.png' class="glyphicon" wx:if="{{sort!='addedDate'}}"></image>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/activeDown.png' class="glyphicon" wx:if="{{theAddedTimeOrder=='desc'&&sort=='addedDate'}}"></image>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/activeUp.png' class="glyphicon" wx:if="{{theAddedTimeOrder=='asc'&&sort=='addedDate'}}"></image>
+    </view>
+    <view class="{{sort=='showsaleCounts'?'current':''}}" data-type="showsaleCounts" bindtap='onSelectSort'>
+      <text>销量 </text>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/up.png' class="glyphicon" wx:if="{{sort!='showsaleCounts'}}"></image>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/activeDown.png' class="glyphicon" wx:if="{{theSaleCountOrder=='desc'&&sort=='showsaleCounts'}}"></image>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/activeUp.png' class="glyphicon" wx:if="{{theSaleCountOrder=='asc'&&sort=='showsaleCounts'}}"></image>
+    </view>
+    <view class="{{sort=='VistiCounts'?'current':''}}" data-type="VistiCounts" bindtap='onSelectSort'>
+      <text>浏览量 </text>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/up.png' class="glyphicon" wx:if="{{sort!='VistiCounts'}}"></image>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/activeDown.png' class="glyphicon" wx:if="{{theVCountOrder=='desc'&&sort=='VistiCounts'}}"></image>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/activeUp.png' class="glyphicon" wx:if="{{theVCountOrder=='asc'&&sort=='VistiCounts'}}"></image>
+    </view>
+  </view>
+  <view class='store-products' wx:if='{{!isEmpty}}'>
+    <view class='pro-item' wx:for="{{proList}}">
+      <view class='item-wrap' bindtap='onToDetailPage' data-price='{{item.SalePrice}}' data-name='{{item.ProductName}}' data-img='{{item.ThumbnailUrl60}}' data-id='{{item.ProductId}}'>
+        <view class='img-box'>
+          <image src='{{item.ThumbnailUrl60}}'></image>
+          <text class="sale-count">已销售{{item.SaleCounts}}件</text>
+        </view>
+        <text class='title'>{{item.ProductName}}</text>
+        <view class='price-box'>
+          <text class='icon-red'>¥</text>
+          <text class='current-price'>{{item.SalePrice}}</text>
+          <text class='original-price'>¥{{item.MarketPrice}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='empty' wx:if='{{isEmpty}}'>
+    <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/pic_search.png'></image>
+    <text>暂无数据</text>
+  </view>
+</block>

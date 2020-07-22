@@ -1,0 +1,241 @@
+.layout {
+  background-color: #f7f7f7;
+}
+
+.nav {
+  padding: 0 30rpx;
+  line-height: 100rpx;
+  background-color: #fff;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 999;
+}
+
+.nav image {
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 9rpx;
+}
+
+.topTab {
+  font-size: 30rpx;
+  color: #000;
+  flex: 1;
+  padding: 0 160rpx;
+}
+
+.empty {
+  width: 100rpx;
+}
+
+.activeTab {
+  color: #f44;
+  position: relative;
+}
+
+.activeTab::after {
+  position: absolute;
+  bottom: 6rpx;
+  left: 7rpx;
+  right: 7rpx;
+  content: '';
+  height: 6rpx;
+  background-color: #f44;
+}
+
+swiper-item,
+swiper {
+  height: 750rpx;
+  width: 100%;
+}
+
+.banner {
+  position: relative;
+}
+
+.banner-img {
+  width: 100%;
+  height: 100%;
+}
+
+.banner-user {
+  color: #fff;
+  font-size: 22rpx;
+  position: absolute;
+  top: 40rpx;
+  left: 30rpx;
+  width: 320rpx;
+  height: 90rpx;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 45rpx;
+  padding-left: 8rpx;
+}
+
+.banner-user view {
+  height: 90rpx;
+}
+
+.banner-user image {
+  width: 76rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+
+.banner-user text:first-of-type {
+  margin-right: 10rpx;
+}
+
+/* .addAni {
+  position: fixed;
+  z-index: 999;
+  left: 30%;
+  top: 40%;
+
+}
+
+.addAni image{
+  width: 300rpx;
+  border-radius: 50%;
+} */
+
+.yyemity {
+  height: 14%;
+}
+
+
+/**直播提示弹窗*/
+.live_auto {
+  height: 50rpx;
+  position: fixed;
+  top: 60%;
+  right: 0;
+  border: 1rpx 0 1rpx 1rpx solid #ffbbc9;
+  box-sizing: border-box;
+  border-radius: 25rpx 0 0 25rpx;
+  background-color: #ff5e7d;
+}
+
+.live_tip {
+  width: 233rpx;
+  height: 50rpx;
+  border-radius: 25rpx 0 0 25rpx;
+  background-color: #ff5e7d;
+  display: flex;
+  align-items: center;
+}
+
+.live_tip .live_img {
+  width: 44rpx;
+  height: 44rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+
+.live_text {
+  font-size: 22rpx;
+  color: #fff;
+  width: 100rpx;
+}
+
+.off_img {
+  width: 16rpx;
+  height: 16rpx;
+  position: absolute;
+  top: 20rpx;
+  right: 10rpx;
+}
+
+.wrap {
+  width: 18px;
+  height: 30rpx;
+  margin: 10rpx auto 0;
+  position: absolute;
+  bottom: 5px;
+  right: 45rpx;
+  display: inline-block;
+  vertical-align: baseline;
+  font-size: 0;
+  overflow: hidden;
+  /* background:rgba(0,0,0,.6); */
+}
+
+.wrap .m1,
+.m2,
+.m3 {
+  background-color: #fff;
+  display: inline-block;
+  width: 10rpx;
+  height: 100rpx;
+}
+
+.m1 {
+  -webkit-animation: .8s .1s living linear infinite backwards normal;
+  animation: .8s .1s living linear infinite backwards normal;
+  -webkit-animation-delay: -1.1s;
+}
+
+.m2 {
+  -webkit-animation: .8s .3s living linear infinite backwards normal;
+  animation: .8s .3s living linear infinite backwards normal;
+  -webkit-animation-delay: -1.3s;
+}
+
+.m3 {
+  -webkit-animation: .8s .6s living linear infinite backwards normal;
+  animation: .8s .6s living linear infinite backwards normal;
+  -webkit-animation-delay: -1.6s;
+}
+
+@-webkit-keyframes living {
+  0% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 0 120rpx;
+    transform-origin: 0 120rpx
+  }
+
+  50% {
+    -webkit-transform: scaleY(.3);
+    transform: scaleY(.3);
+    -webkit-transform-origin: 0 120rpx;
+    transform-origin: 0 120rpx
+  }
+
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 0 120rpx;
+    transform-origin: 0 120rpx
+  }
+}
+
+@keyframes living {
+  0% {
+    -webkit-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 0 120rpx;
+    -ms-transform-origin: 0 120rpx;
+    transform-origin: 0 120rpx
+  }
+
+  50% {
+    -webkit-transform: scaleY(.3);
+    -ms-transform: scaleY(.3);
+    transform: scaleY(.3);
+    -webkit-transform-origin: 0 120rpx;
+    -ms-transform-origin: 0 120rpx;
+    transform-origin: 0 120rpx
+  }
+
+  100% {
+    -webkit-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    transform: scaleY(1);
+    -webkit-transform-origin: 0 120rpx;
+    -ms-transform-origin: 0 120rpx;
+    transform-origin: 0 120rpx
+  }
+}

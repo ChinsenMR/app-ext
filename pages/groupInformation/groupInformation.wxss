@@ -1,0 +1,241 @@
+/* pages/groupInformation/groupInformation.wxss */
+
+/* 头部 */
+
+page {
+  background-color: #f5f5f5;
+}
+
+.top {
+  width: 100%;
+  height: 200rpx;
+  background-color: white;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.top .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.top .title .icon {
+  width: 36rpx;
+  height: 36rpx;
+  line-height: 36rpx;
+  color: white;
+  background-color: #e0001b;
+  border-radius: 50%;
+  font-size: 12px;
+  margin-right: 20rpx;
+}
+
+.top .title .txt {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #e0001b;
+}
+
+.top .stitle {
+  font-size: 26rpx;
+  color: #999;
+}
+
+/* 商品信息 */
+
+.goods {
+  width: 90%;
+  height: 200rpx;
+  /* background-color: white; */
+  margin: 20rpx auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goods .left {
+  width: 30%;
+}
+
+.goods .left image {
+  width: 150rpx;
+  height: 150rpx;
+  border: 2rpx solid #e5e5e5;
+}
+
+.goods .right {
+  width: 70%;
+}
+
+.goods .right .title {
+  font-size: 30rpx;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.goods .right .sku {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.goods .right .price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goods .right .price .groupprice {
+  font-size: 28rpx;
+  color: #e0001b;
+}
+
+.goods .right .price .oriprice {
+  font-size: 26rpx;
+  color: #999;
+  text-decoration: line-through;
+}
+
+.goods .right .price .group {
+  width: 20%;
+  height: 40rpx;
+  font-size: 22rpx;
+  color: white;
+  text-align: center;
+  line-height: 40rpx;
+  background-color: #d32d49;
+  border-radius: 10rpx;
+}
+
+/* 参团人员 */
+
+.personnel {
+  width: 100%;
+  background-color: white;
+}
+
+.personnel .title {
+  font-size: 30rpx;
+  color: #999;
+  padding: 20rpx;
+}
+
+.personnel .imgarray {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.headimg {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin: 15rpx 15rpx 30rpx 15rpx;
+  border: 2rpx solid #ee9f2f;
+}
+
+.noper {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100rpx;
+  margin: 15rpx;
+  color: #ee9f2f;
+  background-color: #fcecd5;
+  border: 2rpx dashed #ee9f2f;
+}
+
+.more{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 100rpx;
+  margin: 15rpx;
+  color: #999999;
+  background-color: white;
+  border: 2rpx solid #999999;
+}
+
+.colonel{
+  width: 80rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  border-radius: 25rpx;
+  color: white;
+  background-color: #EE9F2F;
+  position: absolute;
+  top: 100rpx;
+  left: 28rpx;
+  font-size:28rpx;
+text-align:center;
+}
+/* 倒计时 */
+
+.countdown {
+  width: 92%;
+  margin: 88rpx auto 0;
+}
+
+.countdown .txt {
+  color: #333;
+  font-size: 15px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.countdown .txt .font {
+  font-size: 26rpx;
+  color: white;
+  background-color: #333;
+  padding: 3rpx;
+  margin-right: 10rpx
+}
+
+.countdown .txt:before {
+  position: absolute;
+  top: 11px;
+  left: 0;
+  content: '';
+  width: 10%;
+  border-bottom: 1px solid #666;
+}
+
+.countdown .txt:after {
+  position: absolute;
+  top: 11px;
+  left: 90%;
+  content: '';
+  width: 10%;
+  border-bottom: 1px solid #666;
+}
+
+/* 确认按钮 */
+
+.confirmation {
+  width: 92%;
+  height: 88rpx;
+  margin: 40rpx auto 15rpx;
+  background-color: #e0001b;
+  border-radius: 8rpx;
+  line-height: 88rpx;
+  text-align: center;
+  color: white;
+}
+
+.tip {
+  font-size: 26rpx;
+  color: #666;
+  text-align: center;
+}

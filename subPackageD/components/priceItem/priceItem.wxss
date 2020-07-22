@@ -1,0 +1,143 @@
+/* @import "../../../app.wxss"; */
+
+.layout {
+  padding: 30rpx;
+  background-color: #fff;
+}
+
+.goods-price {
+ 
+  /* font-weight: bold; */
+  margin-right: 20rpx;
+  font-size:24rpx;
+}
+
+.goods-price text:first-child {
+  /* font-size: 38rpx; */
+  margin-bottom: 10rpx;
+  color: #f44;
+}
+
+.goods-price text:last-child {
+  color:#999999;
+  /* font-size: 34rpx; */
+}
+
+.buyNum1 .newUserTxt {
+  color: #fff;
+  width: 131rpx;
+  height: 25rpx;
+  border-radius: 13rpx 12rpx 12rpx 0;
+  background-color: #f44;
+  font-size: 20rpx;
+  margin-right: 10rpx;
+}
+
+.buyNum1 .buyNumTxt {
+  color: #666;
+  font-size: 22rpx;
+  margin-top: 5rpx;
+}
+
+.buyNum1 .buyNumTxt text:first-child {
+  margin-right: 20rpx;
+  text-decoration: line-through;
+}
+
+.buyNum1.buyNum6 > view:last-child text:last-child {
+  text-decoration: none;
+}
+
+.goodsShare {
+  display: flex;
+  flex-direction: column;
+  color: #999;
+  font-size: 26rpx;
+}
+
+.goodsShare image {
+  width: 42rpx;
+}
+.cellect {
+  /* width: 135rpx; */
+  width: 142rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.buyNum2 {
+  width: 310rpx;
+  height: 44rpx;
+  background-color: #ffe2cc;
+  color: #fc8833;
+  font-size: 24rpx;
+  border-radius: 10rpx;
+}
+
+.goods-title {
+  font-size: 28rpx;
+  font-family: PingFangSC-Medium, PingFang SC;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+  /* line-height: 40px; */
+  margin-bottom: 32rpx;
+  position: relative;
+}
+
+.ck-price {
+  font-size: 20rpx;
+  font-family: PingFangSC-Regular, PingFang SC;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 28rpx;
+  margin-bottom: 14rpx;
+}
+
+.goods-title > view:first-child {
+  background-color: #f44;
+  color: #fff;
+  width: 100rpx;
+  height: 34rpx;
+  margin-right: 24rpx;
+}
+
+.goods-titleL {
+  background: linear-gradient(
+    88deg,
+    rgba(255, 51, 51, 0.94),
+    rgba(255, 70, 70, 0.94)
+  );
+  color: #fff;
+  font-size: 22rpx;
+  border-radius: 17rpx;
+  width: 244rpx;
+  height: 34rpx;
+  display: inline-block;
+  text-align: right;
+  margin-bottom: 10rpx;
+  margin-right: 10rpx;
+}
+
+.goods-titleL text {
+  display: inline-block;
+  width: 100rpx;
+  height: 34rpx;
+  border-radius: 17rpx;
+  text-align: center;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 204, 153, 0.94),
+    rgba(224, 169, 110, 0.94)
+  );
+}
+
+.goods-title image {
+  position: absolute;
+  top: 26rpx;
+  left: 24rpx;
+  width: 105rpx;
+}
+
+.share_add {
+  margin-right: 10rpx;
+}

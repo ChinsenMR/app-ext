@@ -1,0 +1,107 @@
+#equities {
+  width: 100%;
+  height: 100vh;
+  background-color: #010000;
+}
+
+#equities .header_wrap {
+  position: relative;
+}
+
+#equities .header_wrap image {
+  width: 100vw;
+  height: 100vh;
+}
+
+#equities .header_wrap .title_wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 5%;
+  margin: auto;
+}
+
+#equities .header_wrap .title_wrap .title {
+  font-size: 60rpx;
+  color: #F8E5C9;
+  text-align: center;
+}
+
+#equities .header_wrap .title_wrap .title_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30rpx;
+}
+
+#equities .header_wrap .title_wrap .title_img image {
+  width: 24rpx;
+  height: 24rpx;
+}
+
+#equities .header_wrap .title_wrap .title_img .title_text {
+  display: flex;
+  align-items: center;
+  margin: 0 10rpx;
+}
+
+#equities .header_wrap .title_wrap .title_img .title_text text {
+  font-size: 30rpx;
+  color: #F0D5A7;
+}
+
+#equities .header_wrap .title_wrap .title_img .title_text .box {
+  width: 5rpx;
+  height: 5rpx;
+  border-radius: 50%;
+  margin: 0 10rpx;
+  background-color: #F0D5A7;
+}
+
+#equities .header_wrap .equity {
+  margin: 55rpx auto 20rpx auto;
+  width: 376rpx;
+  height: 49rpx;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+#equities .header_wrap .equity image {
+  width: 100%;
+  height: 49rpx;
+}
+
+#equities .header_wrap .equity .eq_title {
+  font-size: 26rpx;
+  color: #F0D5A7;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 11%;
+  margin: auto;
+  text-align: center;
+}
+
+#equities .header_wrap .btn_wrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: -65vh;
+}
+
+#equities .header_wrap .btn_wrap .capsule_wrap {
+  font-size: 34rpx;
+  color: #875D37;
+  width: 680rpx;
+  height: 88rpx;
+  border-image: linear-gradient(180deg, #fddf96, #875d37, #e6ba6a) 2 2;
+  background: linear-gradient(43deg, #f0ca8a 0%, #ffe6bb 100%);
+  border-radius: 49rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin: 30rpx auto;
+}

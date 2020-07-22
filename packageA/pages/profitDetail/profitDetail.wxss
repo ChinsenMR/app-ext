@@ -1,0 +1,88 @@
+.layout {
+  padding-top: 20rpx;
+  box-sizing: border-box;
+}
+
+.a-li {
+  padding: 0 30rpx;
+  background-color: #fff;
+  height: 121rpx;
+  border-bottom: 1rpx solid #F4F4F4;
+}
+
+.al-tip {
+  color: #333;
+  font-size: 30rpx;
+}
+
+.al-time {
+  color: #C5C3C3;
+  font-size: 22rpx;
+}
+
+.al-account {
+  color: #333;
+  font-size: 34rpx;
+  text-align: right;
+}
+
+.empty {
+  color: #999; 
+  font-size: 30rpx;
+  margin-top: 200rpx;
+  text-align: center;
+}
+
+.title {
+  padding: 0 0 20rpx 20rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.info{
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.info .upper{
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  border-bottom:1rpx solid #eee;
+}
+.info .upper .upper_img{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 10rpx;
+}
+.info .upper .content{
+  flex:1;
+  position: relative;
+  padding: 20rpx 15rpx;
+  display: flex;
+  flex-direction: column;
+  /* align-items:flex-end; */
+}
+.name{
+  margin-bottom: 60rpx;
+}
+.nums{
+  position: absolute;
+  bottom: 10rpx;
+  right: 40rpx;
+}
+.info .zongji{
+  padding: 20rpx 20rpx 40rpx 20rpx;
+  font-size: 28rpx;
+  color:#333;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.hint{
+  text-align: center;
+  padding: 30rpx;
+  background-color: #fff;
+  font-size: 30rpx;
+  color:#999;
+}

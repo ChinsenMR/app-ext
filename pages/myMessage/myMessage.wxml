@@ -1,0 +1,11 @@
+<!--pages/myMussage/myMessage.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class='content'>
+  <view class='richtext'>
+    <view class='title'>{{newsList.Title}}</view>
+    <view class='time'>{{time}}</view>
+    <view class='line'></view>
+    <template is="wxParse" data="{{wxParseData:richtext.nodes}}" />
+    <view bindtap='navigatorTo' class='more'>更多消息>></view>
+  </view>
+</view>

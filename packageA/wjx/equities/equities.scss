@@ -1,0 +1,106 @@
+#equities {
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(1,0,0);
+  .header_wrap {
+    position: relative;
+    image {
+      width: 100vw;
+      height: 100vh;
+    }
+    .title_wrap {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 5%;
+      margin: auto;
+
+      .title {
+        font-size: 60rpx;
+        color: #F8E5C9;
+        text-align: center;
+      }
+
+      .title_img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 30rpx;
+
+        image {
+          width: 24rpx;
+          height: 24rpx;
+        }
+
+        .title_text {
+          display: flex;
+          align-items: center;
+          margin: 0 10rpx;
+
+          text {
+            font-size: 30rpx;
+            color: #F0D5A7;
+          }
+
+          .box {
+            width: 5rpx;
+            height: 5rpx;
+            border-radius: 50%;
+            margin: 0 10rpx;
+            background-color: #F0D5A7;
+          }
+        }
+      }
+    }
+
+    .equity {
+      margin: 55rpx auto 20rpx auto;
+      width: 376rpx;
+      height: 49rpx;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+
+      image {
+        width: 100%;
+        height: 49rpx;
+      }
+
+      .eq_title {
+        font-size: 26rpx;
+        color: #F0D5A7;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 11%;
+        margin: auto;
+        text-align: center;
+      }
+
+
+    }
+
+    .btn_wrap {
+      // margin-top: 75%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+      bottom: -65vh;
+      .capsule_wrap {
+        font-size: 34rpx;
+        color: #875D37;
+        width: 680rpx;
+        height: 88rpx;
+        border-image: linear-gradient(180deg, rgba(253, 223, 150, 1), rgba(135, 93, 55, 1), rgba(230, 186, 106, 1)) 2 2;
+        background: linear-gradient(43deg, rgba(240, 202, 138, 1) 0%, rgba(255, 230, 187, 1) 100%);
+        border-radius: 49rpx;
+        line-height: 80rpx;
+        text-align: center;
+        margin: 30rpx auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "Discountcontent": "/components/Discount/Discount"
+  },
+  "navigationBarTitleText": "9.9包邮",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black"
+}

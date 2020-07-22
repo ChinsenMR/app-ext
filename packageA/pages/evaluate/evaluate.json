@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-rate": "/miniprogram_npm/vant-weapp/rate/index",
+    "van-field": "/miniprogram_npm/vant-weapp/field/index"
+  },
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "评价"
+}

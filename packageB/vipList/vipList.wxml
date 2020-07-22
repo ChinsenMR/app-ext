@@ -1,0 +1,32 @@
+<view id="vipList">
+  <!-- 不需要了 -->
+  <view class="nav_wrap" wx:if="{{false}}">
+    <scroll-view class="scroll_nav " scroll-x scroll-into-view="{{toView}}" scroll-with-animation="true">
+      <block wx:for="{{nav}}"wx:key="index">
+        <view class="nav {{index==nums?'active':''}}" bindtap="handleNav" data-index="{{index}}">{{item}}</view>
+      </block>
+    </scroll-view>
+  </view>
+  <!-- 商品列表 -->
+  <view class="content">
+    <block wx:for="{{list}}" wx:key="index">
+      <view class="main_wrap" bindtap="handleDetail" data-productid="{{item.ProductId}}">
+        <image src="{{item.ImageUrl1}}"></image>
+        <view class="main">
+          <view class="title to-2line">{{item.ProductName}}</view>
+          <view class="price">
+            <text>￥</text>
+            <text>{{item.SalePrice}}</text>
+          </view>
+          <view class="member" wx:if="{{item.SkuItems[0].NextMemberPrice}}">
+            <text>{{item.SkuItems[0].NextMemberPrice.GradeName}}</text>
+            <text>专享￥{{item.SkuItems[0].NextMemberPrice.MemberSalePrice}}</text>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<!-- 底部导航栏 -->
+<tabBar curActive="{{tabIndex}}"></tabBar>

@@ -1,0 +1,253 @@
+.layout{
+  background-color: #F7F7F7;
+}
+
+.header{
+  position: relative;
+}
+
+.header-c {
+  position: absolute;
+  top: 35rpx;
+  left: 58rpx;
+  color: #fff;
+  font-size: 28rpx;
+}
+
+.header-c image{
+  width: 44rpx;
+  margin-right: 35rpx;
+}
+
+
+.userInfo{
+  margin: -70rpx 30rpx 20rpx 30rpx;
+  background-color: #fff;
+  z-index: 10;
+  position: relative;
+  border-radius: 6rpx;
+  padding: 43rpx 30rpx;
+}
+
+.userInfo image:first-of-type{
+  width: 50rpx;
+}
+
+.userInfo image:last-of-type{
+  width: 30rpx;
+}
+
+.userInfo-inner{
+  padding-left: 30rpx;
+  padding-right: 80rpx;
+}
+
+.userInfo-innerT text:first-child{
+  color: #333333;
+  font-size: 28rpx;
+}
+
+.userInfo-innerT text:last-child{
+  color: #666666;
+  font-size: 24rpx;
+  margin-left: 20rpx;
+}
+
+.userInfo-innerB{
+  color: #666666;
+  font-size: 24rpx;
+  margin-top: 15rpx;
+}
+
+.storeList {
+  background-color: #fff;
+  margin: 0 30rpx 20rpx 30rpx;
+  border-radius: 6rpx;
+}
+
+.storeName{
+  height: 88rpx;
+  padding-left: 30rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+
+.storeName image{
+  width: 35rpx;
+}
+
+.storeName text{
+  color: #333333;
+  font-size: 28rpx;
+  margin-left: 10rpx;
+}
+
+.goodsList{
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+
+.goodsList image{
+  width: 128rpx;
+  margin-right: 20rpx;
+  margin-left: 30rpx;
+}
+
+.goodsName {
+  color: #333333;
+  font-size: 26rpx;
+  width: 410rpx;
+}
+
+.goodsType{
+  background-color: #FFEEEE;
+  color: #FF2222;
+  font-size: 22rpx;
+  margin-top: 5rpx;
+  padding: 3rpx 10rpx;
+  display: inline-block;
+}
+
+.goodsPrice{
+  margin-top: 15rpx;
+}
+
+.goodsPrice text:first-of-type{
+  color: #FF4444;
+  font-size: 28rpx;
+}
+
+.goodsPrice .count{
+  color: #999999;
+  font-size: 26rpx;
+  padding-right: 30rpx;
+  flex: 1;
+  text-align: right;
+}
+.apply-aftersale {
+	font-size: 24rpx;
+	font-size: 24rpx;
+	margin: 0;
+	color: #333;
+	border: 1px solid #333;
+	height: 45rpx;
+	line-height: 45rpx;
+	border-radius: 100rpx;
+	width: 150rpx;
+	text-align:center;
+  margin-right: 30rpx;
+}
+
+.totalPrice{
+  height: 88rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+
+.totalPrice text:first-child{
+  color: #333333;
+  font-size: 26rpx;
+  margin-right: 20rpx;
+}
+
+.totalPrice text:last-child{
+  color: #FF4444;
+  font-size: 28rpx;
+  margin-right: 30rpx;
+}
+
+.realityPrice{
+  height: 88rpx;
+}
+
+.realityPrice text:nth-child(1){
+  color: #333333;
+  font-size: 26rpx;
+}
+
+.realityPrice text:nth-child(2){
+  color: #FF4444;
+  font-size: 28rpx;
+}
+
+.realityPrice text:nth-child(3){
+  color: #999999;
+  font-size: 22rpx;
+  margin-left: 15rpx;
+  margin-right: 30rpx;
+}
+.handler-bar{
+  display: flex;
+  padding: 30rpx;
+  padding-bottom: 0;
+  border-bottom: 1rpx solid #E5E5E5;
+  flex-wrap: wrap;
+}
+.handler-bar .handle-btn{
+  color: #ff3333;
+	font-size: 30rpx;
+	border: 2rpx solid #ff3333;
+	padding: 0 35rpx;
+	line-height: 58rpx;
+	border-radius: 29rpx;
+	background-color: none;
+	margin: 0rpx 15rpx 20rpx 0;
+}
+.handler-bar .black{
+  border: 2rpx solid #333;
+  color: #333;
+}
+.orderInfo{
+  background-color: #fff;
+  margin: 0 30rpx 30rpx 30rpx;
+  border-radius: 6rpx;
+}
+
+.orderInfo > view{
+  height: 88rpx;
+  padding: 0 30rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+
+.orderInfo > view:last-of-type{
+  border: 0;
+}
+
+.orderInfo-title{
+  color: #333333;
+  font-size: 28rpx;
+  font-weight:bold;
+}
+
+.orderInfo-code view:first-child{
+  color: #333333;
+  font-size: 26rpx;
+}
+
+.orderInfo-code view:last-child text:first-child{
+  color: #666666;
+  font-size: 26rpx;
+}
+
+.orderInfo-code view:last-child text:last-child{
+  color: #fff;
+  font-size: 20rpx;
+  width: 110rpx;
+  line-height: 26rpx;
+  text-align: center;
+  border-radius: 13rpx;
+  background-color: #479EFF;
+  margin-left: 20rpx;
+}
+
+.orderInfo-time view:first-child{
+  color: #666666;
+  font-size: 26rpx;
+}
+
+.orderInfo-time view:last-child{
+  color: #999999;
+  font-size: 26rpx;
+}
+
+.orderInfo-time view:last-child text:last-child{
+  margin-left: 10rpx;
+}

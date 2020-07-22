@@ -1,0 +1,50 @@
+<view class='layout'>
+  <view class='scroll-header'>
+    <scroll-view scroll-x >
+      <view 
+      wx:for="{{scrollItem}}" 
+      wx:for-item="scrollItem" 
+      wx:for-index="scrollIndex"
+      wx:key="scrollIndex"
+      data-id='{{scrollIndex}}'
+      class="{{activeItem==scrollIndex? 'activeItem':''}}"
+      bindtap='selectTab'>
+        {{scrollItem}}
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- 内容  -->
+  <view class='content-ul'>
+    <view class='content-li'
+    wx:for="{{list}}"
+    wx:for-index="index"
+    wx:key="index">
+      <view class='li-header df ais jct-between'>
+        <view  class='li-headerL df ais'>
+          <image class='userImg' src='http://img.hmeshop.cn/hmeshop_jxy/images/touxiang_01@2x.png' mode='widthFix'></image>
+            <view class='df fdc jct'>
+              <text class='userName'>鸿猫企云</text>
+              <text class='time'>31分钟前</text>
+            </view>
+        </view>
+        <view class='li-headerR df ais jct' data-index='{{index}}' bindtap='share'>
+          <image src='{{imgUrl+ "icon_share@2x_2.png"}}' mode='widthFix'></image>
+          <text>分享</text>
+        </view>
+      </view>
+      <view class='content-inner'>
+        <view class='contentTitle'>99九阳电热水壶1.5L容量双层保温防烫伤食品级不锈钢安全健康喝水这件事,九阳是认真</view>
+        <view class='contentImg df ais flex'>
+          <image src='http://img.hmeshop.cn/hmeshop_jxy/images/big_pic@2x.png' mode='widthFix'></image>
+          <image src='http://img.hmeshop.cn/hmeshop_jxy/images/big_pic@2x.png' mode='widthFix'></image>
+          <image src='http://img.hmeshop.cn/hmeshop_jxy/images/big_pic@2x.png' mode='widthFix'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 分享modal -->
+  <share-modal wx:if="{{modalShow}}" bind:closeModal="share" imgList="{{imgList}}"/>
+
+</view>

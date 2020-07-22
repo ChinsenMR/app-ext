@@ -1,0 +1,16 @@
+<!-- <view class='layout' wx:if='{{steps}}'> -->
+<view class='layout' wx:if='{{true}}'>
+  <view class='goodsInfo da'>
+    <view class='goodsImg'>
+      <image src='{{imgs[0].Image}}' mode='aspectFill'></image>
+      <text>共{{imgs[0].Amount}}件</text>
+    </view>
+    <view class='df ais-start fdc'>
+      <!-- <view class='logStatus'>配送中</view> -->
+      <view class='logCompany'>物流公司： {{logisticsInfo.ShipperCode}}</view>
+      <view class='order'>物流单号:  {{logisticsInfo.LogisticCode}}</view>
+    </view>
+  </view>
+  <van-steps steps="{{ steps }}" active="{{ active }}" direction="vertical" active-color="#FE575E" />
+</view>
+<view class='empty' wx:else>查询有误，请查看物流单号是否正确</view>

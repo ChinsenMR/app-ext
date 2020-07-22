@@ -1,0 +1,165 @@
+.group_wrap {
+  .content {
+    padding: 0 20rpx;
+    background-color: #fff;
+    margin-bottom: 20rpx;
+    position: relative;
+
+    .commodity_wrap {
+      display: flex;
+      font-size: 26rpx;
+      color: #606060;
+      border-bottom: 1rpx solid #eee;
+
+      .commodity_img_wrap {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 12rpx;
+        margin-right: 20rpx;
+        image {
+          width: 140rpx;
+          height: 140rpx;
+          border-radius: 12rpx;
+          margin-bottom: 5rpx;
+        }
+      }
+
+      .group_main {
+        flex: 7;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .group_title {
+          margin-bottom: 15rpx;
+          text-overflow: -o-ellipsis-lastline;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+        }
+
+        .group_price {
+          margin-bottom: 15rpx;
+
+          text {
+            color: #000;
+          }
+        }
+
+        .time_wrap {
+          .over {
+            .timeColor {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+
+    // 中
+    .group_team_wrap {
+      font-size: 26rpx;
+      columns: #797979;
+      border-bottom: 1rpx solid #eee;
+      padding: 10rpx;
+
+      .group_team_title {
+        margin: 10rpx 0;
+
+        .team_title {
+          .team_num {
+            color: red;
+          }
+        }
+      }
+
+      .team_img_wrap {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-left: 15rpx;
+
+        .team_members {
+          width: 100rpx;
+          height: 100rpx;
+          border: 1rpx solid red;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 20rpx 30rpx 20rpx 0;
+          position: relative;
+
+          image {
+            width: 98rpx;
+            height: 98rpx;
+            border-radius: 50%;
+          }
+
+          .captain_img {
+            width: 50rpx;
+            height: 50rpx;
+            border-radius: 50%;
+            position: absolute;
+            right: -12rpx;
+            bottom: -5rpx;
+            z-index: 100;
+          }
+        }
+      }
+
+    }
+
+    .group_btn_wrap {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      font-size: 26rpx;
+      padding: 10rpx 0 25rpx 0;
+
+      .group_detail {
+        width: 170rpx;
+        height: 50rpx;
+        line-height: 50rpx;
+        margin-right: 20rpx;
+        border: 1rpx solid #d98d71;
+        text-align: center;
+        border-radius: 12rpx;
+        color: #d98d71;
+      }
+
+      .view_order {
+        color: #fff;
+        background-color: #fe612a;
+        width: 170rpx;
+        height: 50rpx;
+        line-height: 50rpx;
+        text-align: center;
+        border-radius: 12rpx;
+      }
+    }
+
+    // 水印
+    .shuiyin {
+      position: absolute;
+      right: 11%;
+      top: 24%;
+      width: 160rpx;
+      height: 160rpx;
+
+      image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .no_data{
+    width: 100%;
+    text-align: center;
+    margin-top: 100rpx;
+  }
+}

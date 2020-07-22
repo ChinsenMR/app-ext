@@ -1,0 +1,22 @@
+<!--pages/myCollect/myCollect.wxml-->
+<view class='list' wx:if="{{collectData.length>0}}">
+  <view class='listItem' wx:for="{{collectData}}" wx:key="index">
+    <navigator class='left' url='/pages/productDetail/productDetail?id={{item.ProductId}}'>
+      <image src='{{item.Img}}'></image>
+    </navigator>
+    <view class='right'>
+      <navigator class='r_top' url='/pages/productDetail/productDetail?id={{item.ProductId}}'>
+        {{item.ProductName}}
+      </navigator>
+      <!-- <view class='r_center' wx:if="{{item.ValueStr}}">规格：{{item.ValueStr}}</view> -->
+      <view class='r_bottom'>
+        <view class='price'>￥{{item.Price}}</view>
+        <view class='cancel' bindtap='cancelCollect' data-favId="{{item.FavoriteId}}" data-id='{{index}}'>取消收藏</view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='empty' wx:if='{{!collectData.length}}'>
+ <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/pic-kong.png'></image>
+  <text>暂无数据</text>
+</view>

@@ -1,0 +1,51 @@
+<view class='layout'>
+  <view class='scroll-header'>
+    <scroll-view scroll-x >
+      <view 
+      wx:for="{{scrollItem}}" 
+      wx:for-item="scrollItem" 
+      wx:for-index="scrollIndex"
+      wx:key="scrollIndex"
+      data-id='{{scrollIndex}}'
+      class="{{activeItem==scrollIndex? 'activeItem':''}}"
+      bindtap='selectTab'>
+        {{scrollItem}}
+      </view>
+    </scroll-view>
+  </view>
+  <view class='content'>
+    <view class='allSelect df ais'>
+      <icon class='iconfont df ais jct {{selectAllStatus? "iconxuanze":"iconweixuanze"}}' bindtap='selectAll'></icon>
+      <text>全选</text>
+    </view>
+    <!-- 内容列表 -->
+    <view class='content-ul'>
+      <view 
+      class='content-li df ais' 
+      wx:for="{{list}}" 
+      wx:for-index="index" 
+      wx:for-item="list" 
+      wx:key="index"
+      data-id='{{index}}'
+      bindtap='selectSingle'>
+        <icon class='iconfont df ais jct {{list.selectStatus? "iconxuanze":"iconweixuanze"}}'></icon>
+        <view class='df ais'>
+          <image class='goodsImg' src='{{list.goodsImg}}' mode="widthFix"></image>
+          <view class='df fdc jct-between content-liR'>
+            <view class='goodsTitle to-line'>{{list.goodsTitle}}</view>
+            <view class='goodsPrice'>￥ {{list.goodsPrice}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 底部 -->
+  <view class='footer df ais jct-between'>
+    <view class='footer-l'>
+      <text>合计： </text>
+      <text>￥ {{totalPrice}}</text>
+    </view>
+    <view class='footer-r df ais jct'>确认换购</view>
+  </view>
+</view>

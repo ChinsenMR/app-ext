@@ -1,0 +1,12 @@
+<!--components/sortNavigation/sortNavigation.wxml-->
+<!-- <text>components/sortNavigation/sortNavigation.wxml</text> -->
+<view class='sort'>
+  <ul>
+    <li wx:for="{{sortNavUrls.content.dataset}}" wx:key="index">
+      <view class='navigator' bindtap='jumptap' data-type='{{item.linkType}}' data-index='{{index}}'>
+        <image mode="widthFix" src='{{item.pic}}'></image>
+        <text>{{item.showtitle}}</text>
+      </view>
+    </li>
+  </ul>
+</view>

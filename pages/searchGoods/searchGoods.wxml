@@ -1,0 +1,78 @@
+<view class='layout'>
+  <view class='search df ais'>
+    <view class='search-l df ais flex'>
+      <image src='{{imgUrl+"icon_search@2x.png"}}' mode='widthFix' ></image>
+      <input class='flex' value='{{searchVal}}' placeholder='请输入搜索关键词' confirm-type='search' bindconfirm='onSearch' />
+    </view>
+    <!-- <view wx:if="{{}}" class='search-r' bindtap='cancelSearch'>取消</view> -->
+    <view class='search-r' bindtap='cancelSearch'>取消</view>
+  </view>
+
+  <!-- 搜索的关键词列表 -->
+  <view class='searchKey' hidden='{{hiddenKey}}'>
+    <!-- 热门 -->
+    <view class='popular'>
+      <view class='popularTitle'>热门</view>
+      <view class='popular-ul df ais'>
+        <view 
+        class='popular-li' 
+        wx:for="{{popularKeyword}}" 
+        wx:for-index="keyword"
+        wx:for-item='popularKeyword' 
+        wx:key="{{keyword}}"
+        data-id='{{keyword}}'
+        bindtap='onPopular'
+        >
+        {{popularKeyword}}
+        </view>
+      </view>
+    </view>
+
+    <!-- 历史搜索 -->
+    <view class='popular'>
+      <view class='popularTitle df ais jct-between'>
+        <text>历史搜索</text>
+        <image src='{{imgUrl+"icon_del@2x.png"}}' mode='widthFix' bindtap='clearHistory'></image>
+      </view>
+      <view class='popular-ul df ais'>
+        <view 
+          class='popular-li to-line' 
+          wx:for="{{historyKeyword}}" 
+          wx:for-index="history" 
+          wx:for-item='historyKeyword' 
+          wx:key="{{history}}"
+          data-id='{{history}}'
+          bindtap='onHistory'
+        >
+          {{historyKeyword}}
+        </view>
+      </view>
+    </view>
+
+    <!-- 常用分类 -->
+    <view class='classify' wx:if="{{false}}">
+      <view class='popularTitle'>常用分类</view>
+      <view class='classify-ul df ais'>
+        <view class='classify-li df ais fdc' 
+        wx:for="{{classify}}" wx:for-index="classifyIndex" wx:for-item="classify" wx:key="{{classifyIndex}}">
+          <image src='{{imgUrl+classify.img}}' mode='widthFix'></image>
+          <text>{{classify.txt}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+   
+  
+  <!-- 搜索结果组件 -->
+  <searchResult 
+  hiddenResult="{{hiddenResult}}" 
+  bind:drawerState="openDrawer" 
+  id='search-result' 
+  bindsaleprice="getSortNum"
+  comList="{{CommodityList}}"/>
+  
+  <!-- 筛选drawer -->
+  <screenDrawer hiddenDrawer="{{hiddenDrawer}}" bind:drawerState="openDrawer"
+                minPrice="{{minPrice}}" maxPrice="{{maxPrice}}" />
+
+</view>

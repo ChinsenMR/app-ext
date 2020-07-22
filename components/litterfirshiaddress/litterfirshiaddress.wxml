@@ -1,0 +1,19 @@
+<!--components/addrPicker/addrPicker.wxml-->
+<view class='addr-box' hidden='{{!show}}'>
+  <view class='btn-box'>
+    <view class='addr-cancel' bindtap='oncancel'>取消</view>
+    <view class='addr-sure' bindtap='onsure'>确定</view>
+  </view>
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange">
+    <picker-view-column>
+      <view wx:for="{{province}}" wx:key="{{item}}" style="line-height: 50px">{{item.name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{city}}" wx:key="{{item}}" style="line-height: 50px">{{item.name}}</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{area}}" wx:key="{{item}}" style="line-height: 50px">{{item.name}}</view>
+    </picker-view-column>
+  </picker-view>
+  </view>
+  <view class='addr-cover' hidden='{{!show}}'></view>

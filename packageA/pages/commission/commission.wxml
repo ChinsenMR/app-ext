@@ -1,0 +1,51 @@
+<view class='layout'>
+  <view class="c-total dd-vh">
+    <text>{{listData.Commission}}</text>
+    <text>总佣金(元)</text>
+  </view>
+  <button bindtap="handleWithdraw" class="addAcitve">提现</button>
+
+  <!-- <view class="a-btn dbc ">
+    <button class="chongzhi">充值</button>
+  </view> -->
+  <!-- <view class="c-nav da">
+    <view class="cn-item flex dd-vh">
+      <text class="cn-amount">￥{{listData.Commission}}</text>
+      <text>可提现</text>
+    </view>
+    <view class="flex dd-vh">
+      <text class="cn-amount">￥{{listData.AnticipatedIncome}}</text>
+      <text>未结算</text>
+    </view>
+  </view> -->
+
+  <view class="c-ul">
+    <view class="cu-header">佣金明细</view>
+    <view class="c-li da" wx:for='{{list}}' wx:key>
+      <view class="">
+        <view class="">
+          <text class="c-order">单号:{{item.OrderId}}</text>
+          <!-- <text class="c-tip">{{item.IsUse? '已结算':'未结算'}}</text> -->
+          <text class="c-tip">{{!item.IsRepOrder? '首购':'复购'}}</text>
+        </view>
+        <view class="c-time">{{item.TradeDate}}</view>
+      </view>
+      <view class="cu-amount flex" style="color:{{item.IsUse?'#FF3333':'#333'}}">+￥{{item.Amount}}</view>
+    </view>
+    <view class="empty" wx:if='{{isEmpty && list.length == 0}}'>暂无佣金...</view>
+  </view>
+</view>
+
+<view class="win_wrap" catchtouchmove="ture" wx:if="{{isWin}}">
+  <view class="win_main">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    <view class="btn_wrap" catchtap="handleTY" data-status="1">
+      <view class="search_btn">
+        <view class="btn_img" wx:if="{{isShow}}"></view>
+      </view>
+      <view class="search_title">我已阅读该协议</view>
+    </view>
+  </view>
+  <view class="win_style" catchtap="handleAgree">同意</view>
+</view>
+<view class="zhezhao" catchtouchmove="ture" wx:if="{{isWin}}"></view>

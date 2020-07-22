@@ -1,0 +1,50 @@
+.layout {
+  background-color: #fff;
+  height: 100%;
+}
+
+.suIcom {
+  width: 312rpx;
+  height: auto;
+  margin-top: 70rpx;
+  margin-bottom: 35rpx;
+}
+
+.su-item1 {
+  font-size: 50rpx;
+  color: #FF6633;
+}
+
+.su-item2 {
+  font-size: 36rpx;
+  color: #FF6633;
+  margin: 10rpx 0;
+}
+
+.active {
+  text-decoration: line-through;
+  color:#999;
+}
+
+.su-item3 {
+  font-size: 28rpx;
+  color: #999999;
+}
+
+.btn {
+  font-size: 30rpx;
+  color: #333;
+  margin-top: 55rpx;
+}
+
+.btn text {
+  line-height: 78rpx;
+  text-align: center;
+  width: 260rpx;
+  border: 2rpx solid #999999;
+  border-radius: 39rpx;
+}
+
+.btn text:first-child {
+  margin-right: 76rpx;
+}

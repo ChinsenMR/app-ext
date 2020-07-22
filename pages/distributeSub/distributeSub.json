@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "分销下属",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "agent": "../components/agentComponent/agentComponent"
+  }
+}

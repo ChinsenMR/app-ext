@@ -1,0 +1,108 @@
+#vipList {
+  .nav_wrap {
+    background: linear-gradient(115deg, rgba(231, 100, 62, 1) 0%, rgba(232, 84, 72, 1) 38%, rgba(228, 62, 81, 1) 100%);
+    box-sizing: border-box;
+    padding: 0 20rpx;
+
+    .scroll_nav {
+      white-space: nowrap;
+
+      .nav {
+        display: inline-block;
+        padding: 20rpx 30rpx;
+        font-size: 28rpx;
+        color: #fff;
+        position: relative;
+      }
+
+      .active {
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          margin: auto;
+          bottom: 5rpx;
+          width: 50rpx;
+          height: 6rpx;
+          background-color: #fff;
+          border-radius: 3rpx;
+        }
+      }
+    }
+
+  }
+
+  .content {
+    box-sizing: border-box;
+    padding: 20rpx 20rpx 120rpx 20rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .main_wrap {
+      width: 49%;
+      border-radius: 15rpx;
+      background-color: #fff;
+      margin-bottom: 20rpx;
+
+      image {
+        width: 100%;
+        height: 320rpx;
+        border-top-left-radius: 15rpx;
+        border-top-right-radius: 15rpx;
+      }
+
+      .main {
+        padding: 20rpx 10rpx;
+        height: 180rpx;
+        .title {
+          font-size: 28rpx;
+          color: #333;
+          height: 80rpx;
+        }
+
+        .price {
+          margin: 10rpx 0;
+
+          text {
+            font-size: 20rpx;
+            color: #ea5464;
+          }
+
+          text:nth-child(2) {
+            font-size: 28rpx;
+            font-weight: 600;
+          }
+        }
+
+        .member {
+          background: url('https://img.hmeshop.cn/hmeshop_jxy/images/icon_hy@3x.png') no-repeat;
+          background-size: 102rpx 40rpx;
+          width: 85%;
+          height: 40rpx;
+          border-radius: 20rpx;
+          background-color: #efefef;
+          box-sizing: border-box;
+          padding-left: 55rpx;
+          display: flex;
+          align-items: center;
+
+          text:nth-child(1) {
+            font-size: 20rpx;
+            color: #FFE1AE;
+            font-weight: 600;
+          }
+
+          text:nth-child(2) {
+            font-size: 22rpx;
+            color: #333;
+            margin-left: 30rpx;
+          }
+        }
+      }
+
+    }
+  }
+}

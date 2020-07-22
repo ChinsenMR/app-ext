@@ -1,0 +1,146 @@
+@import '../../../app.wxss';
+
+.layout {
+  background-color: #f7f7f7;
+  padding-top: 215rpx;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.userComment {
+  background-color: #f7f7f7;
+}
+
+.userComment .commoentImg {
+  flex-wrap: wrap;
+}
+
+.userComment .commoentImg image {
+  margin-bottom: 20rpx;
+  margin-right: 15rpx;
+}
+
+.commoentImg image:nth-of-type(3),
+.commoentImg image:nth-of-type(6),
+.commoentImg image:nth-of-type(9){
+  margin-right: 0;
+}
+
+.userComment .goods-comment {
+  background-color: #fff;
+  padding: 30rpx 30rpx 15rpx 30rpx;
+}
+
+.userComment .goods-comment:first-child {
+  margin-top: -30rpx;
+}
+
+.goods-comment {
+  padding: 0 30rpx 30rpx 30rpx;
+  background-color: #fff;
+  margin: 20rpx 0;
+}
+
+.goods-commentH {
+  height: 89rpx;
+  margin-bottom: 10rpx;
+}
+
+.goods-commentH view:first-child {
+  color: #333;
+  font-size: 30rpx;
+}
+
+.goods-commentH view:last-child {
+  color: #999;
+  font-size: 26rpx;
+}
+
+.goods-commentH view:last-child text {
+  margin-right: 30rpx;
+}
+
+/* .userInfo {
+  position: relative;
+}
+
+.userImg {
+  width: 76rpx;
+  margin-right: 20rpx;
+}
+
+.userName {
+  color: #333;
+  font-size: 26rpx;
+}
+
+.userName text:last-child {
+  color: #999;
+  margin-top: 7rpx;
+} */
+
+.commoentInfo {
+  color: #666;
+  font-size: 24rpx;
+  margin-top: 20rpx;
+}
+
+.commoentImg {
+  margin-top: 20rpx;
+}
+
+.commoentImg image {
+  width: 220rpx;
+}
+
+.userInfoImg{
+  width: 76rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+
+.userName{
+  color: #333;
+  font-size: 26rpx;
+}
+
+.userInfo-grade{
+  width: 129rpx;
+  height: 30rpx;
+  background-color: #333333;
+  border-radius: 15rpx;
+  margin-left: 16rpx;
+}
+
+.userInfo-grade image{
+  width: 20rpx;
+}
+
+.userInfo-grade text{
+  color: #FFDDBC;
+  font-size: 18rpx;
+  margin-left: 6rpx;
+  height: 30rpx;
+  padding-bottom: 6rpx;
+  box-sizing:  border-box;
+}
+
+.userInfo-gradeStar{
+  margin-top: 12rpx;
+}
+
+.userInfo-gradeStar image{
+  width: 19rpx;
+  margin-right: 9rpx;
+}
+
+.buyTime {
+  color: #999;
+  font-size: 20rpx;
+}
+
+.empty{
+  margin-top: 100rpx;
+  color: #666;
+  font-size: 28rpx;
+}

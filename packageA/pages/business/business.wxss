@@ -1,0 +1,50 @@
+/* packageA/pages/business/business.wxss */
+.business {
+  border-top: 1rpx solid #666;
+  padding: 5rpx 20rpx 0 20rpx;
+  height: 100vh;
+  background-color: #fff;
+}
+.business .flex {
+  display: flex;
+  margin-bottom: 20rpx;
+  flex-direction: column;
+}
+.business .flex .upload_img_wrap {
+  display: flex;
+}
+.business .flex .upload_img_wrap .img_wrap {
+  background-color: #fff;
+  border: 2rpx dashed #666;
+  width: 230rpx;
+  height: 300rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10rpx;
+}
+.business .flex .upload_img_wrap .img_wrap .bus_img {
+  width: 100rpx;
+  height: 100rpx;
+}
+.business .flex .upload_img_wrap .img_wrap image {
+  width: 100%;
+  height: 100%;
+}
+.business .flex .upload_img_wrap .img_box {
+  margin: 0 10rpx 10rpx 0;
+}
+.business .flex .title_wrap .title {
+  font-size: 30rpx;
+  color: #666;
+}
+.business .flex .line_feed {
+  flex-wrap: wrap;
+}
+.business .business_btn {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-radius: none;
+}

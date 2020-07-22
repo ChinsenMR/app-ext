@@ -1,0 +1,32 @@
+<!--components/ShareShwiper/ShareShwiper.wxml-->
+<view class="Sharebox">
+  <swiper class="containt" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" current="{{current}}" bindchange="bindchange">
+    <block wx:for="{{imgUrls}}" wx:if="{{item}}">
+      <swiper-item bindtap="Close">
+        <image src="{{item.url}}" class="slide-image" mode="widthFix" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="bot">
+    <view class="botl">
+      <view>
+        <button open-type="share">
+          <image class="bimg" src="{{imgurl}}icon_wechat@2x.png"></image>
+          <text>邀请好友</text>
+        </button>
+      </view>
+    </view>
+    <view class="botr">
+      <view>
+        <button bindtap='save' hidden='{{saveImgBtnHidden}}' hover-class="none">
+          <image class="bimg" src="{{imgurl}}icon_xiazai@2x.png"></image>
+          <text>保存图片</text>
+        </button>
+        <button open-type="openSetting" bindopensetting='handleSetting' hover-class="none" hidden='{{openSettingBtnHidden}}'>
+          <image class="bimg" src="{{imgurl}}icon_xiazai@2x.png"></image>
+          <text>前往授权</text>
+        </button>
+      </view>
+    </view>
+  </view>
+</view>

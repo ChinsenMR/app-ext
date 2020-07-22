@@ -1,0 +1,21 @@
+<view class='layout'>
+  <view class='header'>
+    <image src='{{imgUrl+"banner @2x (1).png"}}' mode='widthFix'></image>
+  </view>
+  <view class='content-ul da'>
+    <navigator url="" class='content-li ddc-v' wx:for="{{list}}" wx:key>
+      <image src='{{imgUrl+"bg_canpin@2x.png"}}' mode='aspectFill'></image>
+      <view class='to-line goodsTitle'>多媒体重低多媒体重低音炮音响音炮音响</view>
+      <view class='dcc integral'>
+        <text>6000</text>
+        <text>积分</text>
+      </view>
+      <view class='btn'>立即兑换</view>
+    </navigator>
+  </view>
+
+  <!-- 底部导航栏 -->
+  <!-- <import src="../../template/template.wxml" />
+  <template is="tabBar" data="{{tabBar:bindData.tabBar}}" /> -->
+
+</view>

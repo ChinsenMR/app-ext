@@ -1,0 +1,191 @@
+<!-- 限时组件  需要传入限时的时间 -->
+<view class='limit-time'>
+  <view class='limit-time1 df ais jct-between'>
+    <image src='{{ imgUrl + "pic_activity_4@2x.png" }}' mode='widthFix'></image>
+    <view class='limit-time1R df ais'>
+      <view>{{limitTxt}}</view>
+      <view class='df ais'>
+        <text>{{limitHours}}</text>
+        <icon>:</icon>
+        <text>{{limitMin}}</text>
+        <icon>:</icon>
+        <text>{{limitSecond}}</text>
+      </view>
+    </view>
+  </view>
+  <!-- 新增团员展示 -->
+  <!-- <block wx:for="{{groupList}}" wx:key="index"> -->
+    <!-- <view class="add_members" wx:if="{{goodsInfo.FightDistributorInfo && index<1}}"> -->
+    <view class="add_members">
+      <view class="add_left" bindtap="handleClick">
+        <image class="add_img" src="{{goodsInfo.FightDistributorInfo.UserHead}}"></image>
+        <text>咨询代理</text>
+      </view>
+      
+      <view class="add_right">
+        <view class="add_gd">
+          <image class="gd_img" src="{{imgUrl+'diandian.png'}}"></image>
+        </view>
+        
+        <!-- 团长 -->
+        <!-- <view class="img_wrap">
+          <image class="gd_img2" src="{{goodsInfo.FightDistributorInfo.UserHead}}"></image>
+          <text>团长</text>
+        </view> -->
+
+        <!-- 非团长 -->
+        <!-- <block wx:for="{{goodsInfo.FightDistributorInfoList}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="{{subIndex}}"> -->
+        <block wx:for="{{newArr}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="{{subIndex}}">
+          <view class="img_wrap2">
+            <image class="gd_img3" src="{{subItem.Picture}}" wx:if="{{newArr.length !=0}}"></image>
+            <view class="no_img" wx:else>?</view>
+          </view>
+        </block>
+
+        <view class="img_wrap2" wx:if="{{goodsInfo.FightDistributorInfoList.length ==0}}">
+          <view class="no_img">?</view>
+        </view>
+      </view>      
+    </view>
+  <!-- </block> -->
+    <!-- <viww class="ceshi_wrap">
+      <text>页面团id:{{fid}}</text>
+      <text>页面代理id:{{dlr}}</text>
+      <text>请求团id:{{goodsInfo.FightGroupInfo.FightGroupId}}</text>
+      <text>请求代理id"{{goodsInfo.FightDistributorInfo.UserId}}</text>
+      <text>回复团id:{{groupList.FightGroupId}}</text>
+      <text>回复代理id:{{goodsInfo.FightDistributorInfo.UserId}}</text>
+    </viww> -->
+
+</view>
+
+<view class='layout'>
+  <view class='title2 df ais'>
+    <text>{{goodsInfo.FightGroupActivityInfo.JoinNumber}}</text>人团，您可以直接参加，已拼 {{goodsInfo.FightGroupActivityInfo.FightGroupsOrderCount}} 件
+  </view>
+  <view class='user-ul'>
+    <view class='user-li df ais jct-between' wx:for='{{groupList}}' wx:for-item='groupList' wx:for-key='index' wx:key>
+      <view class='user-liL df ais'>
+        <!-- 团长头像 -->
+        <view class='user-img userType'>
+          <!-- <image src='{{groupList.THeadPicture}}' mode='widthFix'></image> -->
+          <image src='{{groupList.THeadPicture}}'></image>
+          <!-- <text>团长</text> -->
+        </view>
+        <view class='df fdc jct userName'>
+          <text class="infoName">{{groupList.THeadNickName}}</text>
+          <text wx:if="{{groupList.limitHours =='00' && groupList.limitMin =='00' && groupList.limitSecond =='00' || groupList.LeftNum == 0}}">已结束</text>
+          <text wx:else>剩余 {{groupList.limitHours}}:{{groupList.limitMin}}:{{groupList.limitSecond}}</text>
+        </view>
+        <!-- 成员小头像 -->
+        <block wx:for="{{groupList.FightGroupUsers}}"  wx:key>
+          <view class='userGroup-img df ais'>
+            <image src='{{item.Picture}}' class="ceshi_img" ></image>
+          </view>
+        </block>
+      </view>
+
+      <view class='user-liR df ais'>
+        <!-- 参团描述 -->
+        <view class='groupNum'>
+          <view class='df ais'>还差
+            <text>{{groupList.LeftNum}}</text>人成团</view>
+          <view class='df ais'>拼团价
+            <text>￥ {{goodsInfo.FightGroupSkuInfos[0].SalePrice}}</text>
+          </view>
+        </view>
+        <!-- 参团按钮 -->
+        <view 
+          wx:if="{{groupList.limitHours =='00' && groupList.limitMin =='00' && groupList.limitSecond =='00' || groupList.LeftNum == 0}}" 
+          class='df ais jct showGroup-btn' bindtap='joinOver'>
+          已结束 >
+        </view>
+        <view  
+          wx:else 
+          class='df ais jct showGroup-btn' 
+          data-id='{{groupList.FightGroupActivityId}}' 
+          data-isown='{{groupList.IsJoinGroup}}' 
+          data-FightGroupId="{{groupList.FightGroupId}}" 
+          data-sku='{{groupList.SkuId}}' 
+          data-tuxedo='tuxedo'
+          data-dlUser="{{goodsInfo.FightDistributorInfo.UserId}}"
+          bindtap='joinGroup'>
+          立即参团 >
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class='title df ais'>拼团玩法</view>
+  <view class='step-inner df ais jct-between'>
+    <view class='step-item step-item1 df ais'>
+      <view>1</view>
+      <view class='df fdc ais'>
+        <text>支付</text>
+        <text>开团/参团</text>
+      </view>
+    </view>
+    <view class='step-line'></view>
+    <view class='step-item df ais'>
+      <view>2</view>
+      <view class='df fdc ais'>
+        <text>邀请</text>
+        <text>好友参团</text>
+      </view>
+    </view>
+    <view class='step-line'></view>
+    <view class='step-item df ais'>
+      <view>3</view>
+      <view class='df fdc ais'>
+        <text>拼团成功立即发货</text>
+        <text>逾期未成团自动退款</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 拼团modal -->
+  <!-- <view class='modal df ais jct' hidden='{{hiddenModal}}'>
+    <view class='modal-inner df fdc ais'>
+      <view class='modal-close df ais' bindtap='showGroup'>+</view>
+      <view class='df ais moodal-info1'>参与
+        <text class='df ais jct'>{{groupObj.groupUser}}</text> 的团 还差</view>
+      <view class='df ais moodal-info2'>
+        <text class='df ais jct'>1人</text> ，剩余{{groupObj.limitHours}}:{{groupObj.limitMin}}:{{groupObj.limitSecond}}后结束</view>
+      <view class='modal-user df ais'>
+        <view class='df ais jct' wx:for='{{groupObj.userList}}' wx:for-item='{{userList}}' wx:key>
+          <image src='{{userList}}' mode='widthFix'></image>
+        </view>
+        <view class='df ais jct'>
+          <image src='{{imgUrl+"touxiang_03@2x.png"}}' mode='widthFix'></image>
+        </view>
+      </view>
+      <view class='modal-btn' bindtap='joinGroup'>立即参团</view>
+    </view>
+  </view> -->
+
+  <!--代理分享 弹窗 -->
+  <view class="win_wrap" wx:if="{{isShow}}">
+    <view class="dl_win">
+      <view class="head_wrap">
+        <image class="head_img" src="{{goodsInfo.FightDistributorInfo.UserHead}}"></image>
+      </view>
+      <view class="head_right">
+        <text class="head_one">{{goodsInfo.FightDistributorInfo.Name || '无'}}</text>
+        <view class="head_two">
+          <text class="head_code">微信号:{{goodsInfo.FightDistributorInfo.wechat || '无'}}</text>
+          <text class="head_copy" catchtap="copyBtn">复制</text>
+        </view>
+      </view>
+    </view>
+    <view class="code_wrap">
+      <image class="code_img" src="{{goodsInfo.FightDistributorInfo.WxImage}}"></image>
+    </view>
+    <view class="off_btn" catchtap="handleOff">x</view>
+  </view>
+  
+  <view class="zezhao" wx:if="{{isShow}}"></view>
+
+
+
+</view>

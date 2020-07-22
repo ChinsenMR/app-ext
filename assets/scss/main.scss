@@ -1,0 +1,7 @@
+@import './mixin.scss';
+@import './variable.scss';
+
+
+page {
+    @include wh(100%, 100%);
+}

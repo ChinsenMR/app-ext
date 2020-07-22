@@ -1,0 +1,61 @@
+.orderGood {
+  position: relative;
+  display: flex;
+}
+.orderGood-pic {
+  width: 142rpx;
+  height: 142rpx;
+  border-radius: 4rpx;
+  overflow: hidden;
+}
+.orderGood-pic > image {
+  width: 100%;
+  height: 100%;
+}
+.orderGood-desc {
+  flex: 1;
+  margin-left: 17rpx;
+  text-align: left;
+}
+.orderGood-name {
+  padding-right: 50rpx;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #333333;
+}
+.orderGood-des {
+  margin-top: 2rpx;
+  line-height: 37rpx;
+  font-size: 26rpx;
+  font-weight: 500;
+  color: #9b9b9b;
+}
+.orderGood-sub {
+  margin-top: 12rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.orderGood-tags {
+  margin: 0 -4rpx 0;
+}
+.orderGood-tags-item {
+  display: inline-block;
+  margin-right: 4rpx;
+  padding: 3rpx 7rpx;
+  line-height: 33rpx;
+  font-size: 24rpx;
+  font-weight: 500;
+  color: #9b9b9b;
+  background: #eaeaea;
+  border-radius: 6rpx;
+}
+.orderGood-num {
+  position: absolute;
+  top: 1rpx;
+  right: 0;
+  line-height: 40rpx;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #9b9b9b;
+}

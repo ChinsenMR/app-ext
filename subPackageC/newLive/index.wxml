@@ -1,0 +1,163 @@
+<view class="newLive app">
+  <view class="bookshelf">
+    <view class="bookshelf-item bookshelf-item-required">
+      <view class="bookshelf-item-box">
+        <view class="bookshelf-item-title">分享封面图</view>
+        <view class="bookshelf-item-desc">(尺寸800*640，大小不超过1M)</view>
+      </view>
+      <view class="bookshelf-item-extra">
+        <view class="newLive-gallery clearfix">
+          <view class="newLive-gallery-item" bindtap="handleUploadShareImg">
+            <image style="width:120rpx;height:1rpx;" mode="widthFix"
+              src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/zbzp.png" wx:if="{{ !filedsValues.showImg }}" />
+            <image mode="aspectFill" src="{{ filedsValues.showImg }}" wx:else />
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bookshelf">
+    <view class="bookshelf-item bookshelf-item-required">
+      <view class="bookshelf-item-box">
+        <view class="bookshelf-item-title">直播间封面图</view>
+        <view class="bookshelf-item-desc">(尺寸1080*1920，大小不超过3M)</view>
+      </view>
+      <view class="bookshelf-item-extra">
+        <view class="newLive-gallery clearfix">
+          <view class="newLive-gallery clearfix">
+            <view class="newLive-gallery-item" bindtap="handleUploadPosterImg">
+              <image style="width:120rpx;height:1rpx;" mode="widthFix"
+                src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/zbzp.png" wx:if="{{ !filedsValues.liveImg }}" />
+              <image mode="aspectFill" src="{{ filedsValues.liveImg }}" wx:else />
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="bookshelf">
+    <view class=" ">
+      <view class="bookshelf-item-box display">
+        <view class="bookshelf-item-title">直播标题</view>
+        <input class="newLive-input" placeholder="请输入直播标题(必须3-6个汉字)" bindinput="handleTitleChange" maxlength="6" />
+      </view>
+    </view>
+    <view class="">
+      <view class="bookshelf-item-box displayT" bindtap="handleShowTime">
+        <view class="bookshelf-item-title">
+          开播时间
+          <view class="bookshelf-item-desc">(当前时间1小时后)</view>
+        </view>
+        <span class="flex">
+          <van-cell title="{{ startTimeVal + '-' + endTimeVal }}" custom-class="newLive-cell" border="{{ false }}"
+            is-link />
+        </span>
+      </view>
+    </view>
+    <view>
+      <view class="bookshelf-item-box display">
+        <view class="bookshelf-item-title">主播昵称</view>
+        <input class="newLive-input" placeholder="请输入主播昵称" bindinput="handleAnchorNameChange" />
+      </view>
+    </view>
+    <view>
+      <view class="bookshelf-item-box displayT">
+        <view class="bookshelf-item-title">
+          主播微信号
+          <view class="bookshelf-item-desc">(请认真填写，填写错误将无法开播)</view>
+        </view>
+        <input class="newLive-input" placeholder="请输入主播微信号" bindinput="handleWechatNumChange" maxlength="15"/>
+      </view>
+    </view>
+  </view>
+  <view class="bg">
+    <van-cell center>
+      <view slot="title" style="text-align: left;flex: 1;" class="newLive-cell-title">允许评论</view>
+      <van-switch checked="{{ filedsValues.enableEomment }}" active-color="#02E809" size="40rpx"
+        bindchange="handleCommentableonChange" />
+    </van-cell>
+  </view>
+  <view class="bookshelf bg">
+    <van-cell border="{{ false }}" bindclick="handleShowGoods" is-link center>
+      <view slot="title" style="text-align: left;" class="newLive-cell-title">设置关联商品</view>
+    </van-cell>
+  </view>
+  <view class="newLive-handle">
+    <van-button type="primary" custom-class="newLive-handle-btn" bindtap="handleSubmit"
+      loading="{{ actionLoading }}" round>
+      创建直播
+    </van-button>
+  </view>
+  <van-popup show="{{ timeVisible }}" position="bottom" bindclose="handleCloseTime" custom-class="newLive-popup-time">
+    <view class="newLive-popup-time-head">
+      <view class="newLive-popup-time-head-title">选择开播时间</view>
+      <view class="newLive-popup-time-head-close" bindtap="handleCloseTime">
+        <van-icon name="close" />
+      </view>
+    </view>
+    <view class="newLive-popup-time-main">
+      <view class="newLive-popup-time-tofu">
+        <view class="newLive-popup-time-tofu-item">
+          <van-button type="default" data-type="start" bindtap="hanldeSwitchTime">开始时间</van-button>
+        </view>
+        <view class="newLive-popup-time-tofu-item">
+          <view class="line"></view>
+        </view>
+        <view class="newLive-popup-time-tofu-item">
+          <van-button type="default" data-type="end" bindtap="hanldeSwitchTime">结束时间</van-button>
+        </view>
+      </view>
+      <van-datetime-picker type="datetime" value="{{ filedsValues.beginTime }}" bindinput="handleStartTimeInput"
+        min-date="{{ minDate }}" show-toolbar="{{ false }}" visible-item-count="{{ 3 }}" wx:if="{{ isStart }}" />
+      <van-datetime-picker type="datetime" value="{{ filedsValues.endTime }}" bindinput="handleEndTimeInput"
+        min-date="{{ minDate }}" show-toolbar="{{ false }}" visible-item-count="{{ 3 }}" wx:else />
+    </view>
+    <view class="newLive-handle">
+      <van-button bindtap="handleJumpAddBank" type="primary" custom-class="newLive-handle-btn"
+        bindtap="handleTimeConfirm" round>
+        确定
+      </van-button>
+    </view>
+  </van-popup>
+  <!-- goodsVisible -->
+  <van-popup show="{{goodsVisible  }}" position="bottom" bindclose="handleCloseGoods"
+    custom-class="newLive-popup-goods">
+    <van-tabs line-width='20' color="#FB1F4F" active="{{ active }}" bind:change="onChange" swipeable>
+      <van-tab wx:for="{{functionList}}" title="{{item.name}}" wx:key="index">
+        <scroll-view class="newLive-popup-goods-list" bindscrolltolower="handleMoreProducts" scroll-y>
+          <view class="product" bindtap="chooseFN"
+              data-choose="{{itemc.isChoose}}" data-name="{{'functionList['+active+'].data['+indexc+'].isChoose'}}" wx:for="{{item.data}}" wx:for-item="itemc" wx:for-index="indexc" wx:key="{{indexc}}">
+            <van-checkbox checked-color="#02E809" value="{{ itemc.isChoose }}" >
+            </van-checkbox>
+            <image src="{{itemc.ImageUrl1}}" mode="widthFix" />
+            <span class="contant">
+              <view class="name">
+                {{itemc.ProductName}}
+              </view>
+              <view class="price">
+                ￥{{itemc.SalePrice}}
+              </view>
+            </span>
+            <span class="{{itemc.gl?'gl':''}}">
+              <van-button data-w="true" catchtap="chooseFN" data-choose="{{itemc.gl}}"
+                data-name="{{'functionList['+active+'].data['+indexc+'].gl'}}">{{itemc.gl?'取消':'关联'}}</van-button>
+            </span>
+
+          </view>
+          <view class="noMore">
+            没有更多的了~~~
+          </view>
+        </scroll-view>
+      </van-tab>
+    </van-tabs>
+    <view class="newLive-popup-goods-handle">
+      <van-checkbox checked-color="#02E809" value="{{ checkedAll }}" bindtap="chooseAll">全选</van-checkbox>
+      <view class="newLive-popup-goods-handle-wrap">
+        <view class="newLive-popup-goods-handle-cancel" bindtap="handleCloseGoods">取消</view>
+        <van-button type="primary" size="small" bindtap="handleGoodsSubmit">
+          批量关联
+        </van-button>
+      </view>
+    </view>
+  </van-popup>
+</view>

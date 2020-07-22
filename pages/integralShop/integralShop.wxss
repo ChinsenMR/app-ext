@@ -1,0 +1,54 @@
+.header image {
+  height: 318rpx;
+}
+
+.content-ul {
+  padding: 20rpx 30rpx;
+  flex-wrap: wrap;
+  margin-bottom: 220rpx;
+}
+
+.content-li {
+  box-shadow: 0 4rpx 3rpx 0 rgba(153,153,153,0.05);
+  border-radius: 8rpx;
+  padding-bottom: 19rpx;
+  margin-bottom: 25rpx;
+}
+
+.content-li:nth-of-type(odd) {
+  margin-right: 19rpx;
+}
+
+.content-li image {
+  width: 334rpx;
+  height: 323rpx;
+}
+
+.goodsTitle {
+  color: #333;
+  font-size: 28rpx;
+  margin-top: 9rpx;
+  width: 298rpx;
+  text-align: center;
+}
+
+.integral text:first-of-type {
+  color: #f93;
+  font-size: 26rpx;
+}
+
+.integral text:last-of-type {
+  color: #333;
+  font-size: 26rpx;
+}
+
+.btn {
+  width: 150rpx;
+  line-height: 44rpx;
+  text-align: center;
+  border-radius: 22rpx;
+  color: #39f;
+  font-size: 26rpx;
+  border: 1rpx solid #39f;
+  margin-top: 18rpx;
+}

@@ -1,0 +1,66 @@
+<import  src="./template/gift.wxml"></import>
+<import  src="./template/goods.wxml"></import>
+
+<!-- 搜索框 -->
+<view class="order-container-search">
+	<view class="input-wrap">
+		<input
+		 type="text"
+		 value="{{searchVal}}"
+		 class="search-input"
+		 placeholder="请输入搜索内容"
+		 bindinput="handleVal"
+		/>
+	</view>
+
+	<view class="search-btn" bindtap="handleSearch">搜索</view>
+</view>
+<van-tabs
+ swipeable
+ sticky
+ bind:change='selectTabbar'
+ active='{{activeItem}}'
+>
+	<van-tab wx:for='{{tabbar}}' wx:key="item" title="{{item}}">
+		<!-- 内容区 -->
+		<view class='content-ul' wx:if='{{item.length}}'>
+			<view
+			 class='content-li'
+			 wx:for="{{list}}"
+			 wx:for-item="item"
+			 wx:key="index"
+			>
+				<view class='content-liH dbc' data-id='{{item.OrderId}}' bindtap='toOrderDetail'>
+					<text class='liH-L df ais'>{{item.ShipperName}}</text>
+					<!-- 订单号 -->
+					<text class='liH-L'>订单号:{{item.OrderId}}</text>
+					<text class='liH-R'>{{item.StatusText}}</text>
+				</view>
+
+				<!-- 礼品列表 -->
+				<block wx:for="{{item.Gifts}}" wx:for-item="gift" wx:key="index">
+					<template is="gift"  data="{{ gift,item }}"></template>
+				</block>
+			
+				  
+				<!-- 普通商品 -->
+				<block 
+				 	wx:for="{{item.LineItems}}"
+					wx:for-item="goods"
+					wx:key="index">
+					<template is="goods"  data="{{ goods, item, IS_ALLOW_USER_APPLY_AFTER_SALE }}"></template>
+				</block>	  
+			</view>
+		</view>
+		<!-- 无数据 -->
+		<view class='empty ddc-v' wx:if='{{list.length == 0 && isEmpty}}'>
+			<image src='{{imgUrl+"icon_zanwudingdan@2x.png"}}' mode='widthFix' />
+			<view>暂无订单～</view>
+		</view>
+	</van-tab>
+</van-tabs>
+
+<base-code-dialog show="{{displayDialog}}" bind:close="closeDialog" wechat="{{wechat}}" />
+
+
+

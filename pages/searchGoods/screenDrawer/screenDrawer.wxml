@@ -1,0 +1,69 @@
+  <!-- 筛选Drawer -->
+  <view class='screenDrawer df ais jct-end' hidden='{{hiddenDrawer}}'>
+    <view class='drawer-inner'>
+
+      <!-- 品牌 -->
+      <view class='brand' wx:if="{{false}}">
+        <view class='brand-header df ais jct-between'>
+          <view>品牌</view>
+          <view class='df ais' bindtap='showBrand'>
+            <text>全部</text>
+            <image src='{{imgUrl+"icon_quanbu@2x.png"}}' mode='widthFix'></image>
+          </view>
+        </view>
+        <view class='brand-ul df ais'>
+          <view 
+            wx:for='{{brand}}' 
+            wx:for-item="brand" 
+            wx:for-index="brandIndex" 
+            wx:key="{{brandIndex}}"
+            wx:if="{{brandIndex<brandNum}}"
+            data-id='{{brandIndex}}'
+            bindtap='brandSelect'
+            class='brand-li df ais jct {{curBrand==brandIndex? "brandActive":""}}' 
+          >
+            <image src='{{imgUrl+brand}}' mode='aspectFit'></image>
+          </view>
+        </view>
+      </view>
+
+      <!-- 价格区间 -->
+      <view class='priceRange'>
+        <view class='priceRange-title df ais'>价格区间</view>
+        <view class='priceRange-inner df ais'>
+          <view class='minPrice df ais jct'>
+            <input type='number' value='{{minPrice}}' placeholder='最低价' bindinput="minPrice"/>
+          </view>
+          <view class='priceRange-separator'></view>
+          <view class='maxPrice df ais jct'>
+            <input type='number' value='{{maxPrice}}' placeholder='最高价' bindinput="maxprice"/>
+          </view>
+        </view>
+      </view>
+
+      <!-- 促销 -->
+      <view class='promote' wx:if="{{false}}">
+        <view class='promote-title df ais'>促销</view>
+        <view class='promote-ul df ais'>
+          <view 
+            wx:for="{{promoteList}}" 
+            wx:for-item="promote" 
+            wx:for-index="promoteIndex" 
+            wx:key="{{promoteIndex}}"
+            data-id='{{promoteIndex}}'
+            bindtap='promoteSelect'
+            class='promote-li to-line df ais jct {{curPromote==promoteIndex? "promoteActive":""}}' 
+          >
+            {{promote}}
+          </view>  
+        </view>
+      </view>
+
+      <!-- 底部按钮 -->
+      <view class='screenDrawer-btn df ais jct-between'>
+        <text bindtap='reset'>重置</text>
+        <text bindtap='comfirm'>确定</text>
+      </view>
+
+    </view>
+  </view>

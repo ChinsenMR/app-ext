@@ -1,0 +1,72 @@
+<view class="top">
+  <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/bg_yellow.png'></image>
+  <view class='top_content'>
+    <!-- <view class='c_top'>
+      <view class='ct_left'>
+         <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/retnrnw.png'></image> 
+      </view>
+      <view>我的佣金</view>
+      <navigator url='/pages/remaining/remaining'>明细</navigator>
+    </view> -->
+    <view class='c_center'>
+      <text class='symbol'>￥</text>{{commissionList.ReferralRequestBalanceMoney}}
+    </view>
+    <view class='c_bottom'>历史佣金总额</view>
+  </view>
+</view>
+<view class='center'>
+  <view class='c_left'>
+    <view class='color'>
+      <text class='symbol'>￥</text> {{commissionList.ReferralBlance}}</view>
+    <view>可提现</view>
+  </view>
+  <view class='c_right'>
+    <view class='color'>
+      <text class='symbol'>￥</text>{{commissionList.ReferralRequestBalance}}</view>
+    <view>已提现</view>
+  </view>
+</view>
+<view class='bottom'>
+  <navigator url='/pages/changeMoney/changeMoney?balance={{commissionList.ReferralBlance}}'>
+    <view class='b_left'>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/yong.png'></image>
+      <text>佣金转余额</text>
+    </view>
+    <view class='b_right'>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/path-right@2x.png'></image>
+    </view>
+  </navigator>
+
+  <!-- url='/pages/withdraw/withdraw?commission=1' -->
+
+  <navigator  wx:if="{{IsEnabelBalanceWithdrawal}}" bindtap='toWithdrawPage'>
+    <view class='b_left'>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/shen.png'></image>
+      <text style='{{IsEnabelSceondTimeBalance?"":"color:red"}}'>{{IsEnabelSceondTimeBalance?"申请提现":"您的提现申请正在审核中..."}}</text>
+    </view>
+    <view class='b_right'>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/path-right@2x.png'></image>
+    </view>
+  </navigator>
+
+  <navigator url='/pages/detailList/detailList?type=1'>
+    <view class='b_left'>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/detail.png'></image>
+      <text>预计佣金</text>
+    </view>
+    <view class='b_right'>
+    <text style='margin-right:10px;'>{{commissionList.ExpectedIncome?"¥"+commissionList.ExpectedIncome:""}}</text>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/path-right@2x.png'></image>
+    </view>
+  </navigator>
+
+   <navigator url='/pages/detailList/detailList?type=2'>
+    <view class='b_left'>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/detail.png'></image>
+      <text>佣金明细</text>
+    </view>
+    <view class='b_right'>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/path-right@2x.png'></image>
+    </view>
+  </navigator>
+</view>

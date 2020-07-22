@@ -1,0 +1,241 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+
+  .content {
+    padding: 0 20rpx;
+    // background-color: #fff;
+    box-sizing: border-box;
+    width: 100%;
+
+    .wrap {
+      display: flex;
+      align-items: center;
+      // justify-content: space-between;
+      padding: 20rpx 0;
+      border-bottom: 1rpx solid #eee;
+      font-size: 30rpx;
+      position: relative;
+      background-color: #fff;
+      .title {
+        flex: 1.5;
+        color: #2c2c2c;
+      }
+
+      .describe {
+        flex: 4;
+        color: #929292;
+      }
+
+      .wrap_img {
+        width: 15rpx;
+        height: 30rpx;
+        position: absolute;
+        top: 24rpx;
+        right: 20rpx;
+      }
+    }
+
+    .btn-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .btn_one {
+        width: 80%;
+        text-align: center;
+        color: #fff;
+        font-size: 30rpx;
+        background-color: #ff5722;
+        // padding: 15rpx 0;
+        border-radius: 10rpx;
+        margin: 60rpx 0;
+      }
+
+      .btn_two {
+        width: 80%;
+        text-align: center;
+        color: #7fd87f;
+        font-size: 30rpx;
+        background-color: #fff;
+        // padding: 15rpx 0;
+        border: 2rpx solid #999;
+        border-radius: 10rpx;
+      }
+    }
+  }
+
+
+}
+
+///
+.apply_win {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: #fff;
+
+  .apply_title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20rpx;
+    border-bottom: 1rpx solid #eee;
+
+    text {
+      font-size: 30rpx;
+      color: #909090;
+    }
+
+    .apply_btn {
+      width: 40rpx;
+      height: 40rpx;
+      border-radius: 50%;
+      border: 1rpx solid #909090;
+      text-align: center;
+      font-size: 30rpx;
+      color: #909090;
+      line-height: 32rpx;
+      box-sizing: border-box;
+    }
+  }
+
+  .apply_main {
+    display: flex;
+    align-items: center;
+    padding: 20rpx;
+    border-bottom: 1rpx solid #eee;
+
+    .main_img {
+      width: 40rpx;
+      height: 40rpx;
+      border-radius: 50%;
+      border: 1rpx solid #141414;
+      margin-right: 20rpx;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+
+      .img {
+        width: 100%;
+        // width: 42rpx;
+        // height: 42rpx;
+        // border-radius: 50%;
+      }
+    }
+
+    .active {
+      border: none;
+    }
+
+    .main_title {
+      font-size: 30rpx;
+      color: #838383;
+    }
+  }
+
+  .apply_winBtn {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #ff5722;
+    color: #fff;
+    font-size: 32rpx;
+    padding: 30rpx 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.tk_win {
+  width: 100%;
+  height: 400rpx;
+  box-sizing: border-box;
+  position: fixed;
+  bottom:0;
+  left: 0;
+  z-index: 100;
+  background-color: #fff;
+
+  .apply_title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20rpx;
+    border-bottom: 1rpx solid #eee;
+
+    text {
+      font-size: 30rpx;
+      color: #909090;
+    }
+
+    .apply_btn {
+      width: 40rpx;
+      height: 40rpx;
+      border-radius: 50%;
+      border: 1rpx solid #909090;
+      text-align: center;
+      font-size: 30rpx;
+      color: #909090;
+      line-height: 32rpx;
+      box-sizing: border-box;
+    }
+  }
+
+  .apply_main {
+    display: flex;
+    align-items: center;
+    padding: 25rpx 25rpx;
+    border-bottom: 1rpx solid #eee;
+    .main_img {
+      width: 40rpx;
+      height: 40rpx;
+      border-radius: 50%;
+      border: 1rpx solid #141414;
+      margin-right: 20rpx;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      .img {
+        width: 100%;
+      }
+    }
+    .active {
+      border: none;
+    }
+    .main_title {
+      font-size: 30rpx;
+      color: #838383;
+    }
+  }
+  .apply_winBtn {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #ff5722;
+    color: #fff;
+    font-size: 32rpx;
+    padding: 30rpx 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+.zhezhao{
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background:rgba(0,0,0,.6);
+  z-index:99;
+}

@@ -1,0 +1,47 @@
+@import '../../../app.wxss';
+
+.limit-time image {
+  width: 164rpx;
+}
+
+.limit-time1 {
+  padding: 0 27rpx;
+  height: 88rpx;
+  background: linear-gradient(135deg, rgba(255, 173, 112, 1), rgba(255, 142, 59, 1));
+  color: #333;
+  font-size: 26rpx;
+}
+
+.limit-time1R > view:first-of-type{
+  margin-right: 32rpx;
+}
+
+.limit-time1R > view:last-of-type text {
+  width: 36rpx;
+  line-height: 29rpx;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  font-size: 19rpx;
+}
+
+.limit-time1R > view:last-of-type icon{
+  color: #333;
+  margin: 0 8rpx;
+  font-size: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.startTimeTxt{
+  font-size:30rpx;
+  color: #333;
+  font-weight:bold;
+}
+
+.startTimeTxt2{
+  font-size:26rpx;
+  color: #333;
+  font-weight:bold;
+}

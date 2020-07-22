@@ -1,0 +1,55 @@
+<!--pages/storeIndex/storeIndex.wxml-->
+<view class='store-top'>
+  <view class='img-bg'>
+    <image src='../../images/store-bg.png'></image>
+    <text class='store-title'>TEST01的小店</text>
+  </view>
+  <view class='st-bars'>
+    <view class='img-box'>
+      <image src='../../images/store-logo.jpg'></image>
+    </view>
+    <view class='right'>
+      <navigator class='str-tab' url='/pages/productList/productList'>
+       <image src='../../images/a1.png'></image>
+       <text>全部商品</text>
+      </navigator>
+      <navigator class='str-tab' url='/pages/shopActivity/shopActivity'>
+       <image src='../../images/a2.png'></image>
+       <text>店铺活动</text>
+      </navigator>
+      <navigator class='str-tab'>
+       <image src='../../images/a3.png'></image>
+       <text>我的订单</text>
+      </navigator>
+      <view class='str-tab'>
+       <image src='../../images/a4.png'></image>
+       <text>会员签到</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='store-banner'>
+   <swiper indicator-dots='true' autoplay='true' interval='3000' circular='true'>
+    <block wx:for="{{imgUrls}}">
+      <swiper-item>
+        <image src="{{item}}"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class='store-products'>
+  <view class='pro-item' wx:for="{{5}}">
+    <view class='item-wrap'>
+      <view class='img-box'>
+        <image src='../../images/pic1.png'></image>
+        <text class="sale-count">已销售350件</text>
+      </view>
+      <text class='title'>贝德玛深层舒aaaaaaaaaaaaaaaaaaaaaaaaaaa妍卸妆水500ml</text>
+      <view class='price-box'>
+        <text class='icon-red'>¥</text><text class='current-price'>299.00</text>
+        <text class='original-price'>¥399.99</text>
+      </view>
+    </view>
+  </view>
+</view>
+<button class='expressage-search'>快递查询</button>

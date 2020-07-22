@@ -1,0 +1,27 @@
+<!--pages/coupons/coupons.wxml-->
+<view class='coupons'>
+  <block wx:if="{{!isEmpty}}">
+    <view class='item' wx:for="{{dataList}}" wx:key="index">
+      <image wx:if="{{item.Status === 0}}" class="bg" src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/red.png'></image>
+      <image  wx:if="{{item.Status != 0}}" class="bg" src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/gray.png'></image>
+      <view class="content">
+        <view class='left {{item.Status === 0?"red":"gray"}}'>
+          <text class='icon'>¥</text>
+          <text class='money'>{{item.CouponValue}}</text>
+        </view>
+        <view class='right'>
+          <text class='info {{item.Status === 0?"":"gray"}}'>{{item.ConditionValue!=0?'满 '+ item.ConditionValue+'元可用':'无消费限制'}}</text>
+          <text class='date'>生效时间：{{item.BeginDate}}</text>
+          <text class='date'>到期时间：{{item.EndDate}}</text>
+        </view>
+      </view>
+      <text class="btn">{{item.Status === 0?'已领取':'已使用'}}</text>
+    </view>
+  </block>
+  <block wx:if="{{isEmpty}}">
+    <view class='empty'>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/pic-kong.png'></image>
+      <text class='empty-text'>暂无优惠券</text>
+    </view>
+  </block>
+</view>

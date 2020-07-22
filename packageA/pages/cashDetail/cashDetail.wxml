@@ -1,0 +1,15 @@
+<view class='layout'>
+  <!-- 明细列表 -->
+  <view class="a-ul">
+    <view class="title">提现明细</view>
+    <view class="a-li da" wx:for='{{list}}' wx:key>
+      <view class="">
+        <view class="al-tip">{{item.UserName}}</view>
+        <view class="al-time">{{item.RequestTime}}</view>
+      </view>
+      <view class="wjx {{item.IsPass?'active':''}}">{{item.IsPass?'提现成功':'拒绝提现'}}</view>
+      <view class="al-account flex">-{{item.Amount}}￥</view>
+    </view>
+    <view class="empty" wx:if='{{list.length == 0 && isEmpty}}'>暂无数据...</view>
+  </view>
+</view>

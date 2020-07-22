@@ -1,0 +1,46 @@
+<import src="../../../wxParse/wxParse.wxml" />
+
+
+<view class='layout'>
+  <view class="account da">
+    <view class="dd-vh flex">
+      <text>{{listData.Balance}}</text>
+      <text class="a-tip">可提现余额</text>
+    </view>
+    <view class="dd-vh flex">
+      <text>{{listData.ConsumptionBalance}}</text>
+      <text class="a-tip">可消费余额</text>
+    </view>
+  </view>
+  <view class="a-btn dbc">
+    <button bindtap="handleWithdraw" class="deposit_btn">提现</button>
+    <button class="chongzhi">充值</button>
+  </view>
+
+  <!-- 明细列表 -->
+  <view class="a-ul">
+    <view class="au-header">余额明细</view>
+    <view class="a-li da" wx:for='{{list}}' wx:key>
+      <view class="">
+        <view class="al-tip">{{item.TradeTypeName}}</view>
+        <view class="al-time">{{item.TradeDate}}</view>
+      </view>
+      <view class="al-account flex" style="color:{{item.BalanceType == 0? '#FF6666':'#333'}}">{{item.BalanceType == 0? '+￥':'-￥'}}{{item.Amount}}</view>
+    </view>
+    <view class="empty" wx:if='{{list.length == 0 && isEmpty}}'>暂无数据...</view>
+  </view>
+</view>
+
+<view class="win_wrap" catchtouchmove="ture" wx:if="{{isWin}}">
+  <view class="win_main">
+    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+    <view class="btn_wrap" catchtap="handleTY" data-status="1">
+      <view class="search_btn">
+        <view class="btn_img" wx:if="{{isShow}}" ></view>
+      </view>
+      <view class="search_title">我已阅读该协议</view>
+    </view>
+  </view>
+  <view class="win_style" catchtap="handleAgree">同意</view>
+</view>
+<view class="zhezhao" catchtouchmove="ture" wx:if="{{isWin}}"></view>

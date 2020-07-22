@@ -1,0 +1,28 @@
+<view class="header da">
+  <image class="avatar" src="{{avatar}}" mode="aspectFill"></image>
+  <view class="flex">
+    <button class="h-btn" bindtap="upAvatar">重新上传图片</button>
+    <view class="h-tip">建议尺寸：200 x 200像素小于120KB，支持 jpg、gif、png格式</view>
+  </view>
+</view>
+
+<!-- 信息列表 -->
+<form bindsubmit="onSubmit">
+  <view class="u-li da" wx:for='{{list}}' wx:key>
+    <view class="da flex" wx:if='{{item.t != "性别" && item.t != "生日" && item.t != "地区"}}'>
+      <label>{{item.t}}</label>
+      <input bindinput='handleInput' data-name='{{item.m}}' placeholder="{{item.p}}" value="{{item.v}}" name='{{item.m}}' disabled='{{item.m == "UserName"? true:false}}'></input>
+    </view>
+
+    <!-- 性别 / 生日 / 地区-->
+    <picker class="flex" 
+    mode='{{item.t == "性别"? "selector":(item.t == "生日"? "date":"region")}}' 
+    range='{{sexArr}}' data-type="{{item.t}}" bindchange='onPicker' wx:else>
+      <view class="da flex">
+        <label>{{item.t}}</label>
+        <input placeholder="{{item.p}}" value="{{item.v}}" name='{{item.m}}' disabled></input>
+      </view>
+    </picker>
+  </view>
+  <button class="btn" form-type="submit">保存</button>
+</form>

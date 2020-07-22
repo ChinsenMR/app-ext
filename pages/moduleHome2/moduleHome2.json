@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#ff4444",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "share": "../../components/productShare/productShare",
+    "tabBar": "/components/tabBar/tabBar",
+    "addCart": "/components/addCart/addCart"
+  }
+}

@@ -1,0 +1,25 @@
+<!-- 新人专享福利 -->
+<view class='welfare'>
+  <view class='welfare-header df ais jct-between'>
+    <view class='df ais welfare-headerL'>
+      <text>新人专享福利</text>
+      <text>平台补贴 抢完为止</text>
+    </view>
+    <view class='welfare-headerR df ais'>
+      <text>查看全部</text>
+      <image class='arrowRight' src='{{imgUrl+"icon_more@2x.png"}}' mode='widthFix'></image>
+    </view>
+  </view>
+  <view>专属商品共
+    <text>29</text>件</view>
+  <scroll-view scroll-x class='welfare-ul'>
+    <view  class='welfare-li' wx:for="{{welfareList}}" wx:key="{{welfareIndex}}">
+      <image src='http://img.hmeshop.cn/hmeshop_jxy/images/big_pic@2x.png' mode='widthFix'></image>
+      <view class='to-line'>儿童可拆卸组拆卸组</view>
+      <view class='welfare-ulB df ais jct-between'>
+        <text>￥89.00</text>
+        <text>新人价</text>
+      </view>
+    </view>
+  </scroll-view>
+</view>

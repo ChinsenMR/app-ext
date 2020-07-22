@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "Discountcontent": "/components/Discount/Discount"
+  },
+  "navigationBarTitleText": "新人特惠",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black"
+
+}

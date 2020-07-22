@@ -1,0 +1,31 @@
+<block wx:for="{{productlist}}" wx:for-index='index' wx:key='{{index}}'>
+  <view class="newpeopleitem" data-productid="{{item.ProductId}}" data-pagetype="{{pagetype}}" bindtap='Toprocuctdetail'>
+    <view class='newpeopleitemimgbox' style='background-image: url({{item.ImageUrl1}})'>
+    </view>
+    <view class='peoplename'>{{item.ProductName}}</view>
+    <view class='limitTime df ais' wx:if="{{(pagetype==5 && !item.countDownState.overTime) ||  notime}}">
+      <text>距开始:</text>
+      <text>{{item.countDownState.limitHours}}</text>
+      <text>:</text>
+      <text>{{item.countDownState.limitMin}}</text>
+      <text>:</text>
+      <text>{{item.countDownState.limitSecond}}</text>
+    </view>
+    <view class='peoplepricebox'>
+      <view class='peoplepriceacting'>
+        <text>￥</text><text>{{item.SalePrice}}</text>
+        <text class='new'>新人专享价</text>
+        <view class='more'>
+          <text></text>
+          <text></text>
+        </view>
+      </view>
+      <view class='peoplepricenoacting'>
+        原价:￥{{item.MarketPrice==null?0:item.MarketPrice}} 
+        <text></text>
+      </view>
+    </view>
+  </view>
+</block>
+<!-- <view class="hint">没有更多了~</view> -->
+<view class="no_data" wx:if="{{productlist.length==0}}">暂无数据</view>

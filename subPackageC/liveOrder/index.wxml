@@ -1,0 +1,67 @@
+<view class="liveOrderList">
+  <!-- <van-search
+    value="{{ keyword }}"
+    placeholder="请输入关键字搜索订单"
+    bindchange="handleKeywordChange"
+    use-action-slot
+  >
+    <view 
+      slot="action" 
+      bindtap="handleSearch"
+      class="extendClick"
+    >
+      搜索
+  </view>
+  </van-search> -->
+  <view class="liveOrderList-status">
+    <van-tabs border="{{ false }}" swipe-threshold="{{5}}" bindchange="handleStatusChange" sticky color="#FB1F4F">
+      <van-tab wx:for="{{ tabs }}" wx:key="status" title="{{ item.title }}">
+        <view class="liveOrderList-list">
+          <view class="liveOrderList-list-item" wx:for="{{ orderList }}" wx:key="OrderId">
+            <view class="liveOrderList-list-head">
+              <view class="liveOrderList-list-orderNum">
+                <span class="black">订单编号</span>
+                {{ item.OrderId }}
+                <span class="black">直播房间ID</span>
+                {{ item.LiveRoomId }}
+              </view>
+              <view class="liveOrderList-list-status">{{ item.statusTxt }}</view>
+            </view>
+            <view class="liveOrderList-list-body">
+              <view class="liveOrderList-list-goods">
+                <view class="liveOrderList-list-goods-item product" wx:for="{{ item.products }}" wx:key="{{ProductId}}" wx:for-item="product">
+                  <image src="{{product.pic}}" mode="widthFix" />
+                  <span class="contant">
+                    <view class="name">{{product.name}}</view>
+                    <view class="type">
+                      <!-- <span class="child">甜蜜套装 | 粉色</span> -->
+                    </view>
+                    <view class="price">￥{{product.pri}}</view>
+                  </span>
+                  <span class="num">x{{product.quantity}}</span>
+                </view>
+              </view>
+            </view>
+            <view class="liveOrderList-list-foot display">
+              <view class="liveOrderList-list-actions ">
+                <view >实付款：¥{{ item.OrderTotal?item.OrderTotal:0 }}</view>
+                <view class="color">
+                  奖励金额：¥{{ item.CommissionAmount? item.CommissionAmount:0 }}
+                </view>
+              </view>
+              <view class="liveOrderList-list-actions-item">
+                <van-button size="small" data-orderid="{{ item.OrderId }}" bindtap="handleJumpDetail" >
+                  查看详情
+                </van-button>
+              </view>
+            </view>
+          </view>
+        </view>
+        <loading wx:if="{{ loading }}" />
+        <view class="liveOrderList-noData" wx:if="{{ !loading && finished }}">
+          {{ orderList.length ? '没有更多了~' : '暂无数据~' }}
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+</view>

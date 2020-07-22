@@ -1,0 +1,49 @@
+<view class="deliver-goods-wrap">
+	<form>
+		<view class="filed-item flex-box">
+			<view class="title">退货订单</view>
+			<view class="input">{{info.OrderId}}</view>
+		</view>
+		<view class="filed-item flex-box">
+			<view class="title">退货商品</view>
+			<view class="input">{{info.LineItem[0].ItemDescription}}</view>
+		</view>
+		<view class="filed-item flex-box">
+			<view class="title">收件人</view>
+			<view class="input">{{info.AdminShipTo}}</view>
+		</view>
+		<view class="filed-item flex-box">
+			<view class="title">手机号</view>
+			<view class="input">{{info.AdminCellPhone}}</view>
+		</view>
+		<view class="filed-item flex-box">
+			<view class="title">退货地址</view>
+			<view class="input">{{info.AdminShipAddress}}</view>
+		</view>
+		<picker
+		 mode="selector"
+		 range="{{expressCompanyList}}"
+		 range-key="value"
+		 bindchange="pickerItem"
+		>
+			<view class="filed-item flex-box">
+				<view class="title">物流公司</view>
+				<view class="input">{{form.express_company || '请选择'}}</view>
+				<image src="http://img.hmeshop.cn/hmeshop_jxy/images/arrowRight.png" />
+			</view>
+		</picker>
+		<view class="filed-item flex-box">
+			<view class="title">物流编号</view>
+			<input
+			 type="number"
+			 class="input"
+			 value="{{form.express_sn}}"
+			 bindinput="inputContext"
+			 data-name="{{form.express_sn}}"
+			 placeholder="请填写物流单号"
+			/>
+		</view>
+		<button form-type="submit" bindtap="submit">提交</button>
+	</form>
+</view>
+

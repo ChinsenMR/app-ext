@@ -1,0 +1,56 @@
+<!--packageA/pages/evaluate/evaluate.wxml-->
+<view class="evaluatetop">
+  <image class="proimg" src="{{Produtinfo[0].Image}}"></image>
+  <view class="proname">{{Produtinfo[0].Name}}</view>
+</view>
+
+<view class="rate">
+
+  <view class="commte">
+    <text class="de">描述相符</text>
+    <van-rate value="{{ desvalue }}" bind:change="onChange1" />
+    <text class="moede">{{comment1}}</text>
+  </view>
+
+  <view class="commte">
+    <text class="de">物流服务</text>
+    <van-rate value="{{ logisticsvalue }}" bind:change="onChange2" />
+    <text class="moede">{{comment2}}</text>
+  </view>
+
+  <view class="commte">
+    <text class="de">服务态度</text>
+    <van-rate value="{{ atituvalue }}" bind:change="onChange3" class="wjxxuanz" />
+    <text class="moede">{{comment3}}</text>
+  </view>
+
+</view>
+
+
+<view class="inputbox">
+  <van-cell-group>
+    <van-field value="{{ message }}" type="textarea" placeholder="宝贝满足你的期待吗？说说它的优点和美中不足的地方吧!" border="{{ false }}"  bind:change="onChange" />
+  </van-cell-group>
+
+  <view class="pictbox" >
+
+    <view class="evalteimg" wx:for="{{photoList}}" wx:key>
+      <image class="tu" src="{{item}}"></image>
+      <image class="close" src="{{imgurl}}btn_close.png" data-index="{{index}}" bindtap="Deleted"></image>
+    </view>
+    
+
+    <view class="takepic" bindtap="postImg">
+      <image class="pict" src="{{imgurl}}icon_camera1.png"></image>
+      <text>{{photoList.length}}/9</text>
+    </view>
+    
+    <view class="takepic" bindtap="postVideo">
+      <!-- <video class="pict" src="{{imgurl}}icon_camera1.png"></video> -->
+      <text>视频</text>
+    </view>
+
+  </view>
+</view>
+
+<view class="submit" bindtap="Submit">提交评价</view>

@@ -1,0 +1,110 @@
+@import '../../app.wxss';
+
+.d-tab{
+  position: fixed;
+  left: 30rpx;
+  right: 30rpx;
+  bottom: 45rpx;
+  color: #fff;
+  font-size: 24rpx;
+  z-index: 999;
+}
+
+.d-ul{
+  background: linear-gradient(#FF3333, #FF4646);
+  border-radius: 45rpx;
+  flex: 1;
+  height: 95rpx;
+  padding: 0 10rpx;
+}
+
+.d-li{
+  flex: 1;
+}
+
+.d-share{
+  width: 126rpx;
+  height: 95rpx;
+  background: linear-gradient(#FF3333, #FF4646);
+  margin-left: 15rpx;
+  border-radius: 45rpx;
+  color: #FFCC99;
+}
+
+.d-share image{
+  width: 43rpx;
+  height: auto;
+  margin-bottom: 3rpx;
+}
+
+.c-tab{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 95rpx;
+  background-color: #fff;
+  color: #333;
+  font-size: 24rpx;
+  box-sizing: border-box;
+  padding: 5rpx 0;
+  border-top:1rpx solid #eee;
+  overflow: hidden;
+}
+.c-tab>.tab_wrap{
+  flex:1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+
+.c-li{
+  flex: 1;
+}
+
+.s-modal{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sb-ul{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  height: 280rpx;
+  border-radius: 6rpx 6rpx 0 0;
+}
+
+.sb-li{
+  flex: 1;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.sb-li image{
+  width: 117rpx;
+  height: auto;
+  margin-bottom: 5rpx;
+}
+
+.s-modal swiper{
+  height: calc(100% - 320rpx);
+  /* padding-top: calc(var(--tabH) * 1px); */
+}
+
+.sm-img{
+  width: 500rpx;
+  height: auto;
+  margin: 150rpx auto 0 auto;
+}

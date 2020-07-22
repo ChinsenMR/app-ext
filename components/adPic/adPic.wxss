@@ -1,0 +1,8 @@
+/* components/banner/banner.wxss */
+.adPic{
+  /* margin:10px 0 0 0;  */
+  height: 100%;
+}
+.color{
+  background-color: #f1f1f1
+}

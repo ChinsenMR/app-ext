@@ -1,0 +1,114 @@
+<view class='layout'>
+  <view class='navBar df ais' bindtap='selectNav'>
+    <!-- <text class='{{activeItem == 0? "active":""}}' data-id='0'>全部订单({{allOrderNum}})</text>
+    <text class='{{activeItem == 2? "active":""}}' data-id='2'>待发货({{BuyerAlreadyPaid}})</text>
+    <text class='{{activeItem == 3? "active":""}}' data-id='3'>待收货({{WaitReceivedCount}})</text>
+    <text class='{{activeItem == 5? "active":""}}' data-id='5'>已完成({{completeOrderNum}})</text> -->
+    <text class='{{activeItem == 0? "active":""}}' data-id='0'>全部订单</text>
+    <text class='{{activeItem == 2? "active":""}}' data-id='2'>待发货</text>
+    <text class='{{activeItem == 3? "active":""}}' data-id='3'>待收货</text>
+    <text class='{{activeItem == 5? "active":""}}' data-id='5'>已完成</text>
+  </view>
+
+  <view class='content-ul' wx:if="{{orderList.length!=0}}">
+    <view class='content-li' wx:for='{{orderList}}' wx:for-item='orderList' wx:for-index='index' wx:key>
+      <view class='order-inner'>
+        <view class='df ais jct-between order-code'>
+          <text>订单编号: {{orderList.OrderId}}</text>
+          <text>{{orderList.StatusText}}</text>
+        </view>
+        <view class='df ais'>订单时间: {{orderList.OrderDate}}</view>
+        <view class='df ais'>订单买家: {{orderList.RealName}}</view>
+        <view class='df ais'>手机号: {{orderList.CellPhone}}</view>
+        <view class='df ais'>地区: {{orderList.ShippingRegion}}</view>
+        <view class='df ais'>地址: {{orderList.Address}}</view>
+       
+        <view class='df ais order-price'>
+          <text>成交金额: </text>
+          <text>￥ {{orderList.Amount}}</text>
+        </view>
+        <view class='df ais employ-price' hidden='{{pageType != 1}}'>
+          <view>推荐人: {{orderList.Username}}</view>
+          <view>
+            <text>佣金:</text>
+            <text>￥28.00</text>
+          </view>
+        </view>
+      </view>
+
+      <view class='goodsInfo df ais-start' wx:for='{{orderList.LineItems}}' wx:for-item='LineItems' wx:key
+        catchtap="handleQQ" data-order="{{orderList.OrderId}}">
+        <image src='{{LineItems.Image}}' mode='aspectFill'></image>
+        <view class='goodsInfo-inner flex'>
+          <view class='df ais-start jct-between goods-title'>
+            <text>{{LineItems.Name}}</text>
+            <text>x{{LineItems.ShipmentQuantity}}</text>
+          </view>
+          <view>{{LineItems.SkuText}}</view>
+        </view>
+      </view>
+
+      <view class="fahuo" wx:if="{{false}}">
+        <view class="send">
+          <view class="send_btn" catchtap="openSendFN" data-item="{{orderList}}" data-num="{{orderList.ReferralTempId}}"
+            wx:if="{{activeItem==2 || activeItem == 0 && orderList.ReferralTempId==2}}">
+            发货
+          </view>
+          <view class="send_btn" bindtap="openSendFN" data-item="{{orderList}}" wx:elif="{{orderList.KjSendGoods}}">发货
+          </view>
+        </view>
+        <view class='goodsPrice df ais jct-end'>
+          <text>共 {{orderList.Quantity}} 件商品</text>
+          <text>净赚:￥{{orderList.Income}}</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view class="emity" wx:if="{{orderList.length==0}}">暂无订单</view>
+
+  <!-- 发货 -->
+  <view wx:if="{{false}}" class="Delivery_wrap">
+  <!-- <view wx:if="{{showFH}}" class="Delivery_wrap"> -->
+    <view wx:if="{{item.status}}" class="Delivery" bindtap="chooseFN" data-index="{{index}}" data-id="{{item.id}}"
+      wx:for="{{Delivery}}" :key="index">
+      {{item.name}}
+    </view>
+  </view>
+  <view class="zezhao" wx:if="{{showFH}}" catchtap="handleGB" data-index="1"></view>
+  <!-- <van-picker columns="{{ columns }}" default-index="{{ 2 }}" bind:change="onChange" /> -->
+
+  <view wx:if="{{false}}" class="showEdit_wrap">
+  <!-- <view wx:if="{{showEdit}}" class="showEdit_wrap"> -->
+    <view class="showEdit paddNot">
+      <span class="name">
+        物流名称:
+      </span>
+      <span class="flex">
+        <van-picker columns="{{ columns }}" bind:change="onChange" item-height="25" default-index="{{0}}" />
+      </span>
+    </view>
+    <view class="showEdit">
+      <span class="name">
+        物流单号:
+      </span>
+      <span class="flex">
+        <input type="text" bindinput="handleInput" />
+      </span>
+    </view>
+    <view class="showEdit" wx:for="{{showEditList}}" :key="index">
+      <span class="name">
+        {{item.name}}
+      </span>
+      <span class="flex">
+        {{item.val?item.val:'无'}}
+      </span>
+    </view>
+    <!-- <van-button bindtap='subMitFN' data-id="0" round class="editSub" size="small" type="danger">
+      提交
+    </van-button> -->
+    <view class="show_btn" bindtap='subMitFN' data-id="0">提交</view>
+  </view>
+  <view class="zezhao" wx:if="{{showEdit}}" catchtap="handleGB" data-index="2"></view>
+
+</view>

@@ -1,0 +1,3 @@
+<view class="spin">
+  <van-loading size="40rpx" />
+</view>

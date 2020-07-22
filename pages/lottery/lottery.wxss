@@ -1,0 +1,230 @@
+/* pages/lottery/lottery.wxss */
+page{
+  width:100%;
+  height:1655rpx;
+}
+.bg{
+  width:100%;
+  height:100%;
+  background-size: 100% 100%;
+  position: relative
+}
+.content{
+  position: absolute;
+  top: 50rpx;
+  width: 100%;
+}
+.winners{
+  width: 150rpx;
+  height: 50rpx;
+  font-size: 26rpx;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  line-height: 50rpx;
+  position: absolute;
+  top: 220rpx;
+  right: 0;
+  background:rgba(217,84,73,1);
+  border-top-left-radius: 30rpx;
+  border-bottom-left-radius: 30rpx;
+  box-shadow:1px 0px 1px rgba(181,33,20,0.83);
+}
+.top_img{
+  width: 510rpx;
+  height: 116rpx;
+  margin: 0 auto;
+}
+.top_txt{
+  font-size: 26rpx;
+  color: white;
+  margin-top: 22rpx;
+  display: flex;
+  justify-content: center;
+}
+.disk{
+  width: 512rpx;
+  height: 512rpx;
+  margin: 48rpx auto;
+  position: relative;
+}
+.disk image{
+  width: 90%;
+  height: 90%;
+  margin-left: 3%
+}
+.disk text{
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #D87E00;
+  display: flex;
+  justify-content: center;
+  margin-top: -27rpx;
+}
+.disk .pointer{
+  position: absolute;
+  top: 110rpx;
+  left: 135rpx;
+  width: 190rpx;
+  height: 221rpx;
+}
+
+.turntable {
+  height: 512rpx;
+}
+
+.shade{
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0,0,0,0.8);
+  position:fixed;
+  z-index: 999;
+  top:0;
+  left: 0;
+}
+
+/* 未中奖 */
+.shade .pop{
+  width: 481rpx;
+  height: 322rpx;
+  border-radius: 4rpx;
+  background-color: #EDD9B3;
+  position: absolute;
+  top: 360rpx;
+  left: 142rpx; 
+
+}
+.shade .pop text{
+  font-size: 31rpx;
+  font-weight: bold;
+  color: #BB1D11;
+  display: flex;
+  justify-content: center;
+  padding-top: 99rpx;
+}
+.shade .pop .knowBtn{
+  width: 195rpx;
+  height: 56rpx;
+  border-radius: 4rpx;
+  background-color: #BF1E2E;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: white;
+  margin-top: 58rpx;
+  line-height: 56rpx;
+}
+
+/* 中奖 */
+.shade .gift{
+  width: 594rpx;
+  height: 512rpx;
+  position: absolute;
+  top: 232rpx;
+  left: 63rpx;
+}
+.shade .success{
+  width: 100%;
+  position: absolute;
+  top: 0;
+ 
+}
+.shade .success image{
+  width: 186rpx;
+  height: 54rpx;
+  margin: 229rpx 0 0 217rpx; 
+}
+.shade .success text{
+  font-size: 35rpx;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+.shade .success .btn{
+  width: 124rpx;
+  height: 39rpx;
+  background-color: #FFD800;
+  font-size: 24rpx;
+  color: #DD2C3C;
+  margin: 27rpx 0 0 240rpx;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+
+
+.prize{
+  width: 690rpx;
+  padding-bottom: 10rpx;
+  /* height: 197rpx; */
+  background-color:rgba(255,255,255,0.5);
+  border-radius: 16rpx;
+  margin: 0 auto;
+}
+.prize .title{
+  display: flex;
+  font-size: 28rpx;
+  color: #BB1D11;
+  padding-top: 20rpx
+}
+.prize image{
+  width: 30rpx;
+  height: 30rpx;
+  margin: 4rpx 10rpx 0 21rpx; 
+}
+.prize .text{
+  font-size: 24rpx;
+  color: white;
+  margin: 8rpx 0 0 17rpx;
+}
+.rule{
+  width: 690rpx;
+  height: 272rpx;
+  border-radius: 16rpx;
+  background-color:rgba(255,255,255,0.5);
+  margin: 20rpx auto;
+}
+.rule .title{
+  display: flex;
+  font-size: 28rpx;
+  color: #BB1D11;
+  padding-top: 20rpx
+}
+.rule image{
+  width: 30rpx;
+  height: 30rpx;
+  margin: 4rpx 10rpx 0 21rpx; 
+}
+.rule .text{
+  font-size: 24rpx;
+  color: white;
+  padding: 10rpx;
+  /* margin: 8rpx 0 0 17rpx; */
+}
+
+.btn{
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  z-index:1000;
+}
+.btn image{
+  width: 66%;
+  height: 70rpx;
+  margin-top: 63rpx;
+  position: relative;
+}
+.btn image .text{
+  font-size: 32rpx;
+  color: white;
+  position: absolute;
+  top: 10rpx;
+  left: 150rpx 
+}
+.bottom{
+  width: 100%;
+  height: 232rpx;
+  position:absolute;
+  bottom: 0
+}

@@ -1,0 +1,10 @@
+<!--components/search/search.wxml-->
+<!-- <text>components/search/search.wxml</text> -->
+<view class="top">
+  <navigator class="left" url='/pages/search/search' hover-class="none">
+    <view class="search pr">
+      <input placeholder-class="fontSize" type="text" placeholder="商品搜索：请输入商品关键字" disabled/>
+      <image src="https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/search.png" alt=""></image>
+    </view>
+  </navigator>
+</view>

@@ -1,0 +1,196 @@
+.layout{
+  padding: 20rpx;
+}
+
+.g-info{
+  background-color: #fff;
+  padding: 25rpx 30rpx;
+  border-radius: 6rpx;
+  margin-bottom: 20rpx;
+}
+
+.g-img{
+  width: 158rpx;
+  height: 158rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+}
+
+.g-title{
+  color: #333;
+  font-size: 28rpx;
+  width: 420rpx;
+  line-height: 30rpx;
+  height: 60rpx;
+}
+
+.g-num{
+  color: #999;
+  font-size: 24rpx;
+  margin-left: 30rpx;
+}
+
+.g-sku{
+  display: inline-block;
+  background-color: #FCEFEE;
+  color: #E8544D;
+  font-size: 22rpx;
+  padding: 4rpx 8rpx;
+  margin-top: 20rpx;
+  border-radius: 5rpx;
+}
+
+.a-type{
+  background-color: #fff;
+  border-radius: 6rpx;
+  padding-left: 30rpx;
+  margin-bottom: 20rpx;
+}
+
+.at-header{
+  line-height: 88rpx;
+  color: #333;
+  font-size: 28rpx;
+  font-weight:bold;
+  border-bottom: 1rpx solid #f5f5f5;
+}
+
+.at-radio{
+  height: 88rpx;
+  border-bottom: 1rpx solid #f5f5f5;
+  color: #666;
+  font-size: 26rpx;
+}
+
+.at-radio .van-radio__label{
+  margin-right: 30rpx;
+}
+
+.a-account{
+  height: 88rpx;
+  color: #666;
+  font-size: 26rpx;
+}
+
+.aac-price{
+  color: #E5414A;
+  font-size: 30rpx;
+  font-weight:bold;
+  margin-left: 30rpx;
+}
+.aac-input{
+  border: 1px solid #999;
+  width: 100rpx;
+  text-align: center;
+}
+.reason-s{
+  height: 88rpx;
+  padding: 0 30rpx;
+  color: #333;
+  font-size: 28rpx;
+  background-color: #fff;
+  font-weight:bold;
+  margin-bottom: 20rpx;
+}
+
+.arrowRight{
+  width: 25rpx;
+  height: auto;
+}
+
+.voucher{
+  background-color: #fff;
+  color: #333;
+  font-size: 28rpx;
+  padding: 0 30rpx;
+}
+
+.v-header{
+  line-height: 88rpx;
+}
+
+.v-box{
+  padding-bottom: 20rpx;
+}
+
+.up-btn{
+  width: 150rpx;
+  height: 150rpx;
+  border: 1rpx dashed #999;
+  border-radius: 10rpx;
+  color: #999;
+  font-size: 28rpx;
+}
+
+.up-btn image{
+  width: 60rpx;
+  height: auto;
+  margin-bottom: 10rpx;
+}
+
+.vb-img{
+  position: relative;
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 25rpx;
+  margin-bottom: 10rpx;
+}
+
+.vb-img image{
+  width: 150rpx;
+  height: 150rpx;
+}
+
+.vb-img .vb-clear{
+  width: 44rpx;
+  height: auto;
+  position: absolute;
+  top: -20rpx;
+  right: -20rpx;
+}
+
+.apply-btn{
+  /* position: absolute; */
+  /* bottom: 50rpx; */
+  /* left: 30rpx; */
+  /* right: 30rpx; */
+  line-height: 88rpx;
+  color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+  border-radius: 44rpx;
+  background-color: #FF4444;
+  display: 40rpx auto;
+}
+
+.logisticsInfo {
+  background-color: #fff;
+  border-radius: 6rpx;
+  margin: 20rpx 0;
+}
+
+.logisticsInfo .title {
+  color: #333;
+  font-size: 28rpx;
+  font-weight: bold;
+  line-height: 88rpx;
+  padding-left: 30rpx;
+}
+
+.logisticsInfo .log-li {
+  margin-left: 30rpx;
+  padding-right: 30rpx;
+  border-top: 1rpx solid #E7E7E7;
+  line-height: 88rpx;
+  height: 88rpx;
+  color: #333;
+  font-size: 28rpx;
+}
+.logisticsInfo .log-li input {
+  flex: 1;
+}
+.logisticsInfo .log-li .icon {
+  width: 30rpx;
+  height: auto;
+  margin-left: 20rpx;
+}

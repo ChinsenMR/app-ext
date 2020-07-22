@@ -1,0 +1,31 @@
+<!--pages/exchangedRecords/exchangedRecords.wxml-->
+<view class='exchanged-item' wx:for="{{dataList}}" wx:key="index">
+  <view class='top'>
+    <text class='title'>售后单号：</text>
+    <text class='number'>{{item.ReturnsId}}</text>
+    <text class='state'>{{item.HandleStatus}}</text>
+  </view>
+  <navigator class='content' url='/pages/exchangedDetail/exchangedDetail?id={{item.ReturnsId}}'>
+    <view class='left'>
+      <view class='item'>订单编号：
+        <text>{{item.OrderId}}</text>
+      </view>
+      <view class='item'>申请时间：
+        <text>{{item.ApplyForTime}}</text>
+      </view>
+      <view class='title-box'>
+        <text class='title'>商品名称：</text>
+        <text class='title-name' selectable>{{item.ProductName}}</text>
+      </view>
+      <view class='title-box'>
+        <text class='title'>备注：</text>
+        <text class='title-name' selectable>{{item.AdminRemark}}</text>
+      </view>
+    </view>
+    <i class="arrow"></i>
+  </navigator>
+</view>
+<view class='empty' wx:if='{{isEmpty}}'>
+ <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/pic-kong.png'></image>
+  <text>暂无数据</text>
+</view>

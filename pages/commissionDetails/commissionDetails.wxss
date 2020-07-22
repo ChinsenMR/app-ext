@@ -1,0 +1,36 @@
+/* pages/commissionDetails/commissionDetails.wxss */
+.top,.bottom{
+  padding: 40rpx;
+  margin-top: 2rpx;  
+  font-size: 32rpx;  
+  background-color: #fff;
+}
+.top{
+  display: flex; 
+  padding: 30rpx 40rpx;   
+  align-items: center;
+  justify-content: space-between;  
+}
+.top>view:first-child{
+  color: #999;
+}
+.top>view:last-child{
+  color: #333;
+}
+.top .money{
+  font-size: 60rpx;
+}
+.bottom{
+  background-color: #fff;
+}
+.bottom>view{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 6rpx;
+}
+.bottom>view:first-child{
+  margin-top: 0;
+}
+.bottom>view>text:first-child{
+  color: #999;
+}

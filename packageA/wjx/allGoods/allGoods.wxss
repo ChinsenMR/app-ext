@@ -1,0 +1,280 @@
+/* 头部开始 */
+.nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+}
+
+.nav-box {
+  background-color: #f44;
+  padding: 0 27rpx;
+  overflow: hidden;
+}
+
+.navtop {
+  /* display: flex; */
+  /* margin-top: 55rpx; */
+  top: 61rpx;
+  position: fixed;
+  align-self: stretch;
+}
+
+.nvatopx {
+  display: flex;
+  /* margin-top: 102rpx; */
+}
+
+.nav-name {
+  width: 144rpx;
+  height: 59rpx;
+  display: inline-block;
+  font-size: 36rpx;
+  font-family: MicrosoftYaHei;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 59rpx;
+  vertical-align: top;
+  margin-left: 10rpx;
+}
+
+.search-box {
+  padding-left: 20rpx;
+  width: 250rpx;
+  height: 59rpx;
+  margin-left: 30rpx;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 27rpx;
+}
+
+.wrapper {
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.search-box image {
+  width: 100%;
+  height: 100%;
+}
+
+.search {
+  display: inline-block;
+  width: 171rpx;
+  /* height: 32rpx; */
+  vertical-align: top;
+  margin-left: 17rpx;
+  height: 100%;
+}
+
+.Placeholder {
+  color: rgba(255, 255, 255, 1);
+  font-size: 26rpx;
+}
+
+.kong {
+  width: 193rpx;
+  height: 31rpx;
+}
+
+/* 滚动导航栏 */
+
+.scrollbox {
+  width: 100%;
+  display: flex;
+  line-height: 22px;
+  align-items: center;
+  padding-left: 30rpx;
+  background-color: #f44;
+  box-sizing: border-box;
+}
+
+.scroll {
+  white-space: nowrap;
+  height: 60rpx;
+  width: 658rpx;
+  margin-right: 15rpx;
+}
+
+.scroll .active {
+  position: relative;
+  color: #FFCC99;
+}
+
+.scroll .active::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  height: 4rpx;
+  background-color: #FFCC99;
+}
+
+.scrollitem {
+  display: inline-block;
+  color: #fff;
+  font-size: 28rpx;
+  margin-right: 68rpx;
+  vertical-align: middle;
+  line-height: 60rpx;
+}
+
+.scroll .tabbaractive {
+  color: #fc9;
+  position: relative;
+}
+
+.tabbaractive::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fc9;
+  width: 100%;
+  height: 4rpx;
+}
+
+.btn {
+  display: inline-block;
+  border-left: 1px solid red;
+  background: rgba(255, 68, 68, 1);
+  vertical-align: top;
+  width: 32rpx;
+  height: 28rpx;
+  /* align-content: stretch; */
+}
+
+.btn image {
+  width: 100%;
+  height: 100%;
+}
+
+/* 头部结束 */
+
+.layout {
+  /* margin-top: 230rpx; */
+  background-color: #f4f4f4;
+}
+
+.navBar {
+  background-color: #FF4444;
+  color: #fff;
+  font-size: 30rpx;
+  padding: 0 10rpx;
+  box-sizing: border-box;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+}
+
+.test {
+  display: inline-block;
+  flex: 2;
+  margin-right: 25rpx;
+  font-size: 30rpx;
+  color: #fff;
+  line-height: 70rpx;
+}
+
+.navBar .active {
+  position: relative;
+  color: #FFCC99;
+}
+
+.navBar .active::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  content: '';
+  height: 4rpx;
+  background-color: #FFCC99;
+}
+
+.g-ul {
+  padding: 20rpx 10rpx 20rpx 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.g-li {
+  margin: 0 20rpx 20rpx 0;
+  padding: 12rpx;
+  box-sizing: border-box;
+  width: 334rpx;
+  box-shadow: 0 8rpx 23rpx 1rpx rgba(153, 153, 153, 0.1);
+  border-radius: 8rpx;
+  background-color: #fff;
+}
+
+.g-img {
+  width: 310rpx;
+  height: 310rpx;
+  border-radius: 8rpx 8rpx 0 0;
+}
+
+.g-title {
+  color: #333;
+  font-size: 28rpx;
+  margin: 5rpx 0;
+  width: 100%;
+  height: 64rpx;
+  line-height: 32rpx;
+}
+
+.g-pbox {
+  width: 100%;
+}
+
+.pMark {
+  color: #FF3333;
+  font-size: 24rpx;
+  margin-bottom: -8rpx;
+}
+
+.curPrice {
+  color: #FF3333;
+  font-size: 36rpx;
+  margin: 0 3rpx;
+}
+
+.newTip {
+  border-radius: 12rpx 12rpx 12rpx 2rpx;
+  background: linear-gradient(#FF4444, #FF3366);
+  color: #fff;
+  font-size: 18rpx;
+  padding: 2rpx 10rpx;
+}
+
+.prePrice {
+  color: #999;
+  font-size: 20rpx;
+  text-decoration: line-through;
+  margin-top: 5rpx;
+}
+
+.g-add {
+  width: 50rpx;
+  height: 50rpx;
+  box-sizing: border-box;
+  padding-bottom: 10rpx;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 46rpx;
+  background-color: #E3B27D;
+}
+
+.empty {
+  width: 100%;
+  margin-top: 100rpx;
+  color: #999;
+  font-size: 30rpx;
+}
+
+.empty image {
+  width: 450rpx;
+  height: auto;
+  margin-bottom: 30rpx;
+}

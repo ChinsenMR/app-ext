@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "我的",
+   "navigationBarBackgroundColor": "#fff",
+   "navigationBarTextStyle": "black",
+  "usingComponents":{
+    "btn-to-top": "/components/btnToTop/btnToTop",
+    "code":"./code/code",
+    "tabBar": "/components/tabBar/tabBar"
+  }
+}

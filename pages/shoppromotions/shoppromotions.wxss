@@ -1,0 +1,177 @@
+/* pages/shoppromotions/shoppromotions.wxss */
+
+.shoppromotions {
+  background: #f5f5f5;
+}
+
+.shoppromotions .top {
+  background: #fff;
+}
+
+/*标题头*/
+
+.shoppromotions .title {
+  position: relative;
+  display: block;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  font-size: 30rpx;
+  width: 100%;
+  height: 80rpx;
+  border-top: 2rpx solid #f5f5f5;  
+  border-bottom: 2rpx solid #f5f5f5;
+  line-height: 80rpx;
+  color: #333;
+}
+
+.shoppromotions .title:before {
+  content: " ";
+  display: inline-block;
+  margin-right: 20rpx;
+  vertical-align: middle;
+  width: 8rpx;
+  height: 30rpx;
+  border-radius: 6rpx;
+  background-color: #ff950d;
+  overflow: hidden;
+}
+
+.shoppromotions .title-red:before {
+  background-color: #e0001b !important;
+}
+
+.shoppromotions .title-green:before {
+  background-color: #29c500 !important;
+}
+
+.shoppromotions .title-red, .shoppromotions .title-green {
+  text-align: left !important;
+}
+
+/*输入框*/
+
+.shoppromotions .msg {
+  padding: 30rpx 30rpx;
+  width: 100%;
+  height: 160rpx;
+  box-sizing: border-box;
+  font-size: 26rpx;
+}
+
+.shoppromotions .button-wrap {
+  padding: 0 90rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 60rpx;
+  box-sizing: border-box;
+}
+.place-holder {
+  margin-top: 4rpx;
+  font-size: 28rpx;
+  color: #bfbfbf;
+}
+.shoppromotions .btn-shareWx, .shoppromotions .btn-shareWb {
+  width: 240rpx;
+  height: 68rpx;
+  border-radius: 8rpx;
+  font-size: 26rpx;
+}
+
+.shoppromotions .btn-shareWx {
+  background-color: #e0001b;
+  color: #fff;
+}
+
+.shoppromotions .btn-shareWb {
+  font-size: 26rpx;
+  background-color: #fff;
+  color: #e0001b;
+  border: 2rpx solid #e0001b;
+  box-sizing: border-box;
+}
+
+.shoppromotions .shop-name {
+  padding-left: 30rpx;
+  box-sizing: border-box;
+  height: 120rpx;
+  width: 100%;
+  font-size: 28rpx;
+  line-height: 120rpx;
+  color: #999;
+  background: #fafafa;
+}
+
+.shoppromotions .logo {
+  margin-right: 20rpx;
+  display: inline-block;
+  width: 68rpx;
+  height: 68rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+/* 店铺链接部分*/
+
+.shoppromotions .mid {
+  margin-top: 20rpx;
+  text-align: center;
+  background: #fff;
+}
+
+.shoppromotions .title-red {
+  margin-bottom: 30rpx;
+}
+
+.shoppromotions .text-link {
+  padding: 0 20rpx;
+  margin-top: 20rpx;
+  border: 2rpx dashed #333;
+  /* padding: 6rpx 30rpx; */
+  box-sizing: border-box;
+  border-radius: 8rpx;
+  font-size: 26rpx;
+  color: #666;
+}
+
+/*二维码部分*/
+
+.title-green {
+  border-bottom: none !important;
+}
+
+.shoppromotions .text-tips {
+  margin-top: 20rpx;
+  padding-bottom: 30rpx;
+  box-sizing: border-box;
+  display: block;
+  font-size: 24rpx;
+  color: #bfbfbf;
+}
+
+.shoppromotions .bottom {
+  margin-top: 20rpx;
+  background: #fff;
+  font-size: 28rpx;
+}
+
+.shoppromotions .code-tips {
+  margin-top: 60rpx;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+  color: #333;
+}
+
+.shoppromotions .code-box {
+  padding: 0 100rpx 80rpx 100rpx;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.shoppromotions .code-box>.img {
+  width: 100%;
+  height: 480rpx;
+}

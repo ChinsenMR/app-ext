@@ -1,0 +1,167 @@
+page{
+  padding-top: 44px;
+}
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.orderList {
+  margin-top: 30rpx;
+  background-color: #fff;
+}
+
+.orderList .ol_top {
+  display: flex;
+  padding: 26rpx;
+  font-size: 27rpx;
+  justify-content: space-between;
+  border-bottom: 2rpx solid #f5f5f5;
+}
+
+.orderList .ol_top .ot_center {
+  color: #999;
+}
+
+.orderList .ol_top .ot_right {
+  color: #e0001b;
+}
+
+.orderList .ol_center {
+  display: flex;
+  padding: 30rpx;
+  font-size: 30rpx;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f5f5f5;
+  background-color: #fff;
+  position: relative;
+}
+
+.orderList .ol_center .oc_left {
+  width: 30%;
+  height: 150rpx;
+  flex-shrink: 0;
+  margin-right: 30rpx;
+}
+
+.orderList .ol_center .oc_right{
+  flex: 1;
+}
+
+.orderList .ol_center .ocr_bottom {
+  display: flex;
+  margin-top: 30rpx;
+  justify-content: space-between;
+}
+
+.orderList .ol_center .ocr_bottom .price {
+  color: #e0001b;
+}
+
+.orderList .ol_center .ocr_bottom .num {
+  color: #999;
+  font-size: 28rpx;
+}
+
+.orderList .ol_all {
+  display: flex;
+  width: 100%;
+  padding: 20rpx;
+  font-size: 30rpx;
+  text-align: right;
+  box-sizing: border-box;
+  border-bottom: 2rpx solid #f5f5f5;
+  color: #999;
+}
+
+.orderList .ol_all .all {
+  width: 60%;
+}
+
+.orderList .total {
+  width: 40%;
+  text-align: right;
+}
+
+.orderList .ol_bottom {
+  color: #666;
+  height: 50rpx;
+  position: absolute;
+  top: 310rpx;
+  right: 20rpx;
+}
+
+.ol_all_bottom{
+  width: 100%;
+  background-color: #fff;
+  height: 80rpx;
+}
+.check {
+  padding: 6rpx 16rpx;
+  border-radius: 6rpx;
+  margin-left: 20rpx;
+  font-size: 28rpx;  
+  border: 2rpx solid #999;
+}
+.orderList .ol_bottom .help{
+  margin-right: 10rpx;
+  border: 2rpx solid #e0001b;
+  color: #fff;
+  background-color: #e0001b;
+}
+.bottom {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  align-items: center;
+  font-size: 30rpx;
+  color: #999;
+  background-color: #fff;
+}
+
+.bottom .center {
+  width: 30%;
+}
+
+.bottom .select {
+  display: flex;
+  padding-left: 30rpx;
+  width: 35%;
+  align-items: center;
+}
+
+.bottom .select image {
+  margin-right: 10rpx;
+  width: 14%;
+  height: 34rpx;
+}
+
+.bottom .right {
+  text-align: center;
+  width: 35%;
+}
+
+.bottom .right {
+  padding: 26rpx 0;
+  color: #fff;
+  background-color: #e0001b;
+}
+
+.empty{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: #666666;
+  font-size: 14px;
+  text-align: center;
+}
+.empty>image{
+  width: 360rpx;
+  height: 360rpx;
+}

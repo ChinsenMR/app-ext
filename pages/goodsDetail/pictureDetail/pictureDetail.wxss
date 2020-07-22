@@ -1,0 +1,73 @@
+@import '../../../app.wxss';
+
+.line {
+  color: #666;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 90rpx;
+}
+
+.goodsDetail {
+  background-color: #fff;
+}
+
+.goodsDetail .intr-header {
+  font-size: 17rpx;
+  color: #fff;
+}
+
+.goodsDetail .intr-header > view image {
+  width: 25rpx;
+}
+
+.goodsDetail .goodsDetail-title {
+  background-color: #f44;
+  font-size: 17rpx;
+  margin-bottom: 0;
+  height: 50rpx;
+  border-radius: 6rpx 6rpx 0rpx 0rpx;
+}
+
+.goodsDetail-title image:not(.logo_w) {
+  width: 20rpx;
+  margin-right: 5rpx;
+}
+
+.intr-header {
+  color: #f66;
+  font-size: 22rpx;
+  padding: 0 30rpx;
+  background-color: #fff;
+  height: 88rpx;
+}
+
+.discount-bottom{
+  border-top:0;
+}
+
+.intr-header .arrowRight {
+  margin-left: 60rpx;
+}
+
+.arrowRight {
+  width: 15rpx;
+}
+
+.intr-header > view image {
+  width: 30rpx;
+  margin-right: 6rpx;
+}
+
+.logo_w {
+  width: 114rpx;
+  height: 24rpx;
+  margin-right: 47rpx;
+}
+
+.goodsDetail-img{
+  width: 100%;
+}
+
+.goodsDetail-img image{
+  width: 100%;
+}

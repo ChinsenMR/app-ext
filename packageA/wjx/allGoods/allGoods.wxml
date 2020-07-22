@@ -1,0 +1,71 @@
+<!-- 顶部 -->
+<view class='nav'>
+  <view class='nav-box' style='height:{{navHeight}}px;'>
+    <view class='nav-boxInner df ais' style='margin-top: {{statusBarHeight}}px; height:{{navHeight-statusBarHeight}}px'>
+      <!-- 返回按钮新增 -->
+      <view class="wjxback" bindtap="getBack" wx:if="{{backShow}}">
+        <image style="width:40rpx;height:35rpx;"
+          src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/newzuojiantout.png" />
+      </view>
+      <view class='nav-name'>{{homeTitle}}</view>
+      <view class='search-box df ais' bindtap='Tosearch'>
+        <view class="wrapper">
+          <image src='{{imgurl + "icon_search@2x.png"}}' mode='widthFix'></image>
+        </view>
+        <input class='search' type="text" placeholder='搜索' placeholder-class='Placeholder' disabled='false'></input>
+      </view>
+      <view class='kong'></view>
+    </view>
+  </view>
+
+  <!-- 导航栏 -->
+  <view class='scrollbox df ais' wx:if="{{newShow}}">
+    <scroll-view class="scroll df ais" scroll-x="true" bindtap='selecttarbar'>
+      <view wx:for="{{Categorydata}}" wx:key 
+        class="test {{index==activeIndex?'active':''}}" bindtap="getClickIndex" data-nums="{{index}}"
+        data-id="{{item.CategoryId}}" data-name="{{item.Name}}">
+        {{item.Name}}
+      </view>
+    </scroll-view>
+  </view>
+
+
+</view>
+
+
+<view class='layout' style="margin-top:{{newHeight}}rpx">
+  <!-- <scroll-view scroll-x class="navBar ">
+    <block wx:for="{{Categorydata}}" wx:key="{{item}}">
+      <view class="test {{index==activeIndex?'active':''}}" bindtap="getClickIndex" data-nums="{{index}}"
+        data-id="{{item.CategoryId}}">
+        {{item.Name}}
+      </view>
+    </block>
+  </scroll-view> -->
+
+  <!-- 内容区 -->
+  <view class="g-ul">
+    <navigator url="/pages/goodsDetail/goodsDetail?p={{item.ProductId}}" class="g-li dd-vh" wx:for='{{list}}' wx:key
+      wx:if='{{list.length != 0}}'>
+      <image class="g-img" src="{{item.ImageUrl1}}" mode="aspectFill"></image>
+      <view class="g-title to-2line">{{item.ProductName}}</view>
+      <view class="da g-pbox">
+        <view class="flex">
+          <view class="da">
+            <text class="pMark">￥</text>
+            <text class="curPrice">{{item.SalePrice}}</text>
+            <!-- <text class="newTip"></text> -->
+          </view>
+          <view class="prePrice">原价:￥{{item.MarketPrice || 0}}</view>
+        </view>
+        <view class="g-add dcc">+</view>
+      </view>
+    </navigator>
+
+    <!-- 空空如也 -->
+    <view class="empty dd-vh" wx:if='{{list.length == 0 && isEmpty}}'>
+      <image src="{{imgUrl+'icon_kong.png'}}" mode="widthFix"></image>
+      <text>空空如也...</text>
+    </view>
+  </view>
+</view>

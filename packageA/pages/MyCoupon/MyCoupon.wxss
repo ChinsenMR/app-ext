@@ -1,0 +1,110 @@
+/* packageA/pages/MyCoupon/MyCoupon.wxss */
+
+.couponbox {
+  padding: 30rpx;
+  color: white;
+  
+}
+
+.coudet {
+  width: 690rpx;
+  height: 160rpx;
+  background-image: url("http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/pic_coupon_1@2x.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.coudet2 {
+  width: 690rpx;
+  height: 160rpx;
+  background-image: url("http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/pic_coupon_2@2x.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.defalut {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.coul, .coum, .cour {
+  height: 100%;
+}
+
+.coul {
+  /* width: 20%; */
+}
+
+.limt {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 85%;
+  align-items: center;
+}
+
+.coum {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  width: 204rpx;
+}
+
+.coum::after {
+  position: absolute;
+  right: -44rpx;
+  display: inline-block;
+  content: "";
+  width: 1rpx;
+  height: 87rpx;
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+
+.dol {
+  font-size: 33rpx;
+}
+
+.num {
+  font-size: 70rpx;
+}
+
+.man {
+  font-size: 22rpx;
+}
+
+.new {
+  font-size: 32rpx;
+  position: absolute;
+  top: 20rpx;
+}
+
+.tiem {
+  position: absolute;
+  font-size: 22rpx;
+  margin-top: 19rpx;
+  width: 210rpx;
+left: -14rpx;
+
+}
+
+.coumr {
+  width: 98rpx;
+  height: 44rpx;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 22rpx;
+  color:rgba(252,67,69,1);
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 44rpx;
+}
+.emity{
+  width: 98rpx;
+}
+
+.nocnopnn{
+  font-size: 34rpx;
+  text-align: center;
+  margin-top: 40%;
+}

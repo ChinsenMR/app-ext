@@ -1,0 +1,135 @@
+
+.shopORders {
+  border-top: 2rpx solid #e5e5e5;
+}
+.Skin-DistributorOrders .orderTitle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 88rpx;
+	display: flex;
+  align-items: center;
+	 background: #fff; 
+  border-top: 2rpx solid #f5f5f5;
+  box-sizing: border-box;
+}
+.Skin-DistributorOrders .orderTitle>.list {
+  position: relative;
+	flex:1;
+	height: 60rpx;
+	line-height: 60rpx;
+	text-align: center;
+	 padding: 10rpx 0; 
+	font-size: 30rpx;
+	color:#BEBEBE;
+}
+
+.Skin-DistributorOrders .orderTitle>.list1::after{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 2rpx;
+  height: 50rpx;
+  top: 20rpx;
+  right: 0;
+  background-color: #e5e5e5;
+}
+
+
+.Skin-DistributorOrders .orderTitle .actives {
+	color:#E0001B;
+	border-bottom:6rpx solid #E0001B;
+	font-weight: bold;
+}
+
+.Skin-DistributorOrders .orderList .all-orders {
+	margin-top: 20rpx;
+	background: #fff;
+	border-top:2rpx solid #F5F5F5;
+	border-bottom:2rpx solid #F5F5F5;
+}
+
+.Skin-DistributorOrders .orderList .orderinfo {
+	position: relative;  
+	font-size: 26rpx;
+	padding:30rpx 0 30rpx 40rpx;
+	color:#999;  
+} 
+.Skin-DistributorOrders .orderList .orderinfo .state {
+	position: absolute;
+	right:40rpx;
+	top:30rpx;
+	font-size: 28rpx;
+	color:#E0001B;
+}
+.Skin-DistributorOrders .orderinfo view {
+	margin-bottom: 10rpx;
+}
+.Skin-DistributorOrders .orderList .coloractive {
+	font-size: 28rpx;
+	color:#E0001B;
+}
+.Skin-DistributorOrders .commodity {
+	display: flex;
+	padding:30rpx 40rpx;
+	border-top:2rpx solid #e5e5e5;
+	border-bottom:2rpx solid #e5e5e5;
+}
+.Skin-DistributorOrders .commodity>.commodityinfo{
+	flex:1;
+	position: relative;
+	font-size: 26rpx;
+	color:#333333;
+}
+.Skin-DistributorOrders .commodityImg image{
+	width:144rpx;
+	height: 144rpx;
+	margin-right: 10rpx;
+}
+.Skin-DistributorOrders .commodityinfo .money {
+	width:100%;
+	position: absolute;
+	bottom:0;
+	left:0;
+	overflow: hidden;
+	font-size: 28rpx;
+	color:#FF950D;
+}
+.Skin-DistributorOrders .commodityinfo .money text {
+	float: right;
+	color:#999;
+}
+.Skin-DistributorOrders .commodityNum {
+	text-align: right;
+	font-size: 28rpx;
+	height: 88rpx;
+	line-height: 88rpx;
+	padding-right: 40rpx;
+	color:#999;
+	overflow: hidden;
+}
+.Skin-DistributorOrders .commodityNum text {
+	margin-left: 40rpx;
+}
+.Skin-DistributorOrders .commission {
+	float: left;
+	font-size: 26rpx;
+	color:#E0001B;
+}
+
+
+.empty{
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%,-40%);
+  color: #666666;
+  font-size: 14px;
+  text-align: center;
+}
+.empty>image{
+  width: 360rpx;
+  height: 360rpx;
+}

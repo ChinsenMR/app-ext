@@ -1,0 +1,67 @@
+<!-- 优惠券modal -->
+<view class='cModal' hidden='{{hiddenModal}}'>
+<!-- <view class='cModal' hidden='{{true}}'> -->
+  <view class='content'>
+    <view class='header df ais jct'>
+      <text>优惠</text>
+      <view class='close df ais jct' bindtap='showModal'>+</view>
+    </view>
+    <view class='tabbar'>
+      <text>领券</text>
+    </view>
+    <!-- 可用优惠券 -->
+    <view class='content-ul'>
+      <view class='content-li' wx:for="{{coupons}}" wx:key="index">
+        <image src='{{imgUrl+ "pic_coupon_1@2x.png"}}' mode='widthFix'></image>
+        <view class='content-inner df ais jct-between'>
+          <view class='content-innerL df ais'>
+            <view class='cou-price df fdc jct ais'>
+              <view class='df ais-end'>
+                <text>¥</text>
+                <text class='df ais-end'>{{item.Price}}</text>
+              </view>
+              <view>{{item.LimitText}}</view>
+            </view>
+            <view class='cou-title df fdc jct'>
+              <text>{{item.CouponName}}</text>
+              <text>{{item.StartTimeText}} 至 {{item.ClosingTimeText}}</text>
+            </view>
+          </view>
+          <!-- <view class='content-innerR df ais jct' data-id='{{item.CouponId}}' bindtap='selectCou'> -->
+          <view 
+          class='content-innerR df ais jct' 
+          data-id='{{item.CouponId}}' 
+          data-name="{{item.CouponName}}"
+          data-Price="{{item.Price}}"
+          data-index="{{index}}"
+          data-code="{{item.ClaimCode}}"
+          catchtap='selectCou'
+          >
+            <!-- <text>{{item.IsCurCouponUserGet == 0? '领券':'已领'}}</text> -->
+            <!-- <view class="select {{index==nums && select==true?'selectAdd':''}}">
+              <image 
+                src="{{select==true?'../../images/gou_red.png':''}}" 
+                mode="widthFix" 
+                class="gouzi" 
+                wx:if="{{select && index==nums}}">
+              </image>
+            </view> -->
+
+            <view class="select {{index+1==nums?'selectAdd':''}}">
+              <image 
+                src="{{index+1==nums?'../../images/gou_red.png':''}}" 
+                mode="widthFix" 
+                class="gouzi" 
+                wx:if="{{index+1==nums}}">
+              </image>
+            </view>
+
+
+
+
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

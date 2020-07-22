@@ -1,0 +1,33 @@
+<!--pages/exchangedDetail/exchangedDetail.wxml-->
+<view class='exchanged-item'>
+  <view class='top'>
+    <text class='title'>售后类型: {{detailData.RefundType}}</text>
+    <view class='right'>
+      <text class='money'>{{ detailData.RefundMoney?'￥'+detailData.RefundMoney:''}} </text>
+      <text class='state'>{{ detailData.HandleStatus}}</text>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='left'>
+      <view class='item'>订单编号：<text>{{detailData.OrderId}}</text></view>
+      <view class='item'>申请时间：<text>{{detailData.ApplyForTime}}</text></view>
+      <view class='title-box'>
+        <text class='title'>商品名称：</text>
+        <text class='title-name' selectable>{{detailData.ProductName}}</text>
+      </view>
+      <view class='item'>备注： <text>{{ detailData.Comments? detailData.Comments:'无'}}</text></view>
+    </view>
+    <i class="arrow"></i>
+  </view>
+</view>
+<view class='exchanged-item' style='margin-top: 10px;'>
+  <view class='top'>
+    <text class='title'>进度跟踪</text> 
+  </view>
+  <view class='progress'>
+    <view class='item {{(detailData.ProgressStatus.length-1) === index?"red":""}}' wx:for="{{detailData.ProgressStatus}}">
+      <text class='state'>{{item.ProgressName}}</text>
+      <text class='date'>{{item.ProgressTime}}</text>
+    </view>
+  </view>
+</view>

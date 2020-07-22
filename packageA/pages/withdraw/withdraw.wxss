@@ -1,0 +1,111 @@
+.withdraw {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx 0;
+}
+.withdraw .huokuai_wrap {
+  box-sizing: border-box;
+  position: relative;
+}
+.withdraw .huokuai_wrap .withdrawal_way {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  width: 690rpx;
+  height: 88rpx;
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}
+.withdraw .huokuai_wrap .withdrawal_way .withdrawal_title {
+  font-size: 26rpx;
+  color: #333333;
+}
+.withdraw .huokuai_wrap .search_wrap {
+  position: absolute;
+  top: 88rpx;
+  left: 10rpx;
+  width: 690rpx;
+  height: 300rpx;
+  box-sizing: border-box;
+  background-color: #fff;
+  z-index: 1000;
+  padding: 20rpx;
+}
+.withdraw .huokuai_wrap .search_wrap .wx_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1rpx solid #666;
+}
+.withdraw .huokuai_wrap .search_wrap .wx_wrap .wx_img {
+  width: 60rpx;
+  height: 60rpx;
+}
+.withdraw .huokuai_wrap .search_wrap .wx_wrap .wx_main {
+  font-size: 26rpx;
+}
+.withdraw .huokuai_wrap .search_wrap .wx_wrap .wx_main .wx_title {
+  color: #333;
+}
+.withdraw .huokuai_wrap .search_wrap .wx_wrap .wx_main .wx_text {
+  color: #FF3333;
+}
+.withdraw .withdrawal_money {
+  width: 690rpx;
+  height: 256rpx;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  margin-bottom: 80rpx;
+  background-color: #fff;
+  padding: 30rpx 29rpx;
+}
+.withdraw .withdrawal_money .money_title {
+  font-size: 26rpx;
+  color: #333333;
+  margin-bottom: 30rpx;
+}
+.withdraw .withdrawal_money .money_in {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 30rpx;
+}
+.withdraw .withdrawal_money .money_in .money_icon {
+  font-size: 24rpx;
+  margin-right: 10rpx;
+}
+.withdraw .withdrawal_money .money_in .money_input {
+  font-size: 40rpx;
+}
+.withdraw .withdrawal_money .placeholderStyle {
+  color: #999999;
+  font-size: 25rpx;
+  font-weight: none;
+}
+.withdraw .money_num {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 26rpx;
+}
+.withdraw .money_num .money_one {
+  color: #666666;
+}
+.withdraw .money_num .money_all {
+  color: #FF6666;
+}
+.withdraw .money_btn {
+  width: 80%;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background-color: #ff6666;
+  color: #fff;
+  border-radius: 40rpx;
+}

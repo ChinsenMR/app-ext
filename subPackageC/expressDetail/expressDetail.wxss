@@ -1,0 +1,8 @@
+.steps-wrap {
+  padding: 30rpx;
+}
+
+.goods-wrap {
+  padding: 30rpx;
+  background-color: #fff;
+}

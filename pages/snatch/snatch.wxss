@@ -1,0 +1,258 @@
+.nav {
+  display: flex;
+  margin-top: 2rpx;
+  margin-bottom: 20rpx;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  background-color: #fff;
+}
+
+.nav .left {
+  position: relative;
+}
+
+.nav .left::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 2rpx;
+  height: 40rpx;
+  top: 20rpx;
+  right: 0;
+  background-color: #eee;
+}
+
+.default {
+  flex: 1;
+  text-align: center;
+  color: #bebebe;
+}
+
+.red {
+  flex: 1;
+  text-align: center;
+  font-weight: 600;
+  color: #e0001b;
+  border-bottom: 6rpx solid #e0001b;
+}
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+.tabList {
+  display: flex;
+  margin-bottom: 2rpx;
+  padding: 20rpx;
+  font-size: 26rpx;
+  line-height: 42rpx;
+  color: #333;
+  background-color: #fff;
+}
+
+.tabList .t_left {
+  margin: 0 auto;
+  width: 14%;
+  height: 90rpx;
+}
+
+.tabList .t_left image {
+  width: 80%;
+}
+
+.tabList .right {
+  width: 86%;
+}
+
+.tabList .right .r_top {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.tabList .right .r_bottom {
+  display: flex;
+  margin-top: 6rpx;
+  justify-content: space-between;
+}
+
+.tabList .right .price .current {
+  font-size: 26rpx;
+  color: #e0001b;
+}
+
+.tabList .right .price .del {
+  text-decoration: line-through;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.tabList .right .time {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.tabList2 {
+  background-color: #fff;
+  margin-bottom: 2rpx;
+}
+
+.tabList2>view {
+  position: relative;
+  display: flex;
+  padding: 24rpx;
+  color: #666;
+}
+
+.tabList2>view .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+
+.tabList2>view .left image {
+  width: 100%;
+  height: 150rpx;
+}
+
+.tabList2>view .center {
+  margin-left: 20rpx;
+  width: 58%;
+  font-size: 26rpx;
+}
+
+.tabList2>view .center .c_center {
+  display: flex;
+  font-size: 26rpx;
+  color: #ff950d;
+}
+
+.tabList2>view .center .c_center image {
+  margin-top: 2rpx;
+  margin-right: 20rpx;
+  width: 18%;
+  height: 38rpx;
+}
+
+.tabList2>view .center .c_bottom .current {
+  font-size: 32rpx;
+  color: #e0001b;
+}
+
+.tabList2>view .center .c_bottom .del {
+  margin-left: 8rpx;
+  font-size: 24rpx;
+  text-decoration: line-through;
+  color: #999;
+}
+
+.tabList2>view .right {
+  width: 22%;
+  flex: 1;
+}
+
+.tabList2>view .right .r_top {
+  text-align: right;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.tabList2>view .r_bottom {
+  position: absolute;
+  right: 20rpx;
+  bottom: 30rpx;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.tabList1 {
+  background-color: #fff;
+  margin-bottom: 2rpx;
+}
+
+.tabList1>view {
+  display: flex;
+  padding: 30rpx;
+  color: #666;
+}
+
+.tabList1>view .left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 150rpx;
+}
+
+.tabList1>view .left image {
+  width: 100%;
+  height: 100%;
+}
+
+.tabList1>view .center {
+  padding-right: 10rpx;
+  box-sizing: border-box;
+  margin-left: 30rpx;
+  width:54%;
+  font-size: 26rpx;
+}
+
+.tabList1>view .center .c_center {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.tabList1>view .center .c_bottom .current {
+  font-size: 32rpx;
+  color: #e0001b;
+}
+
+.tabList1>view .center .c_bottom .del {
+  margin-left:8rpx;
+  font-size: 24rpx;
+  text-decoration: line-through;
+  color: #999;
+}
+
+.tabList1>view .right {
+  width: 26%;
+  flex: 1;
+}
+
+.tabList1>view .right .r_top {
+  text-align: right;
+  font-size: 24rpx;
+}
+
+.tabList1>view .right .r_bottom {
+  margin-top: 60rpx;
+  padding: 6rpx;
+  font-size:26rpx;
+  text-align: center;
+  border: 2rpx soild #e0001b;
+  border-radius: 6rpx;
+  color: #fff;
+  background-color: #e0001b;
+}
+
+.clock {
+  font-size: 24rpx;
+}
+.clock text{
+  padding: 0 4rpx;
+  color: #fff;
+  background-color: #333333;
+}
+.fen{
+  margin: 0 8rpx;
+}
+.symbel{
+  font-size: 24rpx;
+}

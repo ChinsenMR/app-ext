@@ -1,0 +1,91 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: WuJixuan
+ * @Date: 2020-07-02 18:42:11
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2020-07-02 19:47:16
+ -->
+<!-- module -->
+<block wx:if="{{goodsInfo}}" >
+  <view class='layout' >
+    <view class='coupon df ais flex'>
+      <view class='coupon-L'>已选</view>
+      <view class='coupon-R df ais jct-between flex' bindtap='showModal'>
+        <view class='couponItem'>{{selectedArr}}</view>
+        <image class='arrowRight' src='{{imgUrl+"icon_more@2x.png"}}' mode='widthFix'></image>
+      </view>
+    </view>
+
+    <view class='df ais-start flex coupon2'>
+      <view class='coupon-L'>配送至</view>
+      <view class='coupon-R2 flex'>
+        <view class='df ais jct-between' bindtap="Toaddress">
+          <view class='df ais to-line'>{{Defaultaddres.FullAddress?Defaultaddres.FullAddress:'选择送货地址'}}</view>
+          <image class='arrowRight' src='{{imgUrl+"icon_more@2x.png"}}' mode='widthFix'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- modal -->
+  <view class='gModal' hidden='{{hiddenModal}}' bindtap="aasdas">
+    <view class='content' catchtap style="height: {{skuItem.length==0?'300':'700'}}rpx">
+      <view class='goodsInfo df ais'>
+        <image class='goodsImg' wx:if="{{skuItem.length==0}}" src='{{combineGoodsImg}}'></image>
+        <image class='goodsImg' wx:if="{{skuItem.length!=0}}" src='{{goodsInfo.ImageUrl1}}'></image>
+        <view class='goodsInfo-right'>
+          <view wx:if="{{!goodsInfo.IsFightGroup}}" class='goodsPrice'>￥{{salePrice}}</view>
+          
+          <!-- 团长购买展示团长价 goodsInfo.FightGroupSkuInfos[0].HeadSalePrice-->
+          
+
+          <!-- <view wx:elif="{{paramData.fightgroupprice}}" class='goodsPrice'>￥{{paramData.fightgroupprice}}</view>
+          <view wx:else class='goodsPrice'>￥{{paramData.saleprice}}</view> -->
+
+
+          <view wx:if="{{goodsInfo.IsFightGroup==true && paramData.type=='signbuy'}}" class='goodsPrice'>￥{{goodsInfo.SalePrice}}</view>
+          <view wx:if="{{goodsInfo.IsFightGroup==true && paramData.type=='fightgroup'}}" class='goodsPrice'>￥{{goodsInfo.FightGroupSkuInfos[0].HeadSalePrice}}</view>
+
+
+          <view class='selected-txt'>已选：{{selectedArr}}</view>
+        </view>
+        <image class='close' src='{{imgUrl+"icon_add.png"}}' mode='widthFix' bindtap='showModal'></image>
+      </view>
+      <view class='select-ul' wx:for='{{skuItem}}' wx:for-index='skuItemIndex' wx:key='skuItemIndex' wx:for-item='skuItem'>
+        <view class='select-title'>{{skuItem.AttributeName}}</view>
+        <view class='select-inner df ais'>
+          <view wx:for='{{skuItem.AttributeValue}}' wx:for-item="AttributeValue" wx:key="skuItemIndex" bindtap='selectItem' class='{{AttributeValue.selectStatus? "active":""}} df ais' data-index='{{skuItemIndex}}' data-attributeId='{{skuItem.AttributeId}}' data-value='{{AttributeValue.Value}}'
+            data-valueId='{{AttributeValue.ValueId}}'>
+            <image src='{{AttributeValue.ImageUrl}}' mode='widthFix' wx:if='{{AttributeValue.ImageUrl !=""}}'></image>
+            <text>{{AttributeValue.Value}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='goodsNum df ais jct-between'>
+        <view class='goodsNum-l df ais-end'>
+          <text>数量</text>
+          <text>仅有{{stock}}件</text>
+        </view>
+        <view class='df ais'>
+          <text class='reduce df ais jct' bindtap='reduceFun'>-</text>
+          <text class='num df ais jct'>{{goodsNum}}</text>
+          <text class='add df ais jct' bindtap='addFun'>+</text>
+        </view>
+      </view>
+      <view class='btn df ais jct-between' bindtap='btn'>
+        <text bindtap='addGoods' wx:if="{{!goodsInfo.IsFightGroup}}">加入购物车</text>
+        <text bindtap='immediatelyBuy' style="background:#ff4a4a;">立即购买</text>
+      </view>
+    </view>
+  </view>
+</block>
+
+<!-- 加购动画 -->
+<view class="animation {{addSucc?'animation_star':''}}" 
+      hidden="{{!addSucc}}">
+    <image src='{{aniImg}}' mode='widthFix'></image>
+</view>
+<!-- <view animation="{{animationData}}" hidden='{{hiddenAni}}' class='addAni df ais jct'>
+  <image src='{{aniImg}}' mode='widthFix'></image>
+</view> -->

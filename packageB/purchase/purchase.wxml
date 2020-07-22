@@ -1,0 +1,138 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: WuJixuan
+ * @Date: 2020-07-02 20:23:03
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2020-07-03 17:31:11
+ -->
+<view id="purchase">
+  <!-- 头部代理信息 -->
+  <view class="header">
+    <image src="{{imgUrl+'jujingyi.jpg'}}"></image>
+    <view class="header_right">
+      <view class="header_top">
+        <text>成露露</text>
+        <text>一级代理</text>
+      </view>
+      <view class="header_bottom">
+        <text>微信号:sada6546546</text>
+        <text>手机号:134654365</text>
+      </view>
+    </view>
+    <view class="header_img">
+      <image src="{{imgUrl+'jujingyi.jpg'}}"></image>
+    </view>
+  </view>
+
+  <!-- 拼团详情 -->
+  <view class="content">
+    <view class="mian_wrap">
+      <image src="{{fightInfo.ProductImg || imgNo}}"></image>
+      <view class="main_content">
+        <view class="main_span">
+          <text>[{{fightInfo.NeedNum}}人团]</text>
+          <text>{{fightInfo.ProductName}}</text>
+        </view>
+        <view class="main_btn">
+          <text>拼团价</text>
+        </view>
+        <view class="main_price">
+          <text>￥{{fightInfo.SalePrice}}</text>
+          <text class="sc">￥{{fightInfo.ProductShowPrice}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view class="head_wrap">
+      <block wx:for="{{groupUser}}" wx:key="index">
+        <view class="head_img {{item.IsFightGroupHead?'active':''}}">
+          <image src="{{item.Picture}}"></image>
+        </view>
+      </block>
+      <view class="head_box"></view>
+    </view>
+
+    <!-- 倒计时 -->
+    <view class="time_wrap">
+      <view class="time_title">距离结束还有</view>
+      <view class="time_hms">
+        <text>{{fightInfo.limitHours}}</text>:
+        <text>{{fightInfo.limitMin}}</text>:
+        <text>{{fightInfo.limitSecond}}</text>
+      </view>
+    </view>
+    <!-- 拼团人数提示 -->
+    <view class="num_tip">
+      还差<text>{{fightInfo.NeedNum-fightInfo.NowNum}}</text>人参团,快邀请还有来参团吧
+    </view>
+    <!-- 按钮容器 -->
+    <view class="btn_wrap">
+      <text>查看详情</text>
+      <text>邀请好友</text>
+      <text>参团</text>
+      <text>我也开一团</text>
+    </view>
+  </view>
+
+  <!-- 拼团玩法介绍 -->
+  <view class="method_wrap">
+    <view class="method_title">
+      <image src="{{imgUrl+'ptwanfa_icon.png'}}"></image>
+    </view>
+    <view class="method_lc">
+      <view class="tip_wrap">
+        <view class="tip_num">1</view>
+        <view class="tip_text">
+          <text>选择商品</text>
+          <text>完成下单</text>
+        </view>
+      </view>
+      <view class="tip_wrap">
+        <view class="tip_num">2</view>
+        <view class="tip_text">
+          <text>支付开团</text>
+          <text>或参团</text>
+        </view>
+      </view>
+      <view class="tip_wrap">
+        <view class="tip_num">3</view>
+        <view class="tip_text">
+          <text>邀请好友</text>
+          <text>参团支付</text>
+        </view>
+      </view>
+      <view class="tip_wrap">
+        <view class="tip_num">4</view>
+        <view class="tip_text">
+          <text>人满成功</text>
+          <text>失败退款</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 分享 -->
+  <share wx:if="{{isShow}}" shareInfo="{{shareInfo}}" bind:closeEvent="closeEvent"></share>
+</view>
+
+<!-- 代理信息弹窗 -->
+<view class="win_wrap">
+  <view class="win_top">
+    <image src="{{imgUrl+'jujingyi.jpg'}}"></image>
+    <view class="win_tip">
+      <view class="text_title">安装时的</view>
+      <view class="text_wrap">
+        <text>微信号:sdf654654</text>
+        <text>复制</text>
+      </view>
+    </view>
+  </view>
+  <view class="win_code">
+    <view class="code_title">小程序码</view>
+    <image src="{{imgUrl+'jujingyi.jpg'}}" bindlongpress="saveImage"></image>
+    <text>长按保存小程序码</text>
+  </view>
+</view>
+<view class="zezhao"></view>

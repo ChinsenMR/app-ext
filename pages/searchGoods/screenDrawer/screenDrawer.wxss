@@ -1,0 +1,167 @@
+@import "../../../app.wxss";
+
+.screenDrawer{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.drawer-inner{
+  width: 590rpx;
+  background-color: #fff;
+  height: 100%;
+  border-top: 1rpx solid #F7F7F7;
+  padding: 30rpx;
+  position: relative;
+  animation: Drawer 0.5s;
+}
+
+@keyframes Drawer{
+  from{ transform: translate(1000rpx,0); }
+  to{ transform: translate(0,0); }
+}
+
+.brand{
+  margin-bottom: -12rpx;
+}
+
+.brand-header{
+  height: 70rpx;
+}
+
+.brand-header view:first-child{
+  color: #333333;
+  font-size: 28rpx;
+}
+
+.brand-header view:last-child{
+  color: #666666;
+  font-size: 22rpx;
+}
+
+.brand-header image{
+  width: 14rpx;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+}
+
+.brand-ul{
+  flex-wrap: wrap;
+  max-height: 300rpx;
+  overflow-y: scroll;
+}
+
+.brand-ul::-webkit-scrollbar{
+  width: 0;
+}
+
+.brand-li{
+  border: 1rpx solid #999999;
+  border-radius: 10rpx;
+  width: 167rpx;
+  height: 80rpx;
+  margin-right: 20rpx;
+  margin-bottom: 16rpx;
+}
+
+.brand-li.brandActive{
+  border: 1rpx solid #FF9966;
+  position: relative；
+}
+
+.brandActive::after{
+  position: absolute;
+  content: '+';
+  transform: rotate(45deg);
+  right: 0;
+  bottom: 0;
+  width: 20rpx;
+  height: 20rpx;
+  background-color: #FF9966;
+  color: #fff;
+  font-size: 20rpx;
+  z-index: 9999;
+}
+
+.brand-li image{
+  width: 137rpx;
+}
+
+.priceRange-title, .promote-title{
+  height: 75rpx;
+  color: #333333;
+  font-size: 28rpx;
+  margin-top: 10rpx;
+}
+
+.minPrice, .maxPrice{
+  width:154rpx;
+  height:44rpx;
+  background:rgba(224,224,224,1);
+  border-radius:22rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.priceRange input{
+  color: #333;
+  font-size: 24rpx;
+  text-align: center;
+}
+
+.priceRange-separator{
+  width: 52rpx;
+  height: 2rpx;
+  background-color: #CED2D1;
+  margin: 0 16rpx;
+}
+
+.promote-ul{
+  flex-wrap: wrap;
+}
+
+.promote-li{
+  width: 154rpx;
+  height: 60rpx;
+  background-color: #E0E0E0;
+  border-radius: 12rpx;
+  color: #333333;
+  font-size: 26rpx;
+  margin-right: 31rpx;
+  margin-bottom: 20rpx;
+}
+
+.promote-li.promoteActive{
+  background-color: #FF9966;
+  color: #fff;
+}
+
+.screenDrawer-btn{
+  position: absolute;
+  bottom: 130rpx;
+  left: 26rpx;
+  right: 26rpx;
+}
+
+.screenDrawer-btn text{
+  line-height:60rpx;
+  text-align: center;
+  border-radius:12rpx;
+  font-size: 26rpx;
+  flex: 1;
+}
+
+.screenDrawer-btn text:first-child{
+  color: #333333;
+  background-color: #E0E0E0;
+  margin-right: 56rpx;
+}
+
+.screenDrawer-btn text:last-child{
+  color: #FFFFFF;
+  background-color: #D07B30;
+}

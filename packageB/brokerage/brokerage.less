@@ -1,0 +1,349 @@
+.withdrawal_wrap {
+  position: relative;
+  padding-bottom: 200rpx;
+
+  // tab栏
+  .withdrawal_title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    padding: 20rpx 20rpx 30rpx 20rpx;
+    font-size: 26rpx;
+    color: #0083e6;
+
+    .withdrawal_tx {
+      flex: 1;
+      text-align: center;
+    }
+
+    .active {
+      position: relative;
+      color: #ff450b;
+    }
+
+    .active::after {
+      position: absolute;
+      content: '';
+      bottom: -29rpx;
+      width: 29%;
+      left: 35%;
+      right: 0;
+      text-align: center;
+      height: 5rpx;
+      background-color: #ff450b;
+    }
+  }
+
+  //表单内容
+  .content {
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 10rpx 20rpx;
+    font-size: 26rpx;
+    color: #232323;
+    margin-bottom: 100rpx;
+
+    // 提现内容
+    .content_one {
+      display: flex;
+      justify-content: center;
+      padding: 20rpx 0 30rpx 0;
+      border-bottom: 1rpx solid #eee;
+
+      .test_title {
+        flex: 1;
+        font-weight: 600;
+        margin-top: 5rpz;
+      }
+
+      .main_wrap {
+        flex: 4;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        // align-items: center;
+        .cash_int {
+          margin-bottom: 40rpx;
+        }
+
+        .reminder_wrap {
+          font-size: 25rpx;
+          color: #c2c2c2;
+
+          .cash_test {}
+        }
+      }
+
+
+
+    }
+
+    //选择体现方式
+    .withdrawal_way {
+      display: flex;
+      font-size: 26rpx;
+      color: #2d2d2d;
+      padding: 30rpx 0;
+      border-bottom: 1rpx solid #eee;
+
+      .way_title {
+        flex: 1;
+        font-weight: 600;
+      }
+
+      .cardid_input {
+        width: 0;
+        height: 0;
+      }
+
+      .search_way {
+        flex: 4;
+      }
+    }
+
+    // 银行卡 表单
+    .yinhangka {
+      .deposit_bank {
+        display: flex;
+        align-items: center;
+        padding: 30rpx 0;
+        color: #2d2d2d;
+        border-bottom: 1rpx solid #eee;
+
+        .bank_title {
+          flex: 1;
+          font-weight: 600;
+        }
+
+        .cash_input {
+          flex: 4;
+        }
+
+        .deposit_bank:last-chlid {
+          border-bottom: none;
+        }
+      }
+
+      // 忘记密码
+      .forget_passwrod {
+        padding: 30rpx;
+        border-bottom: 1rpx solid #eee;
+        font-size: 26rpx;
+        text-align: center;
+        color: #0c95ea;
+      }
+    }
+
+    //微信  表单
+    .wx_input {
+      .deposit_bank {
+        display: flex;
+        align-items: center;
+        padding: 30rpx 0;
+        color: #2d2d2d;
+        border-bottom: 1rpx solid #eee;
+
+        .bank_title {
+          flex: 1;
+          font-weight: 600;
+        }
+
+        .cash_input {
+          flex: 4;
+        }
+
+        .deposit_bank:last-chlid {
+          border-bottom: none;
+        }
+      }
+
+      // 忘记密码
+      .forget_passwrod {
+        padding: 30rpx;
+        border-bottom: 1rpx solid #eee;
+        font-size: 26rpx;
+        text-align: center;
+        color: #0c95ea;
+      }
+    }
+
+
+    // 上传身份证
+    .upload_id {
+      font-size: 26rpx;
+      color: #2d2d2d;
+
+      .title_wrap {
+        display: flex;
+        padding: 30rpx 0 40rpx 0;
+
+        .zhanwei {
+          flex: 1;
+          font-size: 0;
+        }
+
+        .hint_title {
+          flex: 4;
+        }
+      }
+
+      .upload_title {
+        .upload_img_wrap {
+          padding: 10rpx 0 30rpx 0;
+
+          .title_id {
+            margin-bottom: 10rpx;
+          }
+
+          .upload_img {
+            width: 100rpx;
+            height: 100rpx;
+          }
+        }
+      }
+    }
+
+    // 按钮
+    .btn_wrap {
+      width: 100%;
+      position: absolute;
+      bottom: 10%;
+      left: 5%;
+      height: 100rpx;
+
+      .btn-area {
+        width: 90%;
+        height: 60rpx;
+        line-height: 60rpx;
+        text-align: center;
+        border-radius: 12rpx;
+        font-size: 26rpx;
+        margin-bottom: 30rpx;
+
+        .bgc_btn {
+          background-color: #ff5722;
+          color: #fff;
+        }
+
+        .last_time {
+          font-size: 26rpx;
+          color: #2d2d2d;
+          margin-top: 30rpx;
+          float: left;
+        }
+      }
+
+    }
+
+  }
+
+
+
+  // 选择弹窗
+  .withdrawal_way_wrap {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    font-size: 26rpx;
+    color: #2d2d2d;
+    width: 100%;
+    z-index: 10;
+
+    .withdrawal_window {
+      width: 100%;
+      padding: 25rpx 0;
+      border-bottom: 1rpx solid #eee;
+      margin-bottom: 10rpx;
+      text-align: center;
+    }
+
+    .cancel_btn {
+      padding: 25rpx 0;
+      border-top: 1rpx solid #eee;
+      text-align: center;
+    }
+  }
+
+  .zhezhao {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+  }
+
+  /* 提现记录 */
+  .withdrawal_record {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    /* align-items: center; */
+    background-color: #fff;
+    padding: 20rpx 30rpx;
+    font-size: 26rpx;
+    color: #2d2d2d;
+    border-top: 1rpx solid #eee;
+
+    .record_wrap {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 40rpx;
+
+      .status_wrap {
+        flex: 2;
+      }
+
+      .price_wrap {
+        flex: 5;
+      }
+
+      .record_time {
+        flex: 1.9;
+      }
+
+
+    }
+
+    .times {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+
+  }
+
+
+
+  .no_data {
+    width: 100%;
+    position: fixed;
+    top: 20%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+
+    image {
+      width: 100%;
+      height: 50%;
+    }
+
+    .no_data_title {
+      text-align: center;
+      font-size: 26rpx;
+      color: #2d2d2d;
+      margin-top: 20rpx;
+    }
+  }
+
+
+
+
+}

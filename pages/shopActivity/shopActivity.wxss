@@ -1,0 +1,186 @@
+.layout{
+  background-color: #F5F5F5;
+  padding-bottom: 100rpx;
+}
+
+.nav{
+  height: 88rpx;
+  color: #333;
+  font-size: 28rpx;
+  background-color: #fff;
+}
+
+.nav view{
+  line-height: 88rpx;
+}
+
+.nav .active{
+  color: #FF3333;
+  position: relative;
+}
+
+.active::after{
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 4rpx;
+  background-color: #FF3333;
+}
+
+.preferential{
+  margin-top: 26rpx;
+}
+
+.preferential-time{
+  height: 88rpx;
+  background-color: #fff;
+  color: #666666;
+  font-size: 24rpx;
+  padding-left: 30rpx;
+}
+
+.preferential-title{
+  height: 88rpx;
+  background-color: #fff;
+  margin-top: 1rpx;
+  padding: 0 30rpx;
+}
+
+.preferential-info{
+  color: #333;
+  font-size: 26rpx;
+  background-color: #fff;
+  height: 163rpx;
+  padding-left: 30rpx;
+  margin-bottom: 1rpx;
+}
+
+.preferential-titleL{
+  color: #333333;
+  font-size: 30rpx;
+  font-weight:bold;
+}
+
+.preferential-titleR{
+  color: #E0001B;
+  font-size: 26rpx;
+}
+
+.coupon-inner{
+  margin: 16rpx 30rpx;
+  position: relative;
+}
+
+.coupon-inner image{
+  width: 100%;
+}
+
+.coupon-info{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.content-ul{
+  margin: 15rpx 30rpx;
+}
+
+.content-li{
+  position: relative;
+  margin-bottom: 26rpx;
+  height: 158rpx;
+}
+
+.content-inner{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+  padding: 0 52rpx;
+}
+
+.cou-price > view:first-child{
+  margin-top: -13rpx;
+}
+
+.cou-price > view:first-child text:first-child{
+  font-size: 30rpx;
+}
+
+.cou-price > view:first-child text:last-child{
+  font-size: 98rpx;
+  margin-bottom: -25rpx;
+}
+
+.cou-price > view:last-child{
+  font-size: 22rpx;
+  margin-top: 10rpx;
+  letter-spacing: 6rpx;
+}
+
+.cou-title{
+  margin-left: 70rpx;
+}
+
+.cou-title text:first-child{
+  font-size: 32rpx;
+  margin-bottom: 19rpx;
+}
+
+.cou-title text:last-child{
+  font-size: 22rpx;
+}
+
+.content-innerR{
+  line-height: 87rpx;
+  padding-left: 48rpx;
+  font-size: 26rpx;
+  position: relative;
+}
+
+.content-innerR::after{
+  position: absolute;
+  width: 1rpx;
+  height: 90rpx;
+  background-color: rgba(255,255,255,0.3);
+  content: '';
+  left: 18rpx;
+}
+
+.content-innerR text:first-child{
+  color: #FC4345;
+  border:1px solid #fff;
+  background-color: #fff;
+  border-radius: 22rpx;
+  width: 98rpx;
+  line-height: 44rpx;
+  text-align: center;
+}
+
+.content-innerR text:last-child{
+  color: #fff;
+  border:1px solid #fff;
+  border-radius: 22rpx;
+  width: 98rpx;
+  line-height: 44rpx;
+  text-align: center;
+}
+
+.unselect{
+  border-radius: 50%;
+  border: 1rpx solid #fff;
+  height: 62rpx;
+  width: 62rpx;
+}
+
+.unselect2{
+  height: 62rpx;
+  width: 62rpx;
+}

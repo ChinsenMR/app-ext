@@ -1,0 +1,49 @@
+<view id="vipList" class="{{isShow?'add_active':''}}">
+  <!-- 商品列表 -->
+  <view class="content">
+    <block wx:for="{{list}}" wx:key="index">
+      <view class="main_wrap" bindtap="handleDetail" data-productid="{{item.ProductId}}">
+        <image src="{{item.ImageUrl1}}"></image>
+        <view class="main">
+          <view class="title to-2line">{{item.ProductName}}</view>
+          <view class="price">
+            <text>￥</text>
+            <text>{{item.SalePrice}}</text>
+          </view>
+          <view class="member" catchtap="handleSet" data-productid="{{item.ProductId}}">设置</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+  <!-- 弹窗 -->
+<view class="win_wrap" wx:if="{{isShow}}">
+  <form class="" report-submit="false" catchsubmit="formSubmit">
+    <view class="title">推荐人返利</view>
+    <view class="win_level">
+      <block wx:for="{{level}}" wx:key="index">
+        <view class="content_wrap">
+          <label for="" class="info">{{item.Name}}</label>
+          <view class="input_wrap {{index==nums?'active':''}}" catchtap="handleChange" data-index="{{index}}">
+            <text>{{item.title}}</text>
+            <input type="text" value="{{item.title}}" class="title_input" name="title" disabled />
+            <view class="seach_wrap" wx:if="{{item.isCheck}}">
+              <block wx:for="{{item.levels}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="{{subItem.id}}">
+                <text class="" catchtap="handleSeach" data-name="{{subItem.name}}"
+                  data-index="{{index}}">{{subItem.name}}</text>
+              </block>
+            </view>
+            <image class="sjx_btn" src="{{imgUrl+'sanjiaoxs.png'}}"></image>
+          </view>
+          <input type="text" value="{{item.value}}" bindinput="handleInput" data-index="{{index}}" data-gradeid="{{item.GradeId}}"  name="numVal" />
+        </view>
+      </block>
+    </view>
+    <view class="btn_wrap">
+      <text catchtap="setStore">确定</text>
+      <!-- <button style="margin: 30rpx 0" type="primary" formType="submit">确定</button> -->
+      <text catchtap="handleOff">取消</text>
+    </view>
+  </form>
+</view>
+<view class="zezhao" wx:if="{{isShow}}"></view>

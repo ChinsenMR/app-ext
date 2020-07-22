@@ -1,0 +1,20 @@
+<wxs src="../../utils/wxs/common.wxs" module="common"></wxs>
+<!-- 联系卖家弹窗 -->
+<view class="dialog" wx:if="{{show}}">
+	<view class="filter" bindtap="close" data-type="close" />
+	<view class="container" style="background: url({{codeBackgroundUrl}})center center / 539rpx 678rpx no-repeat">
+		<view class="title">请加微信联系店家</view>
+		<view class="wechat">
+			<text>微信号：{{wechat.id}}</text>
+			<view class="copy" bindtap='_setClipboard' data-code="{{wechat.id}}">复制</view>
+		</view>
+		<image class="code" src="{{ common.setImage(wechat.qrcode) }}" mode="aspectFill" />
+		<image
+		 class="close"
+		 bindtap="close"
+		 data-type="close"
+		 src="{{closeBtnUrl}}"
+		/>
+	</view>
+</view>
+

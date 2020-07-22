@@ -1,0 +1,71 @@
+.orderGood {
+  position: relative;
+  display: flex;
+  // align-items: center;
+
+  &-pic {
+    width: 142rpx;
+    height: 142rpx;
+    border-radius: 4rpx;
+    overflow: hidden;
+
+    > image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-desc {
+    flex: 1;
+    margin-left: 17rpx;
+    text-align: left;
+  }
+
+  &-name {
+    padding-right: 50rpx;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    font-weight: 700;
+    color: rgba(51, 51, 51, 1);
+  }
+
+  &-des {
+    margin-top: 2rpx;
+    line-height: 37rpx;
+    font-size: 26rpx;
+    font-weight: 500;
+    color: rgba(155, 155, 155, 1);
+  }
+
+  &-sub {
+    margin-top: 12rpx;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-tags {
+    margin: 0 -4rpx 0;
+
+    &-item {
+      display: inline-block;
+      margin-right: 4rpx;
+      padding: 3rpx 7rpx;
+      line-height: 33rpx;
+      font-size: 24rpx;
+      font-weight: 500;
+      color: rgba(155, 155, 155, 1);
+      background: rgba(234, 234, 234, 1);
+      border-radius: 6rpx;
+    }
+  }
+
+  &-num {
+    position: absolute;
+    top: 1rpx;
+    right: 0;
+    line-height: 40rpx;
+    font-size: 28rpx;
+    font-weight: 500;
+    color: rgba(155, 155, 155, 1);
+  }
+}

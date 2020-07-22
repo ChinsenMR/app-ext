@@ -1,0 +1,89 @@
+<view class='MemberStores'>
+  <view class="wrapper">
+    <view class="listContent clearfix" data-shop="vips" id='listCon'>
+      <view class="list list1 {{tabIndex == 0 ? 'actives' : ''}}" bindtap='tabBar' data-current="0">
+        <view>店铺会员({{memberList.litMysubMember}})</view>
+      </view>
+      <view class="list list1 {{tabIndex == 1 ? 'actives' : ''}}" bindtap='tabBar' data-current="1">
+        <view>一级分店({{memberList.litMysubFirst}})</view>
+      </view>
+      <view class="list {{tabIndex == 2 ? 'actives' : ''}}" bindtap='tabBar' data-current="2">
+        <view>二级分店({{memberList.litMysubSecond}})</view>
+      </view>
+    </view>
+    <view class="sortCont">
+      <view class="sortTit {{index == 'createTime' ? 'active' : ''}}" bindtap='sortTit' data-index='createTime'>
+        <view>
+          申请时间
+          <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/down.png' class="glyphicon" wx:if="{{index!='createTime'}}"></image>
+          <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/activeDown.png' class="glyphicon" wx:if="{{timeA=='desc'&&index=='createTime'}}"></image>
+          <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/activeUp.png' class="glyphicon" wx:if="{{timeA=='asc'&&index=='createTime'}}"></image>
+        </view>
+      </view>
+      <view class="sortTit {{index == 'MemberTotal' ? 'active' : ''}}" bindtap='sortTit' data-index='MemberTotal'>
+        <view>
+          会员数
+          <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/down.png' class="glyphicon" wx:if="{{index!='MemberTotal'}}"></image>
+          <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/activeDown.png' class="glyphicon" wx:if="{{memberA=='desc'&&index=='MemberTotal'}}"></image>
+          <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/activeUp.png' class="glyphicon" wx:if="{{memberA=='asc'&&index=='MemberTotal'}}"></image>
+        </view>
+      </view>
+      <view class="sortTit {{index == 'OrderTotal' ? 'active' : ''}}" bindtap='sortTit' data-index='OrderTotal'>
+        <view>
+          销售额
+          <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/down.png' class="glyphicon" wx:if="{{index!='OrderTotal'}}"></image>
+          <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/activeDown.png' class="glyphicon" wx:if="{{saleA=='desc'&&index=='OrderTotal'}}"></image>
+          <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/activeUp.png' class="glyphicon" wx:if="{{saleA=='asc'&&index=='OrderTotal'}}"></image>
+        </view>
+      </view>
+    </view>
+    <view class="dataUser memberinfolistbox" wx:if="{{memberDetailList.length>0}}" id="distributor" wx:for="{{memberDetailList}}" wx:key="index">
+      <view id="ulChirldrenStores">
+        <view>
+          <view class="address" wx:if="{{gradeId != 0}}">
+            <image src='{{item.Logo}}'></image>
+            <text>{{item.StoreName}}</text>
+          </view>
+          <view class="userinfo">
+            <view class="leftCont">
+              <image src='{{item.UserHead}}'></image>
+            </view>
+            <view class="rightCont">
+              <view class='marginB'>用户名称：{{item.UserName}}</view>
+              <view class='marginB'>申请时间：{{item.CreateTime}}
+              </view>
+              <view class="subbranch">
+                <view class="subLeft subCont marginB">
+                  <view>下级分店：
+                    <span class="colors">{{item.disTotal}} </span>家</view>
+                  <view>下级会员：
+                    <span class="colors">{{item.MemberTotal}} </span>位</view>
+                </view>
+                <view class="subRight subCont marginB">
+                  <view>销售总额：
+                    <text class="colors">￥{{item.OrderTotal}}</text>
+                  </view>
+                  <view>贡献佣金：
+                    <text class="colorsed">￥{{item.CommTotal}}</text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <!-- <view class="noneActivity" style="display:none">
+                        没有数据
+                    </view> -->
+        </view>
+      </view>
+    </view>
+    <view class='empty' wx:if="{{memberDetailList.length==0}}">
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/pic-kong.png'></image>
+      <text>暂无数据</text>
+    </view>
+    <!-- <view class="loading">
+            <text>正在加载中····</text>
+        </view> -->
+    <!-- <two dataList="{{list}}"></two> -->
+    <view class="under"></view>
+  </view>
+</view>

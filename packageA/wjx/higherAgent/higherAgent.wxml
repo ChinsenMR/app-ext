@@ -1,0 +1,30 @@
+<view id="higherAgent">
+  <view class="header">
+    <view class="hiti">以下是您上级代理商的基本信息,如需要,请联系!</view>
+    <view class="info">
+      <label for="" class="title">联系人</label>
+      <input type="text" placeholder="" value="{{obj.Name}}" disabled />
+    </view>
+    <view class="info">
+      <label for="" class="title">手机号</label>
+      <input type="text" placeholder="" value="{{obj.tel}}" disabled />
+    </view>
+    <view class="info">
+      <label for="" class="title">微信号</label>
+      <input type="text" placeholder="" value="{{obj.wechat}}" disabled />
+    </view>
+  </view>
+  <view class="content">
+    <view class="code_wrap" wx:if="{{obj.WxImage}}">
+      <label for="" class="code_t">微信二维码:</label>
+      <image src="{{obj.WxImage}}" class="code_img" />
+    </view>
+    <view class="xg_agent" wx:if="{{obj.LicenseImg || obj.CertImg}}">
+      <label for="" class="xg_zizhi">相关资质:</label>
+      <view class="img_wrap">
+        <image src="{{obj.LicenseImg}}" alt="" class="one_img" wx:if="{{obj.LicenseImg}}" />
+        <image src="{{obj.CertImg}}" alt="" class="one_img" wx:if="{{obj.CertImg}}" />
+      </view>
+    </view>
+  </view>
+</view>

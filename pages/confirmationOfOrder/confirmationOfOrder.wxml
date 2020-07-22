@@ -1,0 +1,128 @@
+<view id='box'>
+	<!-- 收货地址 -->
+	<view class='addressBox' bindtap='goSelectAddress'>
+		<image src='{{imgurl + "icon_address@2x.png"}}' class='dingwei' mode='widthFix' />
+		<view class='addressTip'>
+			<view class='addresstipone' wx:if="{{defaultAddressData=='['}}">请选择一个收货地址</view>
+			<view wx:else>
+				<view class='userNameBox'>
+					<view class='userName'>{{defaultAddressData.ShipTo}}</view>
+					<view class='userPhone'>{{defaultAddressData.CellPhone}}</view>
+				</view>
+				<view class='address'>
+					{{defaultAddressData.FullRegionName}} {{defaultAddressData.Address}}
+				</view>
+			</view>
+		</view>
+		<view class='addressRight'>
+			<view class='lineOne' />
+			<view class='lineTwo' />
+		</view>
+	</view>
+	<!-- 店铺 -->
+	<view class='shopBox' wx:if="{{orderInfo}}">
+		<view class='shopTitle'>
+			<image src='{{item.logo}}' class='shoplogo' />
+			<view class='shopName'>{{orderInfo.StoreName}}</view>
+		</view>
+		<view class='shopGoodBox'>
+			<!-- 商品列表 -->
+			<view class='shopGoodListBox' wx:for='{{orderInfo}}' wx:key>
+				<image src='{{item.ThumbnailUrl100}}' class='goodImg' mode='aspectFill' />
+				<view class='goodmsgBox'>
+					<view class='goodTip'>{{item.Name}}</view>
+					<view class='goodSizeBox'>{{item.SkuContent}}</view>
+					<view class='unitPriceBox'>
+						<view class='unitPrice'>￥{{item.AdjustedPrice}}</view>
+						<view class='goodnumber'>X {{item.Quantity}}</view>
+					</view>
+				</view>
+			</view>
+			<!-- 选择配送方式 -->
+			<picker range='{{expressList}}' bindchange='selectExpress' wx:if="{{false}}">
+				<view class='df ais jct-between attrList'>
+					<view>配送方式</view>
+					<view class='df ais'>
+						<text class='attrList-R'>{{currentExpress}}</text>
+						<image src='{{imgurl+"more_2@2x.png"}}' mode='widthFix' />
+					</view>
+				</view>
+			</picker>
+			<view class='df ais jct-between attrList' wx:if="{{false}}" bindtap='selectCoupons'>
+				<!-- <view class='df ais jct-between attrList' wx:if="{{couponList.length!=0}}"  bindtap='getCoupon'> -->
+				<view>店铺优惠</view>
+				<view class='df ais'>
+					<text class='attrList-R' wx:if="{{!couponData.name}}">请选择优惠券</text>
+					<text class="attrList-R" wx:else>{{couponData.name}}</text>
+					<!-- <text class='attrList-R' wx:if="{{SelectCoupons}}">请选择优惠券</text>
+          <text class='attrList-R' wx:else>{{优惠卷名字}}</text> -->
+					<image src='{{imgurl+"more_2@2x.png"}}' mode='widthFix' />
+				</view>
+			</view>
+			<!-- 余额抵扣 -->
+			<view class="balance_wrap df ais jct-between attrList">
+				<view>余额抵扣</view>
+				<view wx:if="{{!isUseDeduction}}" class="balance_price1">可用{{Balance}}元</view>
+				<view wx:else class="balance_price">共{{Balance}}元,使用{{BalanceAmount}}元</view>
+				<switch bindchange="handleOpenDeduction" disabled="{{Balance == 0}}" checked="{{isUseDeduction}}" />
+			</view>
+			<!-- 上门自提 -->
+			<view class="doorTo df ais jct-between attrList">
+				<view>上门自提</view>
+				<switch bindchange="handlePickUp" />
+			</view>
+			<!-- 运费 -->
+			<view class="yunfei df ais jct-between attrList" wx:if="{{orderStatus}}">
+				<view>自提信息</view>
+				<!-- <view>{{OrderFreight}}元</view> -->
+			</view>
+			<view class="yunfei df ais jct-between attrList" wx:if="{{!orderStatus}}">
+				<view>运费</view>
+				<view>{{OrderFreight}}元</view>
+			</view>
+			<view class='df ais jct-between attrList'>
+				<view>备注</view>
+				<view class='df ais'>
+					<input placeholder='选填，请先和商家协商' value="{{remark}}" bindinput="handleEditRemark" />
+				</view>
+			</view>
+			<view class='allnumberBox'>
+				共 {{goodsCountTotal}} 件 合计:
+				<text>￥ {{goodsPriceTotal}}</text>
+			</view>
+		</view>
+	</view>
+	<!-- 默认tab -->
+	<view class='allBtnBox df ais' wx:if='{{isDefault}}'>
+		共 {{goodsCountTotal}} 件 合计: ￥{{goodsPriceTotal}}
+		<view class='surebtn df ais' bindtap='handleOpenPayModal'>确定订单</view>
+	</view>
+	<!-- 自定义tab -->
+	<view class="c-tab da" wx:else>
+		<text class="ct-num">共 {{goodsCountTotal}} 件</text>
+		<text class="ct-account flex">合计 : ￥{{goodsPriceTotal}}</text>
+		<text class="ct-btn" bindtap='handleOpenPayModal'>确定订单</text>
+	</view>
+</view>
+<!-- 优惠券组件 -->
+<Coupon coupons='{{couponList}}' id='coupon' bindselectedValue="getCouponData" />
+<!-- 支付modal -->
+<view class='payModal' hidden='{{hiddenPay}}' bindtap='handleOpenPayModal'>
+	<view class='payModal-ul' catchtap='catchStop'>
+		<view class='payModal-li df ais jct-between' bindtap='selectPayType'>
+			<view class='df ais payModal-liL'>
+				<image src='{{imgurl +"pic_wechat@2x.png"}}' mode='widthFix' />
+				<text>微信支付</text>
+			</view>
+			<view class='df ais payModal-liR'>
+				<text hidden='{{payType}}' />
+
+
+
+
+        <image src='{{imgurl +"icon_xuanzhong@2x (1).png"}}' mode='widthFix' class='payModal-liR' hidden='{{!payType}}' />
+      </view>
+    </view>
+  </view>
+</view>
+

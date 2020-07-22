@@ -1,0 +1,201 @@
+<view class='layout'>
+  <view class='header'>
+    <image src='{{infoObj.StoreSlideImages || imgUrl+"bg_01@2x.png"}}'></image>
+    <view class='header-inner'>
+      <view class='storeInfo'>
+        <view class="storeInfo_image_wrap">
+          <image src='{{infoObj.StoreImages}}' class="storeInfo_image"></image>
+        </view>
+        <view class="shopname_content"> 
+          <view class="shopname_name">{{infoObj.StoreName}}</view>
+          <view wx:if="{{true}}" class="shopname_site">地址：{{infoObj.Address}}</view>
+          <view wx:if="{{true}}" calss="shopname_focus">{{infoObj.FansCount}}人关注</view>
+          <view calss="business_hours">营业时间：{{infoObj.OpenStartDate}} - {{infoObj.OpenEndDate}}</view>
+        </view>
+      </view>
+      <!-- 导航栏 -->
+      <!-- <view class='nav-ul df ais jct-around'>
+          <navigator wx:for='{{nav}}' wx:for-item='nav' wx:for-index='navIndex' wx:key='{{navIndex}}' url='{{nav.path}}'>
+            <view class='{{navIndex==0? "active":""}}'>{{nav.txt}}</view>
+          </navigator>
+        </view> -->
+      <view class="'nav-ul df ais jct-around" bindtap="selected">
+        <view class='{{status==0? "active":""}}' data-status="0">全部商品</view>
+        <view class='{{status==1? "active":""}}' data-status="1">商品管理</view>
+        <view bindtap="handlebuteOrder">掌柜订单</view>
+        <view bindtap="handlebuteSub">店铺会员</view>
+      </view>
+    </view>
+    <!-- 编辑信息 -->
+    <!-- <view class="setShopInfo" bindtap="handleEditInfo" wx:if="{{infoObj.StoreName}}"> -->
+    <view class="setShopInfo" bindtap="handleEditInfo" wx:if="{{infoObj != null}}">
+      <image mode="widthFix" src="../../images/edit.png"></image>
+    </view>
+    <!-- 分享按钮 -->
+    <view class="share_btn" bindtap="handleShare" wx:if="{{infoObj != null}}">
+      <image mode="widthFix" src="../../images/share.png"></image>
+    </view>
+    <!-- 二维码 -->
+    <view class="wx_code" wx:if="{{infoObj.WxImage}}" bindtap="handleWxCode">
+      <image mode="widthFix" src="../../images/erweim2.png"></image>
+    </view>
+  </view>
+
+  <!-- 全部商品 -->
+  <view wx:if="{{status==0}}">
+    <view class='seacrh df ais jct-between'>
+      <view class='seacrh-item df ais'>
+        <!-- <image src='{{imgUrl+"icon_search@2x.png"}}' mode='widthFix'></image> -->
+        <image src='../../images/sousuo.png' mode='widthFix'></image>
+        <input value="{{Keywords}}" type='text' placeholder='输入商品名称' bindinput="handleValue"></input>
+        <image wx:if="{{Keywords}}" src="../../images/shibai.png" mode='widthFix' bindtap="handleEmpty"></image>
+      </view>
+      <view class='seacrh-sort df ais jct-between flex'>
+        <view bindtap="handleRecom">推荐</view>
+        <view class='df ais active' bindtap="handleSaleNum">
+          <text class="{{SortBy=='SaleNum'?'active_sele':''}}">销量</text>
+          <!-- <view class="active_sele" >销量</view> -->
+          <image wx:if="{{SortBy=='SaleNum'}}" src="https://tva2.sinaimg.cn/large/005R6Otmgy1g6ctvxz1jsj3014014mwx.jpg"
+            mode='widthFix'></image>
+          <image wx:else src='{{imgUrl+"icon_chengjiaoe@2x.png"}}' mode='widthFix'></image>
+        </view>
+        <view class='df ais' bindtap="handleSalePrice">
+          <text class="{{SortBy=='SalePrice'?'active_sele':''}}">价格</text>
+          <image wx:if="{{SortBy=='SalePrice'}}"
+            src="https://tva2.sinaimg.cn/large/005R6Otmgy1g6ctvxz1jsj3014014mwx.jpg" mode='widthFix'></image>
+          <image wx:else src='{{imgUrl+"icon_chengjiaoe@2x.png"}}' mode='widthFix'></image>
+        </view>
+      </view>
+    </view>
+    <!-- 全部商品列表 -->
+    <view class='content-ul df ais'>
+      <view class='content-li' wx:for='{{list}}' wx:for-item='listItem' wx:for-index='listIndex' wx:key='{{listIndex}}'>
+        <!-- <image src='{{imgUrl+"bg_canpin@2x.png"}}' mode='widthFix'></image> -->
+        <image class="content_img" src='{{listItem.ThumbnailUrl40}}' data-productid="{{listItem.ProductId}}" bindtap="Toprodetai"></image>
+        <view class='goodsTitle'>
+          <text>热销</text>
+          <text>{{listItem.ProductName}}</text>
+        </view>
+        <view class='goodsPrice df ais'>
+          <view class='df ais-end goodsPrice_wrap'>
+            <text>￥</text>
+            <text>{{listItem.SalePrice}}</text>
+          </view>
+          <view class='df ais' wx:if="{{CategoryName!=null}}">
+            <image src='{{imgUrl+"icon_01@2x.png"}}' mode='widthFix'></image>
+            <!-- <view class='df ais jct' >优惠卷 减20</view> -->
+            <view class='df ais jct'>{{listItem.CategoryName}}</view>
+          </view>
+          <view class="df ais" wx:else></view>
+        </view>
+        <view class='sold'>已售{{listItem.SaleNum}}件</view>
+      </view>
+    </view>
+  </view>
+  <!-- 商品管理 -->
+  <view class="management" wx:if="{{status==1}}">
+    <view class='seacrh df ais jct-between'>
+      <view class='seacrh-item df ais'>
+        <!-- <image src='{{imgUrl+"icon_search@2x.png"}}' mode='widthFix'></image> -->
+        <!-- <image src='../../../images/icon_search@2x.png' mode='widthFix'></image>
+            <input type='text' placeholder='输入商品名称' bindinput="inputValue"></input> -->
+        <image src='../../images/sousuo.png' mode='widthFix'></image>
+        <input value="{{Keywords}}" type='text' placeholder='输入商品名称' bindinput="handleValue"></input>
+        <image wx:if="{{Keywords}}" src="../../images/shibai.png" mode='widthFix' bindtap="handleEmpty"></image>
+      </view>
+      <!-- 上下架切换按钮 -->
+      <view class="seacrh_shelves" bindtap="handleShelves">
+        <view class="shelves1 {{items == 0?'red':'default'}}" data-items="0">在售商品({{nums}})</view>
+        <view class="{{items == 1?'red':'default'}}" data-items="1">下架商品({{nums}})</view>
+      </view>
+    </view>
+    <!-- 在售商品列表 -->
+    <view class="shelvesList" wx:for="{{managerList}}" wx:key="{{item}}">
+      <!-- 列表容器 -->
+      <view class="shelves_wrap">
+        <!-- 左边图片 -->
+        <view class="shelves_img" data-productid="{{item.ProductId}}" bindtap="Toprodetai">
+          <image src='{{item.ImageUrl1}}'></image>
+        </view>
+        <!-- 右边内容 -->
+        <view class="shelves_conter">
+          <!-- 商品名称 -->
+          <view class="shelves_mian">
+            {{item.ProductName}}
+          </view>
+          <!-- 按钮 -->
+          <view class="shelves_btn_wrap">
+            <view class="shelves_btn1">现货</view>
+            <view class="shelves_btn1">现货</view>
+          </view>
+          <!-- 价格 -->
+          <view class="shelves_price">
+            ￥<text class="shelves_price_red">{{item.SalePrice}}</text>
+          </view>
+          <!-- 库存 -->
+          <view class="shelves_inventory">
+            <text class="shelves_inven_num1">已售{{item.SaleCounts}}件</text>
+            <text class="shelves_inven_num1">库存{{item.Stock | 0}}</text>
+          </view>
+          <!-- 上下架按钮 -->
+          <view class="shelves_putaway_wrap">
+            <view class="shelves_putaway" wx:if="{{items == 0}}" data-productid="{{item.ProductId}}"
+              bindtap="getDeleteStore">下架</view>
+            <view class="shelves_putaway shelves_putaway_active" wx:if="{{items == 1}}"
+              data-productid="{{item.ProductId}}" bindtap="getUploadStore">上架</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="kongbai"></view>
+  </view>
+
+<!-- 分享弹窗 -->
+<view class="shareWin" wx:if="{{isShare}}" catchtouchmove="myCatchTouch">
+  <!-- 画布 -->
+  <view class='poste_box' id='canvas-container' bindtap="shutShare">
+    <canvas canvas-id="myCanvas" style="width:100%;height:900rpx;" />
+  </view>
+
+  <!-- 下载和保存按钮 -->
+  <view class="share_bnt_wrap">
+    <view class="share_left" bindtap="onShareAppMessage">
+      <view class="left_wrap">
+        <image src="{{imgUrl+'icon_wechat@2x.png'}}" mode="widthFix"></image>
+        <text class="share_left_text">分享好友</text>
+        <button open-type="share" class="share_left_btn"></button>
+      </view>
+    </view>
+    <!-- <view class="share_right" bindtap="handleSave">saveShareImg -->
+      <view class="share_right" bindtap="saveShareImg">
+    <!-- <view class="share_right" bindtap="saveImg"> -->
+      <view class="right_wrap">
+        <image src="{{imgUrl+'icon_xiazai@2x.png'}}" mode="widthFix"></image>
+        <text class="share_right_text">保存下载</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+  
+
+ 
+
+<!-- 底部导航 -->
+<tabBar curActive='2'/>
+
+
+</view>
+
+<!-- 微信弹窗 -->
+<view class="wx_pop_up" wx:if="{{isCode}}" catchtouchmove="myCatchTouch">
+  <view class="pop_up_img">
+   <!-- <image src="{{infoObj.WxImage}}" bindtap="handleCodeNegation"></image> -->
+   <image src="{{infoObj.WxImage}}"></image>
+  </view>
+  <view  class="zhezhao" bindtap="handleNegation" wx:if="{{isCode}}"></view>
+</view>
+
+
+
+

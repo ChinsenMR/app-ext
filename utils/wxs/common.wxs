@@ -1,0 +1,67 @@
+/* 转换订单状态 */
+var transOrderStatus = function (status) {
+	var statusList = [
+		'待付款',
+		'待发货',
+		'待签收',
+		'交易关闭',
+		'交易成功',
+		'申请退款',
+		'申请退货',
+		'申请换货',
+		'已退款',
+		'已退货',
+	];
+
+	return statusList[status - 1];
+};
+
+/* 设置默认图片，过滤后端传来的无效链接 */
+var setImage = function (url, type) {
+	var filterUrl = url.trim().split('?')[0];
+	var defaultUrl = 'https://img.hmeshop.cn/hmeshopV3/Storage/master/202007091714423634040.png?ive';
+	var avatar = 'https://img.hmeshop.cn/hmeshopV3/Storage/master/202006181754581252080.png';
+	var targetUrl;
+	var isHttps = filterUrl.substring(0, 8) === 'https://';
+	var fileType = filterUrl.substring(filterUrl.length - 5);
+	var isPicture = false;
+	var typeList = ['png', 'gif', 'jpg', 'jpeg'];
+
+	for (var i = 0; i < typeList.length; i++) {
+		if (fileType.indexOf(typeList[i]) > -1) {
+			isPicture = true;
+			break;
+		} else {
+			isPicture = false
+		}
+	}
+
+	if (!isHttps || !isPicture) {
+		switch (type) {
+			case 'avatar': {
+				targetUrl = avatar;
+			}
+			break;
+		default: {
+			targetUrl = defaultUrl;
+		}
+		break;
+		}
+	} else {
+		targetUrl = url;
+	}
+
+	return targetUrl;
+}
+
+var background = function (url, type) {
+	url = setImage(url);
+	var fix = type === 'auto' ? '100% auto' : 'cover';
+	return 'background: url(' + url + ')center center / ' + fix;
+}
+
+module.exports = {
+	transOrderStatus: transOrderStatus,
+	setImage: setImage,
+	background: background
+}

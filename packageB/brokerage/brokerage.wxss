@@ -1,0 +1,263 @@
+.withdrawal_wrap {
+  position: relative;
+  padding-bottom: 200rpx;
+  /* 提现记录 */
+}
+.withdrawal_wrap .withdrawal_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 20rpx 20rpx 30rpx 20rpx;
+  font-size: 26rpx;
+  color: #0083e6;
+}
+.withdrawal_wrap .withdrawal_title .withdrawal_tx {
+  flex: 1;
+  text-align: center;
+}
+.withdrawal_wrap .withdrawal_title .active {
+  position: relative;
+  color: #ff450b;
+}
+.withdrawal_wrap .withdrawal_title .active::after {
+  position: absolute;
+  content: '';
+  bottom: -29rpx;
+  width: 29%;
+  left: 35%;
+  right: 0;
+  text-align: center;
+  height: 5rpx;
+  background-color: #ff450b;
+}
+.withdrawal_wrap .content {
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 10rpx 20rpx;
+  font-size: 26rpx;
+  color: #232323;
+  margin-bottom: 100rpx;
+}
+.withdrawal_wrap .content .content_one {
+  display: flex;
+  justify-content: center;
+  padding: 20rpx 0 30rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+.withdrawal_wrap .content .content_one .test_title {
+  flex: 1;
+  font-weight: 600;
+  margin-top: 5rpz;
+}
+.withdrawal_wrap .content .content_one .main_wrap {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.withdrawal_wrap .content .content_one .main_wrap .cash_int {
+  margin-bottom: 40rpx;
+}
+.withdrawal_wrap .content .content_one .main_wrap .reminder_wrap {
+  font-size: 25rpx;
+  color: #c2c2c2;
+}
+.withdrawal_wrap .content .withdrawal_way {
+  display: flex;
+  font-size: 26rpx;
+  color: #2d2d2d;
+  padding: 30rpx 0;
+  border-bottom: 1rpx solid #eee;
+}
+.withdrawal_wrap .content .withdrawal_way .way_title {
+  flex: 1;
+  font-weight: 600;
+}
+.withdrawal_wrap .content .withdrawal_way .cardid_input {
+  width: 0;
+  height: 0;
+}
+.withdrawal_wrap .content .withdrawal_way .search_way {
+  flex: 4;
+}
+.withdrawal_wrap .content .yinhangka .deposit_bank {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0;
+  color: #2d2d2d;
+  border-bottom: 1rpx solid #eee;
+}
+.withdrawal_wrap .content .yinhangka .deposit_bank .bank_title {
+  flex: 1;
+  font-weight: 600;
+}
+.withdrawal_wrap .content .yinhangka .deposit_bank .cash_input {
+  flex: 4;
+}
+.withdrawal_wrap .content .yinhangka .deposit_bank .deposit_bank:last-chlid {
+  border-bottom: none;
+}
+.withdrawal_wrap .content .yinhangka .forget_passwrod {
+  padding: 30rpx;
+  border-bottom: 1rpx solid #eee;
+  font-size: 26rpx;
+  text-align: center;
+  color: #0c95ea;
+}
+.withdrawal_wrap .content .wx_input .deposit_bank {
+  display: flex;
+  align-items: center;
+  padding: 30rpx 0;
+  color: #2d2d2d;
+  border-bottom: 1rpx solid #eee;
+}
+.withdrawal_wrap .content .wx_input .deposit_bank .bank_title {
+  flex: 1;
+  font-weight: 600;
+}
+.withdrawal_wrap .content .wx_input .deposit_bank .cash_input {
+  flex: 4;
+}
+.withdrawal_wrap .content .wx_input .deposit_bank .deposit_bank:last-chlid {
+  border-bottom: none;
+}
+.withdrawal_wrap .content .wx_input .forget_passwrod {
+  padding: 30rpx;
+  border-bottom: 1rpx solid #eee;
+  font-size: 26rpx;
+  text-align: center;
+  color: #0c95ea;
+}
+.withdrawal_wrap .content .upload_id {
+  font-size: 26rpx;
+  color: #2d2d2d;
+}
+.withdrawal_wrap .content .upload_id .title_wrap {
+  display: flex;
+  padding: 30rpx 0 40rpx 0;
+}
+.withdrawal_wrap .content .upload_id .title_wrap .zhanwei {
+  flex: 1;
+  font-size: 0;
+}
+.withdrawal_wrap .content .upload_id .title_wrap .hint_title {
+  flex: 4;
+}
+.withdrawal_wrap .content .upload_id .upload_title .upload_img_wrap {
+  padding: 10rpx 0 30rpx 0;
+}
+.withdrawal_wrap .content .upload_id .upload_title .upload_img_wrap .title_id {
+  margin-bottom: 10rpx;
+}
+.withdrawal_wrap .content .upload_id .upload_title .upload_img_wrap .upload_img {
+  width: 100rpx;
+  height: 100rpx;
+}
+.withdrawal_wrap .content .btn_wrap {
+  width: 100%;
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  height: 100rpx;
+}
+.withdrawal_wrap .content .btn_wrap .btn-area {
+  width: 90%;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  border-radius: 12rpx;
+  font-size: 26rpx;
+  margin-bottom: 30rpx;
+}
+.withdrawal_wrap .content .btn_wrap .btn-area .bgc_btn {
+  background-color: #ff5722;
+  color: #fff;
+}
+.withdrawal_wrap .content .btn_wrap .btn-area .last_time {
+  font-size: 26rpx;
+  color: #2d2d2d;
+  margin-top: 30rpx;
+  float: left;
+}
+.withdrawal_wrap .withdrawal_way_wrap {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: #fff;
+  font-size: 26rpx;
+  color: #2d2d2d;
+  width: 100%;
+  z-index: 10;
+}
+.withdrawal_wrap .withdrawal_way_wrap .withdrawal_window {
+  width: 100%;
+  padding: 25rpx 0;
+  border-bottom: 1rpx solid #eee;
+  margin-bottom: 10rpx;
+  text-align: center;
+}
+.withdrawal_wrap .withdrawal_way_wrap .cancel_btn {
+  padding: 25rpx 0;
+  border-top: 1rpx solid #eee;
+  text-align: center;
+}
+.withdrawal_wrap .zhezhao {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 5;
+}
+.withdrawal_wrap .withdrawal_record {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* align-items: center; */
+  background-color: #fff;
+  padding: 20rpx 30rpx;
+  font-size: 26rpx;
+  color: #2d2d2d;
+  border-top: 1rpx solid #eee;
+}
+.withdrawal_wrap .withdrawal_record .record_wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40rpx;
+}
+.withdrawal_wrap .withdrawal_record .record_wrap .status_wrap {
+  flex: 2;
+}
+.withdrawal_wrap .withdrawal_record .record_wrap .price_wrap {
+  flex: 5;
+}
+.withdrawal_wrap .withdrawal_record .record_wrap .record_time {
+  flex: 1.9;
+}
+.withdrawal_wrap .withdrawal_record .times {
+  display: flex;
+  justify-content: flex-end;
+}
+.withdrawal_wrap .no_data {
+  width: 100%;
+  position: fixed;
+  top: 20%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+.withdrawal_wrap .no_data image {
+  width: 100%;
+  height: 50%;
+}
+.withdrawal_wrap .no_data .no_data_title {
+  text-align: center;
+  font-size: 26rpx;
+  color: #2d2d2d;
+  margin-top: 20rpx;
+}

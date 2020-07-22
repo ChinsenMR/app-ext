@@ -1,0 +1,76 @@
+<!--components/shopkeeperCenter/shopkeeperCenter.wxml-->
+<view class='list'>
+
+  <view>
+    <view>
+      <text style='color:#e0001b;'>*</text>申请成为商城会员(且登入)</view>
+    <view class='finished'>已达成</view>
+  </view>
+  <!-- <view>
+    <view><text style='color:#e0001b;'>*</text>扫码绑定推荐人</view>
+    <view class='{{agencyData.HasRemment?"finished":"gofinish"}}' bindtap='onScanCode'>{{agencyData.HasRemment?'已达成':'去完成'}}</view>
+  </view> -->
+  <view wx:if="{{agencyData.FinishedOrderMoney}}">
+    <view>账号在商城累计消费额满{{agencyData.FinishedOrderMoney}}元(当前已消费{{agencyData.MemberTotalOrder}}元)</view>
+    <view class='gofinish' bindtap='onFinish'>去完成</view>
+  </view>
+  <view wx:if="{{agencyData.SingleOrderMoney}}">
+    <view>账号在商城单次购买订单满{{agencyData.SingleOrderMoney}}元</view>
+    <view class='gofinish' bindtap='onFinish'>去完成</view>
+  </view>
+  <view wx:if="{{agencyData.RechargeMoneyToDistributor}}">
+    <view>账号在商城单次充值金额满{{agencyData.RechargeMoneyToDistributor}}元</view>
+    <view class='gofinish' bindtap='onFinish'>去完成</view>
+  </view>
+  <view wx:if="{{agencyData.DistributorProducts.length}}">
+    <view>购买指定商品可成为分销商</view>
+    <view class='gofinish' bindtap='onFinish'>去完成</view>
+  </view>
+</view>
+<view class='once'>
+  <image src='/images/zhuyi.png'></image>
+  <text>完成以上任意2个条件均可成为分销商（带*号为必要条件，其余为可选条件）！</text>
+</view>
+
+<navigator open-type="switchTab" url='/pages/index/index' class='btn'>继续逛逛</navigator>
+
+
+<view class='box'>
+  <view class='title'>分销商特权</view>
+  <view class='li'>
+    <image src='/images/1qqq@2x.png'></image>
+    <view>零库存开设微信店铺，平台统一发货；</view>
+  </view>
+  <view class='li'>
+    <image src='/images/2qqq@2x.png'></image>
+    <view>拥有专属推广链接，快速发展下级分销商和会员；</view>
+  </view>
+  <view class='li'>
+    <image class='img' src='/images/3qqq@2x.png'></image>
+    <view>除了可以分享店铺主页和商品，平台也提供精美素材供 分销商分享；
+    </view>
+  </view>
+  <view class='li'>
+    <image src='/images/4qqq@2x.png'></image>
+    <view>通过下级会员消费获得佣金收益，佣金可以提现。</view>
+  </view>
+</view>
+
+<!--升级商品  -->
+<view wx:if="{{agencyData.DistributorProducts.length}}" class='recommond-products' id='shop-products'>推荐商品</view>
+<view class='store-products' wx:if="{{agencyData.DistributorProducts.length}}">
+  <view class='pro-item' wx:for="{{agencyData.DistributorProducts}}" wx:key="index">
+    <navigator class='item-wrap' url='/pages/productDetail/productDetail?id={{item.ProductId}}'>
+      <view class='img-box'>
+        <image src='{{item.ThumbnailUrl60}}'></image>
+        <text wx:if="{{item.SaleCounts}}" class="sale-count">已销售{{item.SaleCounts}}件</text>
+      </view>
+      <text class='title'>{{item.ProductName}}</text>
+      <view class='price-box' wx:if="{{item.SalePrice}}">
+        <text class='icon-red'>¥</text>
+        <text class='current-price'>{{item.SalePrice}}</text>
+        <text wx:if="{{item.MarketPrice}}" class='original-price'>¥{{item.MarketPrice}}</text>
+      </view>
+    </navigator>
+  </view>
+</view>

@@ -1,0 +1,115 @@
+/* component/myCommission/myCommission.wxss */
+
+.top {
+  position: relative;
+  width: 100%;
+  height: 340rpx;
+}
+
+.top .top_content {
+  position: absolute;
+  padding: 20rpx;
+  width: 100%;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+/* .top .top_content .c_top {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  font-size: 32rpx;
+}
+
+.top .top_content .c_top .ct_left {
+  width: 40rpx;
+  height: 40rpx;
+} */
+
+.top .top_content .c_center {
+  margin: 100rpx auto 80rpx;
+  text-align: center;
+  font-size: 46rpx;
+}
+
+.top .top_content .c_bottom {
+  font-size: 32rpx;
+  text-align: center;
+}
+
+.center {
+  display: flex;
+  margin-bottom: 30rpx;
+}
+
+.center .c_left, .center .c_right {
+  flex: 1;
+  padding: 26rpx 0;
+  font-size: 30rpx;
+  text-align: center;
+  background-color: #fff;
+}
+
+.center .c_left {
+  position: relative;
+}
+
+.center .c_left::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 2px;
+  height: 70rpx;
+  top: 40rpx;
+  right: 0;
+  background-color: #e5e5e5;
+}
+
+.center .c_left .color, .center .c_right .color {
+  font-size: 38rpx;
+  margin-bottom: 10rpx;
+  color: #ff950d;
+}
+
+.bottom {
+  width: 100%;
+  font-size: 32rpx;
+  box-sizing: border-box;
+}
+
+.bottom>navigator {
+  display: flex;
+  padding: 20rpx 30rpx;
+  margin-bottom: 2rpx;
+  justify-content: space-between;
+  box-sizing: border-box;
+  color: #666;
+  background-color: #fff;
+}
+
+.bottom navigator .b_left {
+  display: flex;
+}
+
+.bottom navigator image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.bottom navigator .b_left text {
+  margin-left: 20rpx;
+}
+.bottom navigator .b_right {
+  display: flex;
+  align-items: center;
+}
+.bottom navigator .b_right image{
+  width: 25rpx;
+  height: 25rpx;
+}
+
+.symbol{
+  font-size: 26rpx;
+}

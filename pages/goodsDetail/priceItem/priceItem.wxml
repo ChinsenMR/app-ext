@@ -1,0 +1,52 @@
+<!-- 页面类型   新人限时抢购：1，  限时折扣：2，  9.9包邮：3， 品牌秒杀： 4， 即将销售：5， 拼团：6 -->
+
+
+<!-- 标题  -->
+<view class='layout'>
+  <view class='goods-title'>
+    <image src='{{imgUrl+"logo_w@2x.png"}}' mode='widthFix' wx:if='{{goodsInfo.IsDiscount}}'></image>
+    <!-- <view class="yangName">{{ShopName}}</view> -->
+    <text class='goods-titleL' wx:if='{{goodsInfo.IsDiscount}}'><text>{{goodsInfo.Promotions[0].DiscountValue * 10}}折</text></text>
+    <text>{{goodsInfo.ProductName}}</text>
+  </view>
+
+  <view class='df ais jct-between'>
+    <view class='df ais'>
+      <view class='goods-price df'>
+        <text class='df ais-end'>￥</text>
+        <text>{{goodsInfo.SalePrice}}</text>
+      </view>
+      <!-- 新人  9.9包邮 -->
+      <view class='df jct fdc flex buyNum1'>
+        <view class='df ais'>
+          <view class='df ais jct newUserTxt' wx:if='{{goodsInfo.IsNewUser}}'>新人到手价</view>
+          <view class='df ais jct newUserTxt' wx:if='{{goodsInfo.Is99}}'>9.9包邮</view>
+        </view>
+        <view class='df ais buyNumTxt' wx:if="{{!goodsInfo.IsCountDown}}">
+          <text>￥{{goodsInfo.MarketPrice}}</text>
+          <text>{{goodsInfo.SaleCounts}}人已购买</text>
+        </view>
+      </view>
+      <!-- 限时抢购 -->
+      <view class='df jct ais buyNum2' wx:if="{{goodsInfo.IsCountDown}}">
+        <!-- <text>05:36:22 后降价至 ￥{{goodsInfo.MarketPrice}}</text> -->
+        <text>05:36:22 恢复原价</text>
+      </view>
+    </view>
+    <view class="cellect">
+      <view class='goodsShare df ais jct' wx:if="{{IsFavorite=='false'}}" bindtap="Celect">
+        <image src='{{imgUrl+"icon_collection.png"}}' mode='widthFix'></image>
+        <text>收藏</text>
+      </view>
+      <view class='goodsShare df ais jct share_add'  wx:else bindtap="Celect">
+        <image src='{{imgUrl+"icon_collection1.png"}}' mode='widthFix'></image>
+        <!-- <text>已收藏</text> -->
+        <text>收藏</text>
+      </view>
+      <view class='goodsShare df ais jct' bindtap="serviceWin">
+        <image src='{{imgUrl+"icon_customer@2x.png"}}' mode='widthFix'></image>
+        <text>客服</text>
+      </view>
+    </view>
+  </view>
+</view>

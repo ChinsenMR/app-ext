@@ -1,0 +1,18 @@
+<view id="super">
+  <view wx:if="{{MyReferral!=null}}">
+    <view class="contentop">
+      <image class="header" src="{{MyReferral.picture}}" alt /> {{MyReferral.gradeName?MyReferral.gradeName:'暂无信息'}}
+    </view>
+    <view class="name">姓名：{{MyReferral.nickName?MyReferral.nickName:"暂无信息"}}</view>
+    <view class="phone name">联系电话：{{MyReferral.cellPhone?MyReferral.cellPhone:'暂无信息'}}</view>
+    <view class="addr name">地址:{{MyReferral.address?MyReferral.address:'暂无信息'}}</view>
+    <view class="jiontime name">性别：{{MyReferral.gender==1?'男':MyReferral.gender==2?'女':''}}</view>
+    <view class="jiontime name">加入时间：{{MyReferral.CreateDate?MyReferral.CreateDate:'暂无信息'}}</view>
+    <view class="person text_info">个人描述：{{MyReferral.perDescribe?MyReferral.perDescribe:'暂无信息'}}</view>
+    <!-- <view class="person"></view> -->
+    <!-- <textarea class="text"></textarea> -->
+  </view>
+ 
+</view>
+
+ <view wx:if="{{MyReferral==null}}" class="emity">暂无直属上级</view>

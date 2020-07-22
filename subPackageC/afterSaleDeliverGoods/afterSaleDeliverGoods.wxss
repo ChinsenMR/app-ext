@@ -1,0 +1,43 @@
+page {
+  background-color: #fff;
+}
+
+page .deliver-goods-wrap {
+  padding: 0 30rpx;
+}
+
+page .deliver-goods-wrap .filed-item {
+  padding: 30rpx 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+page .deliver-goods-wrap .filed-item .title {
+  width: 100px;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333333;
+}
+
+page .deliver-goods-wrap .filed-item .input {
+  flex: 1;
+  font-size: 28rpx;
+  color: #333333;
+}
+
+page .deliver-goods-wrap .filed-item image {
+  width: 27rpx;
+  height: 33rpx;
+}
+
+page .deliver-goods-wrap button {
+  width: 690rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #ff4444;
+  border-radius: 44rpx;
+  margin-top: 206rpx;
+  font-size: 30rpx;
+  font-family: PingFang SC;
+  font-weight: 500;
+  color: white;
+}

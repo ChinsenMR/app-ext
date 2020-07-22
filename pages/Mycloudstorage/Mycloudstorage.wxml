@@ -1,0 +1,29 @@
+<!--pages/Mycloudstorage/Mycloudstorage.wxml-->
+
+<view class='allproductbox'>
+  <view class='mycloud'>货款余额:￥28.00</view>
+  <view class='allprocucttop' bindtap='clicked'>
+    <view class='search'>
+      <image class='searchimg' src='{{imgurl + "icon_search@2x.png"}}'></image>
+      <input type="text" placeholder='搜索' placeholder-class='holder'></input>
+    </view>
+
+    <text data-select="0" class="moneydefault">净赚</text>
+    <image class='up' src='{{imgurl + "icon_jingzhuan_01@2x.png"}}'></image>
+    <image class='up' src='{{imgurl + "icon_jingzhuan_02@2x.png"}}'></image>
+    <text class="zonheactive">成交额</text>
+    <image class='up' src='{{imgurl + "icon_jingzhuan_02@2x.png"}}'></image>
+  </view>
+  <!-- 选中综合下的产品 -->
+  <view class='zonheproductbox'>
+    <!-- 综合的每一个产品 -->
+    <view class='zonhedetail' wx:for="{{productList}}">
+      <image class='zonheimg'></image>
+      <view class='zonheproductname'>植物干细胞维护滋润</view>
+      <view class='zonheprice'>规格:50g/盒 零售价:
+        <text>￥258.00</text>/盒</view>
+      <view class='zonheprice'>拿货价:
+        <text>￥158.00</text>/盒</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,33 @@
+<wxs src="../../../utils/wxs/common.wxs" module="common" />
+<view id="equities" style="{{common.background(imgUrl + 'bg_04@2x.png', 'auto')}}">
+	<view class="header_wrap">
+		<!-- <image src="{{ common.setImage(imgUrl + 'bg_04@2x.png') }}" /> -->
+<view class="title_wrap">
+	<view class="title">升级代理专享权益</view>
+	<view class="title_img">
+		<image src="{{ common.setImage(imgUrl+'bg_04@2x.png')}}" />
+		<view class="title_text">
+			<text>购物省的更多</text>
+			<view class="box" />
+			<text>分享有奖励</text>
+		</view>
+		<image src="{{imgUrl+'zhuangshi@3x(1).png'}}" />
+	</view>
+	<!-- 会员权益 -->
+	<view class="equity">
+		<image src="{{imgUrl+'zhuangshi@3x.png'}}" />
+		<text class="eq_title">代理权益</text>
+	</view>
+	<!-- vip胶囊 -->
+	<view class="btn_wrap">
+		<view class="capsule_wrap" bindtap="handleAction" data-type="{{ 0 }}" br>成为代理
+		</view>
+		<view class="capsule_wrap" bindtap="handleAction" data-type="{{ 1 }}" wx:if="{{isConfigAgentUrl}}">去代理中心
+		</view>
+		<view class="capsule_wrap" bindtap="handleAction" data-type="{{ 2 }}" wx:else>关联代理
+		</view>
+
+	</view>
+</view>
+</view>
+</view>

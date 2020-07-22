@@ -1,0 +1,56 @@
+<!--components/orderitem/orderitem.wxml-->
+<!-- <text>components/orderitem/orderitem.wxml</text> -->
+  <view class='listAother'>
+    <!-- 商品列表 -->
+    <view class="cart-list">
+      <view wx:for="{{data.product}}" wx:key="index">
+        <view class="img-box">
+          <image src="{{item.ProductImg}}"></image>
+        </view>
+        <view class="right">
+          <view class="title">{{item.ProductName}}</view>
+          <view class="wrap">
+            <text class="price">¥{{item.Amount}}</text>
+            <text class="count">x{{item.Quantity}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="other-select-items">
+      <view class="item">配送方式
+        <picker bindchange="bindChange_select" range-key="ModeName"  value="{{item.Shippingindex}}" range="{{data.Mode}}">
+          <view class="picker">
+            {{data.Mode[data.Shippingindex].ModeName}}
+          </view>
+        </picker>
+        <view class="img-box">
+          <image src="https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/path-right@2x.png"></image>
+        </view>
+      </view>
+      <view class="item" bindtap='toggle' wx:if="{{data.coupons.length}}">优惠券
+        <text class='express' style='margin-left: 110rpx;'>可用优惠券共{{data.coupons.length}}张</text>
+        <view class="img-box">
+          <image src="https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/path-right@2x.png"></image>
+        </view>
+      </view>
+      <!-- 优惠券列表 -->
+      <view hidden='{{isShow}}' class='items'>
+        <view data-index='{{index}}' wx:for='{{data.coupons}}' wx:key="index" class="bg-red" bindtap='select'>
+          <view class='content-top'>
+            <view class='content' style='background-image:url(https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/coupon.png);'>
+              <view class='left'>
+                <text>¥</text>
+                <text class='money'>{{item.CouponValue}}</text>
+              </view>
+              <view class='right'>
+                <text class='font'>{{item.ConditionValue!=0?"满"+item.ConditionValue+"元可用":'无消费额限制'}}</text>
+                <text class='time'>生效时间：{{item.BeginDate}}</text>
+                <text class='time'>到期时间：{{item.EndDate}}</text>
+              </view>
+            </view>
+            <view class='btn {{item.isSelected? "select-btn" : ""}}'><view class='dagou'></view></view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>

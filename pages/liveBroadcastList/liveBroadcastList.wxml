@@ -1,0 +1,29 @@
+<!--pages/liveBroadcastList/liveBroadcastList.wxml-->
+<view class="live-broadcst">
+  <view class="live-broadcst_search">
+    <view class="search-input">
+      <input placeholder="请输入关键字搜索直播"></input>
+    </view>
+    <text>搜索</text>
+  </view>
+  <view class="live-broadcst__list">
+    <view class="live-broadcst__list-item">
+      <view class="live-broadcst__item-top">
+        <view class="item-top__status"></view>
+        <image></image>
+        <view class="item-top__mask">
+          <image></image>
+          <text></text>
+          <view class="item-top__mask-left">
+            <view class="love">
+              <view class="disc_left"></view>
+              <view class="disc_right"></view>
+              <view class="square"></view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="live-broadcst__item-botton"></view>
+    </view>
+  </view>
+</view>

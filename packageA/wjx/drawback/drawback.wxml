@@ -1,0 +1,66 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: WuJixuan
+ * @Date: 2020-06-03 14:53:51
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2020-06-28 17:17:04
+ -->
+<view class="main">
+  <view class="content">
+    <form class="" report-submit="false" bindsubmit="formSubmit">
+      <block wx:for="{{list}}" wx:key="{{item}}">
+        <view class="wrap" bindtap="{{item.met}}">
+          <label for="" class="title">{{item.title}}</label>
+          <input class="describe" 
+            placeholder="{{item.pla}}" 
+            name="{{item.name}}" 
+            value="{{item.val}}" 
+            disabled="{{item.inpSta}}" 
+            bindinput="handleInput"
+            data-index="{{index}}"
+            data-remark="{{item.name}}"
+            ></input>
+          <image class="wrap_img" wx:if="{{item.imgSta}}" src="{{imgUrl+'more_02@2x.png'}}"></image>
+        </view>
+      </block>
+      <view class="btn-area">
+        <button class="btn_one" formType="submit">申请退款</button>
+        <button class="btn_two" bindtap="handleFH">取消</button>
+      </view>
+    </form>
+  </view>
+</view>
+<!-- 申请退款原因弹窗 -->
+<view class="apply_win" wx:if="{{isShow}}">
+  <view class="apply_title">
+    <text>选择申请原因</text>
+    <view class="apply_btn" catchtap="handleGb">x</view>
+  </view>
+  <block wx:for="{{search}}" wx:key="{{item}}">
+    <view class="apply_main" catchtap="handleClick" data-index="{{index}}" data-val="{{item.title}}">
+      <view class="main_img {{index==nums?'active':''}}">
+        <image class="img" wx:if="{{index==nums}}" src="{{imgUrl+'icon_dgg.png'}}"></image>
+      </view>
+      <view class="main_title">{{item.title}}</view>
+    </view>
+  </block>
+  <view class="apply_winBtn" catchtap="handleSearch">确定</view>
+</view>
+<!-- 选择退款方式 -->
+<view class="tk_win" wx:if="{{isHandle}}">
+  <view class="apply_title">
+    <text>选择退款方式</text>
+    <view class="apply_btn" catchtap="handleGb2">x</view>
+  </view>
+  <block wx:for="{{refund}}" wx:key="{{item}}">
+    <view class="apply_main" catchtap="handleNew" data-index="{{index}}" data-val="{{item.title}}">
+      <view class="main_img {{index==rindex?'active':''}}">
+        <image class="img" wx:if="{{index==rindex}}" src="{{imgUrl+'icon_dgg.png'}}"></image>
+      </view>
+      <view class="main_title">{{item.title}}</view>
+    </view>
+  </block>
+  <view class="apply_winBtn" catchtap="handleQD">确定</view>
+</view>
+<view class="zhezhao" wx:if="{{isHandle}}" catchtap="handleGb2"></view>

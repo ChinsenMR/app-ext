@@ -1,0 +1,21 @@
+<!--packageA/pages/Myintegral/Myintegral.wxml-->
+<view class="intetop">
+  <view class="kon"></view>
+  <view class="now">当前拥有</view>
+  <view class="money">{{alldata.Points}}
+    <text>积分</text>
+  </view>
+  <view class="dd">
+    <view bindtap="Selet" wx:for="{{title}}" wx:key class="{{active==index?'atcttit':''}}" data-index="{{index}}">{{item.Name}}</view>
+  </view>
+</view>
+
+
+<view class="detail" wx:for="{{List}}" wx:if="{{List.length!=0}}" wx:key>
+  <view class="del">
+    <view class="qian">{{item.TradeTypeName}}</view>
+    <text class="date">{{item.TradeDate}}</text>
+  </view>
+  <view class="der">{{BalanceType==0?'-':'+'}}{{item.Points}}</view>
+</view>
+<view class="emity" wx:if="{{List.length==0}}">暂无积分</view>

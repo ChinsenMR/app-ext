@@ -1,0 +1,39 @@
+<!--components/indexgroup/indexgroup.wxml-->
+<view class='groupdetail' >
+     <view class='groupdetailbox' wx:for="{{groupdata}}" wx:key="index" data-ProductID="{{item.ProductId}}" bindtap="Toprodetai" data-pagetype="6">
+          <view class='groupimg'>
+            <image src='{{item.ImageUrl1}}'></image>
+          </view>
+          <view class='groupR'>
+               <view class='groupname'>
+                    <text class='grouping' wx:if="{{item.IsFightNow==0}}">未开团</text>
+                    <text class='grouping' wx:if="{{item.IsFightNow==1}}">正在拼团</text> {{item.ProductName}}
+               </view>
+               <view class='prosess'>
+                    <!-- 正在拼团进度条 -->
+                    <view class='progessbox' wx:if="{{true}}">
+                         <view class='acrive' style='width:100%'>当前有{{item.CanFightCount}}个团可拼</view>
+                    </view>
+                    <!-- 即将结束拼团进度条 -->
+                    <!-- <view class='progessbox' wx:if="{{false}}">
+          <view class='acrive' style='width:{{item.item}}'>即将售罄</view>
+          <image class='yuan' src='{{imgurl}}icon_time@2x.png'></image>
+        </view> -->
+                    <view class='grouped'>已卖{{item.SoldCount}}件</view>
+                    <view class='baoyou' wx:if="{{item.IsfreeShipping}}">包邮</view>
+                    <view class='baoyou' wx:else>不包邮</view>
+               </view>
+               <view class='pricebox'>
+                    <view class='grouprice'>
+                         <text class='grouppeople'>{{item.JoinNumber}}人团:</text>
+                         <text class="ge_one1">￥</text>
+                         <text class="ge_one2">{{item.SalePrice}}</text>
+                         <text class="ge_one3">单买价:</text>
+                         <text class="ge_one4">￥{{item.SingleSalePrice}}</text>
+                    </view>
+                    <view class='gogroup' data-ProductID="{{item.ProductId}}" data-pagetype="6">去拼团 ></view>
+               </view>
+
+          </view>
+     </view>
+</view>

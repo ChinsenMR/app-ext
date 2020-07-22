@@ -1,0 +1,241 @@
+/* components/productblist/productblist.wxss */
+/* 小图模式 */
+.list ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20rpx auto;
+  width: 95%;
+  background-color: #f9f9f9;
+}
+.list ul li navigator{
+  background-color: white;
+  margin-bottom: 20rpx;
+  border: 2rpx solid #E9E9E9;
+  padding: 10rpx;
+}
+.list ul li {
+  width: 48%;
+  height: 450rpx;
+  box-sizing: border-box;
+}
+.list ul li image {
+  width: 100%;
+  height: 320rpx;
+}
+.list ul li .title {
+  font-size: 26rpx;
+  color: #333;
+  margin: 5rpx 0 5rpx 18rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.list ul li .oandp{
+  display: flex
+}
+.list ul li .price {
+  font-size: 32rpx;
+  color: #ff5f00;
+  margin-left:15rpx;
+}
+.list ul li .oprice {
+  font-size: 24rpx;
+  color: #929292;
+  margin:6rpx 0 0 10rpx;
+  text-decoration: line-through;
+}
+.list ul li .scount{
+  font-size: 24rpx;
+  margin-left:18rpx
+}
+
+
+/* 大图模式 */
+.blist {
+  margin: 20rpx auto;
+  width: 95%;
+}
+.blist ul li navigator{
+  background-color: white;
+  margin-bottom: 20rpx;
+  border: 2rpx solid #E9E9E9;
+}
+.blist ul li image {
+  margin: 10rpx auto;
+  width: 96%;
+  /* height: 280rpx; */
+}
+.blist ul li .title {
+  font-size: 26rpx;
+  color: #333;
+  margin: 5rpx 0 5rpx 2%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.blist ul li .oandp{
+  display: flex
+}
+.blist ul li .price {
+  font-size: 32rpx;
+  color: #ff5f00;
+  margin: 2%;
+}
+.blist ul li .oprice {
+  font-size: 24rpx;
+  color: #929292;
+  margin:20rpx 0 0 10rpx;
+  text-decoration: line-through;
+}
+.blist ul li .scount {
+  font-size: 24rpx;
+  margin:20rpx 0 0 20rpx;
+}
+
+/* 一大两小 */
+.list_o navigator{
+  background-color: white;
+  margin-bottom: 20rpx;
+  margin: 10rpx;
+  border: 2rpx solid #E9E9E9;
+}
+.list_o image {
+  margin: 10rpx auto;
+  width: 96%;
+}
+.list_o .title {
+  font-size: 26rpx;
+  color: #333;
+  margin: 5rpx 0 5rpx 2%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.list_o .oandp{
+  display: flex
+}
+.list_o .price {
+  font-size: 32rpx;
+  color: #ff5f00;
+  margin: 2%;
+}
+.list_o .oprice {
+  font-size: 24rpx;
+  color: #929292;
+  margin:20rpx 0 0 10rpx;
+  text-decoration: line-through;
+}
+.list_o .scount {
+  font-size: 24rpx;
+  margin:20rpx 0 0 20rpx;
+}
+
+.owlist_t {
+  margin: 20rpx auto;
+  width: 95%;
+  background-color: #f9f9f9;
+}
+.owlist_t li {
+  width: 48%;
+  height: 450rpx;
+  box-sizing: border-box;
+  display:inline-block;
+  background:#fff;
+  margin-left: 10rpx;
+  border: 2rpx solid #E9E9E9;
+}
+.owlist_t li image {
+  width: 95%;
+  height: 338rpx;
+  padding: 10rpx;
+}
+.owlist_t li .title {
+  font-size: 26rpx;
+  color: #333;
+  margin-left:20rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.owlist_t li .oandp{
+  display: flex
+}
+.owlist_t li .price {
+  font-size: 32rpx;
+  color: #ff5f00;
+  margin-left:15rpx;
+  width:100%;
+}
+.owlist_t li .price text{
+  font-size: 26rpx;
+  color: #6A6A6A;
+  text-decoration:line-through
+}
+.owlist_t li .oprice {
+  font-size: 24rpx;
+  color: #929292;
+  margin:6rpx 0 0 10rpx;
+  text-decoration: line-through;
+}
+.owlist_t li .scount{
+  font-size: 24rpx;
+  margin-left:18rpx
+}
+
+
+
+/* 列表模式 */
+.ullist {
+  margin: 20rpx auto;
+  width: 95%;
+}
+.ullist ul li navigator{
+  display: flex;
+  background-color: white;
+  margin-bottom: 20rpx;
+  border: 2rpx solid #E9E9E9;
+}
+.ullist ul li image {
+  flex-shrink: 0;
+  width: 208rpx;
+  height: 208rpx;
+  margin: 10rpx;
+}
+.righttxt{
+  padding: 40rpx 0 20rpx 20rpx;
+}
+.ullist ul li .title {
+  font-size: 26rpx;
+  color: #333;
+  margin: 5rpx 0 40rpx 0;
+    overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.ullist ul li .oandp{
+  display: flex
+}
+.ullist ul li .price {
+  font-size: 32rpx;
+  color: #ff5f00;
+}
+.ullist ul li .oprice {
+  font-size: 24rpx;
+  color: #929292;
+  margin:8rpx 0 10rpx 20rpx;
+  text-decoration: line-through;
+}
+.ullist ul li .scount{
+  font-size: 24rpx;
+}

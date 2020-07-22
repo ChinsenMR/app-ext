@@ -1,0 +1,5 @@
+<!--component/two/two.wxml-->
+<text>component/two/two.wxml</text>
+<view>
+{{dataList.name}}
+</view>

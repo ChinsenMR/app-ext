@@ -1,0 +1,86 @@
+/* pages/myCollect/myCollect.wxss */
+
+.listItem {
+  display: flex;
+  padding: 26rpx;
+  margin-top: 2rpx;
+  margin-bottom: 2rpx;
+  width: 100%;
+   height: 220rpx; 
+  box-sizing: border-box;
+  color: #333;
+  background-color: #fff;
+}
+
+.listItem .left {
+  display: flex;
+  align-items: center;
+  width: 20%;
+  height: 160rpx;
+}
+
+.listItem .left image {
+  width: 100%;
+  /* height: 100%; */
+   height: 140rpx; 
+}
+
+.listItem .right {
+  position: relative;
+  padding: 10rpx 20rpx;
+  width: 80%;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+
+.listItem .right .r_top {
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* .listItem .right .r_center {
+  position: absolute;
+  left: 10rpx;
+  bottom: 50rpx;
+  font-size: 26rpx;
+  color: #c9c9c9;
+} */
+
+.listItem .right .r_bottom {
+  position: absolute;
+  left: 10rpx;
+  bottom: 6rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.listItem .right .r_bottom .price {
+  font-size: 32rpx;
+  color: #e0001b;
+}
+
+.listItem .right .r_bottom .cancel {
+  margin-right: 10rpx;
+  padding: 6rpx 20rpx;
+  border: 2rpx solid #999;
+}
+
+.empty{
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  z-index: -1;
+  transform: translate(-50%,-40%);
+  color: #666666;
+  font-size: 14px;
+  text-align: center;
+}
+.empty>image{
+  width: 360rpx;
+  height: 360rpx;
+}

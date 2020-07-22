@@ -1,0 +1,122 @@
+/* pages/myMussage/myMessage.wxss */
+@import "../../wxParse/wxParse.wxss";
+
+page {
+  background-color: #fff;
+}
+
+.content {
+  width: 100%;
+}
+
+.richtext {
+  border: 2rpx solid #e5e5e5;
+  border-radius: 25rpx;
+  width: 90%;
+  margin: 0 auto 10rpx auto;
+  padding: 20rpx;
+}
+
+.title{
+  font-size: 26rpx;
+  color: #666666;
+}
+
+.time{
+  display: block;
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.line{
+  width: 100%;
+  height: 5rpx;
+  background-color: #e5e5e5;
+  margin: 20rpx auto;
+}
+
+.more{
+  color: #C45E20;
+  text-align: right;
+  font-size: 26rpx;
+  margin-top: 15rpx;
+}
+/* .message {
+  padding: 0 40rpx 40rpx 40rpx;
+}
+.messagewords {
+  margin-top: 30rpx;
+	width:100%;
+	font-size: 28rpx;
+	color:#666666;
+  padding: 100rpx 50rpx;
+  box-sizing: border-box;
+   background: url(https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/bg1.png) no-repeat;
+  background-size: 100% 100%; 
+}
+
+.messagewords .lucid {
+	color:#ff1919;
+}
+.messagewords .money {
+	color:#ff950d;
+}
+.messagewords .time {
+  text-align: right;
+	font-size: 24rpx;
+	color:#666666;
+}
+.skin-vNotice .line {
+	width:100%;
+	height: 20rpx;
+	background:#F5F5F5;
+	border-top:2rpx solid #e5e5e5;
+	border-bottom:2rpx solid #e5e5e5;
+}
+.infoList {
+	margin-top: 20rpx;
+	background: #fff;
+}
+.infoList .state {
+	font-size: 26rpx;
+	color:#999;
+	margin:50rpx 0 30rpx 0;
+	padding:0 40rpx;
+}
+.infoList .list {
+	padding:0 40rpx;
+}
+.infoList .title {
+	width:100%;
+	background:#E0E0E0;
+	display: flex;
+    align-items: center;
+}
+.infoList .title>view{
+	flex:1;
+	height: 68rpx;
+	line-height: 68rpx;
+	font-size: 26rpx;
+	color:#999999;
+	text-align: center;
+	flex-direction: column;
+    align-items: center;
+    border:2rpx solid #e5e5e5;
+}
+.listinfomation .listCont {
+	display: flex;
+    align-items: center;
+}
+.listinfomation .listCont>view {
+	flex:1;
+	height: 68rpx;
+	line-height: 68rpx;
+	font-size: 26rpx;
+	color:#999999;
+	text-align: center;
+	border:2rpx solid #e5e5e5;
+    border-top:none;
+}
+.listinfomation .listCont>view:nth-child(1),.listinfomation .listCont>view:nth-child(2){
+	border-right:none;
+} */

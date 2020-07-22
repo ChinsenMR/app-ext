@@ -1,0 +1,90 @@
+<!-- /*
+ * @Author: fujihang 
+ * @Date: 2020-03-13 16:55:31 
+ * @Last Modified by:   fujihang 
+ * @Last Modified time: 2020-03-13 16:55:31 
+    直播列表
+ */ -->
+<view id="fuLive">
+  <!-- 搜索 -->
+  <view class="search_wrap">
+    <view class="search_left">
+      <image src="{{imgUrl+'sousuo.png'}}"></image>
+      <input type="text" placeholder="请输入关键字搜索直播"  value="{{keyVal}}" bindinput="handleInput"  />
+    </view>
+    <view class="search_btn" bindtap="handleQD">搜索</view>
+  </view>
+
+  <view class="list_wrap">
+    <block wx:for="{{dataList}}" wx:key="index">
+      <view class="list" bindtap="toFN" data-stu="{{item.Status}}"
+          data-url="{{'plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id='+item.roomid}}"
+          data-rid="{{item.roomid}}">
+          <span class="img">
+            <image class="imgbg" src="{{item.cover_img}}" mode="aspectFill"></image>
+            <span class="stuts">
+              <!-- <span class="name {{item.Status!=3?'hui':''}}">
+                {{item.Status==3?'直播中':item.Status==4?'已结束':'待开播'}}
+              </span> -->
+              <span class="name active2" wx:if="{{item.live_status==101}}">直播中</span>
+              <span class="name active" wx:elif="{{item.live_status==102}}">未开始</span>
+              <span class="name active3" wx:elif="{{item.live_status==103}}">已结束</span>
+              <span class="name" wx:elif="{{item.live_status==104}}">禁播</span>
+              <span class="name" wx:elif="{{item.live_status==105}}">暂停中</span>
+              <span class="name" wx:elif="{{item.live_status==106}}">异常</span>
+              <span class="name" wx:else>已过期</span>
+              <!-- <span class="val">{{item.ViewNum}}人观看</span> -->
+            </span>
+            <span class="playback" data-id="{{item.roomid}}" catchtap="openAlert" wx:if="{{item.live_status==103}}">
+              <image src="{{imgUrl+'right_sjx.png'}}"></image>
+              <text>查看回放</text>
+            </span>
+            <span class="people">
+              <image src="{{item.share_img}}" mode="aspectFill"></image>
+              <span class="name">{{item.anchor_name}}</span>
+              <!-- <span class="val {{item.IsSubscription?'IsSubscription':''}}">
+                <subscribe room-id="{{item.roomid}}" catchtap>{{item.IsSubscription?'已订阅':'+订阅'}}</subscribe>
+              </span> -->
+            </span>
+          </span>
+          <span class="contant">
+            <view class="name">{{item.name}}</view>
+            <view class="val">
+              <!-- 直播时间: -->
+              <text>时间:</text>
+              <text class="black">{{item.start +' '+ item.section}}</text>
+            </view>
+            <view class="val dis" wx:if="{{false}}">
+              <span>直播间粉丝福利</span>
+              <span class="red" wx:if="{{item.Status==4}}" data-id="{{item.Id}}" catchtap="openAlert">往期回放</span>
+            </view>
+            <view class="list" wx:if="{{false}}">
+              <span catchtap="toFN" data-url="{{'/fuPackageA/fuProductT/fuProductT?prDid='+items.ProductId}}" class="child"
+                wx:if="{{indexs<2}}" wx:for="{{item.Products}}" wx:for-index="indexs" wx:for-item="items" wx:key="{{indexs}}">
+                <image src="{{items.ImageUrl}}" mode="aspectFill"></image>
+                <view class="price">￥{{items.Price}}</view>
+              </span>
+            </view>
+          </span>
+      </view>
+    </block>
+  </view>
+  <view class="noMore" wx:if="{{dataList.length==0}}">没有更多的了~~~</view>
+</view>
+<!--  -->
+<van-popup show="{{show}}"
+  custom-style="height:100%;justify-content: center;align-items: center;background:rgba(0,0,0,.1);display: flex;"
+  bindtap="onCloseP" position="bottom" bind:close="onCloseP">
+  <view class="zhibo" catchtap>
+    <scroll-view class="scroll-view" lower-threshold="huifan" scroll-y="true">
+      <span class="child" wx:for="{{videoList}}" wx:key="index">
+        <view class="time">
+          <span class="create">开始时间:{{item.create_time}}</span>
+          <span>过期时间:{{item.expire_time}}</span>
+        </view>
+        <video poster="{{item.media_url+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_10000,m_fast'}}"
+          object-fit="cover" class="myVideo" src="{{item.media_url}}" autoplay='{{false}}' controls></video>
+      </span>
+    </scroll-view>
+  </view>
+</van-popup>

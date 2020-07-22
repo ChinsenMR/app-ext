@@ -1,0 +1,248 @@
+@import "../../../app.wxss";
+
+.customTab {
+  position: fixed;
+  left: 29rpx;
+  right: 29rpx;
+  bottom: 40rpx;
+  z-index: 100;
+}
+
+.position {
+  position: relative;
+}
+
+.customTab image {
+  width: 50rpx;
+}
+
+.num {
+  color: white;
+  background: orange;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 0 10rpx;
+  border-radius: 20rpx;
+  font-size: 14rpx;
+}
+
+.inner1 {
+  width: 306rpx;
+  height: 98rpx;
+  background: linear-gradient(88deg, rgba(255, 51, 51, 1), rgba(255, 70, 70, 1));
+  border-radius: 49rpx;
+  color: #FFCC99;
+  font-size: 24rpx;
+  padding-left: 45rpx;
+  box-sizing: border-box;
+}
+
+.inner1 view:last-child {
+  width: 113rpx;
+  height: 98rpx;
+  background: linear-gradient(90deg, #FF6666, #FF3939);
+  border-radius: 49rpx;
+}
+
+.inner2 {
+  width: 210rpx;
+  height: 98rpx;
+  border-radius: 49rpx;
+  color: #FFFFFF;
+  font-size: 28rpx;
+  margin: 0 20rpx;
+}
+
+.inner2-bg1 {
+  background: linear-gradient(0deg, rgba(255, 204, 153, 1), rgba(224, 169, 110, 1));
+}
+
+.inner2-bg2 {
+  background: linear-gradient(135deg, rgba(255, 173, 112, 1), rgba(255, 142, 59, 1));
+}
+
+.inner2-bg3 {
+  background: linear-gradient(135deg, rgba(50, 191, 130, 1), rgba(29, 178, 114, 1));
+}
+
+.inner2-bg4 {
+  background: linear-gradient(135deg, rgba(255, 201, 56, 1), rgba(255, 178, 38, 1));
+}
+
+.inner2-bg5 {
+  background: linear-gradient(135deg, rgba(112, 112, 112, 1), rgba(153, 153, 153, 1));
+}
+
+.inner3 {
+  width: 157rpx;
+  height: 98rpx;
+  background: linear-gradient(88deg, rgba(255, 51, 51, 1), rgba(255, 66, 66, 1));
+  border-radius: 49rpx;
+  color: #FFCC99;
+  font-size: 24rpx;
+}
+
+.inner3 image {
+  width: 45rpx;
+  margin-bottom: 5rpx;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart image {
+  width: 60rpx;
+}
+
+.goodsNum {
+  position: absolute;
+  right: -10rpx;
+  top: -5rpx;
+  width: 28rpx;
+  height: 28rpx;
+  background-color: #FF9966;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 24rpx;
+  padding: 5rpx;
+}
+
+.groupTab {
+  position: relative;
+  background-color: 49rpx;
+  flex: 1;
+  height: 98rpx;
+  margin-right: 38rpx;
+}
+
+.groupTab-item {
+  background: linear-gradient(88deg, rgba(255, 51, 51, 1), rgba(255, 70, 70, 1));
+  flex: 1;
+  color: #FFCC99;
+  font-size: 24rpx;
+  height: 98rpx;
+  border-radius: 49rpx 0 0 49rpx;
+  padding-left: 49rpx;
+  box-sizing: border-box;
+  align-items: flex-start;
+}
+
+.groupTab-item image {
+  width: 50rpx;
+  margin-bottom: 5rpx;
+}
+
+.groupTab-item2 {
+  background: linear-gradient(135deg, rgba(242, 225, 39, 1), rgba(255, 202, 41, 1));
+  flex: 1;
+  padding-right: 49rpx;
+  color: #fff;
+  font-size: 24rpx;
+  height: 98rpx;
+  border-radius: 0 49rpx 49rpx 0;
+  align-items: flex-end;
+}
+
+.groupTab-item2 text:last-child,
+.groupTab-item3 text:last-child {
+  margin-top: 5rpx;
+}
+
+.groupTab-item3 {
+  position: absolute;
+  color: #fff;
+  font-size: 24rpx;
+  width: 210rpx;
+  height: 98rpx;
+  background: linear-gradient(#FF6666, #FF3333);
+  border-radius: 49rpx;
+  left: 145rpx;
+  z-index: 99999;
+}
+
+.c-tab {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #999;
+  font-size: 24rpx;
+  height: 95rpx;
+  border-top: 1rpx solid #eee;
+}
+
+.ct-normal {
+  border-top: 1rpx solid #eee;
+  background-color: #fff;
+}
+
+.ct-home,
+.ct-cart,
+.ct-share {
+  width: 100rpx;
+  position: relative;
+}
+
+.ct-home::after {
+  position: absolute;
+  content: '';
+  right: 0;
+  top: 20rpx;
+  height: 47rpx;
+  width: 2rpx;
+  background-color: #f0f0f0;
+}
+
+.ct-home image,
+.ct-cart image {
+  width: 45rpx;
+  height: auto;
+  margin-bottom: 3rpx;
+}
+
+.ct-share image {
+  width: 35rpx;
+  height: auto;
+  margin-bottom: 3rpx;
+}
+
+.ct-mark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15rpx;
+  height: 15rpx;
+  border-radius: 50%;
+  background-color: red;
+  color: #fff;
+  font-size: 22rpx;
+}
+
+.ct-btn1,
+.ct-btn2 {
+  flex: 1;
+  line-height: 95rpx;
+  color: #fff;
+  text-align: center;
+  font-size: 26rpx;
+}
+
+.addActive {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 10rpx 0;
+  line-height:36rpx;
+}
+
+.ct-btn1 {
+  background: linear-gradient(-90deg, rgb(255, 122, 82), rgb(255, 167, 140));
+}
+
+.ct-btn2 {
+  background: linear-gradient(to right, rgb(255, 87, 34), rgb(255, 26, 26));
+}

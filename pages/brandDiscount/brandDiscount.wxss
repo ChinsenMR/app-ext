@@ -1,0 +1,102 @@
+.layout{
+  background-color: #fff;
+  height: 100%;
+}
+
+.header image{
+  height: 320rpx;
+}
+
+.content-ul{
+  padding-bottom: 300rpx;
+  background-color: #fff;
+  flex-wrap: wrap;
+}
+
+.content-li{
+  width: 48%;
+  box-shadow: 0rpx 4rpx 3rpx 0rpx rgba(153,153,153,0.05);
+  margin-bottom: 25rpx;
+  padding-bottom: 20rpx;
+}
+
+.content-li:nth-of-type(odd){
+  padding-right: 30rpx;
+}
+
+.search{
+  margin: 30rpx;
+  background-color: #DFDFDF;
+  border-radius: 8rpx;
+  height: 54rpx;
+}
+
+.search image{
+  width: 32rpx;
+  margin-right: 11rpx;
+}
+
+.search input{
+  color: #666;
+  font-size: 26rpx;
+  height: 45rpx;
+}
+
+.content-li image{
+  width: 334rpx;
+}
+
+.goodsTitle{
+  color: #333333;
+  font-size: 24rpx;
+  margin: 10rpx 0;
+  padding: 0 18rpx;
+}
+
+.goodsPrice-l view:first-child text:first-child{
+  color: #FF3333;
+  font-size: 20rpx;
+  margin-bottom: 5rpx;
+}
+
+.goodsPrice-l view:first-child text:last-child{
+  color: #FF3333;
+  font-size: 32rpx;
+}
+
+.goodsPrice-l view:last-child{
+  width: 91rpx;
+  line-height: 22rpx;
+  text-align: center;
+  background: linear-gradient(83deg,rgba(255,68,68,1) 0%,rgba(255,51,102,1) 100%);
+  border-radius: 10rpx 10rpx 10rpx 0px;
+  color: #FFFFFF;
+  font-size: 14rpx;
+  margin-left: 5rpx;
+}
+
+.goodsPrice-r{
+  height: 40rpx;
+  width: 40rpx;
+  background-color: #E3B27D;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 45rpx;
+  padding-bottom: 10rpx;
+  padding-right: 1rpx;
+  box-sizing: border-box;
+}
+
+.goodsPrice{
+  padding: 0 18rpx;
+}
+
+.goodsPrice2{
+  color: #999999;
+  font-size: 18rpx;
+  padding: 0 18rpx;
+}
+
+.goodsPrice2 text:last-child{
+  text-decoration: line-through;
+}

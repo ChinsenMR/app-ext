@@ -1,0 +1,29 @@
+<!--pages/verificationBankMsg/verificationBankMsg.wxml-->
+<!-- <text>pages/verificationBankMsg/verificationBankMsg.wxml</text> -->
+<view class='box'>
+  <view class='userMsgBox'>
+    <view class='userTip'>身份证信息</view>
+    <view class='userMsg bg' wx:for="{{userMsgData}}" wx:key="index">
+      <image src='{{item.img}}'></image>
+      <input type='{{item.type}}' placeholder='{{item.placeholder}}' value='{{item.val}}' data-index="{{index}}" bindinput='whatchInput'></input>
+    </view>
+    <view class='cardMsgBox'>
+        <view class='cardImg'></view>
+        <view class='cardMsg'>
+           <view class='cardName'>{{optionsData.bankName}}</view>
+           <view class='cardNumber'>{{optionsData.cardNumber}}</view>
+        </view>
+    </view>
+    <view class='userAgreementBox'>
+        <view class='userAgreementImg' wx:if="{{!isAgree}}" bindtap='agree' >
+        </view>
+        <image src='/images/icon_seleted.png' wx:if="{{isAgree}}" bindtap='agree'  class='userAgreementImg2' ></image>
+         <view class='userAgreementTip'>我已阅读并同意该协议<text>服务条款</text></view>
+    </view>
+
+    <view class='agreeAndSureBox {{showLine == true ? "showColor" : ""}} ' bindtap='aggreyou'>
+    
+    同意协议并验证
+    </view>
+  </view>
+</view>

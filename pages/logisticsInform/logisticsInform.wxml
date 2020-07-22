@@ -1,0 +1,31 @@
+<!--pages/logisticsInform/logisticsInform.wxml-->
+<view class='company-info'>
+  <view class='right'>
+    <text class='company-name'>物流公司：{{company}}</text>
+    <text class='order-number' selectable='true' >运单号码：{{num}}</text>
+    <label class='copyBtn' bindtap='copyBtn'>复制</label>
+  </view>
+</view>
+<view class='content'>
+<block wx:for="{{logistics}}">
+  <view class='item {{index==0?"active":""}}'>
+    <text class='department'>{{item.context}}</text>
+    <!-- <text class='state'>已收入</text> -->
+    <text class='date'>{{item.time}}</text>
+    <i class="circle"></i> 
+  </view>
+</block>
+  <!-- <view class='item'>
+    <text class='department'>广东省揭阳市普宁市池尾分部公司 </text>
+    <text class='state'>已收入</text>
+    <text class='date'>2018.12.12    06:21:10</text>
+    <i class="circle"></i> 
+  </view>
+   <view class='item'>
+    <text class='department'>广州鸿猫旗舰店分公司揭阳驻场 </text>
+    <text class='state'>已发货</text>
+    <text class='date'>2018.12.12    02:11:10</text>
+    <i class="circle"></i> 
+  </view> -->
+  <view class='show-msg' wx:if="{{msg}}">{{msg}}</view>
+</view>

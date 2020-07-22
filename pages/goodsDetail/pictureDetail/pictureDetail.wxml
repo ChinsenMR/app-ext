@@ -1,0 +1,27 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: WuJixuan
+ * @Date: 2020-06-03 14:53:54
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2020-06-28 10:22:57
+ -->
+<!-- 商品图文详情 -->
+<import src="../../../wxParse/wxParse.wxml"/>
+
+<view class='line'>—— 商品图文详情 ——</view>
+<view class='goodsDetail'>
+  <view class='intr-header goodsDetail-title df ais'>
+    <image class='logo_w' src='{{imgUrl+"logo_w@2x.png"}}' mode='widthFix'></image>
+    <!-- <image class='logo_w' src='http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/sixiangshengcheng.png'></image> -->
+    <view class='df ais jct-between flex'>
+      <view class='df ais' wx:for='{{iconList}}' wx:key="index">
+        <image src='{{imgUrl+ item.icon}}' mode='widthFix'></image>
+        <text>{{item.txt}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='goodsDetail-img'>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+  </view>
+</view>

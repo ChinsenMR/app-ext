@@ -1,0 +1,187 @@
+.wrapper {
+  margin-top: 2rpx;
+  max-width: 750px;
+  /* background: #fff; */
+}
+
+.wrapper .listContent {
+  display: flex;
+  /* padding-top: 20rpx; */
+  background-color: #fff;
+}
+
+.wrapper .listContent>.list {
+  position: relative;
+  flex: 1;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  /* padding-bottom: 20rpx; */
+  font-size: 30rpx;
+  color: #bebebe;
+}
+
+.wrapper .listContent>.list1::after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 2rpx;
+  height: 50rpx;
+  top: 16rpx;
+  right: 0;
+  background-color: #e5e5e5;
+}
+
+.wrapper .listContent .actives {
+  color: #e0001b;
+  border-bottom: 6rpx solid #e0001b;
+  font-weight: bold;
+}
+
+.wrapper .listContent a {
+  width: 100%;
+  display: inline-block;
+  border-right: 2rpx solid #e5e5e5;
+  color: #bebebe;
+}
+
+.wrapper .listContent>.actives a {
+  color: #e0001b;
+}
+
+.wrapper .listContent>div:last-child a {
+  border: none;
+}
+
+.wrapper .dataUser{
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+
+.wrapper .sortCont {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper .sortCont .sortTit {
+  flex: 1;
+  text-align: center;
+  font-size: 28rpx;
+  color: #b2b2b2;
+}
+
+.wrapper .sortCont .glyphicon {
+  width: 24rpx;
+  height: 26rpx;
+  display: inline-block; 
+  margin-left: 5rpx;
+  vertical-align: -2rpx;
+}
+
+
+.wrapper .address {
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 28rpx;
+  color: #999;
+  border-bottom: 2rpx dashed #e5e5e5;
+}
+
+.wrapper .address image {
+  width: 36rpx;
+  height: 34rpx;
+  margin-left: 40rpx;
+  display: inline-block;
+  margin-right: 20rpx;
+}
+
+.wrapper .address text {
+  vertical-align: 6rpx;
+}
+
+.wrapper .userinfo {
+  display: flex;
+  padding: 20rpx 0;
+}
+
+.wrapper .userinfo .rightCont {
+  flex: 1;
+  font-size: 24rpx;
+  color: #999;
+}
+
+.wrapper .userinfo .rightCont text {
+  margin-bottom: 10rpx;
+}
+
+.wrapper .userinfo .leftCont {
+  margin-right: 40rpx;
+  margin-left: 40rpx;
+}
+
+.wrapper .userinfo .leftCont image {
+  width: 68rpx;
+  height: 68rpx;
+}
+
+.subbranch {
+  display: flex;
+}
+
+.subbranch .subLeft {
+  flex: 0.8;
+}
+
+.subbranch .subRight {
+  flex: 1.2;
+}
+
+.subbranch .colors {
+  color: #e0001b;
+  font-size: 28rpx;
+}
+
+.marginB {
+  margin-bottom: 6rpx;
+}
+
+.subbranch .colorsed {
+  color: #ff950d;
+  font-size: 28rpx;
+}
+
+
+
+.wrapper .loading {
+  text-align: center;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-bottom: 10rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.sortTit.active{
+  color: #e0001b !important;
+}
+
+
+.empty {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -40%);
+  color: #666;
+  font-size: 14px;
+  text-align: center;
+}
+
+.empty>image {
+  width: 360rpx;
+  height: 360rpx;
+}

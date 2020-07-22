@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "v-test": "./testComponent/testComponent/index"
+  },
+  "navigationBarTitleText": "测试用例"
+}

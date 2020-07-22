@@ -1,0 +1,64 @@
+.layout{
+  background-color: #FFFFFF;
+  padding: 20rpx 59rpx;
+  height: 100%;
+}
+
+.userInfo-li{
+  color: #333333;
+  font-size: 28rpx;
+  border-bottom: 1rpx solid #F4F4F4;
+  line-height: 80rpx;
+}
+
+.userInfo-li label{
+  width: 85rpx;
+  text-align: left;
+  margin-right: 89rpx;
+}
+
+.userInfo-li input{
+  flex: 1;
+  text-align: left;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.userInfo-li image{
+  width: 32rpx;
+  margin: 0 20rpx;
+}
+
+.userInfo-ul button{
+  background-color: #FF3333;
+  line-height: 88rpx;
+  border-radius: 44rpx;
+  border: 0;
+  color: #fff;
+  margin-top: 60rpx;
+}
+
+.register {
+  color: #FF3333;
+  font-size: 30rpx;
+  margin-top: 30rpx;
+}
+
+.register text:nth-child(2){
+  margin: 0 20rpx;
+}
+
+.advantage{
+  text-align: center;
+  margin-top: 100rpx;
+  color: #333333;
+}
+
+.ad-title{
+  font-size: 32rpx;
+  margin-bottom: 20rpx;
+}
+
+.ad-content{
+  font-size: 26rpx;
+}

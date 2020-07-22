@@ -1,0 +1,105 @@
+/* pages/mymoneyRecord/mymoneyRecord.wxss */
+page{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+.box{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.titleBox {
+  width: 100%;
+  display: flex;
+  border-top: 1px solid #F7F7F7;
+  background: #FFF;
+}
+.line {
+  display: inline-block;
+  background: black;
+  height: 20rpx;
+  
+
+}
+.list {
+  flex: 1;
+  /* padding: 20rpx 0rpx; */
+  /* letter-spacing: 3rpx; */
+  text-align: center;
+  /* font-size: 24rpx;
+  font-weight: Medium; */
+
+}
+.listTitle {
+  padding: 20rpx 0rpx;
+  letter-spacing: 3rpx;
+  text-align: center;
+  font-size: 24rpx;
+  display: inline-block;
+  font-weight: Medium;
+  transition: all 0.5s;
+  border: 0rpx solid #FFF;
+}
+.listNow{
+  color: #FF3333;
+  border-bottom: 4rpx  solid #FF3333;
+  transform: scale(1.1,1.1);
+}
+.listDetailsBox{
+  flex: 1;
+  margin-top: 20rpx;
+  overflow: auto;
+  background: #FFF;
+  box-sizing: border-box;
+}
+.listDetails {
+  box-sizing: border-box;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.detailsList {
+  width: 100%;
+}
+.tixian {
+  padding: 10rpx 0rpx;
+  border-bottom: 1rpx solid #F7F7F7;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+.tixianMsg{
+  flex: 1;
+  font-size: 28rpx;
+  color: #333333;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.timeBox{
+  text-align: right;
+}
+.tixianVal {
+  font-size: 28rpx;
+  color: #333333;
+}
+.tixianTime{
+  font-size: 22rpx;
+  color: #999999;
+}
+/*  */
+.yuETip{
+  font-size: 28rpx;
+  color: #333333;
+}
+.allyuE{
+  font-size: 22rpx;
+  color: #999999;
+}

@@ -1,0 +1,308 @@
+<view id="application" wx:if="{{getForm.SWXApplyStatus!=4}}">
+  <view class="tshi">注意：带*号是必填项!!!</view>
+  <view class="header">
+    <view class="header_status"
+      wx:if="{{!getForm.RepelReason&&!getForm.SWXApplyErrMsg&&StoreId&&getForm.SWXApplyStatus!=5}}">审核状态:审核中！</view>
+    <view class="header_status" wx:if="{{getForm.SWXApplyStatus==5&&StoreId}}">审核状态:审核通过！</view>
+
+    <view class="header_status" wx:if="{{getForm.RepelReason||getForm.SWXApplyErrMsg}}">审核状态:审核不通过！</view>
+
+    <view class="header_content" wx:if="{{getForm.RepelReason||getForm.SWXApplyErrMsg}}">
+      <view class="header_title">驳回理由</view>
+      <view class="header_main">{{getForm.SWXApplyErrMsg?getForm.SWXApplyErrMsg:getForm.RepelReason}}</view>
+    </view>
+  </view>
+  <view class="content">
+    <form bindsubmit="formSubmit" class="formSubmit">
+      <!-- 基础信息 -->
+      <view class="information">
+        <view class="info_title">门店信息</view>
+        <block wx:for="{{basicData}}" wx:key="{{item}}">
+          <view class="basic_wrap {{item.period?'big':''}} {{item.show?'add_active':''}}">
+            <label for="" class="basic_name">{{item.title}}</label>
+            <input type="{{item.type}}" class="basic_input {{item.ssq?'ssq_active':''}}" placeholder="{{item.pla}}"
+              placeholder-class="inputStyle" value="{{item.val}}" name="{{item.name}}" disabled="{{item.show}}"
+              bindblur="blurFN" data-name="{{item.name}}" />
+            <image class="icon_img" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/more_02@2x.png" wx:if="{{item.status}}"></image>
+            <!-- 省市区 -->
+            <view class="ssq_wrap" wx:if="{{item.status}}">
+              <picker mode="region" bindchange="bindRegionChange" value="{{region}}" custom-item="{{customItem}}">
+                <view class="picker">
+                  {{region}}
+                </view>
+              </picker>
+            </view>
+           
+            <!-- 图片上传 logo-->
+            <view class="img_wrap" wx:if="{{item.nums==0}}">
+              <view class="pictbox">
+                <view class="evalteimg" wx:for="{{photoList}}" wx:key>
+                  <image class="tu" src="{{item.ImageURL}}"></image>
+                  <image class="close" src="{{iconDel}}" data-index="{{index}}" catchtap="Deleted"
+                    data-type="{{item.nums}}"></image>
+                </view>
+                <view class="takepic" catchtap="postImg" data-subIndex="0" data-typeId="{{item.nums}}"
+                  wx:if="{{photoList.length < 1}}">
+                  <image class="pict" src="{{iconImg}}"></image>
+                </view>
+                <input type="text" id="img_name" value="{{StoreImages}}" name="{{item.name}}" maxlength="-1" />
+              </view>
+            </view>
+          </view>
+        </block>
+
+      </view>
+
+      <!-- 营业执照信息 -->
+      <view class="information active">
+        <view class="info_title">营业执照信息</view>
+        <block wx:for="{{businessData}}" wx:key="{{item}}">
+          <view class="basic_wrap {{item.period?'big':''}} {{item.show?'add_active':''}}">
+            <label for="" class="basic_name">{{item.title}}</label>
+            <input type="{{item.type}}" class="basic_input {{item.ssq?'ssq_active':''}}" placeholder="{{item.pla}}"
+              placeholder-class="inputStyle" value="{{item.val}}" name="{{item.name}}" disabled="{{item.newShow}}"
+              bindblur="blurFN" data-name="{{item.name}}" />
+            <image class="icon_img" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/more_02@2x.png" wx:if="{{item.status}}"></image>
+            <!-- 营业执照 -->
+            <view class="img_wrap" wx:if="{{item.nums==8}}">
+              <view class="pictbox">
+                <view class="evalteimg" wx:for="{{photoList9}}" wx:key>
+                  <image class="tu" src="{{item.ImageURL}}"></image>
+                  <image class="close" src="{{iconDel}}" data-index="{{index}}" catchtap="Deleted9" data-type="{{item.nums}}">
+                  </image>
+                </view>
+                <view class="takepic" catchtap="postImg" data-subIndex="0" data-typeId="{{item.nums}}"
+                  wx:if="{{photoList9.length < 1}}">
+                  <image class="pict" src="{{iconImg}}"></image>
+                </view>
+                <input type="text" id="img_name" value="{{LicenseCopy}}" name="{{item.name}}" maxlength="-1" />
+              </view>
+            </view>
+            <!-- 下拉框选择 -->
+            <view class="drop_down" wx:if="{{item.isShow}}">
+              <input type="text"  value="{{item.list[newIndex]}}" style="display: none;" name="{{item.name}}" />
+              <picker bindchange="bindPickerChange" data-type="1" value="{{newIndex}}" range="{{item.list}}">
+                <view class="picker">
+                  *选择主体类型：{{item.list[newIndex]}}
+                </view>
+              </picker>
+            </view>
+          </view>
+        </block>
+      </view>
+      <!-- 法人信息 -->
+      <view class="information active">
+        <view class="info_title">法人信息</view>
+        <block wx:for="{{legalPerson}}" wx:key="{{item}}">
+          <view class="basic_wrap {{item.period?'big':''}} {{item.show?'add_active':''}}">
+            <label for="" class="basic_name">{{item.title}}</label>
+            <input type="{{item.type}}" class="basic_input {{item.ssq?'ssq_active':''}}" placeholder="{{item.pla}}"
+              placeholder-class="inputStyle" value="{{item.val}}" name="{{item.name}}" disabled="{{item.show}}"
+              bindblur="blurFN" data-name="{{item.name}}" />
+            <image class="icon_img" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/more_02@2x.png" wx:if="{{item.status}}"></image>
+            <!-- 下拉框选择 -->
+            <view class="drop_down" wx:if="{{item.isShow}}">
+              <input type="text" value="{{item.list[newIndex2]}}" style="display: none;" name="{{item.name}}" />
+              <picker bindchange="bindPickerChange" data-type="2" value="{{newIndex2}}" range="{{item.list}}">
+                <view class="picker">
+                  *类型：{{item.list[newIndex2]}}
+                </view>
+              </picker>
+            </view>
+            <!-- 身份证有效期 -->
+            <view class="sfz_wrap" wx:if="{{item.period}}">
+              <view class="star">
+                <input type="text" class="star_in" name="dateSta" value="{{dateSta}}" />
+                <picker mode="date" value="{{dateSta}}" start="1950-01-01" end="2100-12-31" bindchange="bindDateChange1">
+                  <view class="picker">{{dateSta}}</view>
+                </picker>
+              </view>
+              <view class="star2">
+                <input type="text" class="star_in" name="dateEnd" value="{{dateEnd}}" />
+                <picker mode="date" value="{{dateEnd}}" start="1950-01-01" end="2100-12-31" bindchange="bindDateChange2">
+                  <view class="picker">{{dateEnd}}</view>
+                </picker>
+              </view>
+            </view>
+            <!-- 身份证人像正面照片 -->
+            <view class="img_wrap" wx:if="{{item.nums==3}}">
+              <view class="pictbox">
+                <view class="evalteimg" wx:for="{{photoList4}}" wx:key>
+                  <image class="tu" src="{{item.ImageURL}}"></image>
+                  <image class="close" src="{{iconDel}}" data-index="{{index}}" catchtap="Deleted4" data-type="{{item.nums}}">
+                  </image>
+                </view>
+                <view class="takepic" catchtap="postImg" data-subIndex="0" data-typeId="{{item.nums}}"
+                  wx:if="{{photoList4.length < 1}}">
+                  <image class="pict" src="{{iconImg}}"></image>
+                </view>
+                <input type="text" id="img_name" value="{{IdCardCopyIdentity}}" name="{{item.name}}" maxlength="-1" />
+              </view>
+            </view>
+            <!-- 身份证国徽照片 -->
+            <view class="img_wrap" wx:if="{{item.nums==4}}">
+              <view class="pictbox">
+                <view class="evalteimg" wx:for="{{photoList5}}" wx:key>
+                  <image class="tu" src="{{item.ImageURL}}"></image>
+                  <image class="close" src="{{iconDel}}" data-index="{{index}}" catchtap="Deleted5" data-type="{{item.nums}}">
+                  </image>
+                </view>
+                <view class="takepic" catchtap="postImg" data-subIndex="0" data-typeId="{{item.nums}}"
+                  wx:if="{{photoList5.length < 1}}">
+                  <image class="pict" src="{{iconImg}}"></image>
+                </view>
+                <input type="text" id="img_name" value="{{IdCardNationalIdentity}}" name="{{item.name}}" maxlength="-1" />
+              </view>
+            </view>
+            <!-- 经营场地照 -->
+            <view class="img_wrap" wx:if="{{item.nums==8}}">
+              <view class="pictbox">
+                <view class="evalteimg" wx:for="{{photoList9}}" wx:key>
+                  <image class="tu" src="{{item.ImageURL}}"></image>
+                  <image class="close" src="{{iconDel}}" data-index="{{index}}" catchtap="Deleted9" data-type="{{item.nums}}">
+                  </image>
+                </view>
+                <view class="takepic" catchtap="postImg" data-subIndex="0" data-typeId="{{item.nums}}"
+                  wx:if="{{photoList9.length < 1}}">
+                  <image class="pict" src="{{iconImg}}"></image>
+                </view>
+                <input type="text" id="img_name" value="{{SWXAddressCertification}}" name="{{item.name}}" maxlength="-1" />
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+      <!-- 线下门店信息 -->
+      <view class="information active">
+        <view class="info_title">线下门店信息</view>
+        <block wx:for="{{information}}" wx:key="{{item}}">
+          <view class="basic_wrap {{item.period?'big':''}} {{item.show?'add_active':''}}">
+            <label for="" class="basic_name">{{item.title}}</label>
+            <input type="{{item.type}}" class="basic_input {{item.ssq?'ssq_active':''}}" placeholder="{{item.pla}}"
+              placeholder-class="inputStyle" value="{{item.val}}" name="{{item.name}}" disabled="{{item.show}}"
+              bindblur="blurFN" data-name="{{item.name}}" />
+            <image class="icon_img" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/more_02@2x.png"
+              wx:if="{{item.status}}"></image>
+            <!-- 门店门口照片 -->
+            <view class="img_wrap" wx:if="{{item.nums==1}}">
+              <view class="pictbox">
+                <view class="evalteimg" wx:for="{{photoList2}}" wx:key>
+                  <image class="tu" src="{{item.ImageURL}}"></image>
+                  <image class="close" src="{{iconDel}}" data-index="{{index}}" catchtap="Deleted2" data-type="{{item.nums}}">
+                  </image>
+                </view>
+                <view class="takepic" catchtap="postImg" data-subIndex="0" data-typeId="{{item.nums}}"
+                  wx:if="{{photoList2.length < 1}}">
+                  <image class="pict" src="{{iconImg}}"></image>
+                </view>
+                <input type="text" id="img_name" value="{{StoreEntrancePic}}" name="{{item.name}}" maxlength="-1" />
+              </view>
+            </view>
+            <!-- 店内环境照片 -->
+            <view class="img_wrap" wx:if="{{item.nums==7}}">
+              <view class="pictbox">
+                <view class="evalteimg" wx:for="{{photoList8}}" wx:key>
+                  <image class="tu" src="{{item.ImageURL}}"></image>
+                  <image class="close" src="{{iconDel}}" data-index="{{index}}" catchtap="Deleted8" data-type="{{item.nums}}">
+                  </image>
+                </view>
+                <view class="takepic" catchtap="postImg" data-subIndex="0" data-typeId="{{item.nums}}"
+                  wx:if="{{photoList8.length < 1}}">
+                  <image class="pict" src="{{iconImg}}"></image>
+                </view>
+                <input type="text" id="img_name" value="{{IndoorPic}}" name="{{item.name}}" maxlength="-1" />
+              </view>
+            </view>
+            
+          </view>
+        </block>
+      </view>
+      <!-- 结算信息 -->
+      <view class="small" wx:if="{{true}}">
+        <view class="info_title">结算账户信息</view>
+        <block wx:for="{{smallData}}" wx:key="index" wx:if="{{index!=2}}">
+          <view class="basic_wrap" data-index="{{index}}" bindtap="openBank">
+            <label for="" class="basic_name">{{item.title}}</label>
+            <input type="{{item.type}}" class="basic_input" placeholder="{{item.pla}}" placeholder-class="inputStyle"
+              value="{{item.val}}" name="{{item.name}}" disabled="{{item.show}}" />
+            <image class="icon_img" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/more_02@2x.png" wx:if="{{item.status}}"></image>
+            <!-- 服务描述下拉框 -->
+            <image class="pull_img {{pull?'pull_active':''}}" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/sanjiaoxing.png" wx:if="{{item.fusta}}">
+            </image>
+            <view class="pull_btn" wx:if="{{item.fusta}}" bindtap="handlePull"></view>
+            <view class="pull_down" wx:if="{{pull && item.fusta}}">
+              <!-- <view class="pull_down" wx:if="{{true}}"> -->
+              <block wx:for="{{prosivion}}" wx:key="{{subItem}}" wx:for-item="subItem" wx:for-index="subIndex">
+                <view class="pull" data-index="{{subIndex}}" data-val="{{subItem}}" catchtap="handleDown">{{subItem}}
+                </view>
+              </block>
+            </view>
+            <view class="pull_zz" wx:if="{{pull && item.fusta}}"></view>
+          </view>
+        </block>
+      </view>
+
+      <view style="border-top:1px soild rgb(240,240,240);background: #fff;font-size: 32rpx;padding: 20rpx;box-sizing: border-box;margin-top:20rpx">
+        请点击地图确定门店位置，默认当前个人位置
+      </view>
+      <!--  -->
+      <map bindtap="DingWeiFN" 
+        id="map" 
+        circles="{{circles}}" 
+        longitude="{{longitude}}" 
+        latitude="{{latitude}}"
+        scale="14" 
+        show-location="true" 
+        style="width: 96%; height: 500rpx;margin: 0 auto;">
+      </map>
+
+      <view class="btn-area">
+        <!-- <button formType="submit" wx:if="{{!StoreId}}">提交</button>
+        <button formType="submit" wx:if="{{getForm.RepelReason||getForm.SWXApplyErrMsg}}">重新提交</button> -->
+        <button formType="submit" wx:if="{{getForm.RepelReason||getForm.SWXApplyErrMsg}}">重新提交</button>
+        <button formType="submit" wx:else>提交</button>
+      </view>
+    </form>
+  </view>
+
+
+
+</view>
+<!-- 返回的二维码S -->
+<view wx:else class="qianYue">
+  <view class="text_wrap">
+    <text>1.请点击保存签约图片进行绑定门店</text>
+    <text>2.扫码成功后再点击"确认签约"按钮</text>
+  </view>
+  <image style="width:100%;height:1rpx;" src="{{getForm.SWXSignUrl}}" mode="widthFix"></image>
+  <view class="btn_wrap">
+    <van-button round bindtap="saveJScode">点我保存</van-button>
+    <van-button round bindtap="saveSignSWX">确定签约</van-button>
+  </view>
+</view>
+<view wx:if="{{showBank}}"
+  style="position: fixed;z-index: 99;width: 100%;height: 100%;top: 0;left: 0;background: rgba(0, 0, 0, .6);">
+  <view style="max-height: 60%;position: absolute;left: 0;bottom: 0;background: white;width: 100%;overflow: auto;">
+    <view wx:for="{{bankList}}" wx:key="index" data-name='{{item}}' bindtap="chooseBank"
+      style="border-bottom: 1px solid #e2e2e2;font-size: 30rpx;text-align: center;padding: 25rpx 0;color: 666;">
+      {{item}}
+    </view>
+  </view>
+
+</view>
+<!-- srShow -->
+
+<view wx:if="{{srShow}}"
+  style="position: fixed;z-index: 109;width: 100%;height: 100%;top: 0;left: 0;background: rgba(0, 0, 0, .6);">
+  <view
+    style="position: absolute;bottom: 0;width: 100%;left: 0;padding: 20rpx;box-sizing: border-box;background: #fff;">
+    <input style="width: 100%;font-size: 30rpx;border-bottom: 1rpx solid #999;" placeholder="请输入银行" bindinput="inputFN"
+      data-name="smallData[1].val" />
+    <view style="width: 100%;margin-top: 20rpx;">
+      <van-button bindtap="fuNameFN" size="small" type="danger">确定</van-button>
+    </view>
+
+  </view>
+
+
+</view>

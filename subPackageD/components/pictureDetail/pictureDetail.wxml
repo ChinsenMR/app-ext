@@ -1,0 +1,14 @@
+<!-- 商品图文详情 -->
+<import src="../../../../wxParse/wxParse.wxml"/>
+
+<view class='line'>—— 商品图文详情 ——</view>
+<!-- <view class='goodsDetail'>
+ 
+  <view class='goodsDetail-img'>
+    
+  </view>
+</view> -->
+<template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+<view style="height: 200rpx">
+  
+</view>

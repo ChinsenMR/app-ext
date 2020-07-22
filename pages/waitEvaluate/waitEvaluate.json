@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "评价中心",
+  "onReachBottomDistance": 200,
+  "usingComponents": {
+    "select-tabs": "/components/selectTabs/selectTabs"
+  }
+}

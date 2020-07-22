@@ -1,0 +1,37 @@
+/* pages/balanceDetail/balanceDetail.wxss */
+.balance_main{
+  padding: 0 30rpx;
+  background: #ffffff;
+  font-size: 14px; 
+  color: #333333;
+  border-top: 2rpx solid #e5e5e5;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.balance_main>view{
+  padding: 20rpx 0;
+  box-sizing: border-box;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2rpx solid #e5e5e5;
+}
+.balance_main>view:last-child{
+  border-bottom: none;
+}
+.text-left{
+  flex-shrink: 0;
+  margin-right: 20rpx;
+}
+.text-right{
+  word-break: break-all;
+}
+text.red{
+  color: #E0001B;
+}
+text.green{
+  color: #29C500;
+}
+text.little{
+  font-size: 12px;
+}

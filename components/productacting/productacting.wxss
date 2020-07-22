@@ -1,0 +1,26 @@
+/* components/productacting/productacting.wxss */
+.acting-box{
+  padding: 27rpx 40rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.actingitem{
+  margin: 0 11rpx;
+  width: 84rpx;
+  height: 89rpx;
+}
+.actingitem image{
+     width: 100%;
+     height: 100%;
+}
+.actingname{
+  display: inline-block;
+  color:rgba(51,51,51,1);
+  font-size:26rpx;
+}
+.actingdetail{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}

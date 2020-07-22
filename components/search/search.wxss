@@ -1,0 +1,46 @@
+/* components/search/search.wxss */
+
+/*头部搜索*/
+
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30px;
+  position: relative;
+  margin: 10px 0 0 0;
+  background-color: #f1f1f1;
+}
+
+.top .left {
+  width: 100%;
+}
+
+.top .left .search {
+  margin: 0 auto;
+  width: 94%;
+  height: 28px;
+  border-bottom: 2px solid #e6e6e6;
+  overflow: hidden;
+  color: #999;
+}
+
+.top .left .search input {
+  width: 100%;
+  height: 28px;
+  line-height: 28px;
+  text-indent: 1em;
+}
+
+.fontSize {
+  font-size: 30rpx;
+}
+
+.top .left .search image {
+  position: absolute;
+  width: 34rpx;
+  height: 34rpx;
+  right: 20px;
+  top: 8px;
+}

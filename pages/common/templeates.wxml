@@ -1,0 +1,1034 @@
+<wxs src="../../utils/wxs/common.wxs" module="common" />
+<!-- 辅助线 -->
+<template name="temp_11">
+  <view class="page-section bg-wihte" style="height:{{content.height}}rpx"></view>
+</template>
+
+<!-- 橱窗6 单横条 -->
+<template name="temp_24">
+  <view class="page-section bg-wihte" style="{{itemIndex <= swiperSite?'background:linear-gradient(to left,'+ colorArr[colorIndex].startColor +','+ colorArr[colorIndex].endColor +')':''}};">
+    <view bindtap="ClickSwiper" class="banner-pic" data-link="{{content.dataset[0].link}}" data-showtype="{{content.dataset[0].linkType}}">
+      <image class="image" mode="widthFix" src="{{common.setImage(content.dataset[0].pic)}}" style="width:100%;"></image>
+    </view>
+  </view>
+</template>
+
+<!-- 橱窗5 -->
+<template name="temp_23">
+  <view class="page-section bg-wihte" style="{{itemIndex <= swiperSite?'background:linear-gradient(to left,'+ colorArr[colorIndex].startColor +','+ colorArr[colorIndex].endColor +')':''}};">
+    <view class="bd-list-pic">
+
+
+      <view data-topicsListJson="{{content.dataset[0].TopicsListJson}}" wx:for="{{[0,1,2,3]}}" bindtap='jumpWhere' data-linkType='{{content.dataset[0].linkType}}' data-index='{{0}}' class="bd-list-pro-pic" data-link="{{content.dataset[item].link}}" data-showtype="{{content.dataset[item].linkType}}">
+        <image class="border-right  border-bottom" src="{{common.setImage(content.dataset[item].pic)}}" style="width:100%; height:180rpx"></image>
+      </view>
+      <!-- <view data-topicsListJson="{{content.dataset[0].TopicsListJson}}" bindtap='jumpWhere' data-linkType='{{content.dataset[0].linkType}}' data-index='{{0}}' class="bd-list-pro-pic" data-link="{{content.dataset[0].link}}" data-showtype="{{content.dataset[0].linkType}}">
+        <image class="border-right  border-bottom" src="{{common.setImage(content.dataset[0].pic)}}" style="width:100%; height:180rpx"></image>
+      </view>
+      <view data-topicsListJson="{{content.dataset[1].TopicsListJson}}" bindtap='jumpWhere' data-linkType='{{content.dataset[1].linkType}}' data-index='{{1}}' class="bd-list-pro-pic" data-link="{{content.dataset[1].link}}" data-showtype="{{content.dataset[1].linkType}}">
+        <image class="border-right  border-bottom" src="{{common.setImage(content.dataset[1].pic)}}" style="width:100%; height:180rpx"></image>
+      </view>
+      <view data-topicsListJson="{{content.dataset[2].TopicsListJson}}" bindtap='jumpWhere' data-linkType='{{content.dataset[2].linkType}}' data-index='{{2}}' class="bd-list-pro-pic" data-link="{{content.dataset[2].link}}" data-showtype="{{content.dataset[2].linkType}}">
+        <image class="border-right  border-bottom" src="{{common.setImage(content.dataset[2].pic)}}" style="width:100%; height:180rpx"></image>
+      </view>
+      <view data-topicsListJson="{{content.dataset[3].TopicsListJson}}" bindtap='jumpWhere' data-linkType='{{content.dataset[3].linkType}}' data-index='{{3}}' class="bd-list-pro-pic" data-link="{{content.dataset[3].link}}" data-showtype="{{content.dataset[3].linkType}}">
+        <image class="border-right  border-bottom"src="{{common.setImage(content.dataset[3].pic)}}" style="width:100%; height:180rpx"></image>
+      </view> -->
+    </view>
+    <view class="bd-list-b">
+      <view wx:for="{{[5,6,7,8]}}" data-topicsListJson="{{content.dataset[item].TopicsListJson}}" bindtap='jumpWhere' data-linkType='{{content.dataset[4].linkType}}' data-index='{{4}}' class="bd-list-b-pic border-right" data-link="{{content.dataset[item].link}}" data-showtype="{{content.dataset[item].linkType}}">
+        <image src="{{content.dataset[item].pic}}"  src="{{common.setImage(content.dataset[index].pic)}}" style="width:100%;height:180rpx"></image>
+      </view>
+      <!-- <view data-topicsListJson="{{content.dataset[5].TopicsListJson}}" bindtap='jumpWhere' data-linkType='{{content.dataset[5].linkType}}' data-index='{{5}}' class="bd-list-b-pic border-right" data-link="{{content.dataset[5].link}}" data-showtype="{{content.dataset[5].linkType}}">
+        <image src="{{content.dataset[5].pic}}" style="width:100%;height:180rpx"></image>
+      </view>
+      <view data-topicsListJson="{{content.dataset[6].TopicsListJson}}" bindtap='jumpWhere' data-linkType='{{content.dataset[6].linkType}}' data-index='{{6}}' class="bd-list-b-pic border-right" data-link="{{content.dataset[6].link}}" data-showtype="{{content.dataset[6].linkType}}">
+        <image src="{{content.dataset[6].pic}}" style="width:100%;height:180rpx"></image>
+      </view>
+      <view data-topicsListJson="{{content.dataset[7].TopicsListJson}}" bindtap='jumpWhere' data-linkType='{{content.dataset[7].linkType}}' data-index='{{7}}' class="bd-list-b-pic border-right" data-link="{{content.dataset[7].link}}" data-showtype="{{content.dataset[7].linkType}}">
+        <image mode="widthFix" src="{{content.dataset[7].pic}}" style="width:100%;"></image>
+      </view> -->
+    </view>
+  </view>
+</template>
+
+<!-- 橱窗4 -->
+<template name="temp_22">
+  <view class="page-section bg-wihte" style="{{itemIndex <= swiperSite?'background:linear-gradient(to left,'+ colorArr[colorIndex].startColor +','+ colorArr[colorIndex].endColor +')':''}};">
+
+    <view class="bd-list-pic">
+      <view data-topicsListJson="{{dataset.TopicsListJson}}" bindtap='jumpWhere' data-linkType='{{dataset.linkType}}' data-index='{{index}}' class="bd-list-pro-pic" data-link="{{dataset.link}}" data-showtype="{{dataset.linkType}}" wx:key="index" wx:for="{{content.dataset}}"
+        wx:for-item="dataset">
+        <image class="border-right  border-bottom" src="{{dataset.pic}}" style="width:100%; height:180rpx"></image>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!-- 橱窗3 -->
+<template name="temp_21" >
+  <view class="page-section bg-wihte" style="{{itemIndex <= swiperSite?'background:linear-gradient(to left,'+ colorArr[colorIndex].startColor +','+ colorArr[colorIndex].endColor +')':''}};">
+    <view data-topicsListJson="{{content.dataset[0].TopicsListJson}}" bindtap='jumpWhere' data-linkType='{{content.dataset[0].linkType}}' data-index='{{0}}' class="hd-pic" data-link="{{content.dataset[0].link}}" data-showtype="{{content.dataset[0].linkType}}">
+      <!-- <image class="image" mode="widthFix" src="{{content.dataset[0].pic}}" style="width:100%;"></image> -->
+    </view>
+    <view class="bd-pic">
+      <view class="bd-l-pic border-right">
+        <view data-topicsListJson="{{content.dataset[0].TopicsListJson}}" bindtap='jumpWhere' data-linkType='{{content.dataset[0].linkType}}' data-index='{{0}}' class="bd-l-t-pic border-bottom" data-link="{{content.dataset[0].link}}" data-showtype="{{content.dataset[0].linkType}}">
+          <image class="image" src="{{content.dataset[0].pic}}" style="width:100%; height:180rpx" mode="aspectFill"></image>
+        </view>
+        <view data-topicsListJson="{{content.dataset[3].TopicsListJson}}" bindtap='jumpWhere' data-linkType='{{content.dataset[3].linkType}}' data-index='{{3}}' class="bd-l-b-pic" data-link="{{content.dataset[3].link}}" data-showtype="{{content.dataset[3].linkType}}">
+          <image class="image" src="{{content.dataset[3].pic}}" style="width:100%; height:180rpx"  mode="aspectFill"></image>
+        </view>
+      </view>
+      <view class="bd-r-pic">
+        <view class="bd-r-t-pic border-bottom">
+          <view data-topicsListJson="{{content.dataset[1].TopicsListJson}}" bindtap='jumpWhere' data-linkType='{{content.dataset[1].linkType}}' data-index='{{1}}' class="bd-r-b-l-pic border-right" data-link="{{content.dataset[1].link}}" data-showtype="{{content.dataset[1].linkType}}">
+            <image class="image" src="{{content.dataset[1].pic}}" style="width:100%;display:inline-block; height:180rpx"  mode="aspectFill"></image>
+          </view>
+          <view data-topicsListJson="{{content.dataset[2].TopicsListJson}}" bindtap='jumpWhere' data-linkType='{{content.dataset[2].linkType}}' data-index='{{2}}' class="bd-r-b-r-pic" data-link="{{content.dataset[2].link}}" data-showtype="{{content.dataset[2].linkType}}">
+            <image class="image" src="{{content.dataset[2].pic}}" style="width:100%;display:inline-block; height:180rpx"  mode="aspectFill"></image>
+          </view>
+        </view>
+        <view class="bd-r-b-pic">
+          <view data-topicsListJson="{{content.dataset[4].TopicsListJson}}" bindtap='jumpWhere' data-linkType='{{content.dataset[4].linkType}}' data-index='{{4}}' class="bd-r-b-l-pic border-right" data-link="{{content.dataset[4].link}}" data-showtype="{{content.dataset[4].linkType}}">
+            <image class="image" src="{{content.dataset[4].pic}}" style="width:100%;display:inline-block; height:180rpx"  mode="aspectFill"></image>
+          </view>
+          <view data-topicsListJson="{{content.dataset[5].TopicsListJson}}" bindtap='jumpWhere' data-linkType='{{content.dataset[5].linkType}}' data-index='{{5}}' class="bd-r-b-r-pic" data-link="{{content.dataset[5].link}}" data-showtype="{{content.dataset[5].linkType}}">
+            <image class="image" src="{{content.dataset[5].pic}}" style="width:100%;display:inline-block; height:180rpx"  mode="aspectFill"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!-- 橱窗2 -->
+<template name="temp_20">
+  <view class="page-section bg-wihte" style="{{itemIndex <= swiperSite?'background:linear-gradient(to left,'+ colorArr[colorIndex].startColor +','+ colorArr[colorIndex].endColor +')':''}};">
+    <view bindtap='jumpWhere' data-linkType='{{content.dataset[0].linkType}}' data-topicsListJson="{{content.dataset[0].TopicsListJson}}" data-index='{{0}}' class="hd-pic" data-link="{{content.dataset[0].link}}" data-showtype="{{content.dataset[0].linkType}}"
+      wx:if="{{content.dataset[0].pic.length>=0}}">
+      <!-- <image class="image" mode="widthFix" src="{{content.dataset[0].pic}}" style="width:100%;"></image> -->
+    </view>
+    <view class="bd-pic">
+      <view bindtap='jumpWhere' data-topicsListJson="{{content.dataset[0].TopicsListJson}}" data-linkType='{{content.dataset[0].linkType}}' data-index='{{0}}' class="bd-l-pic border-right" data-link="{{content.dataset[0].link}}" data-showtype="{{content.dataset[0].linkType}}">
+        <image class="image" src="{{content.dataset[0].pic}}" style="width:100%;height:360rpx;" mode="aspectFill"></image>
+      </view>
+      <view class="bd-r-pic">
+        <view bindtap='jumpWhere' data-topicsListJson="{{content.dataset[1].TopicsListJson}}" data-index='{{1}}' data-linkType='{{content.dataset[1].linkType}}' class="bd-r-t-pic border-bottom" data-link="{{content.dataset[1].link}}" data-showtype="{{content.dataset[1].linkType}}">
+          <image class="image" src="{{content.dataset[1].pic}}" style="width:100%; height:180rpx" mode="aspectFill"></image>
+        </view>
+        <view class="bd-r-b-pic">
+          <view bindtap='jumpWhere' data-topicsListJson="{{content.dataset[2].TopicsListJson}}" data-index='{{2}}' data-linkType='{{content.dataset[2].linkType}}' class="bd-r-b-l-pic border-right" data-link="{{content.dataset[2].link}}" data-showtype="{{content.dataset[2].linkType}}">
+            <image class="image" src="{{content.dataset[2].pic}}" style="width:100%; height:180rpx" mode="aspectFill"></image>
+          </view>
+          <view bindtap='jumpWhere' data-index='{{3}}' data-topicsListJson="{{content.dataset[3].TopicsListJson}}" data-linkType='{{content.dataset[3].linkType}}' class="bd-r-b-r-pic" data-link="{{content.dataset[3].link}}" data-showtype="{{content.dataset[3].linkType}}">
+            <image class="image" src="{{content.dataset[3].pic}}" style="width:100%; height:180rpx" mode="aspectFill"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!-- 图片导航 -->
+<template name="temp_8">
+  <view class="page-section bg-wihte temp8" style="{{itemIndex <= swiperSite?'background:linear-gradient(to left,'+ colorArr[colorIndex].startColor +','+ colorArr[colorIndex].endColor +')':''}};">
+    <block wx:for="{{content.dataset}}"  wx:for-item="subItem" wx:for-index="subIndex" wx:key="subIndex" >
+      <view class="temp8menu"
+        bindtap='jumpWhere' 
+        data-topicsListJson="{{subItem.TopicsListJson}}" 
+        data-linkType='{{subItem.linkType}}'
+        data-link="{{subItem.link}}" 
+        data-index='{{subIndex}}'
+        style="width: {{1/content.dataset.length*100}}%;"
+       >
+        <image class="image" mode="aspectFill" src="{{subItem.pic}}"></image>
+        <view class="menu-name to-line">{{subItem.showtitle}}</view>
+      </view>
+    </block>
+  </view>
+</template>
+
+
+<!-- temp_9 对应大轮播 -->
+<template name="temp_9">
+  <view class="page-section-spacing" hidden="{{content.dataset.length == '0'}}" wx:if="{{content.showType == '1'}}">
+    <!-- <swiper autoplay="false" indicatorDots="false" style="height:{{content.dataset[0].imgHeight}}rpx"> -->
+    <swiper autoplay circular  indicatorDots="false" style="height:{{content.dataset[0].imgHeight==0?400:content.dataset[0].imgHeight}}rpx" bindchange="handleChange" >
+      <swiper-item  wx:for="{{content.dataset}}" wx:key="index" 
+        wx:for-item="dataset" 
+        data-topicsListJson="{{dataset.TopicsListJson}}" 
+        bindtap='jumpWhere' 
+        data-linkType='{{dataset.linkType}}' 
+        data-index='{{index}}'
+        current="{{dataset.pic}}"
+        > 
+        <view class="spacing_wrap" style="{{itemIndex <= swiperSite?'background:linear-gradient(to left,'+ colorArr[colorIndex].startColor +','+ colorArr[colorIndex].endColor +')':''}};padding:{{content.dataset[0].imgHeight==0?20:0}}rpx;transition:all 2s;">
+          <image bindtap='jumpWhere' bindload="imageLoad" data-linkType='{{dataset.linkType}}' data-index='{{index}}'
+            class="slide-imagesds" src="{{dataset.pic}}" style="width:100%;height:100%;border-radius:{{content.dataset[0].imgHeight==0?20:0}}rpx;" mode="widthFix"></image>
+        </view>
+        <canvas id="myCanvas" canvas-id="myCanvas" style="width:100%;height:100%"></canvas>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <view class="colomShowStyle" hidden="{{content.dataset.length == '0'}}" style="{{content.space=='1'?'margin: 20rpx 0rpx;':'margin: 0rpx 0rpx;'}}" wx:if="{{content.showType == '1'}}" wx:if="{{content.showType == '2'}}" wx:for="{{content.dataset}}" wx:for-item="dataset" wx:key="index">
+    <image src="{{dataset.pic}}" bindtap='jumpWhere' data-topicsListJson="{{dataset.TopicsListJson}}" data-linkType='{{dataset.linkType}}' data-index='{{index}}' class="colomShowImg" mode="widthFix"></image>
+  </view>
+</template>
+<!-- 3.0 有的 type  11, 22 ,23 , 9 , 8 , 20 , 21 24 -->
+
+
+<!-- hsy0815 搬运2.0自定义模块  -->
+<import src="../wxParse/wxParse.wxml" />
+<!-- 富文本模块 -->
+
+<template name="temp_1">
+  <view class='richtext'>
+    <template is="wxParse" data="{{wxParseData:content.fulltext}}" />
+  </view>
+</template>
+
+<!--文本标题 -->
+<template name="temp_2" wx:if="{{false}}">
+  <!-- 文字标题 -->
+  <view class='wbtitle' wx:if="{{content.titleType==0}}" style="{{itemIndex <= swiperSite?'background:linear-gradient(to left,'+ colorArr[colorIndex].startColor +','+ colorArr[colorIndex].endColor +')':''}};">
+    <view class='wbtitle_content wjx_add1' wx:if="{{content.style==0}}" 
+      style="text-align: {{content.direction}};background:#{{content.backgroundColor?content.backgroundColor:'28c193'}}">
+      {{content.title}}
+    </view>
+    <view class='wbtitle_content wjx_add2' wx:elif="{{content.style==1}}"
+      style="text-align: {{content.direction}};background:#{{content.backgroundColor?content.backgroundColor:'28c193'}}">
+      {{content.title}}
+    </view>
+    <view class='wbtitle_content wjx_add3'  wx:elif="{{content.style==2}}"
+      style="text-align: {{content.direction}};background:#{{content.backgroundColor?content.backgroundColor:'28c193'}}">
+      {{content.title}}
+    </view>
+    <view class='wbtitle_content wjx_add4'  wx:elif="{{content.style==3}}"
+      style="text-align: {{content.direction}};background:#{{content.backgroundColor?content.backgroundColor:'28c193'}}">
+      {{content.title}}
+    </view>
+  </view>
+  <!-- 图片标题 -->
+  <view class="title_img" wx:if="{{content.titleType==1}}" bindtap="handleTile" data-url="{{content.url}}">
+    <image src="{{content.titleImage}}" style="vertical-align: middle;display: block;"></image>
+  </view>
+</template>
+<template name="temp_2">
+ <view class="new_title">
+    <view class="new_img_title" 
+      style="{{!content.showbgImg?'background-color:#'+content.backgroundColor+'':''}}"
+      bindtap="handleTile" 
+      data-url="{{content.url}}"
+      >
+      <image src="{{content.titleImage}}" mode="widthFix" wx:if="{{content.showbgImg}}"></image>
+      <view class="temp_2_title">
+        <text>{{content.title}}</text>
+        <text wx:if="{{content.showMore}}">查看更多</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!-- 商品 -->
+<template name="temp_4">
+  <view style="{{itemIndex <= swiperSite?'background:linear-gradient(to left,'+ colorArr[colorIndex].startColor +','+ colorArr[colorIndex].endColor +')':''}};">
+    <!-- 小图模式 -->
+    <view class='list' wx:if="{{content.layout=='1'}}">
+      <ul>
+        <li wx:for="{{content.goodslist}}" wx:key="index" wx:for-item="dataset" data-item_id="{{dataset.item_id}}" bindtap="goToGoodsDetail">
+          <!-- <navigator url='/pages/productDetail/productDetail?id={{dataset.item_id}}' hover-class="none"> -->
+          <view class="nav">
+            <image src='{{dataset.pic}}' alt=""></image>
+            <view class='title'>{{dataset.title}}</view>
+            <view class='price' wx:if="{{content.showPrice}}">￥{{dataset.price}}
+              <text class='oprice'>￥{{dataset.original_price}}</text>
+            </view>
+            <view class="addmycard" wx:if="{{content.showIco}}">加入购物车</view>
+            <!-- 加入购物车样式已经隐藏 -->
+          </view>
+          <!-- </navigator> -->
+        </li>
+      </ul>
+    </view>
+    <!-- 大图模式 -->
+    <view class='blist' wx:if="{{content.layout=='2'}}">
+      <ul>
+        <li wx:for="{{content.goodslist}}" wx:key="index" wx:for-item="dataset" data-item_id="{{dataset.item_id}}" bindtap="goToGoodsDetail">
+          <!-- <navigator url='/pages/productDetail/productDetail?id={{dataset.item_id}}' hover-class="none"> -->
+          <view class="nav">
+            <image mode='widthFix' src='{{dataset.pic}}' alt=""></image>
+            <view class='title'>{{dataset.title}}</view>
+            <view class='price'>
+              <text wx:if="{{content.showPrice}}">￥{{dataset.price}}</text>
+              <text class='oprice' wx:if="{{content.showPrice}}">原价：￥{{dataset.original_price}}</text>
+              <view class="blist_addmycard" wx:if="{{content.showIco}}">加入购物车</view>
+            </view>
+          </view>
+          <!-- </navigator> -->
+        </li>
+      </ul>
+    </view>
+    <!-- 一大两小 先是大图然后小图-->
+    <view wx:if="{{content.layout=='3'}}">
+      <block wx:for="{{content.goodslist}}" wx:for-item="dataset" wx:key="index">
+        <ul>
+          <li class="list_o" wx:key="index" wx:if="{{index%3 ===0||index===0}}" data-item_id="{{dataset.item_id}}" bindtap="goToGoodsDetail">
+            <!-- <navigator url='/pages/productDetail/productDetail?id={{dataset.item_id}}' hover-class="none"> -->
+            <view class="nav">
+              <image mode='widthFix' src='{{dataset.pic}}' alt=""></image>
+              <view class='title'>{{dataset.title}}</view>
+              <view class='price' wx:if="{{content.showPrice}}">
+                <text>￥{{dataset.price}}</text>
+                <text class='oprice'>原价:￥{{dataset.original_price}}</text>
+                <view class="blist_addmycard" wx:if="{{content.showIco}}">加入购物车</view>
+              </view>
+            </view>
+            <!-- </navigator> -->
+          </li>
+        </ul>
+        <ul class="owlist_t">
+          <li wx:key="index" wx:if="{{index%3!=0}}" data-item_id="{{dataset.item_id}}" bindtap="goToGoodsDetail">
+            <!-- <navigator url='/pages/productDetail/productDetail?id={{dataset.item_id}}' hover-class="none"> -->
+            <view class="nav">
+              <image src='{{dataset.pic}}' alt=""></image>
+              <view class='title'>{{dataset.title}}</view>
+              <view class='price' wx:if="{{content.showPrice}}">
+                <text>￥{{dataset.price}}</text>
+                <text>￥{{dataset.original_price}}</text>
+              </view>
+              <view class="addmycard" wx:if="{{content.showIco}}">加入购物车</view>
+            </view>
+            <!-- </navigator> -->
+          </li>
+        </ul>
+      </block>
+    </view>
+    <!--  列表模式 -->
+    <view class='ullist' wx:if="{{content.layout=='4'}}">
+      <ul>
+        <li wx:for="{{content.goodslist}}" wx:key="index" wx:for-item="dataset" data-item_id="{{dataset.item_id}}" bindtap="goToGoodsDetail">
+          <!-- <navigator url='/pages/productDetail/productDetail?id={{dataset.item_id}}' hover-class="none"> -->
+          <view class="nav">
+            <image src='{{dataset.pic}}' alt=""></image>
+            <view class='righttxt'>
+              <view class='title'>{{dataset.title}}</view>
+              <view class='price'>
+                <text>￥{{dataset.price}}</text>
+                <view class="blist_addmycard" wx:if="{{content.showIco}}">加入购物车</view>
+              </view>
+            </view>
+          </view>
+          <!-- </navigator> -->
+        </li>
+      </ul>
+    </view>
+    <!-- end -->
+  </view>
+</template>
+
+
+<!-- 商品列表 -->
+<template name="temp_5">
+  <!-- 小图模式 -->
+  <view class='list' wx:if="{{content.layout==1}}">
+    <ul>
+      <li wx:for="{{content.goodslist}}"
+        class="live_li"
+        wx:key="index" 
+        wx:for-item="dataset" 
+        data-item_id="{{dataset.ProductId}}" 
+        bindtap="goToGoodsDetail">
+        <view class="nav">
+          <image src='{{dataset.ImageUrl1}}' alt=""></image>
+          <view class='title' wx:if="{{content.showName}}">{{dataset.ProductName}}</view>
+          <!-- <view class='title' >{{dataset.ProductName}}</view> -->
+          <view class='oandp'>
+            <view class="oandp_wrap {{content.showSaleCount?'oandp_wrap2':''}}">
+              <text wx:if="{{content.showPrice}}">￥{{dataset.SalePrice}}</text>
+              <!-- <text class="oandp_sales"> {{dataset.salecount}}人付款</text> -->
+            </view>
+            <text class='oprice' wx:if="{{content.showMaketPrice}}">￥{{dataset.original_price}}</text>
+          </view>
+          <view class="addmycard" wx:if="{{content.showIco}}" catchtap="addCart" data-id="{{dataset.ProductId}}">
+            <image class="xiaotu" style="width:60rpx;height:60rpx;" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/wjxcart.png"></image>
+          </view>
+          <!-- <view class='scount' wx:if="{{content.showSaleCount}}">已售 {{dataset.salecount}} 件</view> -->
+        </view>
+        <!-- 新增直播提示 -->
+        <view class="live_auto" wx:if="{{dataset.LiveProducts.length !=0}}">
+          <swiper vertical circular autoplay interval="5000" style="width: 233rpx;height: 50rpx;">
+            <block wx:for="{{dataset.LiveProducts}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="subIndex">
+              <swiper-item style="width: 100%;height: 100%;">
+                <view class="live_tip" catchtap="handleTipLive" data-roomid="{{subItem.LiveRoomId}}" data-pid="{{subItem.ProductId}}">
+                  <image class="live_img" src="{{subitem.LiveImg}}"></image>
+                  <view class="live_text line1">{{subItem.AnchorName}}</view>
+                  <view class="live_dh wrap">
+                    <view class="m1"></view>
+                    <view class="m2"></view>
+                    <view class="m3"></view>
+                  </view>
+                </view>
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+
+      </li>
+    </ul>
+  </view>
+  <!-- 大图模式 -->
+  <view class='blist' wx:if="{{content.layout==2}}">
+    <ul>
+      <li class="live_li" wx:for="{{content.goodslist}}" wx:key="index" wx:for-item="dataset" data-item_id="{{dataset.ProductId}}" bindtap="goToGoodsDetail">
+        <view class="nav">
+          <image mode='widthFix' src='{{dataset.ImageUrl1}}' alt=""></image>
+          <view class='title oandp_title' wx:if="{{content.showName}}">{{dataset.ProductName}}</view>
+          <view class='oandp'>
+            <view class='price'>
+              <view class="big_model">
+                <text wx:if="{{content.showPrice}}">￥{{dataset.SalePrice}}</text>
+                <!-- <text class="model_nums">{{dataset.salecount}}人付款</text> -->
+              </view>
+              <view class="blist_addmycard" wx:if="{{content.showIco}}" catchtap="addCart" data-id="{{dataset.ProductId}}">
+                <image class="model_img" style="width:60rpx;height:60rpx;" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/wjxcart.png"></image>
+              </view>
+            </view>
+            <text class='oprice' wx:if="{{content.showMaketPrice}}">原价:￥{{dataset.original_price}}</text>
+            <!-- <view class='scount' wx:if="{{content.showSaleCount}}">已售 {{dataset.salecount}} 件</view> -->
+          </view>
+        </view>
+        <!-- 新增直播提示 -->
+        <view class="live_auto" wx:if="{{dataset.LiveProducts.length !=0}}">
+          <swiper vertical circular autoplay interval="5000" style="width: 233rpx;height: 50rpx;">
+              <block wx:for="{{dataset.LiveProducts}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="subIndex">
+                <swiper-item style="width: 100%;height: 100%;">
+                  <view class="live_tip" catchtap="handleTipLive" data-roomid="{{subItem.LiveRoomId}}"
+                    data-pid="{{subItem.ProductId}}">
+                    <image class="live_img" src="{{subitem.LiveImg}}"></image>
+                    <view class="live_text line1">{{subItem.AnchorName}}</view>
+                    <view class="live_dh wrap">
+                      <view class="m1"></view>
+                      <view class="m2"></view>
+                      <view class="m3"></view>
+                    </view>
+                  </view>
+                </swiper-item>
+              </block>
+          </swiper>
+        </view>
+
+      </li>
+    </ul>
+  </view>
+  <!-- 一大两小 -->
+  <view wx:if="{{content.layout==3}}">
+    <block wx:for="{{content.goodslist}}" wx:for-item="dataset" wx:key="index">
+      <ul>
+        <li class="list_o live_li" wx:key="index" wx:if="{{index%3 ===0||index===0}}" data-item_id="{{dataset.ProductId}}" bindtap="goToGoodsDetail">
+          <view class="nav">
+            <image mode='widthFix' src='{{dataset.ImageUrl1}}' alt=""></image>
+            <view class='title' wx:if="{{content.showName}}">{{dataset.ProductName}}</view>
+            <view class='oandp'>
+              <view class='price big_picture'>
+                <view class="big_wrap">
+                  <text class="oprice" wx:if="{{content.showPrice}}">￥{{dataset.SalePrice}}</text>
+                  <!-- <text class="big_sales">{{dataset.salecount}}人付款</text> -->
+                </view>
+                <view class="blist_addmycard " wx:if="{{content.showIco}}" catchtap="addCart" data-id="{{dataset.ProductId}}">
+                  <image class="big_img" style="width:60rpx;height:60rpx;" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/wjxcart.png"></image>
+                </view>
+              </view>
+              <text class='oprice' wx:if="{{content.showMaketPrice}}">￥{{dataset.original_price}}</text>
+              <!-- <view class='scount' wx:if="{{content.showSaleCount}}">已售 {{dataset.salecount}} 件</view> -->
+            </view>
+          </view>
+          <!-- 新增直播提示 -->
+          <view class="live_auto" wx:if="{{dataset.LiveProducts.length !=0}}">
+            <swiper vertical circular autoplay interval="5000" style="width: 233rpx;height: 50rpx;">
+              <block wx:for="{{dataset.LiveProducts}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="subIndex">
+                <swiper-item style="width: 100%;height: 100%;">
+                  <view class="live_tip" catchtap="handleTipLive" data-roomid="{{subItem.LiveRoomId}}"
+                    data-pid="{{subItem.ProductId}}">
+                    <image class="live_img" src="{{subitem.LiveImg}}"></image>
+                    <view class="live_text line1">{{subItem.AnchorName}}</view>
+                    <view class="live_dh wrap">
+                      <view class="m1"></view>
+                      <view class="m2"></view>
+                      <view class="m3"></view>
+                    </view>
+                  </view>
+                </swiper-item>
+              </block>
+            </swiper>
+          </view>
+
+        </li>
+      </ul>
+      <ul class="owlist_t">
+        <li class="live_li" wx:key="index" wx:if="{{index%3!=0}}" data-item_id="{{dataset.ProductId}}" bindtap="goToGoodsDetail">
+          <view class="nav" style="margin-bottom: 10rpx;">
+            <image src='{{dataset.ImageUrl1}}' alt=""></image>
+            <view class='oandp small_wrap'>
+              <view class='price owlist_price' wx:if="{{content.showPrice}}">￥{{dataset.SalePrice}}</view>
+              <!-- <text class="small_price">{{dataset.salecount}}人付款</text> -->
+            </view>
+            <!-- <view class='scount' wx:if="{{content.showSaleCount}}">已售 {{dataset.salecount}} 件</view> -->
+            <view class="addmycard wjxactive" wx:if="{{content.showIco}}" catchtap="addCart" data-id="{{dataset.ProductId}}">
+              <image class="wjxnewimg" style="width:60rpx;height:60rpx;" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/wjxcart.png"></image>
+            </view>
+          </view>
+          <!-- 新增直播提示 -->
+          <view class="live_auto" wx:if="{{dataset.LiveProducts.length !=0}}">
+            <swiper vertical circular autoplay interval="5000" style="width: 233rpx;height: 50rpx;">
+              <block wx:for="{{dataset.LiveProducts}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="subIndex">
+                <swiper-item style="width: 100%;height: 100%;">
+                  <view class="live_tip" catchtap="handleTipLive" data-roomid="{{subItem.LiveRoomId}}"
+                    data-pid="{{subItem.ProductId}}">
+                    <image class="live_img" src="{{subitem.LiveImg}}"></image>
+                    <view class="live_text line1">{{subItem.AnchorName}}</view>
+                    <view class="live_dh wrap">
+                      <view class="m1"></view>
+                      <view class="m2"></view>
+                      <view class="m3"></view>
+                    </view>
+                  </view>
+                </swiper-item>
+              </block>
+            </swiper>
+          </view>
+
+        </li>
+      </ul>
+    </block>
+  </view>
+  <!-- 列表模式 -->
+  <view class='ullist' wx:if="{{content.layout=='4'}}">
+    <ul>
+      <li class="live_li" wx:for="{{content.goodslist}}" wx:for-item="dataset" wx:key="index" data-item_id="{{dataset.item_id}}" bindtap="goToGoodsDetail">
+        <view class="nav">
+          <image src='{{dataset.ImageUrl1}}' alt=""></image>
+          <view class='righttxt'>
+            <view class='title'>{{dataset.ProductName}}</view>
+            <view class='price'>
+              <view class="price_wrap">
+                <text wx:if="{{content.showPrice}}">￥{{dataset.SalePrice}}</text>
+                <!-- <text class="sales">{{dataset.salecount}}人付款</text> -->
+              </view>
+              <view class="blist_addmycard" wx:if="{{content.showIco}}" catchtap="addCart" data-id="{{dataset.item_id}}">
+                <image style="width:60rpx;height:60rpx;" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/wjxcart.png"></image>
+                <image class="wjxjia" style="width:30rpx;height:30rpx;"  src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/wjxnewjia.png"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+        <!-- 新增直播提示 -->
+        <view class="live_auto" wx:if="{{dataset.LiveProducts.length !=0}}">
+          <swiper vertical circular autoplay interval="5000" style="width: 233rpx;height: 50rpx;">
+            <block wx:for="{{dataset.LiveProducts}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="subIndex">
+              <swiper-item style="width: 100%;height: 100%;">
+                <view class="live_tip" catchtap="handleTipLive" data-roomid="{{subItem.LiveRoomId}}"
+                  data-pid="{{subItem.ProductId}}">
+                  <image class="live_img" src="{{subitem.LiveImg}}"></image>
+                  <view class="live_text line1">{{subItem.AnchorName}}</view>
+                  <view class="live_dh wrap">
+                    <view class="m1"></view>
+                    <view class="m2"></view>
+                    <view class="m3"></view>
+                  </view>
+                </view>
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+
+      </li>
+    </ul>
+  </view>
+
+</template>
+
+<!-- 搜索 -->
+<template name="temp_6">
+  <!-- <view class="top" style="background:linear-gradient(to left, {{colorArr[colorIndex].startColor}}, {{colorArr[colorIndex].endColor}});transition:all 2s;"> -->
+  <view class="top" style="{{itemIndex <= swiperSite?'background:linear-gradient(to left,'+ colorArr[colorIndex].startColor +','+ colorArr[colorIndex].endColor +')':''}}">
+    <view class="search_left" wx:if="{{content.rightSide}}">
+      <image src="{{content.logo}}"></image>
+    </view>
+    <navigator class="left" url='/pages/searchGoods/searchGoods' hover-class="none">
+      <view class="searchBoxtemplate">
+        <image mode="widthFix" src="https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/search.png" alt=""></image>
+        <input placeholder-class="fontSize" type="text" placeholder="请输入关键字进行搜索" disabled/>
+      </view>
+    </navigator>
+  </view>
+</template>
+
+<!-- 文本导航 -->
+<template name="temp_7">
+  <view class='content' style="{{itemIndex <= swiperSite?'background:linear-gradient(to left,'+ colorArr[colorIndex].startColor +','+ colorArr[colorIndex].endColor +')':''}};">
+    <view class="itemtest" wx:for="{{content.dataset}}" wx:for-item="dataset" data-topicsListJson="{{dataset.TopicsListJson}}" bindtap='jumpWhere' data-linkType='{{dataset.linkType}}' data-index='{{index}}' wx:key="index">
+      <!-- <navigator bindtap='ClickSwiper' data-type='{{dataset.linkType}}' data-showtype="{{dataset.linkType}}" data-index='{{index}}'> -->
+      {{dataset.showtitle}}
+      <view class="img-box">
+        <image src="https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/path-right@2x.png"></image>
+      </view>
+      <!-- </navigator> -->
+    </view>
+  </view>
+</template>
+
+<!-- 分割线 -->
+<template name="temp_10">
+  <view class='cuttingLineBox'>
+    <!-- wx:if="{{content.style == 0}}" -->
+    <view style='border-bottom:2rpx dashed #999;' class='cuttingLine'></view>
+  </view>
+  <!-- <view wx:else="{{content.style == 1}}">
+    <view style='border-bottom:2rpx solid {{content.corlor}};' class='cuttingLine'></view>
+  </view> -->
+</template>
+
+<!-- 顶部菜单 -->
+<template name="temp_12">
+  <view class="tab">
+    <ul>
+      <li wx:for="{{content.dataset}}" wx:for-item="dataset" wx:key="index" bindtap='jumpWhere' data-linkType='{{dataset.linkType}}' data-topicsListJson="{{dataset.TopicsListJson}}" data-index='{{index}}' style='background-color:{{dataset.bgColor}}; border-right:{{content.marginstyle}}rpx solid white '>
+        <view class="content12one">
+          <view class="content12">
+            <image wx:if="{{content.style==1}}" mode="widthFix" src='{{dataset.pic}}' alt=""></image>
+            <!-- <view wx:if="{{content.style==1}}" style='color:{{dataset.fotColor}}' class='font'>{{dataset.title}}</view> -->
+            <view wx:else style='color:{{dataset.fotColor}};' class='font'>{{dataset.showtitle}}</view>
+          </view>
+        </view>
+      </li>
+    </ul>
+  </view>
+</template>
+
+<!-- 2.0橱窗 -->
+<!-- 2.0橱窗默认 -->
+<template name="temp_13">
+  <view class='showcase' style="{{itemIndex <= swiperSite?'background:linear-gradient(to left,'+ colorArr[colorIndex].startColor +','+ colorArr[colorIndex].endColor +')':''}};">
+    <!-- wx:if="{{content.layout==1}}" -->
+    <ul>
+      <li wx:for="{{content.dataset}}" wx:for-item="dataset" wx:key='{{index}}' class="{{index == '0'?'isfarstShowcase':'nofarstShowcase' }}" data-link="{{dataset.link}}" bindtap='jumpWhere' data-linkType='{{dataset.linkType}}' data-topicsListJson="{{dataset.TopicsListJson}}" data-index='{{index}}'>
+        <!-- <navigator bindtap='jumptap' data-type='{{dataset.linkType}}' data-index='{{index}}'> -->
+        <view class="showcasenav">
+          <image class="{{index == '0'?'isfarstShowcaseImg':'nofarstShowcaseImg' }}" src='{{dataset.pic}}'></image>
+          <!-- </navigator> -->
+        </view>
+      </li>
+    </ul>
+  </view>
+  <!-- 2列 -->
+  <!-- <view class='showcase1' wx:if="{{content.layout==0}}">
+      <view class="leftright" >
+        <block wx:for="{{content.dataset}}">
+          <ul>
+            <li class="list_o" wx:key="index" wx:if="{{index%3 ===0||index===0}}">
+              <navigator bindtap='jumptap' data-type='{{dataset.linkType}}' data-index='{{index}}'>
+                <image mode='widthFix' src='{{dataset.pic}}' alt=""></image>
+              </navigator>
+            </li>
+          </ul>
+          <ul>
+            <li class="list_t" wx:key="index" wx:if="{{index%3!=0}}">
+              <navigator bindtap='jumptap' data-type='{{dataset.linkType}}' data-index='{{index}}'>
+                <image mode='widthFix' src='{{dataset.pic}}' alt=""></image>
+              </navigator>
+            </li>
+          </ul>
+        </block>
+      </view>  
+  </view> -->
+  <!-- <view class="hus">黄世有我在模板下面</view> -->
+</template>
+
+<!-- 2.0视频 -->
+
+<template name="temp_14">
+  <video style='width:100%; margin: 20rpx auto;' objectFit="fill" src="{{content.website2}}"></video>
+</template>
+
+<!-- 公告通告栏 -->
+<template name="temp_16">
+  <view class='scroll_view_border'>
+    <view class="srcoll_view">{{content.notice?content.notice:'请填写内容，如果过长，将会滚动显示'}}</view>
+  </view>
+</template>
+
+
+<!-- 直播模块 100-->
+<template name="temp_100">
+  <view class="streaming_wrap {{content.goodsize=='3'?'acitive':''}}" >
+    <view class="streaming">
+      <!-- <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/bg_kb@2x.png" mode="widthFix"></image> -->
+      <view class="streaming_main {{content.goodsize=='3'?'active2':''}}" style="background-color: #{{content.backgroundColor}};">
+        <block wx:for="{{content.newList}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="subIndex">
+          <view class="main_box" wx:if="{{subIndex < content.goodsize}}" bindtap="handleLive" data-roomid="{{subItem.roomid}}" data-status="{{subItem.live_status}}">
+            <view class="main_img1">
+              <image src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/hmeshop_jxy/images/icon_zhibo@22x.png"></image>
+              <text wx:if="{{subItem.live_status==101}}">直播中</text>
+              <text wx:elif="{{subItem.live_status==102}}">未开始</text>
+              <text wx:elif="{{subItem.live_status==103}}">已结束</text>
+              <text wx:elif="{{subItem.live_status==104}}">禁播</text>
+              <text wx:elif="{{subItem.live_status==105}}">暂停中</text>
+              <text wx:elif="{{subItem.live_status==106}}">异常</text>
+              <text wx:else>已过期</text>
+            </view>
+            <image class="zb_img" src="{{subItem.cover_img}}"></image>
+            <view class="main_img2">
+              <!-- 头像 -->
+              <image src="{{subItem.share_img}}"></image>
+              <text>{{subItem.name}}</text>
+            </view>
+          </view>
+        </block>
+        <view class="main_img_wrap" bindtap="handleGo">
+          <image class="new_img" src="{{imgUrl+'more@2x.png'}}" style="width:24rpx;height: 24rpx;"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>
+
+<!-- 新的标签商品 102 -->
+<template name="temp_102">
+  <view class="tally_wrap">
+    <!-- 导航栏1 有图表的导航栏 -->
+    <view class="nav_wrap2 {{scrollTop>xiDing?'xiDing':''}}" style="top:{{navHeight+95}}rpx;" wx:if="{{content.style==1}}">
+      <scroll-view class="scroll_nav nav_list" scroll-x scroll-into-view="{{toView}}" scroll-with-animation="true">
+        <block wx:for="{{content.dataset}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="subIndex">
+          <view class="nav2" style="background-color:{{subItem.bgColor}};border-right:{{content.marginstyle}}rpx solid white;"
+            bindtap="handNav" data-index="{{subIndex}}" data-title="{{subItem.showtitle}}" data-tagid="{{subItem.tagId}}"
+            data-opt="items{{subIndex}}">
+            <image src="{{subItem.pic}}"></image>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    <!-- 导航栏2 无图标可滑动的导航栏-->
+    <view class="nav_wrap {{scrollTop>xiDing?'xiDing':''}}" style="top:{{navHeight+95}}rpx;" wx:else>
+      <view class="nav">
+        <scroll-view class="scroll_nav " scroll-x scroll-into-view="{{toView}}" scroll-with-animation="true">
+          <block wx:for="{{content.dataset}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="subIndex">
+            <view class="scroll_view {{subIndex==nums?'active':''}}" 
+              bindtap="handNav" 
+              data-index="{{subIndex}}"
+              data-title="{{subItem.showtitle}}"
+              data-tagid="{{subItem.tagId}}"
+              data-opt="items{{subIndex}}"
+              >{{subItem.showtitle}}</view>
+          </block>
+        </scroll-view>
+      </view>
+    </view>
+    
+    <!-- 综合 -->
+    <!-- <scroll-view scroll-y="{{true}}" scroll-into-view="{{toView}}" class="scroll-warp" wx:if="{{false}}"
+        scroll-with-animation="{{true}}" >
+        <block wx:for="{{content.dataset}}" wx:for-item="newItem" wx:for-index="newIndex" wx:key="newIndex">
+          <view class="tally_content">
+            <view class="title_wrap" id="items{{newIndex}}">
+              <view class="tally_title">{{newItem.showtitle}}</view>
+            </view>
+            小图模式
+            <view class="samll_wrap" wx:if="{{newItem.layout==1}}">
+              <block wx:for="{{content.newList}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="subIndex">
+                <view class="small_icon" wx:if="{{newItem.tagId==subItem.TagId}}" bindtap="goToGoodsDetail"
+                  data-item_id="{{subItem.ProductId}}">
+                  <image src="{{subItem.AdsImageUrl}}"></image>
+                  <view class="small_main">
+                    <view class="small_title">{{subItem.ProductName}}</view>
+                    <view class="small_prices">
+                      <text>￥</text>
+                      <text>{{subItem.SalePrice}}</text>
+                    </view>
+                    <view class="small_member" wx:if="{{newItem.showMemberPrice}}">
+                      <image src="{{imgUrl+'icon_hy@3x.png'}}"></image>
+                      <view class="main_right">
+                        <text>{{subItem.SkuItems[0].NextMemberPrice.GradeName}}</text>
+                        <text>专享￥{{subItem.SkuItems[0].NextMemberPrice.MemberSalePrice}}</text>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </block>
+            </view>
+            大图模式
+            <view class="max_img_wrap" wx:if="{{newItem.layout==2}}">
+              <block wx:for="{{content.newList}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="subIndex">
+                <view class="main_wrap" wx:if="{{newItem.tagId==subItem.TagId}}">
+                  <image src="{{subItem.AdsImageUrl}}"></image>
+                  <view class="main_info">
+                    <view class="main_title">{{subItem.ProductName}}</view>
+                    <view class="main_btn">
+                      <view class="main_price">
+                        <text>￥</text>
+                        <text>{{subItem.SalePrice}}</text>
+                      </view>
+                      <view class="main_member" wx:if="{{newItem.showMemberPrice}}">
+                        <image src="{{imgUrl+'icon_hy@3x.png'}}"></image>
+                        <view class="main_right">
+                          <text>{{subItem.SkuItems[0].NextMemberPrice.GradeName}}</text>
+                          <text>专享￥{{subItem.SkuItems[0].NextMemberPrice.MemberSalePrice}}</text>
+                        </view>
+                      </view>
+                      <view class="tally_btn" bindtap="goToGoodsDetail" data-item_id="{{subItem.ProductId}}">立即购买</view>
+                    </view>
+                  </view>
+                </view>
+              </block>
+            </view>
+            一大两小
+            <view class="footer_wrap" wx:if="{{newItem.layout==3}}">
+              <block wx:for="{{content.newList}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="subIndex">
+                <view class="footer_icon" wx:if="{{newItem.tagId==subItem.TagId}}">
+                  <image src="{{subItem.AdsImageUrl}}"></image>
+                  <view class="footer_main">
+                    <view class="footer_title">{{subItem.ProductName}}</view>
+                    <view class="footer_info">
+                      <view class="footer_prices">
+                        <text>￥</text>
+                        <text>{{subItem.SalePrice}}</text>
+                      </view>
+                      <view class="footer_member" wx:if="{{newItem.showMemberPrice}}">
+                        <image src="{{imgUrl+'icon_hy@3x.png'}}"></image>
+                        <view class="main_right">
+                          <text>{{subItem.SkuItems[0].NextMemberPrice.GradeName}}</text>
+                          <text>专享￥{{subItem.SkuItems[0].NextMemberPrice.MemberSalePrice}}</text>
+                        </view>
+                      </view>
+                    </view>
+                    <view class="footer_btn" bindtap="goToGoodsDetail" data-item_id="{{subItem.ProductId}}">立即购买</view>
+                  </view>
+                </view>
+              </block>
+            </view>
+            列表
+            <view class="list_model" wx:if="{{newItem.layout==4}}">
+              <block wx:for="{{content.newList}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="subIndex">
+                <view class="list_wrap" wx:if="{{newItem.tagId==subItem.TagId}}" bindtap="goToGoodsDetail"
+                  data-item_id="{{subItem.ProductId}}">
+                  <image src="{{subItem.AdsImageUrl}}"></image>
+                  <view class="list_right">
+                    <view class="list_title">{{subItem.ProductName}}</view>
+                    <view class="list_btn">
+                      <view class="list_price">
+                        <text>￥</text>
+                        <text>{{subItem.SalePrice}}</text>
+                      </view>
+                      <view class="list_member" wx:if="{{newItem.showMemberPrice}}">
+                        <image src="{{imgUrl+'icon_hy@3x.png'}}"></image>
+                        <view class="list_rights">
+                          <text>{{subItem.SkuItems[0].NextMemberPrice.GradeName}}</text>
+                          <text>专享￥{{subItem.SkuItems[0].NextMemberPrice.MemberSalePrice}}</text>
+                        </view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </block>
+            </view>
+            <view class="no_data" wx:if="{{newItem.tagId!=subItem.TagId}}">暂无数据!</view>
+          </view>
+        </block>
+    </scroll-view> -->
+    <block wx:for="{{content.dataset}}" wx:for-item="newItem" wx:for-index="newIndex" wx:key="newIndex">
+      <view class="tally_content">
+        <view class="title_wrap" id="items{{newIndex}}">
+          <view class="tally_title">{{newItem.showtitle}}</view>
+        </view>
+        <!-- 小图模式 -->
+        <view class="samll_wrap" wx:if="{{newItem.layout==1}}">
+          <block wx:for="{{newItem.newList}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="subIndex">
+            <view class="small_icon live_li" wx:if="{{newItem.tagId==subItem.TagId}}" bindtap="goToGoodsDetail"
+              data-item_id="{{subItem.ProductId}}">
+              <image src="{{subItem.ImageUrl1}}"></image>
+              <view class="small_main">
+                <view class="small_title">{{subItem.ProductName}}</view>
+                <view class="small_prices">
+                  <text>￥</text>
+                  <text>{{subItem.SalePrice}}</text>
+                </view>
+                <view class="small_member" wx:if="{{newItem.showMemberPrice && subItem.SkuItems[0].NextMemberPrice}}">
+                  <image src="{{imgUrl+'icon_hy@3x.png'}}"></image>
+                  <view class="main_right">
+                    <text>{{subItem.SkuItems[0].NextMemberPrice.GradeName}}</text>
+                    <text>专享￥{{subItem.SkuItems[0].NextMemberPrice.MemberSalePrice}}</text>
+                  </view>
+                </view>
+              </view>
+              <!-- 新增直播提示 -->
+              <view class="live_auto" wx:if="{{subItem.LiveProducts.length !=0}}">
+                <swiper vertical circular autoplay interval="5000" style="width: 233rpx;height: 50rpx;">
+                  <block wx:for="{{subItem.LiveProducts}}" wx:for-item="liveItem" wx:for-index="liveIndex" wx:key="liveIndex">
+                    <swiper-item style="width: 100%;height: 100%;">
+                      <view class="live_tip" catchtap="handleTipLive" data-roomid="{{liveItem.LiveRoomId}}" data-pid="{{liveItem.ProductId}}">
+                        <image class="live_img" src="{{liveItem.LiveImg}}"></image>
+                        <view class="live_text line1">{{liveItem.AnchorName}}</view>
+                        <view class="live_dh wrap">
+                          <view class="m1"></view>
+                          <view class="m2"></view>
+                          <view class="m3"></view>
+                        </view>
+                      </view>
+                    </swiper-item>
+                  </block>
+                </swiper>
+              </view>
+            </view>
+          </block>
+        </view>
+        <!-- 大图模式 -->
+        <view class="max_img_wrap" wx:if="{{newItem.layout==2}}">
+          <block wx:for="{{newItem.newList}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="subIndex">
+            <view class="main_wrap live_li" wx:if="{{newItem.tagId==subItem.TagId}}" bindtap="goToGoodsDetail" data-item_id="{{subItem.ProductId}}">
+              <image src="{{subItem.AdsImageUrl}}"></image>
+              <view class="main_info">
+                <view class="main_title">{{subItem.ProductName}}</view>
+                <view class="main_btn">
+                  <view class="main_price">
+                    <text>￥</text>
+                    <text>{{subItem.SalePrice}}</text>
+                  </view>
+                  <view class="main_member" wx:if="{{newItem.showMemberPrice  && subItem.SkuItems[0].NextMemberPrice}}">
+                    <image src="{{imgUrl+'icon_hy@3x.png'}}"></image>
+                    <view class="main_right">
+                      <text>{{subItem.SkuItems[0].NextMemberPrice.GradeName}}</text>
+                      <text>专享￥{{subItem.SkuItems[0].NextMemberPrice.MemberSalePrice}}</text>
+                    </view>
+                  </view>
+                  <view class="tally_btn" >立即购买</view>
+                </view>
+              </view>
+              <!-- 新增直播提示 -->
+              <view class="live_auto" wx:if="{{subItem.LiveProducts.length !=0}}">
+                <swiper vertical circular autoplay interval="5000" style="width: 233rpx;height: 50rpx;">
+                  <block wx:for="{{subItem.LiveProducts}}" wx:for-item="liveItem" wx:for-index="liveIndex" wx:key="liveIndex">
+                    <swiper-item style="width: 100%;height: 100%;">
+                      <view class="live_tip" catchtap="handleTipLive" data-roomid="{{liveItem.LiveRoomId}}"
+                        data-pid="{{liveItem.ProductId}}">
+                        <image class="live_img" src="{{liveItem.LiveImg}}"></image>
+                        <view class="live_text line1">{{liveItem.AnchorName}}</view>
+                        <view class="live_dh wrap">
+                          <view class="m1"></view>
+                          <view class="m2"></view>
+                          <view class="m3"></view>
+                        </view>
+                      </view>
+                    </swiper-item>
+                  </block>
+                </swiper>
+              </view>
+
+            </view>
+          </block>
+        </view>
+        <!-- 一大两小 -->
+        <view class="footer_wrap" wx:if="{{newItem.layout==3}}">
+          <block wx:for="{{newItem.newList}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="subIndex">
+            <view class="footer_icon live_li" wx:if="{{newItem.tagId==subItem.TagId}}" bindtap="goToGoodsDetail" data-item_id="{{subItem.ProductId}}">
+              <image src="{{subIndex==0?subItem.AdsImageUrl:subItem.ImageUrl1}}"></image>
+              <view class="footer_main">
+                <view class="footer_title">{{subItem.ProductName}}</view>
+                <view class="footer_info">
+                  <view class="footer_prices">
+                    <text>￥</text>
+                    <text>{{subItem.SalePrice}}</text>
+                  </view>
+                  <view class="footer_member" wx:if="{{newItem.showMemberPrice  && subItem.SkuItems[0].NextMemberPrice}}">
+                    <image src="{{imgUrl+'icon_hy@3x.png'}}"></image>
+                    <view class="main_right">
+                      <text>{{subItem.SkuItems[0].NextMemberPrice.GradeName}}</text>
+                      <text>专享￥{{subItem.SkuItems[0].NextMemberPrice.MemberSalePrice}}</text>
+                    </view>
+                  </view>
+                </view>
+                <view class="footer_btn">立即购买</view>
+              </view>
+              <!-- 新增直播提示 -->
+              <view class="live_auto" wx:if="{{subItem.LiveProducts.length !=0}}">
+                <swiper vertical circular autoplay interval="5000" style="width: 233rpx;height: 50rpx;">
+                  <block wx:for="{{subItem.LiveProducts}}" wx:for-item="liveItem" wx:for-index="liveIndex" wx:key="liveIndex">
+                    <swiper-item style="width: 100%;height: 100%;">
+                      <view class="live_tip" catchtap="handleTipLive" data-roomid="{{liveItem.LiveRoomId}}"
+                        data-pid="{{liveItem.ProductId}}">
+                        <image class="live_img" src="{{liveItem.LiveImg}}"></image>
+                        <view class="live_text line1">{{liveItem.AnchorName}}</view>
+                        <view class="live_dh wrap">
+                          <view class="m1"></view>
+                          <view class="m2"></view>
+                          <view class="m3"></view>
+                        </view>
+                      </view>
+                    </swiper-item>
+                  </block>
+                </swiper>
+              </view>
+
+            </view>
+          </block>
+        </view>
+        <!-- 列表 -->
+        <view class="list_model" wx:if="{{newItem.layout==4}}">
+          <block wx:for="{{newItem.newList}}" wx:for-item="subItem" wx:for-index="subIndex" wx:key="subIndex">
+            <view class="list_wrap live_li" wx:if="{{newItem.tagId==subItem.TagId}}" bindtap="goToGoodsDetail"
+              data-item_id="{{subItem.ProductId}}">
+              <image src="{{subItem.AdsImageUrl}}"></image>
+              <view class="list_right">
+                <view class="list_title">{{subItem.ProductName}}</view>
+                <view class="list_btn">
+                  <view class="list_price">
+                    <text>￥</text>
+                    <text>{{subItem.SalePrice}}</text>
+                  </view>
+                  <view class="list_member" wx:if="{{newItem.showMemberPrice && subItem.SkuItems[0].NextMemberPrice}}">
+                    <image src="{{imgUrl+'icon_hy@3x.png'}}"></image>
+                    <view class="list_rights">
+                      <text>{{subItem.SkuItems[0].NextMemberPrice.GradeName}}</text>
+                      <text>专享￥{{subItem.SkuItems[0].NextMemberPrice.MemberSalePrice}}</text>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <!-- 新增直播提示 -->
+              <view class="live_auto" wx:if="{{subItem.LiveProducts.length !=0}}">
+                <swiper vertical circular autoplay interval="5000" style="width: 233rpx;height: 50rpx;">
+                  <block wx:for="{{subItem.LiveProducts}}" wx:for-item="liveItem" wx:for-index="liveIndex" wx:key="liveIndex">
+                    <swiper-item style="width: 100%;height: 100%;">
+                      <view class="live_tip" catchtap="handleTipLive" data-roomid="{{liveItem.LiveRoomId}}"
+                        data-pid="{{liveItem.ProductId}}">
+                        <image class="live_img" src="{{liveItem.LiveImg}}"></image>
+                        <view class="live_text line1">{{liveItem.AnchorName}}</view>
+                        <view class="live_dh wrap">
+                          <view class="m1"></view>
+                          <view class="m2"></view>
+                          <view class="m3"></view>
+                        </view>
+                      </view>
+                    </swiper-item>
+                  </block>
+                </swiper>
+              </view>
+              
+            </view>
+          </block>
+        </view>
+        <!-- <view class="no_data" wx:if="{{newItem.tagId!=subItem.TagId && content.newList.length==0}}">暂无数据!</view> -->
+        <view class="no_data" wx:if="{{!newItem.newList}}">暂无数据!</view>
+      </view>
+    </block>
+  </view>
+</template>
+
+<!-- 自定义首页头部 -->
+<template  name="temp_home_title">
+<view  wx:if="{{!hideTitle}}" class="home_title {{scrollTop>headerTop?'newIng':''}}" style="{{itemIndex <= swiperSite?'background:linear-gradient(to left,'+ colorArr[colorIndex].startColor +','+ colorArr[colorIndex].endColor +')':''}};height: {{navHeight}}px;line-height: {{navHeight}}px;">
+<!-- <view class="home_title {{scrollTop>headerTop?'newIng':''}}" 
+  style="height: {{navHeight}}px;line-height: {{navHeight}}px;background:linear-gradient(to left, {{colorArr[colorIndex].startColor}}, {{colorArr[colorIndex].endColor}}); transition:all 2s;"> -->
+    <text>{{customTitle || '代理引流商城'}}{{hideTitle}}</text>
+  </view>
+</template>

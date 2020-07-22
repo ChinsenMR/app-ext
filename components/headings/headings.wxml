@@ -1,0 +1,10 @@
+<!--components/headings/headings.wxml-->
+<!-- <text>components/headings/headings.wxml</text> -->
+<view class='wbtitle' style='background-color: {{headingsUrls.bgcorlor}};'>
+  <view class='wbtitle_content' style='text-align: {{headingsUrls.direction}};'>
+    <image src='{{headingsUrls.pic}}'></image>
+    <text style='color: {{headingsUrls.ftcorlor}};'>  
+      {{headingsUrls.title}}
+    </text>
+  </view>
+</view>

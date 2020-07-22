@@ -1,0 +1,261 @@
+/*老页面  未使用 css预编译,所以保存了一份*/
+/* page{
+  height: 2500rpx;
+} */
+.layout {
+  width: 100%;
+  /* height: auto; */
+  /* height: 100%; */
+  position: relative;
+  min-height: 100%;
+  background: linear-gradient(#7f91ff, #5b93fe);
+}
+
+.layout>image {
+  width: 100%;
+}
+
+.rule {
+  background-color: #FF4490;
+  width: 77rpx;
+  line-height: 34rpx;
+  color: #fff;
+  font-size: 18rpx;
+  position: absolute;
+  right: 0;
+  top: 55rpx;
+  border-radius: 17rpx 0 0 17rpx;
+  z-index: 100;
+}
+
+.layout_img {
+  z-index: 2;
+}
+
+/*渐变背景*/
+.member_wrap {
+  width: 100%;
+  height: 100%;
+  /* height: auto; */
+  z-index: -10;
+  box-sizing: border-box;
+  /* background-color: #d980e7; */
+  background: linear-gradient(#7f91ff, #d980e7);
+  padding: 0 30rpx;
+}
+
+.bgc_wrap {
+  width: 100%;
+  height: 100%;
+  /* height: auto; */
+  background: linear-gradient(#7f91ff, #5b93fe);
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.box1,
+.box2 {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.box2 {}
+
+.diamond_wrap {
+  height: 166rpx;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.diamond_img {
+  width: 100%;
+  height: 100%;
+}
+
+.diamond_text {
+  position: absolute;
+  top: 32%;
+  left: 19%;
+  color: #fff;
+  font-size: 51rpx;
+  padding: 10rpx 0;
+}
+
+.diamond_rights {
+  width: 85%;
+  margin-top: 30rpx;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  border: 3rpx solid #ffcc99;
+  background-color: #fff;
+  font-size: 25rpx;
+  position: relative;
+}
+
+.diamond_rights_title {
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-bottom: 10rpx;
+  color: #FC5391;
+}
+
+.diamond_border {
+  position: absolute;
+  top: 14%;
+  left: 2%;
+  width: 100%;
+  height: 100%;
+  border-right: 3rpx solid #ffcc99;
+  border-bottom: 3rpx solid #ffcc99;
+  border-radius: 12rpx;
+  border-top-right-radius: 20rpx;
+  border-bottom-left-radius: 20rpx;
+}
+
+/*商品内容*/
+.shop_main {
+  width: 93%;
+  /* height: 39%; */
+  height: 440rpx;
+  background-color: #fff;
+  border: 3rpx solid #000;
+  padding: 30rpx 5rpx;
+  box-sizing: border-box;
+  border-radius: 12rpx;
+  margin: 80rpx 0 50rpx 0;
+  position: relative;
+}
+
+.onShow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 97%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rpx;
+}
+
+.emptyCart-item {
+  font-size: 26rpx;
+}
+
+
+.Freeshippingidetail-box {
+  white-space: nowrap;
+  /* height: 100%; */
+  height: 400rpx;
+  margin-top: 8rpx
+}
+
+/* 去除scroll-view滚动条 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.Freeshippingdetail {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 9rpx;
+  border-radius: 10rpx;
+  border: 1rpx solid #F0D18C;
+  /* height: 96%; */
+  height: 370rpx;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.Freeshippingimg {
+  /* width: 256rpx; */
+  padding: 5rpx;
+  height: 220rpx;
+  /* height: 56%; */
+  /* margin-bottom: 20rpx; */
+}
+
+.Freeshippingimg image {
+  border-radius: 5rpx;
+  width: 100%;
+  height: 100%;
+}
+
+.shop_info_title {
+  text-overflow: -o-ellipsis-lastline;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  font-size: 25rpx;
+  margin: 20rpx 5rpx;
+  width: 320rpx;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: normal !important;
+}
+
+.shop_info_price {
+  position: absolute;
+  left: 10rpx;
+  bottom: 10rpx;
+  color: red;
+  font-size: 25rpx;
+}
+
+.shop_add {
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  background-color: #ffcc99;
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 600;
+  position: absolute;
+  right: 10rpx;
+  bottom: 10rpx;
+  border-radius: 50%;
+}
+
+/* 按钮 */
+.member_btn {
+  width: 90%;
+  height: 173rpx;
+  position: relative;
+  margin: 180rpx 0 100rpx 0;
+}
+
+.btn_img {
+  width: 100%;
+  height: 100%
+}
+
+.memner_text {
+  position: absolute;
+  top: 18%;
+  left: 23%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #F0D18C;
+}
+
+.btn_text1 {
+  font-size: 40rpx;
+}
+
+.btn_text2 {
+  margin-top: 20rpx;
+  font-size: 30rpx;
+}

@@ -1,0 +1,57 @@
+<view class="entrance">
+  <view class="entrance-menu">
+    <view class="entrance-menu-item">
+      <van-cell link-type="navigateTo" url="/subPackageC/newLive/index" is-link center>
+        <view slot="title" class="entrance-wrap">
+          <view class="entrance-wrap-icon">
+            <image mode="aspectFill" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/sqkb.png" />
+          </view>
+          <view class="entrance-wrap-title">
+            <view>申请开播</view>
+            <view class="entrance-wrap-title-val">马上来新建属于你自己的直播间</view>
+          </view>
+        </view>
+      </van-cell>
+    </view>
+    <view class="entrance-menu-item">
+      <van-cell link-type="navigateTo" url="/subPackageC/liveRoom/index" is-link center>
+        <view slot="title" class="entrance-wrap">
+          <view class="entrance-wrap-icon">
+            <image mode="aspectFill" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/zbj.png" />
+          </view>
+          <view class="entrance-wrap-title">
+            <view>直播间</view>
+            <view class="entrance-wrap-title-val">查看自己有哪些直播</view>
+          </view>
+        </view>
+      </van-cell>
+    </view>
+    <view class="entrance-menu-item">
+      <!-- <van-cell link-type="navigateTo" url="/subPackageC/liveOrder/index" is-link center> -->
+      <van-cell link-type="navigateTo" url="/pages/distributeOrder/distributeOrder?pageType=2&type=2" is-link center>
+        <view slot="title" class="entrance-wrap">
+          <view class="entrance-wrap-icon">
+            <image mode="aspectFill" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/zbdd.png" />
+          </view>
+          <view class="entrance-wrap-title">
+            <view>直播订单</view>
+            <view class="entrance-wrap-title-val">直播中所有销售的订单</view>
+          </view>
+        </view>
+      </van-cell>
+    </view>
+    <view class="entrance-menu-item">
+      <van-cell link-type="navigateTo" url="/packageB/authority/authority" is-link center>
+        <view slot="title" class="entrance-wrap">
+          <view class="entrance-wrap-icon">
+            <image mode="aspectFill" src="{{imgUrl+'icon_setup.png'}}" />
+          </view>
+          <view class="entrance-wrap-title">
+            <view>直播商品</view>
+            <view class="entrance-wrap-title-val">设置直播商品返利</view>
+          </view>
+        </view>
+      </van-cell>
+    </view>
+  </view>
+</view>

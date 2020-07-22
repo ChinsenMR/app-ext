@@ -1,0 +1,124 @@
+<view class="withdrawal_wrap">
+  <view class="withdrawal_title">
+    <block wx:for="{{tabData}}" wx:key="index">
+      <view class="withdrawal_tx {{activeIndex==index?'active':''}}" data-index="{{index}}" bindtap="handleTab">
+        {{item.title}}</view>
+    </block>
+  </view>
+  <!-- 表单内容  -->
+  <!-- <view class="content" wx:if="{{false}}"> -->
+  <view class="content" wx:if="{{activeIndex==0}}">
+    <form bindsubmit="formSubmit" bindreset="formReset">
+      <!-- 提现方式  固定 -->
+      <view class="content_one">
+        <text class="test_title">提现金额</text>
+        <view class="main_wrap">
+          <input type="number" class="cash_int" placeholder="填写你要提现的金额" name="cashAmount" value=""></input>
+          <view class="reminder_wrap">
+            <text class="cash_test">最多可提现:￥{{depositData.MaxAmount}} </text>
+            <text class="cash_test"> 最小可提现:￥{{depositData.MinAmount}}</text>
+          </view>
+        </view>
+      </view>
+      <!-- 选择体现方式 -->
+      <view class="withdrawal_way" bindtap="handleTrigger">
+        <view class="way_title">提现方式</view>
+        <view class="search_way">{{typeData}}</view>
+        <input type="text" name="cardVal" class="cardid_input" value="{{cardid}}" />
+      </view>
+      <!-- 银行卡 表单 -->
+      <view class="yinhangka" wx:if="{{cardid==1}}">
+        <block wx:for="{{yinhang}}" wx:key="index">
+          <view class="deposit_bank">
+            <text class="bank_title">{{item.title}}</text>
+            <input type="{{item.type}}" class="cash_input" placeholder="{{item.hint}}" name="{{item.nameval}}"
+              password="{{index==4}}" value="" wx:if="{{item.show}}"></input>
+          </view>
+        </block>
+        <!-- 忘记密码 -->
+        <view class="forget_passwrod" wx:if="{{false}}">忘记交易密码,点击区重置</view>
+      </view>
+      <!-- 微信 表单 -->
+      <view class="wx_input" wx:if="{{cardid==2}}">
+        <block wx:for="{{yinhang}}" wx:key="index" wx:if="{{index > 2}}">
+          <view class="deposit_bank" wx:if="{{index > 2}}">
+            <text class="bank_title">{{item.title}}</text>
+            <input type="{{item.type}}" class="cash_input" placeholder="{{item.hint}}" name="{{item.nameval}}"
+              password="{{index==4}}" value="" wx:if="{{item.show}}"></input>
+          </view>
+        </block>
+        <!-- 忘记密码 -->
+        <view class="forget_passwrod" wx:if="{{false}}">忘记交易密码,点击区重置</view>
+      </view>
+      <!-- 上传身份证 -->
+      <view class="upload_id" wx:if="{{depositData.CommissiondrawCharge}}">
+        <view class="title_wrap">
+          <view class="zhanwei">占位</view>
+          <view class="hint_title">{{depositData.LastTime}},且收取{{depositData.CommissiondrawCharge}}%手续费</view>
+        </view>
+
+        <view class="upload_title" wx:if="{{depositData.IsCertification}}">
+          <text class="title_id">上传身份证照片</text>
+          <view class="upload_img_wrap" bindtap="postImg">
+            <block wx:for="{{photoList}}" wx:key="index">
+              <view class="evalteimg">
+                <image class="tu" src="{{item}}"></image>
+                <image class="close" src="{{imgUrl+'btn_close.png'}}" data-index="{{index}}" bindtap="Deleted"></image>
+              </view>
+            </block>
+            <image class="upload_img" src="{{imgUrl+'add_add.png'}}"></image>
+          </view>
+        </view>
+
+      </view>
+
+      <!-- 按钮 -->
+      <view class="btn_wrap">
+        <view class="btn-area">
+          <button formType="submit" class="bgc_btn">申请提现</button>
+          <view class="last_time">上次提现日期:{{drawData[0].RequestTime}}</view>
+        </view>
+      </view>
+
+
+
+    </form>
+  </view>
+
+  <!-- 提现记录 -->
+  <block wx:for="{{drawData}}" wx:key="index">
+    <view class="withdrawal_record" wx:if="{{activeIndex==1 && drawData.length>0}}">
+      <view class="record_wrap">
+        <view class="status_wrap">{{item.StatusStr}}</view>
+        <view class="price_wrap">￥{{item.Amount}}</view>
+        <view class="record_time">{{item.nyr}}</view>
+      </view>
+      <view class="times">{{item.hfm}}</view>
+    </view>
+  </block>
+
+
+
+
+
+
+  <!-- 没有数据是显示 -->
+  <!-- <view class="no_data" wx:if="{{false}}"> -->
+  <view class="no_data" wx:if="{{activeIndex==1 && drawData.length==0}}">
+    <image src="{{imgUrl+'icon_gouwuche-t@2x.png'}}"></image>
+    <view class="no_data_title">没有提现记录~</view>
+  </view>
+
+  <!-- 选择提现方式弹窗,默认为银行卡 -->
+  <view class="withdrawal_way_wrap" wx:if="{{isShow}}" catchtouchmove="myCatchTouch">
+    <block wx:for="{{depositData.deliveryedList}}" wx:key="index" >
+      <view class="withdrawal_window" bindtap="handleBankCard" data-id="{{item.id}}"data-name="{{item.name}}">{{item.name}}</view>
+    </block>
+    <view class="cancel_btn" bindtap="handleCancel">取消</view>
+  </view>
+  <!-- 遮罩层 -->
+  <view class="zhezhao" wx:if="{{isShow}}" catchtouchmove="myCatchTouch" bindtap="handleHide"></view>
+
+
+
+</view>

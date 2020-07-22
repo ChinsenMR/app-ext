@@ -1,0 +1,85 @@
+/* pages/addAddress/addAddress.wxss */
+page{
+  background: #f5f5f5;
+}
+.add-addr-wrap{
+  border-top: 2rpx solid #e5e5e5;
+  border-bottom: 2rpx solid #e5e5e5;
+  padding-left:  30rpx;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+.input-wrap{
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  height: 44px;
+  border-bottom: 2rpx solid #e5e5e5;
+  box-sizing: border-box;
+}
+.input-wrap:last-child{
+  border-bottom: none;
+}
+.input-wrap>label{
+  flex-shrink: 0;
+  margin-right: 125rpx;
+  display: inline-block;
+  width: 56px;
+  font-size: 14px;
+}
+.input-wrap>input,.input-wrap text{
+  display: inline-block;
+  font-size: 13px;
+}
+.input-wrap picker{
+  flex: 1;
+}
+.input-wrap text{
+  width:100%;
+  padding-right:1.5em;
+  box-sizing:border-box;
+
+}
+.placeHolder{
+  color: #808080;
+}
+.right-arrow{
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  border-top: 4rpx solid #999999;
+  border-right: 4rpx solid #999999;
+  transform:rotate(45deg);
+  position: absolute;
+  right: 30rpx;
+  top:17px;
+}
+/*保存按钮*/
+.btn-wrap{
+  margin-top: 60rpx;
+  padding: 0 30rpx;
+  width: 100%;
+  height: 88rpx;
+  box-sizing: border-box;
+}
+.btn-wrap>button{
+  width: 100%;
+  height: 100%;
+  line-height: 88rpx;
+  background: #E0001B;
+  color: #ffffff;
+  font-size: 15px;
+}
+.address{
+  width: 30%;
+  height: 100%;
+}
+.address image{
+  width: 44rpx;
+  height: 44rpx;
+  display: inline-block;
+  position: absolute;
+  right: 13rpx;
+  top:13px;
+}

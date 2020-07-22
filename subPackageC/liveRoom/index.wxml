@@ -1,0 +1,105 @@
+<view class="liveRoom">
+  <view class="liveRoom-head">
+    <view class="liveRoom-avatar">
+      <image mode="aspectFill" src="{{ userInfo.Picture }}" />
+    </view>
+    <view class="liveRoom-nick">{{ userInfo.NickName }}</view>
+    <van-button bindtap="toFNAdd">+创建直播</van-button>
+  </view>
+  <view class="liveRoom-list">
+    <view class="liveRoom-list-title" bindtap="handleShowStatus">
+      {{titleNav}}
+      <van-icon name="arrow-down" />
+    </view>
+    <view class="liveRoom-list-item" wx:for="{{ roomList }}" wx:key="Id" >
+      <!-- <navigator url="plugin-private://wx2b03c6e691cd7370/pages/live-player-plugin?room_id=6&userId=666"> -->
+      <view class="liveRoom-list-item-poster">
+        <image mode="aspectFill"  bindtap="toFN" data-stu="{{item.statusTxt}}" data-id="{{item.LiveRoomId}}" src="{{ item.ShowImg && item.ShowImg.length ? item.ShowImg[0] : '' }}" />
+        <!-- <view class="liveRoom-list-item-poster-status">
+          <view class="{{ 'liveRoom-list-item-poster-status-' + item.cls }}">
+            <view class="liveRoom-list-item-poster-status-capsule">{{ item.statusTxt }}</view>
+          </view>
+        </view> -->
+      </view>
+      <view class="liveRoom-list-item-txt">
+        <span class="dis">
+          <span class="{{ 'liveRoom-list-item-poster-status-' + item.cls }} ">
+            <span class="liveRoom-list-item-poster-status-capsule">{{ item.statusTxt }}</span>
+          </span>
+          <span class="red" wx:if="{{item.statusTxt=='已结束'||item.statusTxt=='过期'}}" data-id="{{item.Id}}" catchtap="openAlert">往期回放</span>
+        </span>
+
+        <view class="liveRoom-list-item-title">{{ item.Title }}</view>
+        <view class="liveRoom-list-item-created">
+          <span class="name">直播时间:</span>
+          {{ item.startTime }}～{{ item.endTime }}
+        </view>
+        <view class="funtion">
+          <!-- catchtap="alertInfoFN" data-name="alertInfo" data-data="{{item}}" -->
+          <span class="child" bindtap="toFN" data-stu="{{item.statusTxt}}" data-id="{{item.LiveRoomId}}" >
+            <image mode="aspectFill" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/rwm@3x.png" />
+            去直播
+          </span>
+          <span class="child" wx:if="{{item.ShowCode}}" catchtap="alertInfoFN" data-name="alertInfoT" data-data="{{item}}">
+            <image mode="aspectFill" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/share@3x.png" />
+            分享
+          </span>
+        </view>
+        <view class="liveRoom-list-item-created mt" wx:if="{{ item.LiveTime }}">
+          <span class="name">视频时长:</span> {{ item.interval }}
+        </view>
+        <view class="btnDet">
+          <van-button catchtap="toFNN" size="small" data-url="{{'/subPackageC/fuLiveDet/fuLiveDet?id='+item.Id}}">查看详情</van-button>
+        </view>
+      </view>
+      <!-- </navigator> -->
+    </view>
+    <loading wx:if="{{ loading }}" />
+    <view class="liveRoom-noData" wx:if="{{ !loading && finished }}">
+      {{ roomList.length ? '没有更多了~' : '暂无数据~' }}
+    </view>
+  </view>
+  <van-popup show="{{ statusVisible }}" position="bottom" bindclose="handleCloseStatus"
+    custom-class="liveRoom-popup-goods">
+    <view class="liveRoom-status-list">
+      <view wx:for="{{ statusList }}" data-title="{{item.title}}" wx:key="type"
+        class="liveRoom-status-list-item {{ status === item.type ? 'active' : ''}}" data-type="{{ item.type }}"
+        bindtap="handleChangeStatus">
+        {{ item.title }}
+      </view>
+    </view>
+  </van-popup>
+</view>
+
+
+<view class="alert {{alert?'alertInfo':''}}">
+  <canvas data-mode="content" wx:if="{{alert}}" canvas-id="myCanvas" id="myCanvas" />
+  <image bindtap="closeAlert" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/close_qw.png" />
+</view>
+
+
+<view class="alert {{alertT?'alertInfo':''}}">
+  <view style="position: relative;    background: #fff;">
+    <canvas data-mode="content" wx:if="{{alertT}}" canvas-id="myCanvasT" id="myCanvasT" />
+    <view class="btn"> <button bindtap="saveImg">保存到相册</button></view>
+
+  </view>
+
+  <image bindtap="closeAlert" src="http://hmqy.oss-cn-hangzhou.aliyuncs.com/tdhmd/close_qw.png" />
+
+</view>
+
+<!--  -->
+<van-popup show="{{huiShow}}" custom-style="height:100%;justify-content: center;align-items: center;background:rgba(0,0,0,.1);display: flex;" bindtap="onCloseP" position="bottom" bind:close="onCloseP">
+  <view class="zhibo" catchtap>
+      <scroll-view class="scroll-view" lower-threshold="huifan" scroll-y="true">
+          <span class="child" wx:for="{{videoList}}" wx:key="index">
+               <view class="time">
+                   <span class="create">开始时间:{{item.create_time}}</span>
+                   <span >过期时间:{{item.expire_time}}</span>
+               </view>
+              <video poster="{{item.media_url+'?spm=a2c4g.11186623.2.1.yjOb8V&x-oss-process=video/snapshot,t_10000,m_fast'}}"   object-fit="cover" class="myVideo" src="{{item.media_url}}" autoplay='{{false}}' controls></video>
+          </span>
+      </scroll-view>
+  </view>
+</van-popup>

@@ -1,0 +1,29 @@
+<view class='layout'>
+  <view class='header'>
+    <image src='{{imgUrl+"banner@2x (3).png"}}' mode='widthFix'></image>
+  </view>
+  <view class='search df ais jct flex'>
+    <image src='{{imgUrl+"icon_search@2x.png"}}' mode='widthFix'></image>
+    <input type='text' value='{{inputVal}}' placeholder='请输入搜索关键词' bindinput='onSearch'></input>
+  </view>
+  <view class='content-ul df ais'>
+    <view class='content-li' wx:for='{{list}}' wx:for-index='index' wx:key='{{index}}'  data-pagetype="4" data-ProductID="{{item.ProductId}}"bindtap='Toproductdetai'>
+      <image src='{{item.ImageUrl1}}' mode='widthFix'></image>
+      <view class='goodsTitle to-2line'>{{item.ProductName}}</view>
+      <view class='goodsPrice df ais jct-between'>
+        <view class='goodsPrice-l df ais'>
+          <view class='df ais-end'>
+            <text>￥</text>
+            <text>{{item.SalePrice}}</text>
+          </view>
+          <view>新人专享价</view>
+        </view>
+        <view class='goodsPrice-r df ais jct'>+</view>
+      </view>
+      <view class='goodsPrice2'>
+        <text>原价::</text>
+        <text>￥{{item.MarketPrice}}</text>
+      </view>
+    </view>
+  </view>
+</view>

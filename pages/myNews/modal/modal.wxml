@@ -1,0 +1,27 @@
+<view class='layout df ais jct' bindtap='closeParent'>
+  <view class='modal-inner' animation='{{animationData}}' catchtap='close'>
+    <view class='modal-top'>
+      <view class='df ais jct modal-topT'>升级代理 享受特权</view>
+      <view class='df ais jct modal-topC'>
+        <text>自购省钱</text>
+        <text>分享赚钱</text>
+      </view>
+      <view class='df ais jct modal-topB'>
+        <text>1.专享市代云仓库</text>
+        <text>2.专享给团队供货</text>
+        <text>3.专享代理价格</text>
+      </view>
+    </view>
+
+    <view class='modal-center df ais jct'>已有10个粉丝已升为代理</view>
+    <view class='modal-bottom df ais jct'>
+      <text>不想升级</text>
+      <text>立即升级</text>
+    </view>
+
+    <!-- 用户头像  -->
+    <view class='userImg df ais-end jct'>
+      <image src='http://img.hmeshop.cn/hmeshop_jxy/images/touxiang_03@2x.png' mode='widthFix'></image>
+    </view>
+  </view>
+</view>

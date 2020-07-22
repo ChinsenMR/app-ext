@@ -1,0 +1,58 @@
+<!-- packageA/pages/Myintegral/Myintegral.wxml -->
+<view class="intetop">
+	<view class="float-btn">
+		<navigator
+		 class="btn-item"
+		 url="/subPackageD/pages/myPoint/detail"
+		 hover-class="navigator-hover"
+		 open-type="navigate"
+		>
+			积分明细
+		</navigator>
+		<navigator
+		 class="btn-item"
+		 url="/subPackageD/pages/pointStore/cart"
+		 hover-class="navigator-hover"
+		 open-type="navigate"
+		>
+			积分购物车
+		</navigator>
+	</view>
+
+	<view class="kon" />
+	<view class="now">当前拥有</view>
+	<view class="money">
+		{{point}}
+		<text>积分</text>
+	</view>
+</view>
+<view class="df container">
+	<view class="goods-wrap">
+		<view class="item" wx:for="{{goodsList}}" wx:key="index">
+			<view
+			 class="cover"
+			 style="background:url({{item.ImageUrl}})center center / cover no-repeat"
+			 bindtap="seeDetail"
+			 data-id="{{item.GiftId}}"
+			/>
+			<view class="content">
+				<view class="title" bindtap="seeDetail" data-id="{{item.GiftId}}">
+					{{item.Name}}
+				</view>
+				<view class="price" bindtap="seeDetail" data-id="{{item.GiftId}}">
+					市场参考价：￥{{item.MarketPrice}}
+				</view>
+				<view class="df">
+					<view class="integral " bindtap="seeDetail" data-id="{{item.GiftId}}">
+						<text class="bold">{{item.NeedPoint}}</text>
+						积分
+					</view>
+					<!-- <navigator url="../cart/cart?id={{item.GiftId}}" hover-class="navigator-hover" open-type="navigate"> -->
+					<button class="get" bindtap="addCart" data-id="{{item.GiftId}}">兑换</button>
+					<!-- </navigator> -->
+				</view>
+			</view>
+		</view>
+	</view>
+</view>
+<view class="no-data">{{loadMore ? '加载更多数据':'没有更多了'}}</view>

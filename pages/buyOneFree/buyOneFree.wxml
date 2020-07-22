@@ -1,0 +1,28 @@
+<view class='layout'>
+  <image class="banner" src="{{imgUrl+'banner @2x (2).png'}}" mode="widthFix"></image>
+  <!-- 内容区 -->
+  <view class="g-ul">
+    <navigator url="/pages/goodsDetail/goodsDetail?p={{item.ProductId}}" class="g-li dd-vh" wx:for='{{list}}' wx:key wx:if='{{list.length != 0}}'>
+      <image class="buy_img" src="{{imgUrl+'icon_label@2x.png'}}"></image>
+      <image class="g-img" src="{{item.ImageUrl1}}" mode="aspectFill"></image>
+      <view class="g-title to-2line">{{item.ProductName}}</view>
+      <view class="da g-pbox">
+        <view class="flex">
+          <view class="da">
+            <text class="pMark">￥</text>
+            <text class="curPrice">{{item.SalePrice}}</text>
+          </view>
+          <view class="prePrice">原价:￥{{item.MarketPrice}}</view>
+        </view>
+        <view class="g-add dcc">+</view>
+      </view>
+    </navigator>
+
+    <!-- 空空如也 -->
+    <!-- <view class="empty dd-vh" wx:if='{{list.length == 0 && isEmpty}}'>
+      <image src="{{imgUrl+'icon_kong.png'}}" mode="widthFix"></image>
+      <text>空空如也...</text>
+    </view> -->
+    <view class="no_data">暂无活动~</view>
+  </view>
+</view>

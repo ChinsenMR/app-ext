@@ -1,0 +1,33 @@
+<view class='layout'>
+  <view class='userInfo-ul'>
+    <form bindsubmit="submitForm">
+      <view class='userInfo-li df ais'>
+        <label>用户名</label>
+        <input type='text' name='userName' confirm-type='next' 
+        placeholder='请输入用户名' placeholder-class='holder-style'/>
+      </view>
+      <view class='userInfo-li df ais'>
+        <label>密码</label>
+        <input type='text' name='password' password='{{passwordShow}}' 
+        placeholder='请输入您的密码' placeholder-class='holder-style'/>
+        <image 
+        src='{{imgUrl+"icon_yanjing@2x.png"}}' 
+        mode='widthFix' bindtap='onchangeType'></image>        
+      </view>
+      <button form-type='submit' plain='true' hover-class='none'>立即绑定</button>
+    </form>
+  </view>
+  <view class='register df ais jct'>
+    <navigator>
+      <text>注册新账号 ></text>
+    </navigator>
+    <text>|</text>
+    <navigator>
+      <text>忘记密码 ></text>
+    </navigator>
+  </view>
+  <view class='advantage'>
+    <view class='ad-title'>用户名绑定的优势</view>
+    <view class='ad-content'>{{advantage}}</view>
+  </view>
+</view>

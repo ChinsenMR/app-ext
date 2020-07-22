@@ -1,0 +1,48 @@
+page {
+  background: rgba(245, 245, 245, 1);
+}
+
+.entrance {
+
+  &-menu {
+    padding: 26rpx 44rpx;
+
+    &-item {
+      // box-shadow: 0 2rpx 0 0 rgba(241, 241, 241, 0.5);
+      // border-radius: 10rpx;
+      overflow: hidden;
+      &:not(:last-child) {
+        margin-bottom: 14rpx;
+      }
+    }
+  }
+
+  &-wrap {
+    display: flex;
+    align-items: center;
+
+    &-icon {
+      width: 98rpx;
+      height: 98rpx;
+      margin-right: 21rpx;
+
+      > image {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-title {
+      line-height: 50rpx;
+      font-size: 32rpx;
+      font-weight: bold;
+      color: #000;
+      
+    }
+    .entrance-wrap-title-val{
+      font-size: 22rpx;
+      color: #666;
+    }
+    
+  }
+}

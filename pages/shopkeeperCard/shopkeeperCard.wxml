@@ -1,0 +1,4 @@
+<!--pages/shopkeeperCard/shopkeeperCard.wxml-->
+<view>
+  <image mode="widthFix" src='{{cardData.storeCard}}'></image>
+</view>

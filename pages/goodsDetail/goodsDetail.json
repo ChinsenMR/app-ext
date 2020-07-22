@@ -1,0 +1,20 @@
+{
+  "navigationBarTextStyle": "black",
+  "backgroundColor":"#ffffff",
+  "navigationBarBackgroundColor":"#ffffff",
+  "navigationStyle": "custom",
+  "usingComponents":{
+    "Tab": "./tab/tab",
+    "GoodsSpecs":"./goodsSpecs/goodsSpecs",
+    "UserComment": "./userComment/userComment",
+    "LimitTime": "./limitTime/limitTime",
+    "PriceItem":"./priceItem/priceItem",
+    "PictureDetail":"./pictureDetail/pictureDetail",
+    "Discount":"./discount/discount",
+    "Welfare": "./welfare/welfare",
+    "ShopPicture": "./shopPicture/shopPicture",
+    "GroupPlay":"./groupPlay/groupPlay",
+    "Coupon": "./coupon/coupon",
+    "share": "../../components/productShare/productShare"
+  }
+}

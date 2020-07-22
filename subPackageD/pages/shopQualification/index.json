@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "van-popup": "/miniprogram_npm/vant-weapp/popup/index",
+    "van-radio": "/miniprogram_npm/vant-weapp/radio/index",
+    "van-notice-bar": "/miniprogram_npm/vant-weapp/notice-bar/index",
+    "van-radio-group": "/miniprogram_npm/vant-weapp/radio-group/index",
+    "van-datetime-picker": "/miniprogram_npm/vant-weapp/datetime-picker/index",
+    "litterfirshiaddress": "/components/litterfirshiaddress/litterfirshiaddress"
+  },
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "navigationBarTitleText": "店铺资质申请"
+}

@@ -1,0 +1,86 @@
+<!-- 默认tab -->
+<view class='customTab da' wx:if='{{isDefault == 1}}'>
+  <!-- 拼团tab -->
+  <!-- <view class='groupTab dbc flex' wx:if='{{goodsInfo.IsFightGroup}}'> -->
+
+  <view class='groupTab dbc flex' wx:if='{{goodsInfo.isShowFightActivity && goodsInfo.IsFightGroup}}'>
+    <navigator class='groupTab-item dd-vh' open-type="redirect" url="/pages/index/index">
+      <image src='{{imgUrl+"icon_shouye@2x (4).png"}}' mode='widthFix'></image>
+      <text>首页</text>
+    </navigator>
+    <view class='groupTab-item2 dd-vh' data-type='fightgroup' data-FightGroupPrice="{{goodsInfo.FightGroupPrice}}" bindtap='onAdd'>
+      <text>￥{{goodsInfo.FightGroupSkuInfos[0].HeadSalePrice}}</text>
+      <text>{{goodsInfo.FightGroupActivityInfo.JoinNumber}}人团</text>
+    </view>
+    <view class='groupTab-item3 dd-vh' data-type='signbuy' data-salePrice="{{goodsInfo.SalePrice}}" bindtap='onAdd'>
+      <text>￥{{goodsInfo.SalePrice}}</text>
+      <text>单独购买</text>
+    </view>
+  </view>
+
+  <!-- 正常tab -->
+  <view class='dbc flex' wx:else>
+    <view class='inner1 dbc'>
+      <navigator class='home dd-vh' open-type="redirect" url="/pages/index/index">
+        <image src='{{imgUrl+"icon_shouye@2x (4).png"}}' mode='widthFix'></image>
+        <text>首页</text>
+      </navigator>
+      <navigator class='dd-vh cart position' open-type="redirect" url="/pages/cart/cart">
+        <text class="num" wx-if="{{num>0}}">{{num>99?'99+':num}}</text>
+        <image src='{{imgUrl+"icon_gouwuche@2x (1).png"}}' mode='widthFix'></image>
+        <text>购物车</text>
+      </navigator>
+      <view class='dcc' data-type='signbuy' bindtap='onAdd'>加购</view>
+    </view>
+    <view class='inner2 {{buyBtnBg}} dcc' data-type='signbuy' bindtap='onAdd'>{{buyTxt}}</view>
+  </view>
+  <!-- 分享 -->
+  <view class='inner3 dd-vh' bindtap="onShare">
+    <image src='{{imgUrl+"icon_share@2x.png"}}' mode='widthFix'></image>
+    <text>分享</text>
+  </view>
+</view>
+
+
+
+
+<!-- 自定义tab -->
+<view class="c-tab"  wx:if='{{isDefault == 2}}'>
+  <!-- 正常tab -->
+  <view class="da ct-normal" wx:if='{{!goodsInfo.IsFightGroup}}'>
+    <navigator url="/pages/moduleHome/moduleHome" class="dd-vh ct-home">
+      <image src="{{imgUrl+'icon_home.png'}}" mode="widthFix"></image>
+      <text>首页</text>
+    </navigator>
+    <navigator url="/pages/cart/cart" class="dd-vh ct-cart">
+      <image src="{{imgUrl+'icon_gouwuche.png'}}" mode="widthFix"></image>
+      <text>购物车</text>
+    </navigator>
+    <view class="ct-btn1" data-type='signbuy' bindtap='onAdd'>加入购物车</view>
+    <view class="ct-btn2" data-type='signbuy' bindtap='onAdd'>立即购买</view>
+    <view class="dd-vh ct-share" bindtap="onShare">
+      <image src="{{imgUrl+'icon_share@2x (1).png'}}" mode="widthFix"></image>
+      <text>分享</text>
+    </view>
+  </view>
+
+  <!-- 拼团tab -->
+  <view class="da ct-normal" wx:else>
+    <navigator url="/pages/moduleHome/moduleHome" class="dd-vh ct-home">
+      <image src="{{imgUrl+'icon_home.png'}}" mode="widthFix"></image>
+      <text>首页</text>
+    </navigator>
+    <view class="ct-btn1 addActive" data-type='signbuy' bindtap='onAdd'>
+      <text>￥{{goodsInfo.SalePrice}}</text>
+      <text>单独购买</text>
+    </view>
+    <view class="ct-btn2 addActive" data-type='fightgroup' bindtap='onAdd'>
+      <text>￥{{goodsInfo.FightGroupSkuInfos[0].HeadSalePrice}}</text>
+      <text>发起拼团</text>
+    </view>
+    <view class="dd-vh ct-share" bindtap="onShare">
+      <image src="{{imgUrl+'icon_share@2x (1).png'}}" mode="widthFix"></image>
+      <text>分享</text>
+    </view>
+  </view>
+</view>

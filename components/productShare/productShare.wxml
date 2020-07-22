@@ -1,0 +1,19 @@
+<!--component/productShare.wxml-->
+<view class="maskStyle" catchtouchmove="disableScroll">
+  <view class="canvasBox">
+    <view class="content" data-mode="mask" catchtap="closeMask">
+      <canvas class="canvasStyle" style="{{ratio==0.7?'width:224px;height:336px':ratio==0.8?'width:256px;height:384px':''}}" canvas-id="qrCanvas" data-mode="content"></canvas>
+    </view>
+    <view class="bottomShare">
+      <view class="shareLeft">
+        <button open-type="share" class="opacity"></button>
+        <image src="http://img.hmeshop.cn/hmeshop_jxy/images/icon_wechat@2x.png"></image>
+        <view>分享好友</view>
+      </view>
+      <view class="shareRight" bindtap="checkAuthority">
+        <image src="http://img.hmeshop.cn/hmeshop_jxy/images/icon_xiazai@2x.png"></image>
+        <view>保存图片</view>
+      </view>
+    </view>
+  </view>
+</view>

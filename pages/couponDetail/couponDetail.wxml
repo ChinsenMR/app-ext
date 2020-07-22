@@ -1,0 +1,60 @@
+<!--pages/couponDetail/couponDetail.wxml-->
+<view>
+  <view class='item'>
+    <image class="bg" src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/red.png'></image>
+
+    <view class="content">
+      <view class='left red'>
+        <text class='icon'>¥ </text>
+        <text class='money'>{{detailData.CouponValue}}</text>
+      </view>
+      <view class='right'>
+        <text class='info' decode='true'>{{detailData.ConditionValue!=0?"满"+detailData.ConditionValue+"元可用":'无消费额限制'}}</text>
+        <text class='date'>生效时间：{{detailData.BeginDate}}</text>
+        <text class='date'>到期时间：{{detailData.EndDate}}</text>
+      </view>
+    </view>
+    <text class="btn">优惠券</text>
+  </view>
+</view>
+<view class='box'>
+  <view class='top'>
+    <view>优惠券面值</view>
+    <view>
+      <text class='symbol'>￥</text>
+      <text class='money'>{{detailData.CouponValue}}</text>
+    </view>
+  </view>
+  <view class='bottom'>
+    <view>
+      <text>优惠券名称</text>
+      <text>{{detailData.CouponName}}</text>
+    </view>
+    <view>
+      <text>适用条件</text>
+      <text>{{detailData.ConditionValue!=0?"订单满"+detailData.ConditionValue+"元减"+detailData.CouponValue+"元":'无消费额限制'}}</text>
+    </view>
+    <view>
+      <text>剩余数量</text>
+      <text>{{detailData.StockNum- detailData.ReceiveNum}}张</text>
+    </view>
+    <view>
+      <text>每人限领数量</text>
+      <text>{{detailData.maxReceivNum}}张</text>
+    </view>
+    <view>
+      <text>活动时间</text>
+      <text>2018.12.24 ~ 2018.12.20 </text>
+    </view>
+    <view>
+      <text>活动商品</text>
+      <view>
+        <text>{{detailData.IsAllProduct?"适用任意商品":"部分商品适用"}}</text>
+        <navigator class='check-product' wx:if="{{!detailData.IsAllProduct}}">
+          查看适用商品
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='confirm'  data-couponId='{{detailData.CouponId}}' bindtap='getCoupon'>确认领取</view>

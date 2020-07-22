@@ -1,0 +1,47 @@
+<view id="cart">
+  <view class="agency">
+    <view class="agency-header">
+      <icon class='iconfont df ais jct {{selectAllStatus? "iconxuanze":"iconweixuanze"}}' bindtap='selectAll'></icon>
+      <text>代理商品</text>
+    </view>
+    <!-- 优惠展示 -->
+    <view class="discounts">
+      <text>满额优惠</text>
+      <text>满600减100元,满1000减...</text>
+      <view class="discounts-btn">
+        <text>去凑单</text>
+        <image src="{{imgUrl+'red-yjt.png'}}"></image>
+      </view>
+    </view>
+    <!-- 商品内容 -->
+    <view class="content">
+      <view class="content-list">
+        <view class="content-list-btn">
+          <icon class='iconfont df ais jct {{selectAllStatus? "iconxuanze":"iconweixuanze"}}' bindtap='selectAll'></icon>
+        </view>
+        <view class="content-list-img">
+          <image src="{{imgUrl+'asdwq2.jpg'}}"></image>
+        </view>
+        <view class="content-list-main">
+          <view class="content-list-main-title line1">德国siku拖拉机带大田喷雾仿真车…</view>
+          <view class="content-list-main-sku">颜色分类：蓝色 尺寸：24cm</view>
+          <view class="content-list-main-price">
+            <view class="content-list-main-price-price_wrap">￥79.00</view>
+            <view class="content-list-main-price-add_subtract">
+              <text>-</text>
+              <text>2</text>
+              <text>+</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+<!-- <van-swipe-cell id="swipe-cell2" right-width="{{ 65 }}" left-width="{{ 0 }}" name="示例" bind:open="onOpen">
+  <van-cell-group>
+    <van-cell title="单元格" value="内容" />
+  </van-cell-group>
+  <view slot="right" class="van-swipe-cell__right">删除</view>
+</van-swipe-cell> -->
+</view>

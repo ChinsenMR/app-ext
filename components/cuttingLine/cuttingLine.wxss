@@ -1,0 +1,6 @@
+/* components/cuttingLine/cuttingLine.wxss */
+.cuttingLine{
+  width: 90%;
+  height: 1rpx;
+  margin: 20rpx auto 20rpx;
+}

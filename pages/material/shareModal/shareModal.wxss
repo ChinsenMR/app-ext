@@ -1,0 +1,49 @@
+@import "../../../app.wxss";
+.layout{
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.main{
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin: 0 20rpx;
+  padding: 38rpx;
+}
+
+.main-img{
+  flex-wrap: wrap;
+}
+
+.main-img image{
+  width: 150rpx;
+  margin-right: 10rpx;
+}
+
+.center{
+  color: #333333;
+  font-size: 26rpx;
+  text-align: center;
+  margin: 20rpx 0;
+}
+
+.center text{
+  color: #3399FF;
+}
+
+.buttom image{
+  width: 84rpx;
+  margin-bottom: 20rpx;
+}
+
+.buttom{
+  color: #999999;
+  font-size: 24rpx;
+  padding: 0 110rpx;
+  margin-top: 30rpx;
+  margin-bottom: 10rpx;
+}

@@ -1,0 +1,76 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: WuJixuan
+ * @Date: 2020-06-03 14:53:55
+ * @LastEditors: sueRimn
+ * @LastEditTime: 2020-06-28 09:27:28
+ -->
+<!-- 店家实拍 -->
+
+<view class='goods-comment'>
+  <view class='goods-commentH df ais jct-between'>
+    <view>买家实拍</view>
+    <view class='df ais' bindtap='onChange'>
+      <text>查看全部</text>
+      <image class='arrowRight' src='{{imgUrl+"icon_more@2x.png"}}' mode='widthFix'></image>
+    </view>
+  </view>
+  <view class='a' wx:for='{{listData}}' wx:for-index='index' wx:key="index" wx:if='{{index < 2}}'>
+    <view class='userInfo df ais'>
+      <image class='userInfoImg' src='{{item.Picture}}'></image>
+      <view class='userInfo-inner flex'>
+        <view class='userInfo-innerT df ais jct-between'>
+          <view class='df ais'>
+            <view class='userName'>{{item.UserName}}</view>
+            <!-- <view class='userInfo-grade df ais jct'>
+              <image src='{{imgUrl+"icon_putong@2x.png"}}' mode='widthFix'></image>
+              <text class='df ais jct'>铂金会员</text>
+            </view> -->
+          </view>
+          <view class='buyTime'>{{item.ReviewDate}}</view>
+        </view>
+        
+        <view class='userInfo-gradeStar df ais' wx:if="{{item.Score < 5 }}">
+          <image src='{{img1}}' mode='widthFix'></image>
+          <image src='{{img1}}' mode='widthFix'></image>
+          <image src='{{img2}}' mode='widthFix'></image>
+          <image src='{{img2}}' mode='widthFix'></image>
+          <image src='{{img2}}' mode='widthFix'></image>
+        </view>
+        <view class='userInfo-gradeStar df ais' wx:if="{{item.Score > 5 && item.Score < 8}}">
+          <image src='{{img1}}' mode='widthFix'></image>
+          <image src='{{img1}}' mode='widthFix'></image>
+          <image src='{{img1}}' mode='widthFix'></image>
+          <image src='{{img2}}' mode='widthFix'></image>
+          <image src='{{img2}}' mode='widthFix'></image>
+        </view>
+        <view class='userInfo-gradeStar df ais' wx:if="{{item.Score > 8 && item.Score < 10}}">
+          <image src='{{img1}}' mode='widthFix'></image>
+          <image src='{{img1}}' mode='widthFix'></image>
+          <image src='{{img1}}' mode='widthFix'></image>
+          <image src='{{img1}}' mode='widthFix'></image>
+          <image src='{{img2}}' mode='widthFix'></image>
+        </view>
+        <view class='userInfo-gradeStar df ais' wx:if="{{item.Score >= 10}}">
+          <image src='{{img1}}' mode='widthFix'></image>
+          <image src='{{img1}}' mode='widthFix'></image>
+          <image src='{{img1}}' mode='widthFix'></image>
+          <image src='{{img1}}' mode='widthFix'></image>
+          <image src='{{img1}}' mode='widthFix'></image>
+        </view>
+
+      </view>
+    </view>
+    <view class='commoentInfo'>{{item.ReviewText}}</view>
+
+    <view class='commoentImg df ais'>
+      <block wx:for='{{item.ImagesList}}' wx:for-item='ImagesList'  wx:key="index" wx:for-index="sindex">
+        <image src='{{ImagesList}}' mode='widthFix' data-pindex="{{index}}" data-sindex="{{sindex}}" bindtap="previewImage">
+        </image>
+      </block>
+      <!-- <image wx:for='{{item.ImagesList}}' wx:for-item='ImagesList' wx:key src='{{ImagesList}}' mode='widthFix' data-pindex="{{pindex}}" data-sindex="{{index}}" bindtap="previewImage"></image> -->
+    </view>
+    
+  </view>
+</view>

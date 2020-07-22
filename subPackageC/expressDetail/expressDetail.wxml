@@ -1,0 +1,19 @@
+<view class="goods-wrap">
+  <block wx:for="{{goodsInfoList}}" wx:key="index">
+    <van-card 
+      num="{{goodsInfoList.length}}" 
+      price="{{item.Price}}"
+      desc="{{item.SkuText}}" 
+      title="{{item.Name}}" 
+      thumb="{{ item.Image }}" 
+      wx:if="{{index === 0}}" 
+     ></van-card>
+  </block>
+</view>
+<view class="steps-wrap">
+  <van-steps 
+    steps="{{ steps }}" 
+    active="{{ active }}"
+    direction="vertical" 
+    active-color="#ee0a24" />
+</view>

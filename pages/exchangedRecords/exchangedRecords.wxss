@@ -1,0 +1,2 @@
+/* pages/exchangedRecords/exchangedRecords.wxss */
+@import "/pages/exchangedList/exchangedList.wxss";

@@ -1,0 +1,102 @@
+
+/* 自定义宽高*/
+@mixin wh($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+/**
+* 溢出省略号
+* @param {Number} 行数
+*/
+@mixin ellipsis($rowCount: 1) {
+    @if $rowCount <=1 {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    @else {
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: $rowCount;
+        -webkit-box-orient: vertical;
+    }
+}
+
+
+/*弹性盒子居中（传入null不设置该属性）*/
+@mixin flex-center($direction:row, $justify:center, $align:center, $flex-wrap: null) {
+    display: -webkit-flex;
+    display: flex;
+
+    @if ($direction !=null) {
+        flex-direction: $direction;
+    }
+
+    @if ($justify !=null) {
+        justify-content: $justify;
+    }
+
+    @if ($align !=null) {
+        align-items: $align;
+    }
+
+    @if ($flex-wrap !=null) {
+        flex-wrap: $flex-wrap;
+    }
+}
+
+
+/*绝对定位  参数顺序：上右下左*/
+@mixin position-absolute($top:null, $right:null, $bottom:null, $left:null) {
+    position: absolute;
+
+    @if ($left !=""& & $left !=null) {
+        left: $left;
+    }
+
+    @if ($right !=""& & $right !=null) {
+        right: $right;
+    }
+
+    @if ($top !=""& & $top !=null) {
+        top: $top;
+    }
+
+    @if ($bottom !=""& & $bottom !=null) {
+        bottom: $bottom;
+    }
+}
+
+
+
+/* 行高 */
+@mixin line-height($height:30px, $line-height:30px) {
+    @if ($height !=null) {
+        height: $height;
+    }
+
+    @if ($line-height !=null) {
+        line-height: $line-height;
+    }
+}
+
+
+/* 圆形盒子 */
+@mixin circle($size, $bg) {
+    border-radius: 50%;
+    text-align: center;
+
+    @if ($size !=null) {
+        width: $size;
+        height: $size;
+        line-height: $size;
+    }
+
+    @if ($bg !=null) {
+        background: $bg;
+    }
+}

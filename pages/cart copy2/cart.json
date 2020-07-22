@@ -1,0 +1,11 @@
+{
+  "navigationBarBackgroundColor":"#fff",
+  "navigationBarTextStyle":"black",
+  "navigationBarTitleText":"购物车",
+  "usingComponents":{
+    "Custom-tab":"./tab/tab",
+    "Coupon":"../../components/coupon/coupon",
+    "tabBar": "/components/tabBar/tabBar",
+    "van-swipe-cell": "../../miniprogram_npm/vant-weapp/swipe-cell/index"
+  }
+}

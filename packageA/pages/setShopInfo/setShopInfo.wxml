@@ -1,0 +1,103 @@
+<view class="setinfo">
+  <!-- 门店logo -->
+  <view class="logo_wrap">
+    <view class="logo_img_wrap">
+      <!-- <image class="logo_img" src="https://tva1.sinaimg.cn/large/005R6Otmgy1g6d4f67uzaj30sg15en1i.jpg"></image> -->
+      <image wx:if="{{isShow}}" class="logo_img" src="{{infoObj.StoreImages || default}}"></image>
+      <image wx:else class="logo_img" src="{{'data:image/png;base64,'+infoObj.StoreImages}}"></image>
+    </view>
+    <view class="logo_center">
+      <view class="logo_btn">
+        上传门店logo
+        <input class="reupdate" type="file" accept="image/gif, image/jpeg, image/jpg, image/png"
+          bindtap="postImg"></input>
+      </view>
+      <view class="logo_text">
+        建议尺寸：200 x 200像素小于120KB，支持 jpg、gif、png格式
+      </view>
+    </view>
+  </view>
+  <!-- 上传门店背景 -->
+  <view class="shop_bag">
+    <view class="shop_title">
+      <view class="shop_all_title">上传门店背景</view>
+      <text class="format_text">支持jpg、gif、png格式</text>
+    </view>
+    <view class="shop_bg_wrap" bindtap="handleShopImg">
+      <image wx:if="{{infoObj.StoreSlideImages==null}}" class="shop_bg_img_add" src="../../images/icon_add.png"
+        mode="widthFix"></image>
+      <image wx:elif="{{isShow2}}" class="shop_bg_img" src="{{infoObj.StoreSlideImages}}"></image>
+      <image wx:else class="shop_big_img" src="{{'data:image/png;base64,'+infoObj.StoreSlideImages}}"></image>
+    </view>
+  </view>
+  <!-- 上传微信二维码 -->
+  <view class="wx_img">
+    <view class="shop_title">
+      <text class="shop_all_title">上传微信二维码</text>
+      <text class="format_text">支持jpg、gif、png格式</text>
+    </view>
+    <view class="wx_img_wrap" bindtap="handleWxImg"> 
+      <image wx:if="{{infoObj.WxImage==null}}" class="wx_bg_img_add" src="../../images/icon_add.png" mode="widthFix">
+      </image>
+      <image wx:elif="{{isShow3}}" class="wx_bg_img" src="{{infoObj.WxImage}}"></image>
+      <image wx:else class="wx_big_img" src="{{'data:image/png;base64,'+infoObj.WxImage}}"></image>
+    </view>
+  </view>
+  <!-- 上传门店分享图 -->
+  <!-- <view class="share_img">
+      <view class="shop_title">
+        <text class="shop_all_title">上传门店分享图</text>
+        <text class="format_text">支持jpg、gif、png格式</text>
+      </view>
+      <view class="share_img_wrap">
+        <image wx:if="{{true}}" class="share_bg_img" src="../../images/icon_add.png" mode="widthFix"></image>
+        <image wx:else class="share_bg_img" src="../../images/icon_add.png" mode="widthFix"></image>
+      </view>
+    </view> -->
+  <!-- 门店点信息基础信息 -->
+  <view class="shopInfo_wrap">
+    <!-- <block wx:for="{{list}}" wx:key="{{item}}">
+      <view class="shopInfo_name">
+          <text class="shopInfo_all_title">{{item.name}}</text>
+        <input type="text" value="{{item.value}}" class="shopInfo_all_input" placeholder='{{item.placeholder}}' bindinput="getStoreName" />
+      </view>
+    </block> -->
+      
+    <view class="shopInfo_name">
+      <text class="shopInfo_all_title">门店名称</text>
+      <input type="text" value="{{infoObj.StoreName}}" class="shopInfo_all_input" bindinput="getStoreName" />
+    </view>
+    <!-- <view class="shopInfo_name">
+        <text class="shopInfo_all_title">门店介绍</text>
+        <input type="text" value="{{infoObj.Introduce}}" class="shopInfo_all_input" placeholder='请输入门店介绍'/>
+      </view> -->
+    <view class="shopInfo_name">
+      <text class="shopInfo_all_title">联系电话</text>
+      <input type="text" value="{{infoObj.CellPhone}}" class="shopInfo_all_input" bindinput="getCellPhone" placeholder='请输入手机号码'/>
+    </view>
+    <view class="shopInfo_name">
+      <text class="shopInfo_all_title">营业开始时间</text>
+      <input type="text" value="{{infoObj.OpenStartDate}}" class="shopInfo_all_input" bindinput="getOpenStartDate" />
+    </view>
+    <view class="shopInfo_name">
+      <text class="shopInfo_all_title">营业结束时间</text>
+      <input type="text" value="{{infoObj.OpenEndDate}}" class="shopInfo_all_input" bindinput="getOpenEndDate" />
+    </view>
+  </view>
+  <!-- 门店地址 -->
+  <view class="shop_site_wrap">
+    <view class="shopInfo_all_title">
+      地址
+      <!-- <picker mode="region" bindchange="handleRegion">
+          地址 
+        </picker> -->
+    </view>
+    <input type="text" value="{{infoObj.Address}}" class="shopInfo_all_input" placeholder='请选择地址'
+      bindinput="getAddress" />
+  </view>
+  <!-- 保存按钮 -->
+  <view class="save_wrap" bindtap="handleStoreInfo">
+    <view class="save_btn">保存店铺信息</view>
+  </view>
+
+</view>

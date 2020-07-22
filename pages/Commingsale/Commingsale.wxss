@@ -1,0 +1,91 @@
+.newpeoplecontent {
+  height: 100%;
+}
+
+.newimg {
+  width: 100%;
+}
+
+.pai {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 251rpx;
+  height: 76rpx;
+  background: rgba(255, 255, 255, 1);
+  border: 1rpx solid rgba(204, 204, 204, 1);
+  border-radius: 38rpx 38rpx 38rpx 38rpx;
+  left: calc(50% - 125rpx);
+  bottom: calc(-76rpx / 2);
+}
+
+.painame {
+  color: rgba(51, 51, 51, 1);
+  font-size: 37rpx;
+}
+
+.pai text {
+  color: rgba(51, 51, 51, 1);
+  font-size: 18rpx;
+}
+
+.allproduct {
+  color: rgba(51, 51, 51, 1);
+  font-size: 30rpx;
+  text-align: center;
+  margin-top: 66rpx;
+}
+
+.tomorrow {
+  color: rgba(51, 153, 204, 1);
+  font-size: 26rpx;
+  text-align: center;
+  margin-top: 16rpx;
+}
+
+.commingtimebox {
+  display: flex;
+  justify-content: center;
+}
+
+.commingtime {
+  width: 154rpx;
+  height: 46rpx;
+  margin-top: 27rpx;
+  background: rgba(223, 223, 223, 1);
+  border: 1px solid rgba(102, 102, 102, 1);
+  border-radius: 23rpx 23rpx 23rpx 23rpx;
+  color: rgba(51, 51, 51, 1);
+  font-size: 26rpx;
+  text-align: center;
+  line-height: 46rpx;
+}
+
+.newpeoplecontent {
+  padding: 0 27rpx;
+  margin-top: 32rpx;
+}
+
+.searchbox {
+  width: 687rpx;
+  height: 54rpx;
+  background: rgba(223, 223, 223, 1);
+  border-radius: 8rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchimg {
+  width: 32rpx;
+  height: 32rpx;
+  margin-right: 11rpx;
+}
+
+.search {
+  height: 25rpx;
+  color: #333;
+  font-size: 26rpx;
+}

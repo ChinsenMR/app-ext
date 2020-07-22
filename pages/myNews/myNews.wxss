@@ -1,0 +1,106 @@
+.layout{
+  padding-bottom: 60rpx;
+}
+
+.tabbar{
+  background-color: #fff;
+  height: 88rpx;
+  border-top: 1rpx solid #F7F7F7;
+  color: #666666;
+  font-size: 28rpx;
+  padding: 0 80rpx;
+}
+
+.tabbar view{
+  line-height: 88rpx;
+  position: relative;
+}
+
+.tabbar .tabbarActive{
+  color: #FF5E65;
+  position: relative;
+}
+
+.newNum1{
+  position: absolute;
+  top: 29rpx;
+  right: -10rpx;
+  width: 8rpx;
+  height: 8rpx;
+  background-color: #FF3333;
+  border-radius: 50%;
+}
+
+.newNum2{
+  position: absolute;
+  width: 24rpx;
+  line-height: 24rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 18rpx;
+  top: 20rpx;
+  right: -15rpx;
+  background-color: #FF3333;
+  border-radius: 50%;
+}
+
+.tabbar .tabbarActive::after{
+  position: absolute;
+  content: '';
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5rpx;
+  background-color: #FF5E65;
+  width: 100%;
+}
+
+.content-ul{
+  padding: 0 33rpx;
+}
+
+.infoDate view{
+  width: 344rpx;
+  height: 36rpx;
+  background-color: #CCCCCC;
+  border-radius: 18rpx;
+  color: #FFFFFF;
+  font-size: 24rpx;
+  margin-top: 33rpx;
+}
+
+.infoDate view text:first-child{
+  margin-right: 20rpx;
+}
+
+.content-inner{
+  background-color: #fff;
+  padding: 0 30rpx;
+  border-radius: 10rpx;
+  margin-top: 37rpx;
+}
+
+.content-innerT{
+  color: #333333;
+  font-size: 33rpx;
+  padding: 20rpx 0 0 0;
+  width: 518rpx;
+}
+
+.content-innerI{
+  color: #333;
+  font-size: 24rpx;
+  padding: 20rpx 0 30rpx 0;
+  border-bottom: 1rpx solid #F7F7F7;
+}
+
+.content-innerB {
+  color: #3399FF;
+  font-size: 30rpx;
+  height: 80rpx;
+}
+
+.content-innerB image{
+  width: 25rpx;
+  margin-left: 15rpx;
+}

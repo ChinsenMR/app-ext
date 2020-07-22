@@ -1,0 +1,38 @@
+<view class='layout'>
+  <view class='tabbar df ais jct-around'>
+    <view class='{{activeItem == 1? "tabbarActive":""}}' data-id='1' bindtap='selectTabbar'>
+      <text>通知</text>
+      <text class='newNum1'></text>
+    </view>
+    <view class='{{activeItem == 2? "tabbarActive":""}}' data-id='2' bindtap='selectTabbar'>
+      <text>消息</text>
+      <text class='newNum2'>3</text>
+    </view>
+  </view>
+
+  <view class='content-ul'>
+    <view class='content-li' 
+    wx:for='{{list}}' wx:key='{{index}}' data-id='{{index}}' bindtap='updateAgent'>
+      <view class='infoDate df ais jct'>
+        <view class='df ais jct'>
+          <text>2019-4-17</text>
+          <text>09:13:05</text>
+        </view>
+      </view>
+      <view class='content-inner'>
+        <view class='content-innerT to-line'>今日奖励已到账今日奖励已到账！今日奖励已到账！</view>
+        <view class='content-innerI to-2line' style='color:{{activeItem==2? "#3399FF":""}}'>
+        尊敬的用户XXXX:由于服务升级，你公司足十元由于服务升级，你的余额已不足十元你的余十公司元你的余十公司元你的余
+        </view>
+        <view class='df ais content-innerB'>
+          <text>点击查看</text>
+          <image src='{{imgUrl+"more_1@2x.png"}}' mode='widthFix'></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+
+  <!-- 升级代理modal -->
+  <Modal wx:if='{{showModal}}' animationData='{{animationData}}' bind:closeModal='updateAgent'/>
+</view>

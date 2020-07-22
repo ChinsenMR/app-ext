@@ -1,0 +1,6 @@
+<view class="padding-30 text-center font-28">我的购物车有{{goodsCount}}件商品</view>
+<button bindtap="onChangeCount" class="font-28">买要一件商品</button>
+<v-test wallet="{{wallet}}" class="font-28" />
+<button bindtap="buyGoods" class="font-28"> 父组件找子组件拿了20块钱买包黄鹤楼</button>
+
+<navigator url="../testDemo2/index" class="font-28 margin-t-20">去看看另一个页面的值是不是也改变了</navigator>

@@ -1,0 +1,10 @@
+{ 
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "productacting": "/components/productacting/productacting",
+    "btn-to-top": "/components/btnToTop/btnToTop",
+    "indexgroup":"/components/indexgroup/indexgroup",
+    "tabBar": "/components/tabBar/tabBar"
+  },
+  "enablePullDownRefresh": true
+}

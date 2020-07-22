@@ -1,0 +1,2 @@
+<!-- <web-view src="https://jms.hmeshop.cn/#/payPage" bindmessage="handlePostMessage"></web-view> -->
+<web-view src="https://m.yhd.com/" bindmessage="handlePostMessage"></web-view>

@@ -1,0 +1,19 @@
+<!--packageA/pages/subscribePage/subscribePage.wxml-->
+<!-- 订阅消息 -->
+<view class="subscribe">
+  <view class="tips">
+    <view>订阅以下消息通知</view>
+    <view>现有{{authorizationList.length}}个模板，一次最多选择3个</view>
+  </view>
+  <checkbox-group bindchange="checkboxChange" class="scrollList">
+    <view class="subscribeList" wx:for="{{authorizationList}}" wx:key="index">
+      <checkbox value="{{index}}" checked="{{item.checked}}">
+        <span>{{item.Title}}</span>
+      </checkbox>
+    </view>
+  </checkbox-group>
+  <view class="subscribePlane">
+    <view bindtap="goBack">取消</view>
+    <view bindtap="confirm">确定</view>
+  </view>
+</view>

@@ -1,0 +1,14 @@
+<view class="withdrawal_way">
+  <view class="withdrawal_way_wrap">
+    <block wx:for="{{list}}" wx:key="{{item}}">
+      <view class="withdrawal_wx" bindtap="handleGetId" data-id="{{item.id}}">
+        <image class="withdrawal_img" src="{{imgUrl+item.icon1}}"></image>
+        <view class="wx_wrap">
+          <text class="title">{{item.name}}</text>
+          <text class="test">{{item.value}}</text>
+        </view>
+        <image class="withdrawal_more" src="{{imgUrl+item.icon2}}"></image>
+      </view>
+    </block>
+  </view>
+</view>

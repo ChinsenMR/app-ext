@@ -1,0 +1,38 @@
+<van-nav-bar right-text="{{!edit ? '编辑' : '完成'}}" bind:click-right="onClickRight" custom-style="color: rgb(255,68,68)" />
+<view class="colect" wx:if="{{collectList.length!=0}}">
+	<block wx:for="{{collectList}}" wx:key="{{item}}">
+		<view class="flex-center">
+			<van-checkbox
+			 value="{{ item.checked }}"
+			 bind:change="checkItem"
+			 data-index="{{index}}"
+			 checked-color="rgb(255,68,68)"
+			 wx:if="{{edit}}"
+			/>
+			<view class="containt" data-productid="{{item.ProductId}}" bindtap="seeDetail">
+				<image src="{{item.ThumbnailUrl}}" mode="aspectFill" />
+				<view class="contr">
+					<view class="name">{{item.ProductName}}</view>
+					<view class="pricebox">
+						<view class="price" wx:if="{{item.IsValid}}">￥{{item.SalePrice}}</view>
+						<view class="active" wx:if="{{item.IsValid}}">{{item.IsValid==false?'失效':''}}</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</block>
+</view>
+<view class="emity" wx:if="{{collectList.length==0}}">暂无收藏</view>
+<van-submit-bar
+ button-text="删除"
+ bind:submit="removeItems"
+ tip="{{ true }}"
+ wx:if="{{edit}}"
+>
+	<view class="handle-box flex-center">
+		<van-checkbox value="{{ checked }}" bind:change="onChange" checked-color="rgb(255,68,68)">
+			全选
+		</van-checkbox>
+	</view>
+</van-submit-bar>
+

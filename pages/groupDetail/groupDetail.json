@@ -1,0 +1,8 @@
+{
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "拼团详情",
+    "usingComponents": {
+        "share": "../components/productShare/productShare"
+    }
+}

@@ -1,0 +1,38 @@
+<view class='layout'>
+  <view class='banner'>
+    <image src='http://img.hmeshop.cn/hmeshop_jxy/images/banner @2x (3).png' mode='widthFix'></image>
+  </view>
+  <view class='content-ul'>
+    <view class='content-li df ais' 
+      wx:for='{{groupList}}' 
+      wx:key='{{index}}' 
+      data-ProductID="{{item.ProductId}}" 
+      bindtap="Toprodetai" 
+      data-pagetype="6">
+      <image src='{{item.ImageUrl1 || imgNo}}' mode='widthFix'></image>
+      <view class='flex content-inner df fdc jct-between'>
+        <view>
+          <view class='goodsTitle'><text>正在拼团</text>{{item.ProductName}}</view>
+          <view class='groupStatus df ais'>
+            <text class='groupStatus-n'>当前有{{item.CanFightCount || 0}}个团可拼</text>
+            <text class='groupStatus-s'>已拼{{item.SoldCount || 0}}件</text>
+            <text class='groupStatus-i'>{{item.IsfreeShipping? '不包邮':'包邮'}}</text>
+          </view>
+        </view>
+        <view class='goodsPrice df ais-end jct-between'>
+          <view class='goodsPrice-l df ais-end'>
+            <view class='df ais-end'>
+              <text>{{item.JoinNumber}}人团￥</text>
+              <text>{{item.SalePrice}}</text>
+            </view>
+            <view class='df ais-end'>
+              <text>单买价:</text>
+              <text>￥{{item.SingleSalePrice || 0}}</text>
+            </view>
+          </view>
+          <view class='goodsPrice-r df ais jct'>去拼团 ></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

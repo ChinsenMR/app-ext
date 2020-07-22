@@ -1,0 +1,62 @@
+<!--pages/lottery/lottery.wxml-->
+<!-- <text>pages/lottery/lottery.wxml</text> -->
+<view class='bg'>
+  <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/bg0@2x.png'>
+    <view class='content'>
+      <image class='top_img' src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/title@2x.png'></image>
+      <text class='top_txt'>活动时间：{{baseData.BeginTime+"-"+ baseData.EndTime}}</text>
+      <navigator url='/pages/winners/winners?id={{baseData.GameId}}'>
+        <view class='winners'>中奖名单</view>
+      </navigator>
+      <view class='disk'>
+        <view class='turntable'>
+          <image style='transform: rotateZ({{deg}}deg);-webkit-transform:rotateZ({{deg}}deg); transition: all {{time}}s; transition-timing-function: ease-out;' src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/weiyuan@2x.png'></image>
+          <image bindtap='turntable' class='pointer' src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/neiyuan@2x.png'></image>
+        </view>
+        <block wx:if="{{baseData.TodayCanPlayTime == -1}}">
+          <text>今日可用机会不限次数</text>
+        </block>
+        <block wx:else>
+          <text>今日剩余{{baseData.TodayCanPlayTime}}次机会</text>
+        </block>
+      </view>
+      <view class='prize'>
+        <view class='title'>
+          <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/zhuanpan_jiagnpin@2x.png'></image>
+          奖品设置
+        </view>
+        <view class='text' wx:for="{{prizeData}}">{{item.PrizeName+"："+ item.Prize}}</view>
+      </view>
+      <view class='rule'>
+        <view class='title'>
+          <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/zhuanpan_huodong@2x.png'></image>
+          活动规则
+        </view>
+        <rich-text class='text' nodes="{{baseData.Description}}"></rich-text>
+      </view>
+      <view class='btn'>
+        <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/zhuanpan_anniu@2x.png'>
+          <navigator class='text' url='/pages/award/award'>查看我的奖品</navigator>
+        </image>
+      </view>
+    </view>
+  </image>
+  <image class='bottom' src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/yun01@2x.png'></image>
+
+</view>
+
+<view class="shade" hidden="{{flag}}" catchtouchmove="myCatchTouch" bindtap="conceal">
+  <image class='gift' src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/gift@2x.png'>
+    <view class='success'>
+      <image src='https://hmeshop-1256233971.cos.ap-guangzhou.myqcloud.com/wxapp/images/gift_txt@2x.png'></image>
+      <text>获得{{finalPrize.Prize}}</text>
+      <navigator class='btn' url='/pages/award/award'>查看奖品</navigator>
+    </view>
+  </image>
+</view>
+<view class="shade" hidden='{{isEmpty}}'>
+  <view class='pop'>
+    <text>{{baseData.NotPrzeDescription}}</text>
+    <button class="knowBtn" bindtap="conceal">知道了</button>
+  </view>
+</view>

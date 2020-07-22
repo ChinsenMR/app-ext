@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#FF4444",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "零售商城",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "tabBar": "/components/tabBar/tabBar"
+  }
+}
